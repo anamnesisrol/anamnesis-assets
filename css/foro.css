@@ -479,6 +479,7 @@ body.theme-dark .subforo-layout.escena-img::after {
 /* ANAMNESIS · INTERIOR DE POST */
 .fa_like_div.ana-like-box{
   position:relative;
+  width:100%;
 }
 
 .fa_like_div.ana-like-box > .rep-button{

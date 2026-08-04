@@ -920,11 +920,15 @@ body.theme-dark .subforo-layout.escena-img::after {
 }
 .ana-signature-native {
   max-width: 700px;
-  margin: 28px auto 0;
-  padding-top: 18px;
+  margin: 12px auto 0;
+  padding-top: 8px;
   border-top: 1px solid var(--line-soft);
   color: var(--text-soft);
   font-size: 12px;
+}
+.ana-signature-native > br:first-child,
+.ana-signature-native > br:first-child + br {
+  display: none !important;
 }
 .ana-post-side {
   position: relative;

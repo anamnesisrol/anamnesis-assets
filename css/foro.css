@@ -1500,6 +1500,7 @@ body.theme-dark .ana-post-content dl.codebox {
     width: 46px;
     height: 46px;
   }
+	.ana-signature-native{margin:30px auto !important;}
   .ana-post-signature strong,
   .ana-post-signature strong a,
   .ana-post-signature strong span {

@@ -7839,3 +7839,150 @@ body.theme-dark .am-maxi-return{
   }
 }
 
+/* =========================================================
+   RÉMORA MOBILE MAXI · NAVEGACIÓN CON DIVS
+   Requiere remora-mobile-maxi.js en overall_header.
+========================================================= */
+
+/* Todas las pantallas parten ocultas. */
+.am-phone-maxi .am-maxi-viewport > .am-maxi-screen{
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  display:flex!important;
+  flex-direction:column!important;
+  overflow:hidden!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  transform:translateY(13px) scale(.985)!important;
+  transition:
+    opacity .28s ease,
+    visibility .28s ease,
+    transform .34s cubic-bezier(.2,.75,.25,1)!important;
+}
+
+/* El script activa únicamente la pantalla elegida dentro de cada teléfono. */
+.am-phone-maxi .am-maxi-viewport > .am-maxi-screen.is-active{
+  z-index:5!important;
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  transform:none!important;
+}
+
+/* Todos los controles de navegación son divs. */
+.am-phone-maxi .am-maxi-action{
+  cursor:pointer!important;
+  pointer-events:auto!important;
+  -webkit-tap-highlight-color:transparent;
+  -webkit-user-select:none;
+  user-select:none;
+}
+
+.am-phone-maxi .am-maxi-action:focus-visible{
+  outline:2px solid rgba(255,255,255,.78)!important;
+  outline-offset:2px!important;
+}
+
+/* Toda la pantalla de bloqueo puede pulsarse para desbloquear. */
+.am-phone-maxi .am-maxi-unlock{
+  margin:0!important;
+  padding:0!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:10!important;
+  display:block!important;
+  border:0!important;
+  background:none!important;
+}
+
+/* Notificación aislada del CSS global de Foroactivo. */
+.am-phone-maxi .am-maxi-lock-notification .am-maxi-notification-text{
+  margin:2px 0 0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  color:inherit!important;
+  font-family:var(--font-base)!important;
+  font-size:8px!important;
+  font-weight:400!important;
+  line-height:1.35!important;
+  letter-spacing:0!important;
+  text-align:left!important;
+  text-transform:none!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+}
+
+/* Botón de Inicio para volver a la pantalla de bloqueo. */
+.am-phone-maxi .am-maxi-relock{
+  width:30px!important;
+  height:30px!important;
+  min-width:30px!important;
+  min-height:30px!important;
+  margin:0!important;
+  padding:0!important;
+  top:45px!important;
+  right:17px!important;
+  position:absolute!important;
+  z-index:80!important;
+  display:grid!important;
+  place-items:center!important;
+  border:1px solid rgba(255,255,255,.24)!important;
+  border-radius:10px!important;
+  background:rgba(28,29,34,.18)!important;
+  box-shadow:0 4px 14px rgba(20,22,28,.12)!important;
+  color:#fff!important;
+  text-shadow:0 1px 7px rgba(0,0,0,.42)!important;
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
+  transition:background .22s ease,transform .22s ease!important;
+}
+
+.am-phone-maxi .am-maxi-relock:hover{
+  background:rgba(28,29,34,.32)!important;
+  transform:scale(1.04)!important;
+}
+
+.am-phone-maxi .am-maxi-relock .material-symbols-rounded{
+  font-size:17px!important;
+  line-height:1!important;
+  font-variation-settings:"FILL" 0,"wght" 400,"GRAD" 0,"opsz" 20;
+}
+
+/* Los divs que abren aplicaciones conservan la cuadrícula original. */
+.am-phone-maxi .am-maxi-app-icon{
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  background:none!important;
+}
+
+.am-phone-maxi .am-maxi-return{
+  cursor:pointer!important;
+  pointer-events:auto!important;
+}
+
+/* Bloqueo -> Inicio: salida elevada y entrada con un pequeño retraso. */
+.am-phone-maxi.am-maxi-show-home .am-maxi-screen-lock{
+  transform:translateY(-24px) scale(1.012)!important;
+  transition:
+    opacity .42s ease,
+    visibility .42s linear,
+    transform .54s cubic-bezier(.22,.72,.22,1)!important;
+}
+
+.am-phone-maxi.am-maxi-show-home .am-maxi-screen-home.is-active{
+  transition:
+    opacity .48s ease .07s,
+    visibility 0s linear .07s,
+    transform .58s cubic-bezier(.18,.78,.22,1) .04s!important;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .am-phone-maxi .am-maxi-viewport > .am-maxi-screen,
+  .am-phone-maxi.am-maxi-show-home .am-maxi-screen-lock,
+  .am-phone-maxi.am-maxi-show-home .am-maxi-screen-home.is-active{
+    transition:none!important;
+  }
+}

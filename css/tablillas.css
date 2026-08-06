@@ -7976,3 +7976,67 @@ body.theme-dark .am-maxi-return{
     transition:none!important;
   }
 }
+
+/* RÉMORA MOBILE · AJUSTES VISUALES · 06-08-2026 */
+
+/* Marco más visible en modo claro */
+body:not(.theme-dark) .am-phone-shell{
+  background:linear-gradient(145deg,#ded5ca 0%,#c4b5a3 100%);
+  border-color:#a99a87;
+  box-shadow:0 24px 60px rgba(76,65,55,.20),inset 0 0 0 1px rgba(255,255,255,.55);
+}
+
+body:not(.theme-dark) .am-phone-shell::before{
+  border-color:rgba(255,255,255,.48);
+}
+
+/* Evita que el color de grupo invada reloj, cabecera y etiquetas de apps */
+.am-maxi-lock-clock strong,
+.am-maxi-lock-clock span,
+.am-maxi-lock-owner,
+.am-maxi-home-heading strong,
+.am-maxi-app-icon strong{
+  color:#fff!important;
+}
+
+/* Iconos Maxi · paleta más viva y variada */
+.am-maxi-icon-chat > span{
+  background:linear-gradient(145deg,#69c696,#42aa79);
+}
+
+.am-maxi-icon-social > span{
+  background:linear-gradient(145deg,#ed9bb7,#dc7296);
+}
+
+.am-maxi-icon-profile > span{
+  background:linear-gradient(145deg,#83b5e0,#6097c9);
+}
+
+.am-maxi-icon-mail > span{
+  background:linear-gradient(145deg,#ef9a80,#dd7865);
+}
+
+.am-maxi-icon-music > span{
+  background:linear-gradient(145deg,#b39adc,#9175c1);
+}
+
+.am-maxi-icon-notes > span{
+  background:linear-gradient(145deg,#e6c769,#cea746);
+}
+
+.am-maxi-icon-calls > span{
+  background:linear-gradient(145deg,#6bc5bd,#45a69e);
+}
+
+.am-maxi-icon-contacts > span{
+  background:linear-gradient(145deg,#94a9df,#718bc7);
+}
+
+.am-maxi-icon-calendar > span{
+  background:linear-gradient(145deg,#e98386,#ce6068);
+}
+
+.am-maxi-icon-map > span{
+  background:linear-gradient(145deg,#f0aa67,#dc8243);
+}
+

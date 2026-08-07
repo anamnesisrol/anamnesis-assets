@@ -1,0 +1,788 @@
+/* - - - - - - - - - - G E N E R A D O R   D E   T A B L I L L A S   /   B A S E - - - - - - - - - - */
+.tgen,.tgen *,.tgen-full-preview,.tgen-full-preview *,.tgen-modal,.tgen-modal * { box-sizing: border-box; }
+.tgen {
+  position: relative;
+  width: min(100%,1040px);
+  margin: 38px auto;
+  color: var(--text-main);
+  font-family: var(--font-base);
+}
+.tgen::before {
+  content: "";
+  position: absolute;
+  left: -34px;
+  top: 170px;
+  width: 120px;
+  height: 240px;
+  background: var(--ana-img-ramita) left top / contain no-repeat;
+  opacity: .14;
+  pointer-events: none;
+}
+.tgen::after {
+  content: "";
+  position: absolute;
+  right: -26px;
+  top: 520px;
+  width: 155px;
+  height: 155px;
+  background: var(--ana-img-sello) center / contain no-repeat;
+  opacity: .10;
+  pointer-events: none;
+}
+
+/* - - - - - - - - - - G E N E R A D O R   /   C A B E C E R A - - - - - - - - - - */
+.tgen-hero {
+  position: relative;
+  padding: 34px 38px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.32),transparent 48%),
+    repeating-linear-gradient(0deg,transparent 0 34px,color-mix(in srgb,var(--line) 26%,transparent) 35px),
+    var(--bg-panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+.tgen-hero::before {
+  content: "";
+  position: absolute;
+  inset: 13px;
+  z-index: 3;
+  border: 1px solid var(--line-soft);
+  pointer-events: none;
+}
+.tgen-hero::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 16px;
+  width: 170px;
+  height: 170px;
+  background: var(--ana-img-laurel) right top / contain no-repeat;
+  opacity: .16;
+  pointer-events: none;
+}
+.tgen-hero-tape {
+  position: absolute;
+  right: 62px;
+  top: -10px;
+  z-index: 5;
+  width: 110px;
+  height: 22px;
+  background: color-mix(in srgb,var(--bg-soft) 80%,#fff 20%);
+  border: 1px solid color-mix(in srgb,var(--line) 38%,transparent);
+  opacity: .86;
+  transform: rotate(7deg);
+}
+.tgen-kicker {
+  position: relative;
+  z-index: 4;
+  margin-bottom: 10px;
+  color: var(--accent-rose);
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+.tgen-title {
+  position: relative;
+  z-index: 4;
+  max-width: 760px;
+  color: var(--title-color);
+  font-family: var(--font-title);
+  font-size: clamp(30px,4vw,46px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.tgen-intro {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  gap: 12px;
+  max-width: 820px;
+  margin-top: 22px;
+  color: var(--text-main);
+  font-size: 12px;
+  line-height: 1.78;
+  text-align: justify;
+}
+.tgen-alert {
+  position: relative;
+  z-index: 4;
+  margin-top: 26px;
+  padding: 20px 22px 20px 24px;
+  background: color-mix(in srgb,var(--accent-sage) 8%,transparent);
+  border: 1px solid color-mix(in srgb,var(--accent-sage) 34%,var(--line));
+  overflow: hidden;
+}
+.tgen-alert::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 16px;
+  bottom: 16px;
+  width: 1px;
+  background: color-mix(in srgb,var(--accent-rose) 46%,transparent);
+}
+.tgen-alert::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  bottom: 4px;
+  width: 105px;
+  height: 105px;
+  background: var(--ana-img-flor) right bottom / contain no-repeat;
+  opacity: .16;
+  pointer-events: none;
+}
+.tgen-alert-title {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 10px;
+  color: var(--accent-rose);
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.tgen-alert-text {
+  position: relative;
+  z-index: 2;
+  color: var(--text-main);
+  font-size: 12px;
+  line-height: 1.78;
+  text-align: justify;
+}
+
+/* - - - - - - - - - - G E N E R A D O R   /   C A T Á L O G O - - - - - - - - - - */
+.tgen-catalog {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 18px;
+  margin-top: 22px;
+}
+.tgen-section {
+  position: relative;
+  padding: 24px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.18),transparent 48%),
+    var(--bg-panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+.tgen-section::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid var(--line-soft);
+  pointer-events: none;
+}
+.tgen-section::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 18px;
+  width: 72px;
+  height: 72px;
+  background: var(--ana-img-sello) center / contain no-repeat;
+  opacity: .08;
+  pointer-events: none;
+}
+.tgen-section-head {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  align-items: end;
+  gap: 18px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.tgen-section-title {
+  color: var(--title-color);
+  font-family: var(--font-title);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+.tgen-section-note {
+  max-width: 380px;
+  color: var(--text-soft);
+  font-size: 11px;
+  line-height: 1.35;
+  text-align: right;
+}
+.tgen-section-body {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 14px;
+}
+
+/* - - - - - - - - - - G E N E R A D O R   /   T A R J E T A S - - - - - - - - - - */
+.tgen-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 185px minmax(0,1fr);
+  gap: 16px;
+  min-width: 0;
+  min-height: 226px;
+  padding: 16px;
+  background: color-mix(in srgb,var(--bg-main) 66%,transparent);
+  border: 1px solid var(--line-soft);
+  overflow: hidden;
+}
+.tgen-card::before {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: -11px;
+  width: 76px;
+  height: 19px;
+  background: color-mix(in srgb,var(--bg-soft) 78%,#fff 22%);
+  border: 1px solid color-mix(in srgb,var(--line) 38%,transparent);
+  opacity: .78;
+  transform: rotate(5deg);
+}
+.tgen-card::after {
+  content: "";
+  position: absolute;
+  right: -24px;
+  bottom: -26px;
+  width: 78px;
+  height: 78px;
+  border: 1px solid color-mix(in srgb,var(--accent-rose) 25%,transparent);
+  border-radius: 999px;
+  opacity: .45;
+  pointer-events: none;
+}
+.tgen-card-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.tgen-card-kicker {
+  margin-bottom: 8px;
+  color: var(--accent-rose);
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.tgen-card-title {
+  color: var(--title-color);
+  font-family: var(--font-title);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.tgen-card-text {
+  margin-top: 10px;
+  color: var(--text-main);
+  font-size: 11.5px;
+  line-height: 1.62;
+  text-align: justify;
+}
+.tgen-card-use {
+  margin-top: 10px;
+  color: var(--text-soft);
+  font-size: 10px;
+  line-height: 1.45;
+}
+.tgen-card-use strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--accent-rose);
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+.tgen-variant-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+.tgen-variant-row a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  padding: 0 7px;
+  border: 1px solid var(--line);
+  color: var(--accent-rose);
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.tgen-variant-row a:hover { background: var(--accent-rose); color: #fff; }
+.tgen-generate {
+  width: max-content;
+  max-width: 100%;
+  min-height: 30px;
+  margin-top: auto;
+  padding: 0 13px;
+  background: var(--accent-sage);
+  border: 1px solid transparent;
+  color: #fff;
+  font-family: var(--font-base);
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.tgen-generate:hover { background: var(--accent-rose); color: #fff; }
+.tgen-footer-note {
+  position: relative;
+  z-index: 2;
+  margin-top: 24px;
+  color: var(--accent-rose);
+  font-family: var(--font-note);
+  font-size: 25px;
+  line-height: 1.05;
+  text-align: right;
+}
+
+/* - - - - - - - - - - G E N E R A D O R   /   M I N I A T U R A S - - - - - - - - - - */
+.tgen-preview {
+  position: relative;
+  min-width: 0;
+  min-height: 180px;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.24),transparent 48%),
+    color-mix(in srgb,var(--accent-sage) 10%,var(--bg-panel) 90%);
+  border: 1px solid color-mix(in srgb,var(--accent-sage) 34%,var(--line));
+  overflow: hidden;
+}
+.tgen-preview::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  z-index: 3;
+  border: 1px solid var(--line-soft);
+  pointer-events: none;
+}
+.tgen-preview::after {
+  content: "";
+  position: absolute;
+  right: 6px;
+  bottom: 4px;
+  z-index: 4;
+  width: 76px;
+  height: 76px;
+  background: var(--ana-img-flor) right bottom / contain no-repeat;
+  opacity: .08;
+  pointer-events: none;
+}
+.tgen-preview-label {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: var(--text-soft);
+  font-family: var(--font-note);
+  font-size: 19px;
+  line-height: 1.05;
+  text-align: center;
+  transform: none;
+}
+.tgen-preview-label > .tgen-preview {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  border: 0;
+  background: transparent;
+}
+.tgen-preview-label > .tgen-preview::before,.tgen-preview-label > .tgen-preview::after { display: none; }
+.tgen-preview-img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 180px;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: top center;
+  filter: saturate(.96) contrast(.98);
+}
+.tgen-preview-actions {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+}
+.tgen-preview-open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px;
+  padding: 0 11px;
+  background: var(--accent-rose);
+  border: 1px solid transparent;
+  color: #fff !important;
+  font-family: var(--font-base);
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.tgen-preview-open:hover { background: var(--accent-sage); color: #fff !important; }
+
+/* - - - - - - - - - - G E N E R A D O R   /   P R E V I E W   G R A N D E - - - - - - - - - - */
+.tgen-full-preview {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  display: none;
+  padding: 32px;
+  background: rgba(0,0,0,.62);
+  overflow-y: auto;
+}
+.tgen-full-preview:target { display: block; }
+.tgen-full-box {
+  position: relative;
+  width: min(100%,1020px);
+  margin: 0 auto;
+  padding: 28px;
+  background: var(--bg-main);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-panel);
+}
+.tgen-full-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.tgen-full-title {
+  color: var(--title-color);
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.tgen-full-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  color: var(--accent-rose) !important;
+  font-size: 22px;
+  line-height: 1;
+}
+.tgen-full-close:hover { background: var(--accent-rose); color: #fff !important; }
+.tgen-full-content {
+  position: relative;
+  min-height: 260px;
+  padding: 24px;
+  background: color-mix(in srgb,var(--bg-panel) 82%,transparent);
+  border: 1px solid var(--line-soft);
+  overflow-x: auto;
+}
+.tgen-full-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  color: var(--text-soft);
+  font-family: var(--font-note);
+  font-size: 24px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+/* - - - - - - - - - - G E N E R A D O R   /   M O D A L E S - - - - - - - - - - */
+.tgen-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 26px;
+  background: rgba(0,0,0,.58);
+  overflow-y: auto;
+}
+.tgen-modal.is-open { display: flex; }
+.tgen-modal-box {
+  position: relative;
+  width: min(100%,740px);
+  margin: 34px auto;
+  background: var(--bg-panel);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-panel);
+  overflow: hidden;
+}
+.tgen-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--line);
+}
+.tgen-modal-title {
+  color: var(--title-color);
+  font-family: var(--font-title);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.tgen-close {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--accent-rose);
+  cursor: pointer;
+}
+.tgen-close:hover { background: var(--accent-rose); color: #fff; }
+.tgen-modal-body {
+  max-height: calc(100vh - 230px);
+  padding: 22px;
+  overflow-y: auto;
+}
+.tgen-modal-actions {
+  display: flex;
+  gap: 10px;
+  padding: 16px 22px;
+  background: var(--bg-panel);
+  border-top: 1px solid var(--line);
+}
+.tgen-action {
+  flex: 1;
+  min-height: 34px;
+  background: var(--accent-sage);
+  border: 1px solid transparent;
+  color: #fff;
+  font-family: var(--font-base);
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.tgen-action:hover { background: var(--accent-rose); color: #fff; }
+.tgen-action-alt {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--text-main);
+}
+.tgen-action-alt:hover { background: var(--bg-soft); color: var(--title-color); }
+.tgen-output {
+  display: block;
+  width: 100%;
+  min-height: 300px;
+  max-height: 52vh;
+  padding: 14px;
+  background: color-mix(in srgb,var(--bg-main) 72%,transparent);
+  border: 1px solid var(--line);
+  color: var(--text-main);
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  resize: vertical;
+  white-space: pre;
+}
+
+/* - - - - - - - - - - G E N E R A D O R   /   F O R M U L A R I O S - - - - - - - - - - */
+.tgen-form-slot { min-height: 0; }
+.tgen-real-form {
+  display: grid;
+  gap: 16px;
+  text-align: left;
+}
+.tgen-form-intro {
+  padding: 14px 16px;
+  background: color-mix(in srgb,var(--accent-sage) 8%,transparent);
+  border: 1px solid color-mix(in srgb,var(--accent-sage) 32%,var(--line));
+  color: var(--text-main);
+  font-family: var(--font-base);
+  font-size: 12px;
+  line-height: 1.65;
+  text-align: justify;
+}
+.tgen-field {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--text-main);
+  font-family: var(--font-base);
+}
+.tgen-field > span,.tgen-repeat-title {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--accent-rose);
+  font-family: var(--font-base);
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.tgen-field input,.tgen-field textarea,.tgen-field select {
+  display: block;
+  width: 100%;
+  min-height: 36px;
+  margin: 0;
+  padding: 10px 12px;
+  background: color-mix(in srgb,var(--bg-main) 72%,transparent);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--text-main);
+  font-family: var(--font-base);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .02em;
+  outline: none;
+  text-transform: none;
+}
+.tgen-field textarea {
+  min-height: 135px;
+  resize: vertical;
+}
+.tgen-field select {
+  appearance: auto;
+  -webkit-appearance: menulist;
+  cursor: pointer;
+}
+.tgen-field input:focus,.tgen-field textarea:focus,.tgen-field select:focus {
+  border-color: var(--accent-rose);
+  background: var(--bg-panel);
+}
+
+/* - - - - - - - - - - G E N E R A D O R   /   R E P E A T E R S - - - - - - - - - - */
+.tgen-repeat {
+  display: grid;
+  gap: 12px;
+  margin-top: 4px;
+  padding: 14px;
+  background: color-mix(in srgb,var(--bg-main) 62%,transparent);
+  border: 1px solid var(--line-soft);
+}
+.tgen-repeat-list { display: grid; gap: 12px; }
+.tgen-repeat-item {
+  display: grid;
+  gap: 10px;
+  padding: 13px;
+  background: color-mix(in srgb,var(--bg-panel) 86%,transparent);
+  border: 1px solid var(--line);
+}
+.tgen-repeat-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 0 9px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.tgen-repeat-head strong {
+  display: inline-block;
+  margin: 0;
+  color: var(--title-color);
+  font-family: var(--font-title);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.tgen-repeat-add,.tgen-repeat-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  min-width: 0;
+  min-height: 26px;
+  margin: 0;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
+  color: #fff;
+  font-family: var(--font-base);
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.tgen-repeat-add {
+  justify-self: start;
+  margin-top: 2px;
+  background: var(--accent-sage);
+}
+.tgen-repeat-remove {
+  flex: 0 0 auto;
+  background: var(--accent-rose);
+}
+.tgen-repeat-add:hover,.tgen-repeat-remove:hover { background: var(--title-color); color: #fff; }
+
+/* - - - - - - - - - - G E N E R A D O R   /   R E S P O N S I V E - - - - - - - - - - */
+@media (max-width: 900px) {
+  .tgen-section-body { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+  .tgen { margin: 26px auto; }
+  .tgen-hero { padding: 30px 24px; }
+  .tgen-title { font-size: 28px; letter-spacing: .12em; }
+  .tgen-section { padding: 20px; }
+  .tgen-section-head {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .tgen-section-note { text-align: left; }
+  .tgen-card { grid-template-columns: 1fr; }
+  .tgen-preview,.tgen-preview-label > .tgen-preview { min-height: 160px; }
+  .tgen-preview-img { height: 160px; }
+  .tgen-full-preview { padding: 14px; }
+  .tgen-full-box { padding: 18px; }
+  .tgen-full-content { padding: 12px; }
+  .tgen-modal { padding: 14px; }
+  .tgen-modal-box { width: 100%; margin: 0 auto; }
+  .tgen-modal-body { max-height: none; }
+  .tgen-modal-actions { flex-direction: column; }
+}

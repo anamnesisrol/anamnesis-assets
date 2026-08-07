@@ -10253,3 +10253,169 @@ body.theme-dark .am-starter-mini .asm-info::before {
     font-size:25px;
   }
 }
+
+
+/* =========================================================
+   ANAMNESIS · CORRECCIÓN SOBRIA · 07-08-2026
+   Relaciones/Cronología neutras + mini calendario editorial.
+   El acento principal queda en strong/color de grupo.
+========================================================= */
+
+/* RELACIONES · papel neutro, sin alternancia cromática */
+.ana-relations-item {
+  background:transparent;
+  border-bottom-color:var(--line-soft);
+}
+
+.ana-relations-type {
+  color:var(--text-soft);
+  background:color-mix(in srgb,var(--bg-main) 60%,var(--bg-panel));
+  border-color:var(--line-soft);
+  box-shadow:none;
+}
+
+.ana-relations::after,
+.ana-relations-photo::before {
+  background:rgba(224,216,204,.42);
+  border-color:rgba(174,164,150,.18);
+}
+
+.ana-relations-sheet {
+  background:
+    linear-gradient(90deg,transparent 0 29px,color-mix(in srgb,var(--line-soft) 48%,transparent) 30px,transparent 31px),
+    repeating-linear-gradient(180deg,transparent 0 30px,color-mix(in srgb,var(--line-soft) 28%,transparent) 31px),
+    var(--bg-panel);
+}
+
+/* CRONOLOGÍA · bitácora neutra, sin papelitos de colores */
+.scr-timeline::before {
+  background:var(--line);
+}
+
+.scr-event::before {
+  background:var(--bg-panel);
+  border-color:var(--line);
+  box-shadow:0 0 0 5px var(--bg-panel);
+}
+
+.scr-date,
+.scr-date:not(strong) {
+  background:color-mix(in srgb,var(--bg-main) 56%,var(--bg-panel));
+  border-color:var(--line-soft);
+  box-shadow:2px 3px 0 color-mix(in srgb,var(--line) 18%,transparent);
+}
+
+.scr-box,
+.scr-event:nth-child(even) .scr-box {
+  background:
+    repeating-linear-gradient(180deg,transparent 0 25px,color-mix(in srgb,var(--line-soft) 24%,transparent) 26px),
+    color-mix(in srgb,var(--bg-main) 60%,var(--bg-panel));
+  border-color:var(--line-soft);
+  border-left-color:var(--line);
+  box-shadow:4px 5px 0 color-mix(in srgb,var(--line) 10%,transparent);
+}
+
+.scr-box::before {
+  background:rgba(224,216,204,.38);
+  border-color:rgba(174,164,150,.16);
+}
+
+/* MINI CALENDARIO · scrapbook por forma, no por color */
+.am-starter-mini {
+  border-color:var(--line);
+  background:
+    repeating-linear-gradient(180deg,transparent 0 28px,color-mix(in srgb,var(--line-soft) 22%,transparent) 29px),
+    linear-gradient(180deg,rgba(255,255,255,.12),transparent 46%),
+    var(--bg-panel);
+  box-shadow:
+    6px 6px 0 color-mix(in srgb,var(--line) 18%,transparent),
+    0 10px 22px rgba(82,66,48,.055);
+}
+
+.am-starter-mini::before {
+  border-color:color-mix(in srgb,var(--line-soft) 78%,transparent);
+}
+
+.am-starter-mini::after {
+  display:none;
+}
+
+.asm-date {
+  width:58px;
+  min-width:58px;
+  height:62px;
+  padding:0 15px 0 0;
+  border:0;
+  border-right:1px solid var(--line);
+  background:transparent;
+  box-shadow:none;
+  transform:none;
+}
+
+.asm-date > strong,
+.asm-date > b {
+  display:block;
+  font:400 29px/1 var(--font-title);
+}
+
+.asm-date span,
+.asm-meta span {
+  color:var(--text-soft);
+}
+
+.asm-meta span:not(:last-child)::after,
+.asm-meta i.material-symbols-outlined {
+  color:var(--text-muted)!important;
+}
+
+.am-starter-mini .asm-info::before {
+  top:-10px;
+  right:7px;
+  width:53px;
+  height:13px;
+  background:rgba(224,216,204,.48);
+  border-color:rgba(174,164,150,.18);
+  transform:rotate(2deg);
+  opacity:.78;
+}
+
+:is(html[data-theme="dark"],body[data-theme="dark"],html.dark,body.dark,.dark,.dark-theme,.theme-dark,[data-theme="dark"]) .am-starter-mini {
+  border-color:var(--line)!important;
+  background:
+    repeating-linear-gradient(180deg,transparent 0 28px,color-mix(in srgb,var(--line-soft) 22%,transparent) 29px),
+    linear-gradient(180deg,rgba(255,255,255,.025),transparent 46%),
+    var(--bg-panel)!important;
+  box-shadow:
+    6px 6px 0 rgba(0,0,0,.10),
+    0 10px 22px rgba(0,0,0,.14)!important;
+}
+
+:is(html[data-theme="dark"],body[data-theme="dark"],html.dark,body.dark,.dark,.dark-theme,.theme-dark,[data-theme="dark"]) .asm-date {
+  border-color:var(--line)!important;
+  background:transparent!important;
+}
+
+:is(html[data-theme="dark"],body[data-theme="dark"],html.dark,body.dark,.dark,.dark-theme,.theme-dark,[data-theme="dark"]) .asm-meta span,
+:is(html[data-theme="dark"],body[data-theme="dark"],html.dark,body.dark,.dark,.dark-theme,.theme-dark,[data-theme="dark"]) .asm-meta i.material-symbols-outlined,
+:is(html[data-theme="dark"],body[data-theme="dark"],html.dark,body.dark,.dark,.dark-theme,.theme-dark,[data-theme="dark"]) .asm-meta span:not(:last-child)::after {
+  color:var(--text-soft)!important;
+}
+
+:is(html[data-theme="dark"],body[data-theme="dark"],html.dark,body.dark,.dark,.dark-theme,.theme-dark,[data-theme="dark"]) .am-starter-mini .asm-info::before {
+  background:rgba(255,255,255,.055)!important;
+  border-color:var(--line-soft)!important;
+}
+
+@media(max-width:600px) {
+  .asm-date {
+    width:52px;
+    min-width:52px;
+    height:56px;
+    padding-right:11px;
+  }
+
+  .asm-date > strong,
+  .asm-date > b {
+    font-size:25px;
+  }
+}

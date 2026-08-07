@@ -10419,3 +10419,34 @@ body.theme-dark .am-starter-mini .asm-info::before {
     font-size:25px;
   }
 }
+/* =========================================================
+   ANAMNESIS · MINI CALENDARIO · CINTA EN BORDE SUPERIOR
+   La cinta pertenece a la hoja, no al bloque interior.
+========================================================= */
+.am-starter-mini .asm-info::before {
+  display:none;
+}
+
+.am-starter-mini::after {
+  content:"";
+  display:block;
+  position:absolute;
+  top:-8px;
+  right:54px;
+  bottom:auto;
+  left:auto;
+  width:58px;
+  height:15px;
+  background:rgba(224,216,204,.58);
+  border:1px solid rgba(174,164,150,.18);
+  transform:rotate(2deg);
+  opacity:.82;
+  pointer-events:none;
+  z-index:3;
+}
+
+:is(html[data-theme="dark"],body[data-theme="dark"],html.dark,body.dark,.dark,.dark-theme,.theme-dark,[data-theme="dark"]) .am-starter-mini::after {
+  display:block!important;
+  background:rgba(255,255,255,.07)!important;
+  border-color:var(--line-soft)!important;
+}

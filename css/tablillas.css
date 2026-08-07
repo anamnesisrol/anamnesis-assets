@@ -2659,7 +2659,6 @@
 
 .sbu-list a strong {
   display: block;
-  color: var(--title-color);
   font-family: var(--font-title);
   font-size: 12px;
   font-weight: 600;
@@ -2836,7 +2835,6 @@
 }
 
 .scr-date {
-  color: var(--accent-rose);
   font-family: var(--font-note);
   font-size: 22px;
   line-height: 1;
@@ -2867,7 +2865,6 @@
 .scr-box strong {
   display: block;
   margin-bottom: 8px;
-  color: var(--title-color);
   font-family: var(--font-title);
   font-size: 12px;
   font-weight: 600;
@@ -4116,7 +4113,6 @@
 }
 
 .asm-date b{
-  color:var(--accent-rose);
   font:400 30px/1 'Cinzel', serif;
 }
 
@@ -4138,7 +4134,6 @@
 .asm-info strong{
   display:block;
   margin-bottom:10px;
-  color:var(--accent-rose);
   font:400 18px/1.2 'Cinzel', serif;
   letter-spacing:1.4px;
   text-transform:uppercase;
@@ -4249,7 +4244,6 @@ body.dark .asm-date b,
 .dark-theme .asm-date b,
 .theme-dark .asm-date b,
 [data-theme="dark"] .asm-date b{
-  color:var(--accent-rose)!important;
 }
 
 html[data-theme="dark"] .asm-date span,
@@ -4271,7 +4265,6 @@ body.dark .asm-info strong,
 .dark-theme .asm-info strong,
 .theme-dark .asm-info strong,
 [data-theme="dark"] .asm-info strong{
-  color:var(--accent-rose)!important;
 }
 
 html[data-theme="dark"] .asm-meta span,
@@ -8136,7 +8129,6 @@ body:not(.theme-dark) .am-phone-shell::before{
 }
 
 .ana-search-v2-contact strong {
-  color: var(--accent-rose);
   font-family: var(--font-note);
   font-size: 20px;
   font-weight: 400;
@@ -8248,7 +8240,6 @@ body:not(.theme-dark) .am-phone-shell::before{
 .ana-search-v2-item-title {
   display: block;
   margin: 0 0 10px;
-  color: var(--title-color);
   font-family: var(--font-title);
   font-size: 14px;
   font-weight: 600;
@@ -8484,7 +8475,6 @@ body:not(.theme-dark) .am-phone-shell::before{
 .ana-relations-name {
   display: block;
   margin: 0 0 10px;
-  color: var(--title-color);
   font-family: var(--font-title);
   font-size: 14px;
   font-weight: 600;
@@ -9512,7 +9502,6 @@ ANAMNESIS · BÚSQUEDA MODULAR · SCRAPBOOK / CLASIFICADOS
   margin: -3px 0 1px;
   padding: 0;
   border: 0;
-  color: var(--accent-rose);
   font-family: var(--font-script,var(--font-note));
   font-size: clamp(25px,3.2vw,31px);
   font-weight: 400;
@@ -9831,7 +9820,6 @@ ANAMNESIS · BÚSQUEDA MODULAR · SCRAPBOOK / CLASIFICADOS
   background: color-mix(in srgb,var(--accent-warm) 10%,var(--bg-panel));
   border: 1px solid color-mix(in srgb,var(--accent-warm) 24%,var(--line));
   box-shadow: 2px 3px 0 color-mix(in srgb,var(--accent-warm) 8%,transparent);
-  color: var(--accent-rose);
   font-family: var(--font-note);
   font-size: 18px;
   line-height: 1;
@@ -9975,5 +9963,291 @@ ANAMNESIS · BÚSQUEDA MODULAR · SCRAPBOOK / CLASIFICADOS
   .scr-box,
   .scr-event:nth-child(even) .scr-box {
     transform: none;
+  }
+}
+
+
+/* =========================================================
+   ANAMNESIS · PALETA PAPEL + ACENTO DE GRUPO · 07-08-2026
+   Color en post-its; strong queda libre para heredar el grupo.
+   Incluye mini calendario en la familia scrapbook.
+========================================================= */
+
+.sbu-baul,
+.scr-chrono,
+.ana-relations,
+.ana-search-v2,
+.am-starter-mini {
+  --ana-postit-yellow:#efe2a8;
+  --ana-postit-rose:#e6c4cf;
+  --ana-postit-sage:#c9d8c3;
+  --ana-postit-blue:#c3d5e3;
+}
+
+/* Decoración tipográfica neutra: el color importante lo pone strong. */
+.sbu-kicker,
+.scr-kicker,
+.ana-relations-kicker,
+.ana-search-v2-kicker {
+  color:var(--text-soft);
+}
+
+.sbu-note,
+.scr-note,
+.ana-relations-note,
+.ana-search-v2-note {
+  color:var(--text-soft);
+}
+
+.sbu-list a em,
+.ana-relations-link,
+.ana-search-v2-link,
+.scr-box a {
+  color:var(--text-soft)!important;
+}
+
+.sbu-list a:hover,
+.ana-relations-link:hover,
+.ana-search-v2-link:hover,
+.scr-box a:hover {
+  color:var(--title-color)!important;
+}
+
+/* ---------- BAÚL · fichas/post-its alternados ---------- */
+
+.sbu-list a:nth-child(4n+1) { --ana-postit:var(--ana-postit-yellow); }
+.sbu-list a:nth-child(4n+2) { --ana-postit:var(--ana-postit-rose); }
+.sbu-list a:nth-child(4n+3) { --ana-postit:var(--ana-postit-sage); }
+.sbu-list a:nth-child(4n)   { --ana-postit:var(--ana-postit-blue); }
+
+.sbu-list a,
+.sbu-list a:hover {
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.11),transparent),
+    color-mix(in srgb,var(--ana-postit) 22%,var(--bg-panel));
+  border-color:color-mix(in srgb,var(--ana-postit) 34%,var(--line));
+}
+
+.sbu-list a span::before {
+  background:color-mix(in srgb,var(--ana-postit) 64%,var(--text-muted));
+}
+
+/* ---------- CRONOLOGÍA · papelitos alternados ---------- */
+
+.scr-event:nth-child(4n+1) { --ana-postit:var(--ana-postit-yellow); }
+.scr-event:nth-child(4n+2) { --ana-postit:var(--ana-postit-rose); }
+.scr-event:nth-child(4n+3) { --ana-postit:var(--ana-postit-sage); }
+.scr-event:nth-child(4n)   { --ana-postit:var(--ana-postit-blue); }
+
+.scr-timeline::before {
+  background:var(--line);
+}
+
+.scr-event::before {
+  background:color-mix(in srgb,var(--ana-postit) 34%,var(--bg-panel));
+  border-color:color-mix(in srgb,var(--ana-postit) 48%,var(--line));
+}
+
+.scr-box,
+.scr-event:nth-child(even) .scr-box {
+  background:
+    repeating-linear-gradient(180deg,transparent 0 25px,color-mix(in srgb,var(--line-soft) 24%,transparent) 26px),
+    color-mix(in srgb,var(--ana-postit) 18%,var(--bg-panel));
+  border-color:color-mix(in srgb,var(--ana-postit) 31%,var(--line));
+  border-left-color:color-mix(in srgb,var(--ana-postit) 45%,var(--line));
+}
+
+.scr-date:not(strong) {
+  color:var(--text-soft);
+  background:color-mix(in srgb,var(--ana-postit) 20%,var(--bg-panel));
+  border-color:color-mix(in srgb,var(--ana-postit) 35%,var(--line));
+}
+
+/* ---------- RELACIONES · recortes alternados ---------- */
+
+.ana-relations-item:nth-child(4n+1) { --ana-postit:var(--ana-postit-yellow); }
+.ana-relations-item:nth-child(4n+2) { --ana-postit:var(--ana-postit-rose); }
+.ana-relations-item:nth-child(4n+3) { --ana-postit:var(--ana-postit-sage); }
+.ana-relations-item:nth-child(4n)   { --ana-postit:var(--ana-postit-blue); }
+
+.ana-relations-item {
+  margin:0 0 8px;
+  padding:22px 14px 24px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.10),transparent 48%),
+    color-mix(in srgb,var(--ana-postit) 13%,var(--bg-panel));
+  border-bottom:1px dashed color-mix(in srgb,var(--ana-postit) 35%,var(--line));
+}
+
+.ana-relations-type {
+  color:var(--text-soft);
+  background:color-mix(in srgb,var(--ana-postit) 25%,var(--bg-panel));
+  border-color:color-mix(in srgb,var(--ana-postit) 42%,var(--line));
+}
+
+.ana-relations-text {
+  border-top-color:var(--line-soft);
+}
+
+/* ---------- BÚSQUEDA MÚLTIPLE · clasificados en papel ---------- */
+
+.ana-search-v2-item:nth-child(4n+1) { --ana-postit:var(--ana-postit-yellow); }
+.ana-search-v2-item:nth-child(4n+2) { --ana-postit:var(--ana-postit-rose); }
+.ana-search-v2-item:nth-child(4n+3) { --ana-postit:var(--ana-postit-sage); }
+.ana-search-v2-item:nth-child(4n)   { --ana-postit:var(--ana-postit-blue); }
+
+.ana-search-v2-item {
+  margin:0 0 7px;
+  padding:24px 12px 26px;
+  background:color-mix(in srgb,var(--ana-postit) 11%,var(--bg-panel));
+}
+
+.ana-search-v2-item::before {
+  background:color-mix(in srgb,var(--ana-postit) 62%,var(--text-muted));
+}
+
+.ana-search-v2-label,
+.ana-search-v2-status,
+.ana-search-v2-item[data-status="reserved"] .ana-search-v2-status,
+.ana-search-v2-item[data-status="closed"] .ana-search-v2-status {
+  color:var(--text-soft);
+  background:color-mix(in srgb,var(--ana-postit) 22%,var(--bg-panel));
+  border-color:color-mix(in srgb,var(--ana-postit) 36%,var(--line));
+}
+
+.ana-search-v2-contact {
+  color:var(--text-soft);
+  background:color-mix(in srgb,var(--ana-postit-blue) 15%,var(--bg-panel));
+  border-color:color-mix(in srgb,var(--ana-postit-blue) 34%,var(--line));
+}
+
+/* ---------- MINI CALENDARIO · encabezado scrapbook ---------- */
+
+.am-starter-mini {
+  width:min(88%,560px);
+  padding:19px 20px 18px;
+  gap:19px;
+  isolation:isolate;
+  overflow:visible;
+  border:1px solid var(--line);
+  background:
+    repeating-linear-gradient(180deg,transparent 0 28px,color-mix(in srgb,var(--line-soft) 28%,transparent) 29px),
+    linear-gradient(180deg,rgba(255,255,255,.14),transparent 44%),
+    var(--bg-panel);
+  box-shadow:
+    7px 7px 0 color-mix(in srgb,var(--ana-postit-blue) 16%,var(--bg-panel)),
+    0 13px 27px rgba(82,66,48,.07);
+}
+
+.am-starter-mini::before {
+  inset:8px;
+  border:1px dashed color-mix(in srgb,var(--line) 72%,transparent);
+}
+
+.am-starter-mini::after {
+  left:auto;
+  right:18px;
+  bottom:-13px;
+  width:70px;
+  height:70px;
+  background:var(--ana-img-sello) center / contain no-repeat;
+  opacity:.11;
+  transform:rotate(8deg);
+  pointer-events:none;
+}
+
+.asm-date {
+  width:62px;
+  min-width:62px;
+  height:70px;
+  padding:8px 7px 7px;
+  border:1px solid color-mix(in srgb,var(--ana-postit-yellow) 40%,var(--line));
+  background:color-mix(in srgb,var(--ana-postit-yellow) 25%,var(--bg-panel));
+  box-shadow:3px 3px 0 color-mix(in srgb,var(--ana-postit-yellow) 13%,transparent);
+  transform:rotate(-1.4deg);
+}
+
+.asm-date > strong {
+  display:block;
+  font:400 30px/1 var(--font-title);
+}
+
+.asm-date b {
+  color:var(--text-soft);
+}
+
+.asm-date span {
+  color:var(--text-muted);
+}
+
+.asm-info strong {
+  margin-bottom:8px;
+  font-family:var(--font-title);
+}
+
+.asm-meta span {
+  color:var(--text-soft);
+}
+
+.asm-meta span:not(:last-child)::after,
+.asm-meta i.material-symbols-outlined {
+  color:var(--text-muted)!important;
+}
+
+.am-starter-mini .asm-info::before {
+  top:-20px;
+  right:8px;
+  width:58px;
+  height:14px;
+  background:color-mix(in srgb,var(--ana-postit-rose) 24%,rgba(255,255,255,.50));
+  border-color:color-mix(in srgb,var(--ana-postit-rose) 24%,var(--line));
+  transform:rotate(3deg);
+  opacity:.78;
+}
+
+body.theme-dark .am-starter-mini {
+  border-color:var(--line)!important;
+  background:
+    repeating-linear-gradient(180deg,transparent 0 28px,color-mix(in srgb,var(--line-soft) 28%,transparent) 29px),
+    linear-gradient(180deg,rgba(255,255,255,.035),transparent 44%),
+    var(--bg-panel)!important;
+  box-shadow:
+    7px 7px 0 color-mix(in srgb,var(--ana-postit-blue) 10%,var(--bg-panel)),
+    0 13px 27px rgba(0,0,0,.16)!important;
+}
+
+body.theme-dark .am-starter-mini::before {
+  border-color:var(--line-soft)!important;
+}
+
+body.theme-dark .am-starter-mini::after {
+  background:var(--ana-img-sello) center / contain no-repeat!important;
+}
+
+body.theme-dark .asm-date {
+  border-color:color-mix(in srgb,var(--ana-postit-yellow) 22%,var(--line))!important;
+  background:color-mix(in srgb,var(--ana-postit-yellow) 12%,var(--bg-panel))!important;
+}
+
+body.theme-dark .am-starter-mini .asm-info::before {
+  background:color-mix(in srgb,var(--ana-postit-rose) 12%,var(--bg-panel))!important;
+  border-color:var(--line-soft)!important;
+}
+
+@media(max-width:600px) {
+  .am-starter-mini {
+    width:94%;
+    padding:16px 15px;
+    gap:14px;
+  }
+
+  .asm-date {
+    width:54px;
+    min-width:54px;
+    height:62px;
+  }
+
+  .asm-date > strong {
+    font-size:25px;
   }
 }

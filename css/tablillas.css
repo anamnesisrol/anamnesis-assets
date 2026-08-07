@@ -10450,3 +10450,58 @@ body.theme-dark .am-starter-mini .asm-info::before {
   background:rgba(255,255,255,.07)!important;
   border-color:var(--line-soft)!important;
 }
+
+
+/* RÉMORA MOBILE · AVATARES CIRCULARES + ICONOS NEUTROS · 07-08-2026 */
+
+/* Los retratos de contacto siempre conservan una máscara circular. */
+.am-chat-avatar,
+.am-app-avatar,
+.am-post-avatar{
+  aspect-ratio:1/1;
+  flex:none;
+  overflow:hidden;
+  border-radius:50%!important;
+  object-fit:cover!important;
+  object-position:center;
+}
+
+.am-chat-avatar img,
+.am-call-avatar img,
+.am-contact-avatar img{
+  display:block;
+  width:100%!important;
+  height:100%!important;
+  aspect-ratio:1/1;
+  border-radius:50%!important;
+  object-fit:cover!important;
+  object-position:center;
+}
+
+.am-call-avatar,
+.am-contact-avatar{
+  aspect-ratio:1/1;
+  flex:none;
+  overflow:hidden;
+  border-radius:50%!important;
+}
+
+/* Iconos de sistema y controles: neutros, sin verde/azul de acento. */
+.am-phone-signals,
+.am-phone-signals .material-symbols-rounded,
+.am-phone-back,
+.am-chat-actions,
+.am-chat-actions .material-symbols-rounded,
+.am-app-header .material-symbols-rounded,
+.am-social-header-actions .material-symbols-rounded,
+.am-profile-header .material-symbols-rounded,
+.am-music-header .material-symbols-rounded,
+.am-notes-header .material-symbols-rounded,
+.am-calls-header > .material-symbols-rounded,
+.am-call-time i,
+.am-contacts-header > .material-symbols-rounded,
+.am-contact-open,
+.am-calendar-header .material-symbols-rounded,
+.am-map-search .material-symbols-rounded{
+  color:var(--am-text-soft)!important;
+}

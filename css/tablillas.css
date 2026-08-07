@@ -9183,3 +9183,298 @@ ANAMNESIS · RELACIONES · SCRAPBOOK PASS
     padding-left: 0;
   }
 }
+
+ANAMNESIS · BÚSQUEDA MODULAR · SCRAPBOOK / CLASIFICADOS
+   Solo capa visual; conserva estructura y repetidor.
+========================================================= */
+
+.ana-search-v2 {
+  position: relative;
+  isolation: isolate;
+  width: min(100%,710px);
+  padding: 9px 0 12px;
+}
+
+.ana-search-v2::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 19px 13px 3px 8px;
+  background: color-mix(in srgb,var(--accent-sage) 10%,var(--bg-panel));
+  border: 1px solid color-mix(in srgb,var(--accent-sage) 30%,var(--line));
+  box-shadow: 0 12px 25px rgba(82,66,48,.06);
+  transform: rotate(-.8deg);
+  pointer-events: none;
+}
+
+.ana-search-v2::after {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  right: 62px;
+  width: 78px;
+  height: 18px;
+  background: color-mix(in srgb,var(--bg-soft) 76%,rgba(255,255,255,.54));
+  border: 1px solid color-mix(in srgb,var(--line) 40%,transparent);
+  opacity: .86;
+  transform: rotate(5deg);
+  pointer-events: none;
+}
+
+.ana-search-v2-sheet {
+  padding: 39px 42px 41px;
+  background:
+    linear-gradient(135deg,color-mix(in srgb,var(--accent-sage) 4%,transparent),transparent 34%),
+    repeating-linear-gradient(180deg,transparent 0 31px,color-mix(in srgb,var(--line-soft) 30%,transparent) 32px),
+    var(--bg-panel);
+  box-shadow: 0 15px 32px rgba(82,66,48,.09);
+}
+
+.ana-search-v2-head {
+  padding: 2px 0 19px;
+}
+
+.ana-search-v2-kicker {
+  margin-bottom: 6px;
+  color: var(--accent-rose);
+  font-family: var(--font-note);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: lowercase;
+}
+
+.ana-search-v2-contact {
+  position: relative;
+  min-width: 104px;
+  padding: 9px 10px 8px;
+  background: color-mix(in srgb,var(--accent-rose) 7%,var(--bg-panel));
+  border: 1px dashed color-mix(in srgb,var(--accent-rose) 36%,var(--line));
+  text-align: center;
+  transform: rotate(1deg);
+}
+
+.ana-search-v2-contact strong {
+  font-size: 19px;
+}
+
+.ana-search-v2-item {
+  position: relative;
+  padding: 24px 2px 26px 8px;
+  border-bottom: 1px dashed color-mix(in srgb,var(--line) 72%,transparent);
+}
+
+.ana-search-v2-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 27px;
+  width: 5px;
+  height: 28px;
+  background: color-mix(in srgb,var(--accent-rose) 54%,transparent);
+  transform: rotate(-2deg);
+  pointer-events: none;
+}
+
+.ana-search-v2-number {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.ana-search-v2-label {
+  background: color-mix(in srgb,var(--accent-warm) 11%,var(--bg-panel));
+  border-color: color-mix(in srgb,var(--accent-warm) 28%,var(--line));
+  transform: rotate(-.6deg);
+}
+
+.ana-search-v2-status {
+  border-style: dashed;
+  background: color-mix(in srgb,var(--accent-sage) 6%,var(--bg-panel));
+}
+
+.ana-search-v2-photo {
+  position: relative;
+  padding: 6px 6px 21px;
+  box-shadow: 0 8px 18px rgba(82,66,48,.09);
+  transform: rotate(-1.4deg);
+}
+
+.ana-search-v2-photo::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -7px;
+  left: 50%;
+  width: 45px;
+  height: 13px;
+  background: color-mix(in srgb,var(--accent-warm) 20%,rgba(255,255,255,.58));
+  border: 1px solid color-mix(in srgb,var(--accent-warm) 16%,transparent);
+  opacity: .78;
+  transform: translateX(-50%) rotate(2deg);
+  pointer-events: none;
+}
+
+.ana-search-v2-item:nth-child(even) .ana-search-v2-photo {
+  transform: rotate(1.2deg);
+}
+
+.ana-search-v2-item-title {
+  font-weight: 500;
+  letter-spacing: .11em;
+}
+
+.ana-search-v2-text {
+  line-height: 1.78;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.ana-search-v2-note {
+  margin: 16px 8px 0 18px;
+  padding: 13px 16px;
+  background: color-mix(in srgb,var(--accent-rose) 8%,var(--bg-panel));
+  border-left-width: 2px;
+  box-shadow: 0 5px 13px rgba(82,66,48,.04);
+  transform: rotate(-.25deg);
+}
+
+/* =========================================================
+   ANAMNESIS · BAÚL + CRONOLOGÍA · SCRAPBOOK POLISH
+   Conserva el reorden compacto anterior.
+========================================================= */
+
+.sbu-kicker,
+.scr-kicker {
+  color: var(--accent-rose);
+  font-family: var(--font-note);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: lowercase;
+}
+
+.sbu-photo,
+.scr-photo {
+  box-shadow: 0 9px 19px rgba(82,66,48,.10);
+}
+
+.sbu-photo::before,
+.scr-photo::before {
+  content: "";
+  position: absolute;
+  z-index: 7;
+  top: -7px;
+  left: 50%;
+  width: 42px;
+  height: 13px;
+  background: color-mix(in srgb,var(--accent-warm) 21%,rgba(255,255,255,.58));
+  border: 1px solid color-mix(in srgb,var(--accent-warm) 16%,transparent);
+  opacity: .80;
+  transform: translateX(-50%) rotate(-2deg);
+  pointer-events: none;
+}
+
+.sbu-photo-two::before {
+  transform: translateX(-50%) rotate(4deg);
+}
+
+.sbu-list a {
+  margin: 0 2px;
+  padding: 9px 11px;
+  background: color-mix(in srgb,var(--bg-main) 48%,transparent);
+  border: 1px solid color-mix(in srgb,var(--line-soft) 80%,transparent);
+  transition: transform .18s ease,background .18s ease,border-color .18s ease;
+}
+
+.sbu-list a:nth-child(odd) {
+  transform: rotate(-.15deg);
+}
+
+.sbu-list a:nth-child(even) {
+  transform: rotate(.15deg);
+}
+
+.sbu-list a:hover {
+  background: color-mix(in srgb,var(--accent-sage) 7%,var(--bg-main));
+  border-color: color-mix(in srgb,var(--accent-sage) 28%,var(--line));
+  transform: translateX(2px) rotate(0);
+}
+
+.sbu-list a span {
+  transform: rotate(-5deg);
+}
+
+.scr-event:nth-child(even) .scr-box {
+  transform: rotate(.15deg);
+}
+
+.scr-event:nth-child(odd) .scr-box {
+  transform: rotate(-.15deg);
+}
+
+.scr-box {
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.10),transparent),
+    color-mix(in srgb,var(--bg-main) 61%,transparent);
+  border-left: 2px solid color-mix(in srgb,var(--accent-sage) 28%,var(--line));
+  box-shadow: 0 5px 12px rgba(82,66,48,.035);
+}
+
+.scr-box a {
+  padding-bottom: 2px;
+  border-bottom: 1px solid color-mix(in srgb,var(--accent-rose) 38%,transparent);
+}
+
+@media (max-width: 620px) {
+  .ana-search-v2 {
+    padding: 7px 0 9px;
+  }
+
+  .ana-search-v2::before {
+    inset: 15px 6px 4px 10px;
+  }
+
+  .ana-search-v2::after {
+    right: 30px;
+    width: 62px;
+    height: 15px;
+  }
+
+  .ana-search-v2-sheet {
+    padding: 31px 24px 32px;
+  }
+
+  .ana-search-v2-contact {
+    width: max-content;
+    min-width: 92px;
+    padding: 7px 10px;
+    border-left: 1px dashed color-mix(in srgb,var(--accent-rose) 36%,var(--line));
+  }
+
+  .ana-search-v2-item {
+    padding-left: 5px;
+  }
+
+  .ana-search-v2-item::before {
+    left: -7px;
+  }
+}
+
+@media (max-width: 560px) {
+  .sbu-kicker,
+  .scr-kicker {
+    font-size: 17px;
+  }
+
+  .sbu-list a {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .scr-box {
+    transform: none !important;
+  }
+}

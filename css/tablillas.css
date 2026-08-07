@@ -8843,3 +8843,343 @@ body:not(.theme-dark) .am-phone-shell::before{
     font-size: 18px;
   }
 }
+
+ANAMNESIS · RELACIONES · SCRAPBOOK PASS
+   Solo capa visual. Conserva intacto el HTML y el inverso.
+========================================================= */
+
+.ana-relations {
+  position: relative;
+  isolation: isolate;
+  width: min(100%,700px);
+  padding: 10px 0 12px;
+}
+
+.ana-relations::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 22px 8px 3px 18px;
+  background: var(--bg-panel-alt,var(--bg-soft));
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 26px rgba(82,66,48,.07);
+  transform: rotate(1.15deg);
+  pointer-events: none;
+}
+
+.ana-relations::after {
+  content: "";
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 50%;
+  width: 86px;
+  height: 19px;
+  background: color-mix(in srgb,var(--accent-warm) 24%,rgba(255,255,255,.55));
+  border: 1px solid color-mix(in srgb,var(--accent-warm) 20%,transparent);
+  box-shadow: 0 2px 5px rgba(82,66,48,.05);
+  opacity: .78;
+  transform: translateX(-50%) rotate(-2deg);
+  pointer-events: none;
+}
+
+.ana-relations-sheet {
+  z-index: 1;
+  padding: 40px 44px 42px;
+  background:
+    linear-gradient(90deg,transparent 0 29px,color-mix(in srgb,var(--accent-rose) 16%,transparent) 30px,transparent 31px),
+    repeating-linear-gradient(180deg,transparent 0 27px,color-mix(in srgb,var(--line-soft) 42%,transparent) 28px),
+    linear-gradient(180deg,rgba(255,255,255,.22),transparent 42%),
+    var(--bg-panel);
+  box-shadow: 0 15px 34px rgba(82,66,48,.10);
+  overflow: hidden;
+}
+
+.ana-relations-sheet::before {
+  inset: 12px;
+  border-color: color-mix(in srgb,var(--line) 70%,transparent);
+}
+
+.ana-relations-head {
+  min-height: 112px;
+  padding: 8px 145px 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ana-relations-head::before {
+  content: "";
+  position: absolute;
+  right: 14px;
+  bottom: 8px;
+  width: 112px;
+  height: 100px;
+  background: var(--ana-img-ramita) center / contain no-repeat;
+  opacity: .26;
+  transform: rotate(7deg);
+  pointer-events: none;
+}
+
+.ana-relations-head::after {
+  content: "";
+  position: absolute;
+  right: 7px;
+  top: 4px;
+  width: 58px;
+  height: 58px;
+  border: 1px solid color-mix(in srgb,var(--accent-rose) 38%,transparent);
+  border-radius: 50%;
+  opacity: .62;
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+.ana-relations-kicker {
+  margin: 0 0 5px;
+  color: var(--accent-rose);
+  font-family: var(--font-note);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.ana-relations-title {
+  font-size: clamp(22px,3vw,32px);
+  font-weight: 400;
+  letter-spacing: .12em;
+}
+
+.ana-relations-subtitle {
+  max-width: 470px;
+  margin-top: 9px;
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+
+.ana-relations-list {
+  counter-reset: ana-relation;
+  padding-top: 6px;
+}
+
+.ana-relations-item {
+  position: relative;
+  counter-increment: ana-relation;
+  grid-template-columns: 112px minmax(0,1fr);
+  gap: 22px;
+  min-height: 150px;
+  padding: 25px 4px 26px 0;
+  border-bottom: 1px dashed color-mix(in srgb,var(--line) 72%,transparent);
+}
+
+.ana-relations-item::after {
+  content: counter(ana-relation,decimal-leading-zero);
+  position: absolute;
+  right: 4px;
+  top: 24px;
+  color: color-mix(in srgb,var(--accent-rose) 25%,transparent);
+  font-family: var(--font-title);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: .06em;
+  pointer-events: none;
+}
+
+.ana-relations-item:last-child {
+  border-bottom: 0;
+}
+
+.ana-relations-item.is-no-image {
+  grid-template-columns: minmax(0,1fr);
+  min-height: 0;
+  padding-left: 16px;
+}
+
+.ana-relations-photo {
+  position: relative;
+  width: 108px;
+  aspect-ratio: 1 / 1;
+  padding: 7px 7px 20px;
+  background: color-mix(in srgb,var(--bg-main) 92%,#fff 8%);
+  border: 1px solid color-mix(in srgb,var(--line) 82%,transparent);
+  box-shadow: 0 8px 18px rgba(82,66,48,.10);
+  transform: rotate(-2deg);
+}
+
+.ana-relations-photo::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -8px;
+  left: 50%;
+  width: 48px;
+  height: 14px;
+  background: color-mix(in srgb,var(--accent-warm) 22%,rgba(255,255,255,.58));
+  border: 1px solid color-mix(in srgb,var(--accent-warm) 18%,transparent);
+  opacity: .82;
+  transform: translateX(-50%) rotate(2deg);
+  pointer-events: none;
+}
+
+.ana-relations-item:nth-child(even) .ana-relations-photo {
+  transform: rotate(1.7deg);
+}
+
+.ana-relations-item:nth-child(even) .ana-relations-photo::before {
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+.ana-relations-copy {
+  position: relative;
+  z-index: 1;
+  padding-top: 2px;
+}
+
+.ana-relations-type {
+  margin: 0 0 9px;
+  min-height: 0;
+  padding: 5px 10px 4px;
+  background: color-mix(in srgb,var(--accent-sage) 13%,var(--bg-panel));
+  border: 1px solid color-mix(in srgb,var(--accent-sage) 30%,var(--line));
+  box-shadow: 2px 2px 0 color-mix(in srgb,var(--accent-sage) 10%,transparent);
+  color: var(--accent-sage);
+  font-family: var(--font-note);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: .02em;
+  text-transform: lowercase;
+  transform: rotate(-.7deg);
+}
+
+.ana-relations-name {
+  max-width: calc(100% - 52px);
+  margin-bottom: 9px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid color-mix(in srgb,var(--line-soft) 86%,transparent);
+  font-size: 14.5px;
+  font-weight: 500;
+  letter-spacing: .11em;
+}
+
+.ana-relations-text {
+  font-size: 12px;
+  line-height: 1.78;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.ana-relations-link {
+  position: relative;
+  margin-top: 11px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid color-mix(in srgb,var(--accent-rose) 42%,transparent);
+  font-size: 8.5px;
+  letter-spacing: .15em;
+}
+
+.ana-relations-note {
+  margin: 14px 0 0 14px;
+  padding: 13px 16px 12px 18px;
+  background: color-mix(in srgb,var(--accent-rose) 8%,var(--bg-panel));
+  border: 0;
+  border-left: 2px solid color-mix(in srgb,var(--accent-rose) 58%,var(--line));
+  box-shadow: 0 5px 13px rgba(82,66,48,.04);
+  transform: rotate(-.25deg);
+}
+
+@media (max-width: 540px) {
+  .ana-relations {
+    padding: 7px 0 9px;
+  }
+
+  .ana-relations::before {
+    inset: 16px 5px 4px 10px;
+  }
+
+  .ana-relations::after {
+    width: 68px;
+    height: 16px;
+  }
+
+  .ana-relations-sheet {
+    padding: 31px 24px 32px;
+    background:
+      repeating-linear-gradient(180deg,transparent 0 27px,color-mix(in srgb,var(--line-soft) 38%,transparent) 28px),
+      linear-gradient(180deg,rgba(255,255,255,.20),transparent 42%),
+      var(--bg-panel);
+  }
+
+  .ana-relations-head {
+    min-height: 92px;
+    padding: 4px 86px 18px 0;
+  }
+
+  .ana-relations-head::before {
+    right: 0;
+    width: 76px;
+    height: 76px;
+  }
+
+  .ana-relations-head::after {
+    right: -3px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .ana-relations-kicker {
+    font-size: 18px;
+  }
+
+  .ana-relations-item {
+    grid-template-columns: 82px minmax(0,1fr);
+    gap: 15px;
+    min-height: 124px;
+    padding: 23px 0 24px;
+  }
+
+  .ana-relations-photo {
+    width: 82px;
+    padding: 5px 5px 16px;
+  }
+
+  .ana-relations-item::after {
+    right: 0;
+    top: 23px;
+    font-size: 22px;
+  }
+
+  .ana-relations-name {
+    max-width: calc(100% - 39px);
+    font-size: 12.5px;
+  }
+
+  .ana-relations-type {
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 390px) {
+  .ana-relations-head {
+    padding-right: 58px;
+  }
+
+  .ana-relations-head::before {
+    width: 54px;
+    height: 62px;
+  }
+
+  .ana-relations-item {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .ana-relations-photo {
+    width: 94px;
+  }
+
+  .ana-relations-item.is-no-image {
+    padding-left: 0;
+  }
+}

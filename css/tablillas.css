@@ -10020,16 +10020,18 @@ ANAMNESIS · BÚSQUEDA MODULAR · SCRAPBOOK / CLASIFICADOS
 .sbu-list a:nth-child(4n+3) { --ana-postit:var(--ana-postit-sage); }
 .sbu-list a:nth-child(4n)   { --ana-postit:var(--ana-postit-blue); }
 
-.sbu-list a,
+.sbu-list a {
+  background:transparent;
+  border-color:color-mix(in srgb,var(--line) 64%,transparent);
+}
+
 .sbu-list a:hover {
-  background:
-    linear-gradient(180deg,rgba(255,255,255,.11),transparent),
-    color-mix(in srgb,var(--ana-postit) 22%,var(--bg-panel));
-  border-color:color-mix(in srgb,var(--ana-postit) 34%,var(--line));
+  background:color-mix(in srgb,var(--bg-main) 58%,transparent);
+  border-color:var(--line);
 }
 
 .sbu-list a span::before {
-  background:color-mix(in srgb,var(--ana-postit) 64%,var(--text-muted));
+  background:var(--ana-postit);
 }
 
 /* ---------- CRONOLOGÍA · papelitos alternados ---------- */

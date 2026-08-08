@@ -739,8 +739,8 @@
   min-height: 26px;
   margin: 0;
   padding: 0 10px;
-  background: var(--accent-rose,#e58870);
-  border: 1px solid var(--accent-rose,#e58870);
+  background: var(--accent-sage,#88997f);
+  border: 1px solid var(--accent-sage,#88997f);
   border-radius: 0;
   box-shadow: none;
   color: #fff;
@@ -760,6 +760,7 @@
 .tgen-repeat-remove {
   flex: 0 0 auto;
   background: var(--accent-rose,#e58870);
+  border-color: var(--accent-rose,#e58870);
 }
 .tgen-repeat-add:hover,.tgen-repeat-remove:hover { background: var(--accent-rose,#e58870); border-color: var(--accent-rose,#e58870); color: #fff; filter: brightness(.9); }
 

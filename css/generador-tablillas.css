@@ -584,8 +584,8 @@
 .tgen-action {
   flex: 1;
   min-height: 34px;
-  background: var(--accent-sage);
-  border: 1px solid transparent;
+  background: var(--rose);
+  border: 1px solid var(--rose);
   color: #fff;
   font-family: var(--font-base);
   font-size: 9px;

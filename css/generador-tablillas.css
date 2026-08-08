@@ -335,8 +335,8 @@
   min-height: 30px;
   margin-top: auto;
   padding: 0 13px;
-  background: var(--rose);
-  border: 1px solid var(--rose);
+  background: var(--accent-sage,#88997f);
+  border: 1px solid var(--accent-sage,#88997f);
   color: #fff;
   font-family: var(--font-base);
   font-size: 9px;
@@ -346,7 +346,7 @@
   text-transform: uppercase;
   cursor: pointer;
 }
-.tgen-generate:hover { background: var(--rose); border-color: var(--rose); color: #fff; filter: brightness(.9); }
+.tgen-generate:hover { background: var(--accent-rose,#e58870); border-color: var(--accent-rose,#e58870); color: #fff; filter: brightness(.9); }
 .tgen-footer-note {
   position: relative;
   z-index: 2;
@@ -438,8 +438,8 @@
   justify-content: center;
   min-height: 26px;
   padding: 0 11px;
-  background: var(--rose);
-  border: 1px solid var(--rose);
+  background: var(--accent-sage,#88997f);
+  border: 1px solid var(--accent-sage,#88997f);
   color: #fff !important;
   font-family: var(--font-base);
   font-size: 8px;
@@ -448,7 +448,7 @@
   letter-spacing: .13em;
   text-transform: uppercase;
 }
-.tgen-preview-open:hover { background: var(--rose); border-color: var(--rose); color: #fff !important; filter: brightness(.9); }
+.tgen-preview-open:hover { background: var(--accent-rose,#e58870); border-color: var(--accent-rose,#e58870); color: #fff !important; filter: brightness(.9); }
 
 /* - - - - - - - - - - G E N E R A D O R   /   P R E V I E W   G R A N D E - - - - - - - - - - */
 .tgen-full-preview {
@@ -494,13 +494,13 @@
   justify-content: center;
   width: 34px;
   height: 34px;
-  background: var(--rose);
-  border: 1px solid var(--rose);
+  background: var(--accent-rose,#e58870);
+  border: 1px solid var(--accent-rose,#e58870);
   color: #fff !important;
   font-size: 22px;
   line-height: 1;
 }
-.tgen-full-close:hover { background: var(--rose); border-color: var(--rose); color: #fff !important; filter: brightness(.9); }
+.tgen-full-close:hover { background: var(--accent-rose,#e58870); border-color: var(--accent-rose,#e58870); color: #fff !important; filter: brightness(.9); }
 .tgen-full-content {
   position: relative;
   min-height: 260px;
@@ -563,12 +563,12 @@
   flex: 0 0 auto;
   width: 32px;
   height: 32px;
-  background: var(--rose);
-  border: 1px solid var(--rose);
+  background: var(--accent-rose,#e58870);
+  border: 1px solid var(--accent-rose,#e58870);
   color: #fff;
   cursor: pointer;
 }
-.tgen-close:hover { background: var(--rose); border-color: var(--rose); color: #fff; filter: brightness(.9); }
+.tgen-close:hover { background: var(--accent-rose,#e58870); border-color: var(--accent-rose,#e58870); color: #fff; filter: brightness(.9); }
 .tgen-modal-body {
   max-height: calc(100vh - 230px);
   padding: 22px;
@@ -584,8 +584,8 @@
 .tgen-action {
   flex: 1;
   min-height: 34px;
-  background: var(--rose);
-  border: 1px solid var(--rose);
+  background: var(--accent-sage,#88997f);
+  border: 1px solid var(--accent-sage,#88997f);
   color: #fff;
   font-family: var(--font-base);
   font-size: 9px;
@@ -595,13 +595,13 @@
   text-transform: uppercase;
   cursor: pointer;
 }
-.tgen-action:hover { background: var(--rose); border-color: var(--rose); color: #fff; filter: brightness(.9); }
+.tgen-action:hover { background: var(--accent-rose,#e58870); border-color: var(--accent-rose,#e58870); color: #fff; filter: brightness(.9); }
 .tgen-action-alt {
-  background: var(--rose);
-  border-color: var(--rose);
+  background: var(--accent-rose,#e58870);
+  border-color: var(--accent-rose,#e58870);
   color: #fff;
 }
-.tgen-action-alt:hover { background: var(--rose); border-color: var(--rose); color: #fff; filter: brightness(.9); }
+.tgen-action-alt:hover { background: var(--accent-rose,#e58870); border-color: var(--accent-rose,#e58870); color: #fff; filter: brightness(.9); }
 .tgen-output {
   display: block;
   width: 100%;
@@ -739,8 +739,8 @@
   min-height: 26px;
   margin: 0;
   padding: 0 10px;
-  background: var(--rose);
-  border: 1px solid var(--rose);
+  background: var(--accent-rose,#e58870);
+  border: 1px solid var(--accent-rose,#e58870);
   border-radius: 0;
   box-shadow: none;
   color: #fff;
@@ -755,13 +755,13 @@
 .tgen-repeat-add {
   justify-self: start;
   margin-top: 2px;
-  background: var(--rose);
+  background: var(--accent-sage,#88997f);
 }
 .tgen-repeat-remove {
   flex: 0 0 auto;
-  background: var(--rose);
+  background: var(--accent-rose,#e58870);
 }
-.tgen-repeat-add:hover,.tgen-repeat-remove:hover { background: var(--rose); border-color: var(--rose); color: #fff; filter: brightness(.9); }
+.tgen-repeat-add:hover,.tgen-repeat-remove:hover { background: var(--accent-rose,#e58870); border-color: var(--accent-rose,#e58870); color: #fff; filter: brightness(.9); }
 
 /* - - - - - - - - - - G E N E R A D O R   /   R E S P O N S I V E - - - - - - - - - - */
 @media (max-width: 900px) {

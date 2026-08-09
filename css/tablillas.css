@@ -10505,3 +10505,10 @@ body.theme-dark .am-starter-mini .asm-info::before {
 .am-map-search .material-symbols-rounded{
   color:var(--am-text-soft)!important;
 }
+
+/* RÉMORA MOBILE · ICONOS DE ESTADO BLANCOS · 09-08-2026 */
+.am-phone-status .am-phone-signals,
+.am-phone-status .am-phone-signals .material-symbols-rounded{
+  color:#fff!important;
+  text-shadow:0 1px 3px rgba(0,0,0,.58),0 0 1px rgba(0,0,0,.38)!important;
+}

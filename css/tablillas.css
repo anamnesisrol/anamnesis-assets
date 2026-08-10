@@ -2280,7 +2280,7 @@
 .stb-paper {
   z-index: 2;
   padding: 42px 42px 48px;
-  background: linear-gradient(180deg,rgba(255,255,255,.52),rgba(255,255,255,.18)),var(--bg-panel);
+  background: linear-gradient(180deg,rgba(255,255,255,.2),rgba(255,255,255,.18)),var(--bg-panel);
 }
 
 .stb-tape {

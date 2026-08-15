@@ -1762,7 +1762,7 @@
       d.label =
         readText(
           rootNode,
-          '.asp-spotify-label span'
+          '.asp-spotify-label-text, .asp-spotify-label span'
         ) || 'soundtrack';
 
       d.spotifyUrl =
@@ -2323,7 +2323,7 @@
 
     if (!trackId) return '';
 
-    return '<div class="asp-spotify" data-spotify-track="' + attr(trackId) + '" style="display:flex;align-items:stretch;gap:12px;box-sizing:border-box;width:100%;max-width:640px;margin:24px auto;padding:12px;background:linear-gradient(180deg,rgba(255,255,255,.2),rgba(255,255,255,.08)),var(--bg-panel);border:1px solid var(--line);box-shadow:var(--shadow-soft);"><div class="asp-spotify-label" style="display:flex;flex:0 0 86px;min-height:152px;flex-direction:column;align-items:center;justify-content:center;gap:9px;background:var(--accent-sage,#88997f);color:#fff;text-align:center;"><b aria-hidden="true" style="font-family:serif;font-size:34px;font-weight:400;line-height:1;">♪</b><span style="font-family:var(--font-base);font-size:8px;font-weight:800;line-height:1.25;letter-spacing:.16em;text-transform:uppercase;">' + text(d.label || 'soundtrack') + '</span></div><div class="asp-spotify-player" style="flex:1;min-width:0;"><iframe title="Reproductor de Spotify" src="https://open.spotify.com/embed/track/' + attr(trackId) + '" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="display:block;width:100%;height:152px;border:0;border-radius:12px;"></iframe></div></div>';
+    return '<div class="asp-spotify" data-spotify-track="' + attr(trackId) + '" style="display:flex;align-items:stretch;gap:12px;box-sizing:border-box;width:100%;max-width:640px;margin:24px auto;padding:12px;background:var(--bg-panel);border:1px solid var(--line);box-shadow:var(--shadow-soft);"><div class="asp-spotify-label" style="display:flex;flex:0 0 86px;min-height:152px;box-sizing:border-box;flex-direction:column;align-items:center;justify-content:center;gap:9px;padding:12px;background:var(--bg-soft);border:1px solid var(--line-soft);box-shadow:inset 3px 0 0 var(--accent-sage);text-align:center;"><div class="asp-spotify-note" aria-hidden="true" style="color:var(--accent-sage)!important;font-family:serif;font-size:34px;font-weight:400;line-height:1;">♪</div><div class="asp-spotify-label-text" style="color:var(--title-color)!important;font-family:var(--font-base);font-size:8px;font-weight:800;line-height:1.25;letter-spacing:.16em;text-transform:uppercase;">' + text(d.label || 'soundtrack') + '</div></div><div class="asp-spotify-player" style="flex:1;min-width:0;"><iframe title="Reproductor de Spotify" src="https://open.spotify.com/embed/track/' + attr(trackId) + '?theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="display:block;width:100%;height:152px;border:0;border-radius:12px;"></iframe></div></div>';
   }
 
   function buildFragment(d) {

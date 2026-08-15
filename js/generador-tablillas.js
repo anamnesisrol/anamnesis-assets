@@ -2416,11 +2416,11 @@
 
     return '' +
       '<div class="ams-scene" data-spotify-track="' + attr(trackId) + '" style="position:relative;box-sizing:border-box;width:100%;max-width:650px;margin:28px auto;padding:10px 11px 11px 10px;">' +
-        '<div class="ams-back" aria-hidden="true" style="position:absolute;inset:9px 1px 1px 9px;background:color-mix(in srgb,var(--accent-sage) 10%,var(--bg-soft));border:1px solid var(--line-soft);box-shadow:var(--shadow-soft);transform:rotate(-1.1deg);"></div>' +
-        '<div class="ams-sheet" style="position:relative;z-index:2;box-sizing:border-box;padding:16px;background:color-mix(in srgb,var(--bg-panel) 88%,var(--accent-sage) 12%);border:1px solid var(--line);box-shadow:var(--shadow-soft);overflow:hidden;">' +
-          '<div class="ams-tape" aria-hidden="true" style="position:absolute;left:34px;top:-8px;width:82px;height:20px;background:color-mix(in srgb,var(--accent-rose) 10%,var(--bg-soft));border:1px solid var(--line-soft);opacity:.9;transform:rotate(-4deg);"></div>' +
+        '<div class="ams-back" aria-hidden="true" style="position:absolute;inset:9px 1px 1px 9px;background:color-mix(in srgb,var(--accent-sage) 30%,var(--bg-soft));border:1px solid var(--line-soft);box-shadow:var(--shadow-soft);transform:rotate(-1.1deg);"></div>' +
+        '<div class="ams-sheet" style="position:relative;z-index:2;box-sizing:border-box;padding:16px;background:var(--bg-panel);border:1px solid var(--line);box-shadow:var(--shadow-soft);overflow:hidden;">' +
+          '<div class="ams-tape" aria-hidden="true" style="position:absolute;left:34px;top:-8px;width:82px;height:20px;background:color-mix(in srgb,var(--accent-sage) 24%,var(--bg-soft));border:1px solid var(--line-soft);opacity:.9;transform:rotate(-4deg);"></div>' +
           '<div class="ams-calendar" style="display:grid;grid-template-columns:90px minmax(0,1fr);align-items:stretch;gap:15px;">' +
-            '<div class="ams-date" style="display:flex;min-height:108px;flex-direction:column;align-items:center;justify-content:center;background:color-mix(in srgb,var(--bg-soft) 82%,var(--accent-sage) 18%);border:1px solid var(--line);box-shadow:inset 0 3px 0 var(--accent-sage);">' +
+            '<div class="ams-date" style="display:flex;min-height:108px;flex-direction:column;align-items:center;justify-content:center;background:color-mix(in srgb,var(--bg-soft) 72%,var(--accent-sage) 28%);border:1px solid var(--line);box-shadow:inset 0 3px 0 var(--accent-sage);">' +
               '<b class="ams-date-number" style="color:var(--title-color)!important;font-family:var(--font-title);font-size:38px;font-weight:400;line-height:.95;">' + text(d.day) + '</b>' +
               '<span class="ams-date-month" style="margin-top:8px;color:var(--accent-rose)!important;font-size:9px;font-weight:800;line-height:1;letter-spacing:.22em;text-transform:uppercase;">' + text(d.month) + '</span>' +
             '</div>' +
@@ -2437,7 +2437,7 @@
           '<div aria-hidden="true" style="width:100%;height:1px;margin:15px 0;background:var(--line-soft);"></div>' +
           '<div class="ams-soundtrack">' +
             '<div class="ams-label" style="display:flex;align-items:center;gap:10px;margin:0 3px 10px;">' +
-              '<span aria-hidden="true" style="display:flex;flex:0 0 38px;align-items:center;justify-content:center;width:38px;height:38px;color:var(--accent-sage)!important;background:color-mix(in srgb,var(--bg-soft) 86%,var(--accent-sage) 14%);border:1px solid var(--line-soft);border-radius:999px;font-family:serif;font-size:24px;line-height:1;">♪</span>' +
+              '<span aria-hidden="true" style="display:flex;flex:0 0 38px;align-items:center;justify-content:center;width:38px;height:38px;color:var(--accent-sage)!important;background:color-mix(in srgb,var(--bg-soft) 76%,var(--accent-sage) 24%);border:1px solid var(--line-soft);border-radius:999px;font-family:serif;font-size:24px;line-height:1;">♪</span>' +
               '<span style="display:flex;min-width:0;flex-direction:column;gap:5px;">' +
                 '<span style="color:var(--accent-rose)!important;font-size:7px;font-weight:800;line-height:1;letter-spacing:.16em;text-transform:uppercase;">now playing</span>' +
                 '<strong class="ams-label-text" style="color:var(--title-color)!important;font-family:var(--font-title);font-size:9px;font-weight:600;line-height:1.25;letter-spacing:.12em;text-transform:uppercase;overflow-wrap:anywhere;">' + text(d.label || 'soundtrack de la escena') + '</strong>' +

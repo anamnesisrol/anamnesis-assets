@@ -235,6 +235,21 @@
       ]
     },
 
+    'ams-starter': {
+      title: 'Starter con música',
+      intro: 'Combina la fecha, la hora y el lugar de la escena con una canción de Spotify dentro de una sola tablilla.',
+      fields: [
+        {id:'day',label:'Día numérico',type:'text',value:'04'},
+        {id:'month',label:'Mes abreviado',type:'text',value:'JUL'},
+        {id:'place',label:'Lugar principal',type:'text',value:'Jardín de fiestas'},
+        {id:'date',label:'Fecha completa',type:'text',value:'Sábado, 04 de julio'},
+        {id:'time',label:'Hora',type:'text',value:'15:30 hrs'},
+        {id:'zone',label:'Zona o ubicación',type:'text',value:'Centro de Rémora'},
+        {id:'label',label:'Etiqueta de la canción',type:'text',value:'soundtrack de la escena'},
+        {id:'spotifyUrl',label:'Enlace de la canción en Spotify',type:'text',value:'https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b'}
+      ]
+    },
+
     'asp-spotify': {
       title: 'Soundtrack de Spotify',
       intro: 'Pega el enlace normal de una canción de Spotify. El generador conservará únicamente el identificador de la canción y eliminará cualquier parámetro del enlace compartido.',
@@ -1758,6 +1773,78 @@
       return d;
     }
 
+    if (type === 'ams-starter') {
+      d.day =
+        readText(
+          rootNode,
+          '.ams-date-number'
+        );
+
+      d.month =
+        readText(
+          rootNode,
+          '.ams-date-month'
+        );
+
+      d.place =
+        readText(
+          rootNode,
+          '.ams-place'
+        );
+
+      info =
+        all(
+          rootNode,
+          '.ams-meta > span'
+        );
+
+      d.date =
+        info[0]
+          ? readWithout(
+              info[0],
+              'i'
+            )
+          : '';
+
+      d.time =
+        info[1]
+          ? readWithout(
+              info[1],
+              'i'
+            )
+          : '';
+
+      d.zone =
+        info[2]
+          ? readWithout(
+              info[2],
+              'i'
+            )
+          : '';
+
+      d.label =
+        readText(
+          rootNode,
+          '.ams-label-text'
+        ) || 'soundtrack de la escena';
+
+      d.spotifyUrl =
+        spotifyTrackUrl(
+          clean(
+            rootNode.getAttribute(
+              'data-spotify-track'
+            )
+          ) ||
+          readAttribute(
+            rootNode,
+            'iframe',
+            'src'
+          )
+        );
+
+      return d;
+    }
+
     if (type === 'asp-spotify') {
       d.label =
         readText(
@@ -1910,6 +1997,10 @@
       {
         type:'am-starter',
         selector:'.am-starter-mini'
+      },
+      {
+        type:'ams-starter',
+        selector:'.ams-scene'
       },
       {
         type:'asp-spotify',
@@ -2315,6 +2406,51 @@
     return '<div class="am-starter-mini"><div class="asm-date"><b>' + text(d.day) + '</b><span>' + text(d.month) + '</span></div><div class="asm-info"><strong>' + text(d.place) + '</strong><div class="asm-meta"><span><i class="material-symbols-outlined">calendar_month</i> ' + text(d.date) + '</span><span><i class="material-symbols-outlined">schedule</i> ' + text(d.time) + '</span><span><i class="material-symbols-outlined">location_on</i> ' + text(d.zone) + '</span></div></div></div>';
   }
 
+  function buildMusicStarter(d) {
+    var trackId =
+      spotifyTrackId(
+        d.spotifyUrl
+      );
+
+    if (!trackId) return '';
+
+    return '' +
+      '<div class="ams-scene" data-spotify-track="' + attr(trackId) + '" style="position:relative;box-sizing:border-box;width:100%;max-width:650px;margin:28px auto;padding:10px 11px 11px 10px;">' +
+        '<div class="ams-back" aria-hidden="true" style="position:absolute;inset:9px 1px 1px 9px;background:color-mix(in srgb,var(--accent-sage) 10%,var(--bg-soft));border:1px solid var(--line-soft);box-shadow:var(--shadow-soft);transform:rotate(-1.1deg);"></div>' +
+        '<div class="ams-sheet" style="position:relative;z-index:2;box-sizing:border-box;padding:16px;background:var(--bg-panel);border:1px solid var(--line);box-shadow:var(--shadow-soft);overflow:hidden;">' +
+          '<div class="ams-tape" aria-hidden="true" style="position:absolute;left:34px;top:-8px;width:82px;height:20px;background:color-mix(in srgb,var(--accent-rose) 10%,var(--bg-soft));border:1px solid var(--line-soft);opacity:.9;transform:rotate(-4deg);"></div>' +
+          '<div class="ams-calendar" style="display:grid;grid-template-columns:90px minmax(0,1fr);align-items:stretch;gap:15px;">' +
+            '<div class="ams-date" style="display:flex;min-height:108px;flex-direction:column;align-items:center;justify-content:center;background:var(--bg-soft);border:1px solid var(--line);box-shadow:inset 0 3px 0 var(--accent-sage);">' +
+              '<b class="ams-date-number" style="color:var(--title-color)!important;font-family:var(--font-title);font-size:38px;font-weight:400;line-height:.95;">' + text(d.day) + '</b>' +
+              '<span class="ams-date-month" style="margin-top:8px;color:var(--accent-rose)!important;font-size:9px;font-weight:800;line-height:1;letter-spacing:.22em;text-transform:uppercase;">' + text(d.month) + '</span>' +
+            '</div>' +
+            '<div class="ams-info" style="display:flex;min-width:0;flex-direction:column;justify-content:center;padding:8px 4px;">' +
+              '<div style="margin-bottom:8px;color:var(--accent-rose)!important;font-size:8px;font-weight:800;line-height:1;letter-spacing:.2em;text-transform:uppercase;">apertura de escena</div>' +
+              '<strong class="ams-place" style="color:var(--title-color)!important;font-family:var(--font-title);font-size:20px;font-weight:500;line-height:1.18;letter-spacing:.08em;text-transform:uppercase;overflow-wrap:anywhere;">' + text(d.place) + '</strong>' +
+              '<div class="ams-meta" style="display:flex;flex-wrap:wrap;gap:7px 13px;margin-top:13px;color:var(--text-soft);font-size:9px;line-height:1.35;">' +
+                '<span style="display:inline-flex;align-items:center;gap:4px;"><i class="material-symbols-outlined" style="color:var(--accent-sage)!important;font-size:14px;line-height:1;">calendar_month</i> ' + text(d.date) + '</span>' +
+                '<span style="display:inline-flex;align-items:center;gap:4px;"><i class="material-symbols-outlined" style="color:var(--accent-sage)!important;font-size:14px;line-height:1;">schedule</i> ' + text(d.time) + '</span>' +
+                '<span style="display:inline-flex;align-items:center;gap:4px;"><i class="material-symbols-outlined" style="color:var(--accent-sage)!important;font-size:14px;line-height:1;">location_on</i> ' + text(d.zone) + '</span>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div aria-hidden="true" style="width:100%;height:1px;margin:15px 0;background:var(--line-soft);"></div>' +
+          '<div class="ams-soundtrack">' +
+            '<div class="ams-label" style="display:flex;align-items:center;gap:10px;margin:0 3px 10px;">' +
+              '<span aria-hidden="true" style="display:flex;flex:0 0 38px;align-items:center;justify-content:center;width:38px;height:38px;color:var(--accent-sage)!important;background:var(--bg-soft);border:1px solid var(--line-soft);border-radius:999px;font-family:serif;font-size:24px;line-height:1;">♪</span>' +
+              '<span style="display:flex;min-width:0;flex-direction:column;gap:5px;">' +
+                '<span style="color:var(--accent-rose)!important;font-size:7px;font-weight:800;line-height:1;letter-spacing:.16em;text-transform:uppercase;">now playing</span>' +
+                '<strong class="ams-label-text" style="color:var(--title-color)!important;font-family:var(--font-title);font-size:9px;font-weight:600;line-height:1.25;letter-spacing:.12em;text-transform:uppercase;overflow-wrap:anywhere;">' + text(d.label || 'soundtrack de la escena') + '</strong>' +
+              '</span>' +
+            '</div>' +
+            '<div class="ams-player" style="display:flex;min-width:0;align-items:center;box-sizing:border-box;padding:6px;background:var(--bg-main);border:1px solid var(--line-soft);">' +
+              '<iframe title="Reproductor de Spotify" src="https://open.spotify.com/embed/track/' + attr(trackId) + '?theme=0" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="display:block;width:100%;height:152px;border:0;border-radius:12px;"></iframe>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+  }
+
   function buildSpotify(d) {
     var trackId =
       spotifyTrackId(
@@ -2371,6 +2507,10 @@
       return buildStarter(d);
     }
 
+    if (type === 'ams-starter') {
+      return buildMusicStarter(d);
+    }
+
     if (type === 'asp-spotify') {
       return buildSpotify(d);
     }
@@ -2423,7 +2563,10 @@
 
     if (!output) return;
 
-    if (currentType === 'asp-spotify') {
+    if (
+      currentType === 'asp-spotify' ||
+      currentType === 'ams-starter'
+    ) {
       spotifyData = readForm();
 
       if (!spotifyTrackId(spotifyData.spotifyUrl)) {

@@ -1,0 +1,412 @@
+/* =========================================================
+   ANAMNESIS · Tablillas musicales
+   Cargar en overall_header para que funcione dentro de temas
+   ========================================================= */
+
+.ams-scene,
+.ams-scene *,
+.asp-spotify,
+.asp-spotify * {
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------
+   STARTER CON MÚSICA
+   --------------------------------------------------------- */
+
+.ams-scene {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 650px !important;
+  margin: 28px auto !important;
+  padding: 10px 11px 11px 10px !important;
+  color: var(--text-main) !important;
+  font-family: var(--font-base) !important;
+}
+
+.ams-scene .ams-back {
+  position: absolute !important;
+  inset: 9px 1px 1px 9px !important;
+  background: color-mix(in srgb,var(--accent-sage) 30%,var(--bg-soft)) !important;
+  border: 1px solid var(--line-soft) !important;
+  box-shadow: var(--shadow-soft) !important;
+  transform: rotate(-1.1deg) !important;
+}
+
+.ams-scene .ams-sheet {
+  position: relative !important;
+  z-index: 2 !important;
+  padding: 16px !important;
+  background: var(--bg-panel) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: var(--shadow-soft) !important;
+  overflow: hidden !important;
+}
+
+.ams-scene .ams-tape {
+  position: absolute !important;
+  left: 34px !important;
+  top: -8px !important;
+  width: 82px !important;
+  height: 20px !important;
+  background: color-mix(in srgb,var(--accent-sage) 24%,var(--bg-soft)) !important;
+  border: 1px solid var(--line-soft) !important;
+  opacity: .9 !important;
+  transform: rotate(-4deg) !important;
+}
+
+.ams-scene .ams-calendar {
+  display: grid !important;
+  grid-template-columns: 90px minmax(0,1fr) !important;
+  align-items: stretch !important;
+  gap: 15px !important;
+}
+
+.ams-scene .ams-date {
+  display: flex !important;
+  min-height: 108px !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--accent-sage) !important;
+  border: 1px solid color-mix(in srgb,var(--accent-sage) 72%,var(--line)) !important;
+  text-align: center !important;
+}
+
+.ams-scene .ams-date-number {
+  display: block !important;
+  margin: 0 !important;
+  color: #fff !important;
+  font-family: var(--font-title) !important;
+  font-size: 38px !important;
+  font-weight: 400 !important;
+  line-height: .95 !important;
+}
+
+.ams-scene .ams-date-month {
+  display: block !important;
+  margin: 8px 0 0 !important;
+  color: #fff !important;
+  font-family: var(--font-base) !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  letter-spacing: .22em !important;
+  text-transform: uppercase !important;
+}
+
+.ams-scene .ams-info {
+  display: flex !important;
+  min-width: 0 !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 8px 4px !important;
+}
+
+.ams-scene .ams-info > div:first-child {
+  margin: 0 0 8px !important;
+  color: var(--accent-rose) !important;
+  font-size: 8px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  letter-spacing: .2em !important;
+  text-transform: uppercase !important;
+}
+
+.ams-scene .ams-place {
+  display: block !important;
+  margin: 0 !important;
+  color: var(--title-color) !important;
+  font-family: var(--font-title) !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  line-height: 1.18 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+  overflow-wrap: anywhere !important;
+}
+
+.ams-scene .ams-meta {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 7px 13px !important;
+  margin: 13px 0 0 !important;
+  color: var(--text-soft) !important;
+  font-size: 9px !important;
+  line-height: 1.35 !important;
+}
+
+.ams-scene .ams-meta > span {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  margin: 0 !important;
+  color: var(--text-soft) !important;
+}
+
+.ams-scene .ams-meta .material-symbols-outlined {
+  color: var(--accent-sage) !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+}
+
+.ams-scene .ams-sheet > div[aria-hidden="true"]:not(.ams-tape) {
+  display: block !important;
+  width: 100% !important;
+  height: 1px !important;
+  margin: 15px 0 !important;
+  background: var(--line-soft) !important;
+}
+
+.ams-scene .ams-soundtrack {
+  display: block !important;
+}
+
+.ams-scene .ams-label {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin: 0 3px 10px !important;
+}
+
+.ams-scene .ams-label > span[aria-hidden="true"] {
+  display: flex !important;
+  flex: 0 0 38px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 38px !important;
+  height: 38px !important;
+  color: #fff !important;
+  background: var(--accent-sage) !important;
+  border: 1px solid var(--accent-sage) !important;
+  border-radius: 999px !important;
+  font-family: serif !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+}
+
+.ams-scene .ams-label > span:not([aria-hidden="true"]) {
+  display: flex !important;
+  min-width: 0 !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+}
+
+.ams-scene .ams-label > span:not([aria-hidden="true"]) > span {
+  color: var(--accent-rose) !important;
+  font-size: 7px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+}
+
+.ams-scene .ams-label-text {
+  color: var(--title-color) !important;
+  font-family: var(--font-title) !important;
+  font-size: 9px !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  overflow-wrap: anywhere !important;
+}
+
+.ams-scene .ams-player {
+  display: flex !important;
+  min-width: 0 !important;
+  align-items: center !important;
+  padding: 6px !important;
+  background: var(--bg-main) !important;
+  border: 1px solid var(--line-soft) !important;
+}
+
+.ams-scene .ams-player iframe {
+  display: block !important;
+  width: 100% !important;
+  height: 152px !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+}
+
+/* ---------------------------------------------------------
+   REPRODUCTOR DE SPOTIFY INDIVIDUAL
+   --------------------------------------------------------- */
+
+.asp-spotify {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 650px !important;
+  margin: 28px auto !important;
+  padding: 9px 10px 10px 9px !important;
+  color: var(--text-main) !important;
+  font-family: var(--font-base) !important;
+}
+
+.asp-spotify .asp-spotify-back {
+  position: absolute !important;
+  inset: 8px 1px 1px 8px !important;
+  background: color-mix(in srgb,var(--accent-sage) 18%,var(--bg-soft)) !important;
+  border: 1px solid var(--line-soft) !important;
+  box-shadow: var(--shadow-soft) !important;
+  transform: rotate(-1.2deg) !important;
+}
+
+.asp-spotify .asp-spotify-sheet {
+  position: relative !important;
+  z-index: 2 !important;
+  display: flex !important;
+  align-items: stretch !important;
+  gap: 14px !important;
+  padding: 14px !important;
+  background: var(--bg-panel) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: var(--shadow-soft) !important;
+  overflow: hidden !important;
+}
+
+.asp-spotify .asp-spotify-tape {
+  position: absolute !important;
+  left: 30px !important;
+  top: -8px !important;
+  width: 78px !important;
+  height: 20px !important;
+  background: color-mix(in srgb,var(--accent-sage) 24%,var(--bg-soft)) !important;
+  border: 1px solid var(--line-soft) !important;
+  opacity: .9 !important;
+  transform: rotate(-4deg) !important;
+}
+
+.asp-spotify .asp-spotify-label {
+  position: relative !important;
+  display: flex !important;
+  flex: 0 0 94px !important;
+  min-height: 164px !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 17px 10px 13px !important;
+  background: var(--bg-soft) !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: inset 0 3px 0 var(--accent-sage) !important;
+  text-align: center !important;
+}
+
+.asp-spotify .asp-spotify-kicker {
+  color: var(--accent-rose) !important;
+  font-size: 7px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+}
+
+.asp-spotify .asp-spotify-note-frame {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  background: var(--accent-sage) !important;
+  border: 1px solid var(--accent-sage) !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+}
+
+.asp-spotify .asp-spotify-note {
+  color: #fff !important;
+  font-family: serif !important;
+  font-size: 27px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+}
+
+.asp-spotify .asp-spotify-label-text {
+  color: var(--title-color) !important;
+  font-family: var(--font-title) !important;
+  font-size: 8px !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  letter-spacing: .16em !important;
+  text-transform: uppercase !important;
+  overflow-wrap: anywhere !important;
+}
+
+.asp-spotify .asp-spotify-player {
+  display: flex !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+  align-items: center !important;
+  padding: 6px !important;
+  background: var(--bg-main) !important;
+  border: 1px solid var(--line-soft) !important;
+}
+
+.asp-spotify .asp-spotify-player iframe {
+  display: block !important;
+  width: 100% !important;
+  height: 152px !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 560px) {
+  .ams-scene,
+  .asp-spotify {
+    margin: 20px auto !important;
+    padding: 7px 8px 8px 7px !important;
+  }
+
+  .ams-scene .ams-sheet,
+  .asp-spotify .asp-spotify-sheet {
+    padding: 12px !important;
+  }
+
+  .ams-scene .ams-calendar {
+    grid-template-columns: 72px minmax(0,1fr) !important;
+    gap: 10px !important;
+  }
+
+  .ams-scene .ams-date {
+    min-height: 96px !important;
+  }
+
+  .ams-scene .ams-date-number {
+    font-size: 31px !important;
+  }
+
+  .ams-scene .ams-place {
+    font-size: 15px !important;
+    letter-spacing: .05em !important;
+  }
+
+  .ams-scene .ams-meta {
+    display: grid !important;
+    gap: 5px !important;
+    margin-top: 9px !important;
+  }
+
+  .asp-spotify .asp-spotify-sheet {
+    flex-direction: column !important;
+  }
+
+  .asp-spotify .asp-spotify-label {
+    flex: 0 0 auto !important;
+    min-height: 74px !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    padding: 12px 14px !important;
+    text-align: left !important;
+  }
+
+  .asp-spotify .asp-spotify-note-frame {
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+}

@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,600&family=Manrope:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+/* STAY V3 — Hazel Violet Whitlock
+   Mature editorial grid with separate image panels.
+   Isolated namespace: .stay3-* */
+
+.stay3,
+.stay3 * {
+  box-sizing: border-box;
+}
+
+.stay3 {
+  --stay3-petrol: #234d50;
+  --stay3-deep: #203438;
+  --stay3-copper: #bf6f54;
+  --stay3-sand: #ddcfbb;
+  --stay3-glass: #819c98;
+  --stay3-ivory: #f8f3eb;
+  position: relative;
+  isolation: isolate;
+  width: min(500px, 100%);
+  max-width: 500px;
+  aspect-ratio: 2 / 1;
+  max-height: 250px;
+  margin: 24px auto;
+  overflow: hidden;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.stay3-gallery {
+  position: absolute;
+  z-index: 2;
+  top: 8%;
+  left: 4%;
+  width: 92%;
+  height: 67%;
+  display: grid;
+  grid-template-columns: minmax(0, 2.22fr) minmax(0, 1fr);
+  gap: 9px;
+}
+
+.stay3-panel {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--stay3-sand);
+}
+
+.stay3-panel--beach {
+  border-radius: 54px 4px 4px 4px;
+}
+
+.stay3-panel--room {
+  border-radius: 4px 54px 4px 4px;
+}
+
+.stay3-panel img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  object-fit: cover;
+}
+
+.stay3-panel--beach img {
+  object-position: 50% 38%;
+  filter: saturate(.84) contrast(1.03) brightness(.98);
+}
+
+.stay3-panel--room img {
+  object-position: 50% 27%;
+  filter: saturate(.64) contrast(1.04) brightness(.93);
+}
+
+.stay3-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.stay3-panel--beach::after {
+  background: linear-gradient(110deg, rgba(35, 77, 80, .08), transparent 45%, rgba(191, 111, 84, .1));
+}
+
+.stay3-panel--room::after {
+  background: linear-gradient(145deg, rgba(248, 243, 235, .07), transparent 43%, rgba(35, 77, 80, .2));
+  mix-blend-mode: color;
+}
+
+.stay3-namebar {
+  position: absolute;
+  z-index: 6;
+  top: 49%;
+  left: 8%;
+  width: 84%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 7px 16px 8px 18px;
+  border-left: 4px solid var(--stay3-copper);
+  background: rgba(248, 243, 235, .94);
+  box-shadow: 0 6px 17px rgba(32, 52, 56, .1);
+  white-space: nowrap;
+}
+
+.stay3-given {
+  color: var(--stay3-petrol);
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(17px, 4.7vw, 23px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+}
+
+.stay3-ring {
+  position: relative;
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  margin: 0 10px 0 11px;
+  border: 1.5px solid var(--stay3-copper);
+  border-radius: 50%;
+}
+
+.stay3-ring::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 3px;
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--stay3-glass);
+  background: var(--stay3-ivory);
+  transform: rotate(45deg);
+}
+
+.stay3-surname {
+  color: var(--stay3-deep);
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-size: clamp(20px, 5.6vw, 28px);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.025em;
+  text-transform: none;
+}
+
+.stay3-echo {
+  position: absolute;
+  z-index: 5;
+  top: 12%;
+  left: 1%;
+  height: 38%;
+  color: rgba(248, 243, 235, .7);
+  font-family: "Space Mono", monospace;
+  font-size: 5.5px;
+  font-weight: 700;
+  line-height: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-shadow: 0 1px 2px rgba(32, 52, 56, .22);
+  pointer-events: none;
+}
+
+.stay3-echo span {
+  display: block;
+  white-space: nowrap;
+}
+
+.stay3-echo span + span {
+  margin-right: 5px;
+  color: rgba(221, 207, 187, .78);
+}
+
+.stay3-quote {
+  position: absolute;
+  z-index: 5;
+  left: 7%;
+  bottom: 6%;
+  width: 73%;
+  color: var(--stay3-deep);
+  font-family: "Space Mono", monospace;
+  font-size: clamp(5.8px, 1.45vw, 7.4px);
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: .055em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.stay3-quote::before {
+  content: "STAY";
+  display: inline-block;
+  margin-right: 9px;
+  padding: 2px 5px;
+  color: var(--stay3-ivory);
+  background: var(--stay3-copper);
+  font-size: .9em;
+  letter-spacing: .14em;
+}
+
+.stay3-flora {
+  position: absolute;
+  z-index: 7;
+  right: 2%;
+  bottom: 2%;
+  width: 106px;
+  height: 62px;
+  pointer-events: none;
+}
+
+.stay3-flora::before {
+  content: "";
+  position: absolute;
+  right: 9px;
+  bottom: 9px;
+  width: 89px;
+  height: 40px;
+  border-bottom: 1px solid rgba(129, 156, 152, .82);
+  border-radius: 50%;
+  transform: rotate(-18deg);
+}
+
+.stay3-flora::after {
+  content: "";
+  position: absolute;
+  right: 37px;
+  bottom: 15px;
+  width: 19px;
+  height: 7px;
+  border-radius: 100% 0 100% 0;
+  background: rgba(129, 156, 152, .72);
+  transform: rotate(-12deg);
+  box-shadow:
+    27px -9px 0 -1px rgba(129, 156, 152, .58),
+    -24px 7px 0 -2px rgba(129, 156, 152, .52);
+}
+
+.stay3-flower {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--stay3-copper);
+  color: rgba(248, 243, 235, .96);
+  box-shadow:
+    0 -4px 0 1.5px currentColor,
+    4px 0 0 1.5px currentColor,
+    0 4px 0 1.5px currentColor,
+    -4px 0 0 1.5px currentColor;
+}
+
+.stay3-flower:nth-child(1) {
+  right: 10px;
+  bottom: 45px;
+}
+
+.stay3-flower:nth-child(2) {
+  right: 51px;
+  bottom: 29px;
+  color: rgba(221, 207, 187, .98);
+  transform: scale(.78);
+}
+
+.stay3-flower:nth-child(3) {
+  right: 92px;
+  bottom: 13px;
+  color: rgba(195, 210, 204, .98);
+  transform: scale(.62);
+}
+
+.stay3-index {
+  position: absolute;
+  z-index: 7;
+  right: 4%;
+  top: 77%;
+  color: rgba(35, 77, 80, .48);
+  font-family: "Space Mono", monospace;
+  font-size: 5px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 520px) {
+  .stay3 {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .stay3-gallery {
+    left: 3%;
+    width: 94%;
+  }
+
+  .stay3-namebar {
+    left: 7%;
+    width: 86%;
+    padding-left: 14px;
+    padding-right: 12px;
+  }
+
+  .stay3-given {
+    font-size: clamp(15px, 4.3vw, 21px);
+  }
+
+  .stay3-surname {
+    font-size: clamp(18px, 5.2vw, 26px);
+  }
+
+  .stay3-ring {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .stay3-quote {
+    left: 6%;
+    width: 74%;
+  }
+}

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Caveat:wght@500;600&family=Manrope:wght@700;800&family=Parisienne&display=swap');
 
 /* STAY V4 — Hazel Violet Whitlock
-   Youth, sweetness and one integrated identity.
+   Youth, mature tenderness and one integrated identity.
    Isolated namespace: .stay4-* */
 
 .stay4,
@@ -10,13 +10,13 @@
 }
 
 .stay4 {
-  --stay4-ocean: #6f94a8;
-  --stay4-deep: #28424d;
-  --stay4-coral: #c97d63;
-  --stay4-butter: #e2c46f;
-  --stay4-cream: #fbf5eb;
-  --stay4-leaf: #8fa79a;
-  --stay4-gold: #b99a52;
+  --stay4-lilac: #8b79a6;
+  --stay4-deep: #403949;
+  --stay4-violet: #6f5d88;
+  --stay4-celadon: #b3c1ae;
+  --stay4-cream: #f7f2ea;
+  --stay4-green: #7c9584;
+  --stay4-gold: #b39a64;
   position: relative;
   isolation: isolate;
   width: min(500px, 100%);
@@ -40,8 +40,8 @@
   height: 84%;
   padding: 4px;
   border-radius: 49% 51% 46% 54% / 37% 43% 57% 63%;
-  background: linear-gradient(145deg, var(--stay4-ocean), var(--stay4-butter) 54%, var(--stay4-coral));
-  box-shadow: 8px 9px 0 rgba(111, 148, 168, .12), 0 10px 22px rgba(40, 66, 77, .12);
+  background: linear-gradient(145deg, var(--stay4-lilac), var(--stay4-celadon) 54%, var(--stay4-violet));
+  box-shadow: 8px 9px 0 rgba(139, 121, 166, .12), 0 10px 22px rgba(40, 66, 77, .12);
 }
 
 .stay4-photo {
@@ -74,7 +74,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(145deg, rgba(251, 245, 235, .08), transparent 46%, rgba(201, 125, 99, .12));
+  background: linear-gradient(145deg, rgba(251, 245, 235, .08), transparent 46%, rgba(111, 93, 136, .12));
   pointer-events: none;
 }
 
@@ -83,7 +83,7 @@
   position: absolute;
   z-index: -1;
   inset: -8px 7px 7px -8px;
-  border: 1px solid rgba(111, 148, 168, .48);
+  border: 1px solid rgba(139, 121, 166, .48);
   border-radius: 52% 48% 50% 50% / 43% 37% 63% 57%;
   transform: rotate(-3deg);
 }
@@ -94,7 +94,7 @@
   top: 13%;
   left: 4%;
   width: 66%;
-  color: rgba(111, 148, 168, .105);
+  color: rgba(139, 121, 166, .11);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
   line-height: .9;
@@ -113,7 +113,7 @@
 
 .stay4-background span + span {
   margin: 5px 0 0 34px;
-  color: rgba(201, 125, 99, .09);
+  color: rgba(124, 149, 132, .11);
   font-size: clamp(18px, 5.4vw, 27px);
 }
 
@@ -142,7 +142,7 @@
 .stay4-name-violet {
   position: relative;
   top: 2px;
-  color: var(--stay4-coral);
+  color: var(--stay4-violet);
   font-family: "Parisienne", cursive;
   font-size: clamp(30px, 8.2vw, 41px);
   font-weight: 400;
@@ -158,7 +158,7 @@
   right: 4%;
   bottom: -2px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(226, 196, 111, .72), transparent);
+  background: linear-gradient(90deg, transparent, rgba(124, 149, 132, .68), transparent);
 }
 
 .stay4-quote {
@@ -183,7 +183,7 @@
 
 .stay4-quote b {
   margin: 2px 0 0 24px;
-  color: var(--stay4-coral);
+  color: var(--stay4-violet);
   font-weight: 600;
 }
 
@@ -199,7 +199,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--stay4-butter);
+  background: var(--stay4-celadon);
   color: rgba(251, 245, 235, .98);
   box-shadow:
     0 -5px 0 2px currentColor,
@@ -219,16 +219,16 @@
 .stay4-flower:nth-child(2) {
   top: 20%;
   left: 29%;
-  color: rgba(223, 233, 229, .98);
-  background: var(--stay4-ocean);
+  color: rgba(226, 219, 237, .98);
+  background: var(--stay4-lilac);
   transform: scale(.52) rotate(-8deg);
 }
 
 .stay4-flower:nth-child(3) {
   top: 31%;
   right: 38%;
-  color: rgba(248, 226, 184, .98);
-  background: var(--stay4-coral);
+  color: rgba(215, 226, 216, .98);
+  background: var(--stay4-violet);
   transform: scale(.76) rotate(14deg);
 }
 
@@ -242,16 +242,16 @@
 .stay4-flower:nth-child(5) {
   right: 21%;
   bottom: 5%;
-  color: rgba(219, 232, 226, .98);
-  background: var(--stay4-ocean);
+  color: rgba(211, 224, 214, .98);
+  background: var(--stay4-lilac);
   transform: scale(.57) rotate(9deg);
 }
 
 .stay4-flower:nth-child(6) {
   left: 2%;
   bottom: 18%;
-  color: rgba(249, 221, 211, .98);
-  background: var(--stay4-coral);
+  color: rgba(219, 212, 230, .98);
+  background: var(--stay4-violet);
   transform: scale(.48) rotate(-4deg);
 }
 
@@ -292,7 +292,7 @@
   width: 16px;
   height: 6px;
   border-radius: 100% 0 100% 0;
-  background: rgba(143, 167, 154, .62);
+  background: rgba(124, 149, 132, .66);
   pointer-events: none;
 }
 

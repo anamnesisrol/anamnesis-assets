@@ -90,15 +90,16 @@
 
 .stay4-background {
   position: absolute;
-  z-index: 1;
-  top: 13%;
-  left: 4%;
-  width: 66%;
-  color: rgba(139, 121, 166, .11);
+  z-index: 0;
+  top: 30%;
+  left: 1%;
+  width: 76%;
+  color: rgba(139, 121, 166, .055);
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  line-height: .9;
+  line-height: .86;
   letter-spacing: -.045em;
+  transform: rotate(-1.5deg);
   text-transform: uppercase;
   pointer-events: none;
 }
@@ -112,8 +113,8 @@
 }
 
 .stay4-background span + span {
-  margin: 5px 0 0 34px;
-  color: rgba(124, 149, 132, .11);
+  margin: 7px 0 0 58px;
+  color: rgba(124, 149, 132, .06);
   font-size: clamp(18px, 5.4vw, 27px);
 }
 

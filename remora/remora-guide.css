@@ -36,6 +36,7 @@
 #rmGuide .rm-landmarks .market .rm-landmark-image{background-image:url('https://images.unsplash.com/photo-1534482421-64566f976cfa?auto=format&fit=crop&w=1200&q=82')}
 #rmGuide .rm-landmarks .viewpoint .rm-landmark-image{background-image:url('https://i.servimg.com/u/f68/20/65/25/08/pexels16.jpg')}
 #rmGuide .rm-landmarks .aquarium-landmark .rm-landmark-image{background-image:url('https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=1200&q=82')}
+#rmGuide .rm-landmarks .lighthouse .rm-landmark-image{background-image:url('https://images.unsplash.com/photo-1767508990175-afae38851d0a?auto=format&fit=crop&w=1200&q=82')}
 #rmGuide .rm-district-panel[hidden]{display:none!important}
 @media(prefers-reduced-motion:reduce){#rmGuide{scroll-behavior:auto}#rmGuide *{transition:none!important}}
 

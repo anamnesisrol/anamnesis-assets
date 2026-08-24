@@ -26,6 +26,16 @@
 #rmGuide .rm-tablist button:hover{color:var(--ink)}
 #rmGuide .rm-tablist button[aria-selected="true"]{color:var(--ink)}
 #rmGuide .rm-tablist button[aria-selected="true"]:after{right:14px;left:14px}
+#rmGuide .rm-landmarks article.with-image{padding:0 21px 21px;overflow:hidden}
+#rmGuide .rm-landmark-image{height:145px;margin:0 -21px 16px;background-position:center;background-size:cover;border-bottom:1px solid var(--line)}
+#rmGuide .rm-landmarks article.with-image h3{margin-top:16px}
+#rmGuide .rm-landmarks .trail .rm-landmark-image{background-image:url('https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=82')}
+#rmGuide .rm-landmarks .lighthouse .rm-landmark-image{background-image:url('https://images.unsplash.com/photo-1515894347712-4d9164b20a51?auto=format&fit=crop&w=1200&q=82')}
+#rmGuide .rm-landmarks .sea-steps .rm-landmark-image{background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=82')}
+#rmGuide .rm-landmarks .botanical .rm-landmark-image{background-image:url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=82')}
+#rmGuide .rm-landmarks .market .rm-landmark-image{background-image:url('https://images.unsplash.com/photo-1534482421-64566f976cfa?auto=format&fit=crop&w=1200&q=82')}
+#rmGuide .rm-landmarks .viewpoint .rm-landmark-image{background-image:url('https://i.servimg.com/u/f68/20/65/25/08/pexels16.jpg')}
+#rmGuide .rm-landmarks .aquarium-landmark .rm-landmark-image{background-image:url('https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=1200&q=82')}
 #rmGuide .rm-district-panel[hidden]{display:none!important}
 @media(prefers-reduced-motion:reduce){#rmGuide{scroll-behavior:auto}#rmGuide *{transition:none!important}}
 

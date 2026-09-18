@@ -70,7 +70,7 @@
 }
 
 .hvw-signature{
-  --hvw-photo:none;
+  --hvw-photo:url("https://i86.servimg.com/u/f86/20/65/24/37/para_f10.png");
   --hvw-photo-position:50% 38%;
   --hvw-ink:#29484d;
   --hvw-petrol:#315d64;

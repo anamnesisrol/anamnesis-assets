@@ -78,6 +78,32 @@
       ]
     },
 
+    'ana-npc': {
+      title: 'NPC / Entorno',
+      intro: 'Añade las personas que forman parte de la vida del personaje sin contar con expediente propio. Puedes incluir tantos NPC como necesites.',
+      fields: [
+        {id:'kicker',label:'Etiqueta superior',type:'text',value:'entorno del personaje'},
+        {id:'title',label:'Nombre del personaje',type:'text',value:'Nombre del personaje'},
+        {id:'subtitle',label:'Subtítulo opcional',type:'text',value:'Personas que forman parte de su historia sin expediente propio.'},
+        {id:'note',label:'Nota final opcional',type:'textarea'},
+        {
+          id:'npcs',
+          label:'NPC',
+          type:'repeater',
+          itemLabel:'NPC',
+          fields:[
+            {id:'name',label:'Nombre del NPC',type:'text',value:'Nombre del NPC'},
+            {id:'relation',label:'Tipo de vínculo',type:'text',value:'familiar'},
+            {id:'status',label:'Situación actual opcional',type:'text',value:'en contacto'},
+            {id:'meta',label:'Datos breves opcionales',type:'text',value:'edad · ocupación · ubicación'},
+            {id:'faceclaim',label:'Faceclaim opcional',type:'text',value:'Faceclaim'},
+            {id:'img',label:'Imagen',type:'text'},
+            {id:'text',label:'Relación / contexto',type:'textarea',value:'Describe aquí quién es esta persona y qué lugar ocupa en la vida del personaje.'}
+          ]
+        }
+      ]
+    },
+
     'ana-search-v2': {
       title: 'Búsqueda múltiple',
       intro: 'Añade una o varias búsquedas. Cada propuesta funciona como un módulo independiente.',
@@ -1269,6 +1295,87 @@
       return d;
     }
 
+    if (type === 'ana-npc') {
+      d.kicker =
+        readText(
+          rootNode,
+          '.ana-npc-kicker'
+        );
+
+      d.title =
+        readText(
+          rootNode,
+          '.ana-npc-title'
+        );
+
+      d.subtitle =
+        readText(
+          rootNode,
+          '.ana-npc-subtitle'
+        );
+
+      d.note =
+        readBlocksFrom(
+          rootNode,
+          '.ana-npc-note'
+        );
+
+      d.npcs = [];
+
+      nodes =
+        all(
+          rootNode,
+          '.ana-npc-card'
+        );
+
+      for (
+        i = 0;
+        i < nodes.length;
+        i++
+      ) {
+        d.npcs.push({
+          name:
+            readText(
+              nodes[i],
+              '.ana-npc-name'
+            ),
+          relation:
+            readText(
+              nodes[i],
+              '.ana-npc-relation'
+            ),
+          status:
+            readText(
+              nodes[i],
+              '.ana-npc-status'
+            ),
+          meta:
+            readText(
+              nodes[i],
+              '.ana-npc-meta'
+            ),
+          faceclaim:
+            readText(
+              nodes[i],
+              '.ana-npc-faceclaim'
+            ),
+          img:
+            readAttribute(
+              nodes[i],
+              '.ana-npc-photo img',
+              'src'
+            ),
+          text:
+            readBlocksFrom(
+              nodes[i],
+              '.ana-npc-text'
+            )
+        });
+      }
+
+      return d;
+    }
+
     if (type === 'ana-search-v2') {
       d.title =
         readText(
@@ -1971,6 +2078,10 @@
         selector:'.ana-relations'
       },
       {
+        type:'ana-npc',
+        selector:'.ana-npc'
+      },
+      {
         type:'ana-search-v2',
         selector:'.ana-search-v2'
       },
@@ -2237,6 +2348,105 @@
     return '<div class="ana-relations"><div class="ana-relations-sheet"><div class="ana-relations-head"><span class="ana-relations-kicker">' + text(d.kicker) + '</span><h3 class="ana-relations-title">' + text(d.title) + '</h3>' + subtitle + '</div><div class="ana-relations-list">' + html + '</div>' + note + '</div></div>';
   }
 
+  function buildNpc(d) {
+    var html = '';
+    var i;
+    var item;
+    var photo;
+    var relation;
+    var status;
+    var meta;
+    var faceclaim;
+    var subtitle;
+    var note;
+
+    for (
+      i = 0;
+      i < d.npcs.length;
+      i++
+    ) {
+      item =
+        d.npcs[i];
+
+      if (
+        clean(item.name) ||
+        clean(item.relation) ||
+        clean(item.status) ||
+        clean(item.meta) ||
+        clean(item.faceclaim) ||
+        clean(item.img) ||
+        clean(item.text)
+      ) {
+        photo =
+          clean(item.img)
+            ? '<div class="ana-npc-photo"><img src="' +
+              image(item.img) +
+              '" alt="Imagen del NPC"></div>'
+            : '<div class="ana-npc-photo ana-npc-photo-empty"><span>NPC</span></div>';
+
+        relation =
+          clean(item.relation)
+            ? '<span class="ana-npc-relation">' +
+              text(item.relation) +
+              '</span>'
+            : '';
+
+        status =
+          clean(item.status)
+            ? '<span class="ana-npc-status">' +
+              text(item.status) +
+              '</span>'
+            : '';
+
+        meta =
+          clean(item.meta)
+            ? '<div class="ana-npc-meta">' +
+              text(item.meta) +
+              '</div>'
+            : '';
+
+        faceclaim =
+          clean(item.faceclaim)
+            ? '<div class="ana-npc-faceclaim">' +
+              text(item.faceclaim) +
+              '</div>'
+            : '';
+
+        html +=
+          '<div class="ana-npc-card">' +
+          '<div class="ana-npc-visual">' +
+          photo +
+          faceclaim +
+          '</div><div class="ana-npc-copy"><div class="ana-npc-labels">' +
+          relation +
+          status +
+          '</div><strong class="ana-npc-name">' +
+          text(item.name) +
+          '</strong>' +
+          meta +
+          '<div class="ana-npc-text">' +
+          blocks(item.text) +
+          '</div></div></div>';
+      }
+    }
+
+    subtitle =
+      clean(d.subtitle)
+        ? '<div class="ana-npc-subtitle">' +
+          text(d.subtitle) +
+          '</div>'
+        : '';
+
+    note =
+      clean(d.note)
+        ? '<div class="ana-npc-note">' +
+          blocks(d.note) +
+          '</div>'
+        : '';
+
+    return '<div class="ana-npc"><div class="ana-npc-sheet"><div class="ana-npc-head"><span class="ana-npc-kicker">' + text(d.kicker) + '</span><h3 class="ana-npc-title">' + text(d.title) + '</h3>' + subtitle + '</div><div class="ana-npc-list">' + html + '</div>' + note + '</div></div>';
+  }
+
   function buildSearchV2(d) {
     var labels = {
       available:'disponible',
@@ -2477,6 +2687,10 @@
 
     if (type === 'ana-relations') {
       return buildRelations(d);
+    }
+
+    if (type === 'ana-npc') {
+      return buildNpc(d);
     }
 
     if (type === 'ana-search-v2') {

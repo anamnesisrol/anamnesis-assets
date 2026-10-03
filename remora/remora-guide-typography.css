@@ -1,11 +1,10 @@
 /* RÉMORA · ajuste tipográfico
    Carga después de remora-guide.css, remora-history.css y remora-guide-expansion.css. */
 
-/* Base: la guía original parte de 14px; 16px evita que los textos corridos
-   se pierdan en pantallas grandes sin alterar la escala de los títulos. */
+/* Base general: priorizamos legibilidad real dentro de Foroactivo. */
 #rmGuide {
-  font-size: 16px;
-  line-height: 1.72;
+  font-size: 17px !important;
+  line-height: 1.75;
 }
 
 /* Texto corrido y descriptivo */
@@ -29,13 +28,14 @@
 #rmGuide .rm-event-note,
 #rmGuide .rm-offrole p,
 #rmGuide .rm-footer p {
-  font-size: 15px;
-  line-height: 1.72;
+  font-size: 16px !important;
+  line-height: 1.78 !important;
 }
 
-/* Separación visual entre la etiqueta en negrita y el texto de cada detalle. */
-#rmGuide .rm-details p > strong:first-child {
-  margin-right: .45em;
+/* Foroactivo puede compactar el HTML y dejar </strong>Texto sin espacio.
+   Este espacio no depende del marcado y se aplica a todas las negritas de la guía. */
+#rmGuide strong::after {
+  content: "\00a0";
 }
 
 /* Datos rápidos y textos secundarios */
@@ -44,21 +44,22 @@
 #rmGuide .rm-ticket span,
 #rmGuide .rm-place > span:last-child,
 #rmGuide .rm-npcs article > span:last-child {
-  font-size: 13px;
+  font-size: 14px !important;
+  line-height: 1.65;
 }
 
 /* Etiquetas pequeñas, navegación y controles */
 #rmGuide .rm-brand {
-  font-size: 12px;
+  font-size: 13px !important;
 }
 
 #rmGuide .rm-nav {
-  font-size: 11px;
+  font-size: 12px !important;
 }
 
 #rmGuide .rm-kicker,
 #rmGuide .rm-eyebrow {
-  font-size: 11px;
+  font-size: 12px !important;
 }
 
 #rmGuide .rm-tablist [role="tab"],
@@ -66,32 +67,32 @@
 #rmGuide .rm-level,
 #rmGuide .rm-button,
 #rmGuide .rm-search input {
-  font-size: 12px;
+  font-size: 13px !important;
 }
 
 #rmGuide .rm-subzones span,
 #rmGuide .rm-landmarks article > span,
 #rmGuide .rm-place > span:first-of-type,
 #rmGuide .rm-npcs article > span:first-child {
-  font-size: 11px;
+  font-size: 12px !important;
 }
 
 #rmGuide .rm-map-zoom {
-  font-size: 11px;
+  font-size: 12px !important;
 }
 
 #rmGuide .rm-map-hint {
-  font-size: 14px;
+  font-size: 15px !important;
 }
 
 #rmGuide .rm-map-dialog figcaption {
-  font-size: 13px;
+  font-size: 14px !important;
 }
 
-/* En móvil no reducimos de nuevo el cuerpo: mantenemos legibilidad. */
+/* En móvil mantenemos el mismo cuerpo legible. */
 @media (max-width: 760px) {
   #rmGuide {
-    font-size: 16px;
+    font-size: 17px !important;
   }
 
   #rmGuide .rm-hero-copy > p:not(.rm-kicker),
@@ -99,14 +100,19 @@
   #rmGuide .rm-section-head > p,
   #rmGuide .rm-location-body p,
   #rmGuide .rm-panel p,
+  #rmGuide .rm-government p,
+  #rmGuide .rm-history-steps p,
+  #rmGuide .rm-transit p,
   #rmGuide .rm-district-copy > p,
   #rmGuide .rm-details p,
+  #rmGuide .rm-hospital p,
   #rmGuide .rm-landmarks article p,
   #rmGuide .rm-place p,
   #rmGuide .rm-npcs article p,
   #rmGuide .rm-accordion p,
   #rmGuide .rm-event-list p,
   #rmGuide .rm-offrole p {
-    font-size: 15px;
+    font-size: 16px !important;
+    line-height: 1.78 !important;
   }
 }

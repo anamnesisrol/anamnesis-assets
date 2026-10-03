@@ -7,7 +7,7 @@
 }
 
 /* ==================================================
-   TEXTO GENERAL — 11px parejo
+   TEXTO GENERAL — 12px parejo
    ================================================== */
 #rmGuide p,
 #rmGuide .rm-copy,
@@ -30,7 +30,7 @@
 #rmGuide .rm-event-note,
 #rmGuide .rm-offrole p,
 #rmGuide .rm-footer p {
-  font-size: 11px !important;
+  font-size: 12px !important;
   line-height: 1.65 !important;
 }
 
@@ -51,7 +51,7 @@
 }
 
 /* ==================================================
-   ELEMENTOS DE INTERFAZ — no se igualan a 11px
+   ELEMENTOS DE INTERFAZ — conservan su propia escala
    ================================================== */
 #rmGuide .rm-history-steps h3 {
   font-size: 18px !important;
@@ -150,7 +150,7 @@
   line-height: 1.2 !important;
 }
 
-/* En móvil el cuerpo sigue siendo 11px; no vuelve a inflarse. */
+/* En móvil el cuerpo sigue siendo 12px; no vuelve a inflarse. */
 @media (max-width: 760px) {
   #rmGuide p,
   #rmGuide .rm-copy,
@@ -173,7 +173,7 @@
   #rmGuide .rm-event-note,
   #rmGuide .rm-offrole p,
   #rmGuide .rm-footer p {
-    font-size: 11px !important;
+    font-size: 12px !important;
     line-height: 1.65 !important;
   }
 }

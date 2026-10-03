@@ -169,50 +169,75 @@
 }
 
 /* ---------- Distritos nuevos ---------- */
+/* Pexels: Margo Evardson — Noblessner seaside promenade, Tallinn
+   https://www.pexels.com/photo/tranquil-noblessner-seaside-promenade-in-tallinn-estonia-37519550/ */
 #rmGuide .rm-district-image.coast {
   background:
-    linear-gradient(135deg, rgba(20,35,44,.08), rgba(20,35,44,.28)),
-    radial-gradient(circle at 75% 26%, rgba(255,255,255,.48), transparent 22%),
-    linear-gradient(155deg, #c8d6d3 0 33%, #8eaeba 34% 58%, #e3d0aa 59% 67%, #aabfa8 68% 100%);
+    linear-gradient(135deg, rgba(20,35,44,.10), rgba(20,35,44,.34)),
+    url('https://images.pexels.com/photos/37519550/pexels-photo-37519550.jpeg?auto=compress&cs=tinysrgb&w=1600') center 56% / cover no-repeat;
 }
 
+/* Pexels: Lorenzo Manera — modern residential buildings by a lake
+   https://www.pexels.com/photo/modern-residential-buildings-by-a-serene-lake-30433829/ */
 #rmGuide .rm-district-image.eastbrook {
   background:
-    linear-gradient(135deg, rgba(30,40,46,.05), rgba(30,40,46,.24)),
-    radial-gradient(ellipse at 58% 52%, #87afbd 0 17%, transparent 18%),
-    repeating-linear-gradient(25deg, transparent 0 25px, rgba(255,255,255,.22) 26px 29px),
-    linear-gradient(145deg, #b9c7b0, #ccd1c8 44%, #a9b99e 100%);
+    linear-gradient(135deg, rgba(30,40,46,.08), rgba(30,40,46,.30)),
+    url('https://images.pexels.com/photos/30433829/pexels-photo-30433829.jpeg?auto=compress&cs=tinysrgb&w=1600') center 52% / cover no-repeat;
 }
 
-/* ---------- Nuevos lugares: fondos cartográficos/ambientales ---------- */
+/* ---------- Nuevos lugares: fotografías Pexels ---------- */
+/* Pexels: BAE JUN — Gdańsk waterfront / Maritime Museum
+   https://www.pexels.com/photo/historic-waterfront-in-gdansk-with-maritime-museum-37302564/ */
 #rmGuide .maritime-museum .rm-landmark-image,
 #rmGuide .maritime-museum-card .rm-place-image {
-  background: linear-gradient(150deg, rgba(29,56,69,.18), rgba(29,56,69,.5)), linear-gradient(35deg, #b9c7c8 0 42%, #708f9a 43% 63%, #c6af91 64% 100%);
+  background:
+    linear-gradient(150deg, rgba(29,56,69,.12), rgba(29,56,69,.44)),
+    url('https://images.pexels.com/photos/37302564/pexels-photo-37302564.jpeg?auto=compress&cs=tinysrgb&w=1400') center / cover no-repeat;
 }
 
+/* Pexels: Jasmin Kaemmerer — historic library, Amsterdam
+   https://www.pexels.com/photo/interior-of-a-library-19238157/ */
 #rmGuide .central-library .rm-landmark-image,
 #rmGuide .central-library-card .rm-place-image {
-  background: linear-gradient(135deg, rgba(60,48,39,.12), rgba(60,48,39,.4)), repeating-linear-gradient(90deg, #cabba5 0 12px, #9f8d79 13px 17px, #d5c8b7 18px 31px);
+  background:
+    linear-gradient(135deg, rgba(60,48,39,.10), rgba(60,48,39,.35)),
+    url('https://images.pexels.com/photos/19238157/pexels-photo-19238157.jpeg?auto=compress&cs=tinysrgb&w=1400') center / cover no-repeat;
 }
 
+/* Pexels: incusion — Elephant Gate, Berlin Zoological Garden
+   https://www.pexels.com/photo/the-elephant-gate-of-the-berlin-zoological-garden-9247032/ */
 #rmGuide .bellrose-zoo .rm-landmark-image,
 #rmGuide .bellrose-zoo-card .rm-place-image {
-  background: radial-gradient(circle at 25% 35%, #d6dfc7 0 10%, transparent 11%), radial-gradient(circle at 70% 68%, #8eaa80 0 17%, transparent 18%), linear-gradient(145deg, #c8d6b6, #829c75);
+  background:
+    linear-gradient(145deg, rgba(31,48,31,.08), rgba(31,48,31,.34)),
+    url('https://images.pexels.com/photos/9247032/pexels-photo-9247032.jpeg?auto=compress&cs=tinysrgb&w=1400') center / cover no-repeat;
 }
 
+/* Pexels: Jean-Paul Wettstein — historic stone fort, Brittany
+   https://www.pexels.com/photo/historic-stone-fort-on-brittany-coastline-31691937/ */
 #rmGuide .old-bastion .rm-landmark-image,
 #rmGuide .old-bastion-card .rm-place-image {
-  background: linear-gradient(145deg, rgba(35,34,31,.08), rgba(35,34,31,.38)), repeating-linear-gradient(0deg, #b7ad9d 0 18px, #91897d 19px 21px, #c6bcad 22px 38px);
+  background:
+    linear-gradient(145deg, rgba(35,34,31,.08), rgba(35,34,31,.38)),
+    url('https://images.pexels.com/photos/31691937/pexels-photo-31691937.jpeg?auto=compress&cs=tinysrgb&w=1400') center / cover no-repeat;
 }
 
+/* Pexels: Bert Christiaens — illuminated fairground wheel
+   https://www.pexels.com/photo/ferris-wheel-with-lights-at-night-5555853/ */
 #rmGuide .eastbrook-fair .rm-landmark-image,
 #rmGuide .eastbrook-fair-card .rm-place-image {
-  background: radial-gradient(circle at 50% 42%, transparent 0 21%, rgba(255,255,255,.45) 22% 24%, transparent 25%), conic-gradient(from 10deg at 50% 42%, #c6a37d, #8ea8a7, #c7bd9c, #9b91a8, #c6a37d);
+  background:
+    linear-gradient(145deg, rgba(17,17,24,.02), rgba(17,17,24,.30)),
+    url('https://images.pexels.com/photos/5555853/pexels-photo-5555853.jpeg?auto=compress&cs=tinysrgb&w=1400') center / cover no-repeat;
 }
 
+/* Pexels: Dom Bucci — Bempton Cliffs / North Sea
+   https://www.pexels.com/photo/stunning-chalk-cliffs-overlooking-north-sea-coast-33050274/ */
 #rmGuide .kearney-lookout .rm-landmark-image,
 #rmGuide .kearney-lookout-card .rm-place-image {
-  background: linear-gradient(to bottom, #9fbcc8 0 38%, #c6d0c0 39% 49%, #70856b 50% 68%, #536b59 69% 100%);
+  background:
+    linear-gradient(145deg, rgba(31,47,53,.04), rgba(31,47,53,.30)),
+    url('https://images.pexels.com/photos/33050274/pexels-photo-33050274.jpeg?auto=compress&cs=tinysrgb&w=1400') center 45% / cover no-repeat;
 }
 
 /* Give visual cards a little more breathing room now that there are more. */

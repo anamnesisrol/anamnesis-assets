@@ -33,6 +33,11 @@
   line-height: 1.72;
 }
 
+/* Separación visual entre la etiqueta en negrita y el texto de cada detalle. */
+#rmGuide .rm-details p > strong:first-child {
+  margin-right: .45em;
+}
+
 /* Datos rápidos y textos secundarios */
 #rmGuide .rm-facts span,
 #rmGuide .rm-calendar span,

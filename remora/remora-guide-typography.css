@@ -1,48 +1,40 @@
-/* RÉMORA · tipografía y legibilidad global
+/* RÉMORA · ajuste tipográfico
    Cargar DESPUÉS de remora-guide.css, remora-history.css y remora-guide-expansion.css.
-   Los selectores de contenedor son deliberadamente amplios para resistir el
-   reordenamiento de etiquetas que puede hacer el editor de Foroactivo. */
+   Solo normaliza el TEXTO GENERAL; títulos, pestañas, botones y etiquetas conservan su escala propia. */
 
 #rmGuide {
-  font-size: 17px !important;
-  line-height: 1.65 !important;
-}
-
-/* ==================================================
-   TEXTO CORRIDO — escala común y legible
-   ================================================== */
-#rmGuide p,
-#rmGuide .rm-intro p,
-#rmGuide .rm-location-grid p,
-#rmGuide .rm-location-note,
-#rmGuide .rm-history-layout p,
-#rmGuide .rm-history-steps p,
-#rmGuide .rm-truth p,
-#rmGuide .rm-transit p,
-#rmGuide .rm-districts p,
-#rmGuide .rm-details p,
-#rmGuide .rm-hospital p,
-#rmGuide .rm-landmarks p,
-#rmGuide .rm-directory p,
-#rmGuide .rm-place-grid p,
-#rmGuide .rm-npcs p,
-#rmGuide .rm-accordion p,
-#rmGuide .rm-event-list p,
-#rmGuide .rm-offrole p,
-#rmGuide .rm-footer p {
-  font-size: 16px !important;
-  line-height: 1.65 !important;
-}
-
-/* Los textos explicativos junto a los grandes encabezados pueden ser apenas
-   más compactos, pero siguen siendo perfectamente legibles. */
-#rmGuide .rm-section-head > p {
-  font-size: 15px !important;
   line-height: 1.6 !important;
 }
 
-/* Negritas: mismo tamaño que el párrafo y un espacio real antes del texto
-   que venga después. Esto corrige ViviendaPisos, NegociosHostelería, etc. */
+/* ==================================================
+   TEXTO GENERAL — 11px parejo
+   ================================================== */
+#rmGuide p,
+#rmGuide .rm-copy,
+#rmGuide .rm-section-head > p,
+#rmGuide .rm-location-body p,
+#rmGuide .rm-location-note,
+#rmGuide .rm-panel p,
+#rmGuide .rm-government p,
+#rmGuide .rm-history-steps p,
+#rmGuide .rm-transit p,
+#rmGuide .rm-district-copy > p,
+#rmGuide .rm-details p,
+#rmGuide .rm-hospital p,
+#rmGuide .rm-landmarks p,
+#rmGuide .rm-place-grid p,
+#rmGuide .rm-place p,
+#rmGuide .rm-npcs p,
+#rmGuide .rm-accordion p,
+#rmGuide .rm-event-list p,
+#rmGuide .rm-event-note,
+#rmGuide .rm-offrole p,
+#rmGuide .rm-footer p {
+  font-size: 11px !important;
+  line-height: 1.65 !important;
+}
+
+/* Las negritas dentro del cuerpo conservan el mismo tamaño y llevan separación real. */
 #rmGuide p strong {
   font-size: inherit !important;
   line-height: inherit !important;
@@ -59,18 +51,8 @@
 }
 
 /* ==================================================
-   UBICACIÓN / HISTORIA / MOVILIDAD
+   ELEMENTOS DE INTERFAZ — no se igualan a 11px
    ================================================== */
-#rmGuide .rm-location-body p,
-#rmGuide .rm-panel p,
-#rmGuide .rm-government p,
-#rmGuide .rm-history-steps p,
-#rmGuide .rm-transit p,
-#rmGuide .rm-hospital p {
-  font-size: 16px !important;
-  line-height: 1.65 !important;
-}
-
 #rmGuide .rm-history-steps h3 {
   font-size: 18px !important;
   line-height: 1.3 !important;
@@ -84,70 +66,29 @@
   line-height: 1.45 !important;
 }
 
-/* ==================================================
-   DISTRITOS
-   ================================================== */
-#rmGuide .rm-district-copy > p,
-#rmGuide .rm-details p {
-  font-size: 16px !important;
-  line-height: 1.65 !important;
-}
-
 #rmGuide .rm-subzones span,
-#rmGuide .rm-level {
+#rmGuide .rm-level,
+#rmGuide .rm-tablist [role="tab"] {
   font-size: 12px !important;
   line-height: 1.3 !important;
 }
 
-#rmGuide .rm-tablist [role="tab"] {
-  font-size: 12px !important;
-  line-height: 1.25 !important;
-}
-
-/* ==================================================
-   LUGARES DISTINTIVOS
-   ================================================== */
-#rmGuide .rm-landmarks p,
-#rmGuide .rm-landmarks article p {
-  font-size: 16px !important;
-  line-height: 1.6 !important;
-}
-
 #rmGuide .rm-landmarks h3,
-#rmGuide .rm-landmarks article h3 {
+#rmGuide .rm-place-grid h3,
+#rmGuide .rm-place h3 {
   font-size: 20px !important;
   line-height: 1.28 !important;
 }
 
-#rmGuide .rm-landmarks > span,
-#rmGuide .rm-landmarks article > span {
-  font-size: 12px !important;
-  line-height: 1.3 !important;
-}
-
-/* ==================================================
-   DIRECTORIO
-   ================================================== */
-#rmGuide .rm-place-grid p,
-#rmGuide .rm-place p {
-  font-size: 15px !important;
-  line-height: 1.6 !important;
-}
-
-#rmGuide .rm-place-grid h3,
-#rmGuide .rm-place h3 {
-  font-size: 20px !important;
-  line-height: 1.3 !important;
-}
-
-#rmGuide .rm-place-grid > span,
+#rmGuide .rm-landmarks article > span,
 #rmGuide .rm-place > span:first-of-type,
-#rmGuide .rm-place > span:last-child {
+#rmGuide .rm-place > span:last-child,
+#rmGuide .rm-npcs article > span:first-child,
+#rmGuide .rm-npcs article > span:last-child {
   font-size: 12px !important;
   line-height: 1.35 !important;
 }
 
-/* Los controles estaban desproporcionados: cajas grandes con texto diminuto. */
 #rmGuide .rm-filters button {
   font-size: 13px !important;
   line-height: 1.2 !important;
@@ -161,28 +102,6 @@
   min-height: 38px !important;
 }
 
-/* ==================================================
-   NPC / VIDA COTIDIANA / EVENTOS
-   ================================================== */
-#rmGuide .rm-npcs p,
-#rmGuide .rm-accordion p,
-#rmGuide .rm-event-list p,
-#rmGuide .rm-event-note,
-#rmGuide .rm-offrole p,
-#rmGuide .rm-footer p {
-  font-size: 16px !important;
-  line-height: 1.65 !important;
-}
-
-#rmGuide .rm-npcs article > span:first-child,
-#rmGuide .rm-npcs article > span:last-child {
-  font-size: 12px !important;
-  line-height: 1.4 !important;
-}
-
-/* ==================================================
-   NAVEGACIÓN / ETIQUETAS / BOTONES
-   ================================================== */
 #rmGuide .rm-brand {
   font-size: 13px !important;
 }
@@ -206,66 +125,55 @@
 }
 
 #rmGuide .rm-map-hint {
-  font-size: 14px !important;
+  font-size: 11px !important;
 }
 
 #rmGuide .rm-map-dialog figcaption {
-  font-size: 13px !important;
+  font-size: 11px !important;
 }
 
-/* ==================================================
-   CITA FINAL
-   La frase manuscrita debe acompañar, no dominar toda la página.
-   ================================================== */
+/* Cita final: conserva personalidad sin ocupar media pantalla. */
 #rmGuide .rm-quote {
-  font-size: 20px !important;
-  line-height: 1.4 !important;
+  font-size: 18px !important;
+  line-height: 1.35 !important;
 }
 
 #rmGuide .rm-quote > span:first-child {
-  font-size: 30px !important;
+  font-size: 26px !important;
   line-height: 1 !important;
 }
 
 #rmGuide .rm-quote > span:last-child {
   display: block !important;
-  margin-top: 10px !important;
-  font-size: 26px !important;
-  line-height: 1.25 !important;
+  margin-top: 8px !important;
+  font-size: 22px !important;
+  line-height: 1.2 !important;
 }
 
-/* ==================================================
-   MÓVIL — el cuerpo no vuelve a hacerse diminuto
-   ================================================== */
+/* En móvil el cuerpo sigue siendo 11px; no vuelve a inflarse. */
 @media (max-width: 760px) {
-  #rmGuide,
   #rmGuide p,
-  #rmGuide .rm-location-grid p,
-  #rmGuide .rm-history-layout p,
+  #rmGuide .rm-copy,
+  #rmGuide .rm-section-head > p,
+  #rmGuide .rm-location-body p,
+  #rmGuide .rm-location-note,
+  #rmGuide .rm-panel p,
+  #rmGuide .rm-government p,
   #rmGuide .rm-history-steps p,
   #rmGuide .rm-transit p,
-  #rmGuide .rm-districts p,
+  #rmGuide .rm-district-copy > p,
   #rmGuide .rm-details p,
   #rmGuide .rm-hospital p,
   #rmGuide .rm-landmarks p,
+  #rmGuide .rm-place-grid p,
+  #rmGuide .rm-place p,
   #rmGuide .rm-npcs p,
   #rmGuide .rm-accordion p,
   #rmGuide .rm-event-list p,
-  #rmGuide .rm-offrole p {
-    font-size: 16px !important;
-  }
-
-  #rmGuide .rm-place-grid p,
-  #rmGuide .rm-place p,
-  #rmGuide .rm-section-head > p {
-    font-size: 15px !important;
-  }
-
-  #rmGuide .rm-quote {
-    font-size: 18px !important;
-  }
-
-  #rmGuide .rm-quote > span:last-child {
-    font-size: 22px !important;
+  #rmGuide .rm-event-note,
+  #rmGuide .rm-offrole p,
+  #rmGuide .rm-footer p {
+    font-size: 11px !important;
+    line-height: 1.65 !important;
   }
 }

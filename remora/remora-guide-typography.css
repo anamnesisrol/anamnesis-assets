@@ -1,0 +1,107 @@
+/* RÉMORA · ajuste tipográfico
+   Carga después de remora-guide.css, remora-history.css y remora-guide-expansion.css. */
+
+/* Base: la guía original parte de 14px; 16px evita que los textos corridos
+   se pierdan en pantallas grandes sin alterar la escala de los títulos. */
+#rmGuide {
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+/* Texto corrido y descriptivo */
+#rmGuide .rm-hero-copy > p:not(.rm-kicker),
+#rmGuide .rm-copy,
+#rmGuide .rm-section-head > p,
+#rmGuide .rm-location-body p,
+#rmGuide .rm-location-note,
+#rmGuide .rm-panel p,
+#rmGuide .rm-government p,
+#rmGuide .rm-history-steps p,
+#rmGuide .rm-transit p,
+#rmGuide .rm-district-copy > p,
+#rmGuide .rm-details p,
+#rmGuide .rm-hospital p,
+#rmGuide .rm-landmarks article p,
+#rmGuide .rm-place p,
+#rmGuide .rm-npcs article p,
+#rmGuide .rm-accordion p,
+#rmGuide .rm-event-list p,
+#rmGuide .rm-event-note,
+#rmGuide .rm-offrole p,
+#rmGuide .rm-footer p {
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+/* Datos rápidos y textos secundarios */
+#rmGuide .rm-facts span,
+#rmGuide .rm-calendar span,
+#rmGuide .rm-ticket span,
+#rmGuide .rm-place > span:last-child,
+#rmGuide .rm-npcs article > span:last-child {
+  font-size: 13px;
+}
+
+/* Etiquetas pequeñas, navegación y controles */
+#rmGuide .rm-brand {
+  font-size: 12px;
+}
+
+#rmGuide .rm-nav {
+  font-size: 11px;
+}
+
+#rmGuide .rm-kicker,
+#rmGuide .rm-eyebrow {
+  font-size: 11px;
+}
+
+#rmGuide .rm-tablist [role="tab"],
+#rmGuide .rm-filters button,
+#rmGuide .rm-level,
+#rmGuide .rm-button,
+#rmGuide .rm-search input {
+  font-size: 12px;
+}
+
+#rmGuide .rm-subzones span,
+#rmGuide .rm-landmarks article > span,
+#rmGuide .rm-place > span:first-of-type,
+#rmGuide .rm-npcs article > span:first-child {
+  font-size: 11px;
+}
+
+#rmGuide .rm-map-zoom {
+  font-size: 11px;
+}
+
+#rmGuide .rm-map-hint {
+  font-size: 14px;
+}
+
+#rmGuide .rm-map-dialog figcaption {
+  font-size: 13px;
+}
+
+/* En móvil no reducimos de nuevo el cuerpo: mantenemos legibilidad. */
+@media (max-width: 760px) {
+  #rmGuide {
+    font-size: 16px;
+  }
+
+  #rmGuide .rm-hero-copy > p:not(.rm-kicker),
+  #rmGuide .rm-copy,
+  #rmGuide .rm-section-head > p,
+  #rmGuide .rm-location-body p,
+  #rmGuide .rm-panel p,
+  #rmGuide .rm-district-copy > p,
+  #rmGuide .rm-details p,
+  #rmGuide .rm-landmarks article p,
+  #rmGuide .rm-place p,
+  #rmGuide .rm-npcs article p,
+  #rmGuide .rm-accordion p,
+  #rmGuide .rm-event-list p,
+  #rmGuide .rm-offrole p {
+    font-size: 15px;
+  }
+}

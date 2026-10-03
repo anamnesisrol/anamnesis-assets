@@ -1,0 +1,268 @@
+/* RÉMORA · expansión de la guía
+   Extiende remora-guide.css sin modificar la hoja base.
+   Distritos nuevos, subzonas, mapa ampliable y tarjetas nuevas. */
+
+#rmGuide .rm-tablist {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#rmGuide .rm-tablist [role="tab"] {
+  flex: 1 1 145px;
+  min-width: 0;
+}
+
+#rmGuide .rm-subzones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 15px 0 4px;
+}
+
+#rmGuide .rm-subzones span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 10px;
+  border: 1px solid color-mix(in srgb, var(--accent, #e1914c) 32%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent, #e1914c) 8%, transparent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* ---------- Mapa territorial ampliable ---------- */
+#rmGuide .rm-location-card-territory {
+  position: relative;
+}
+
+#rmGuide .rm-map-thumb {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+#rmGuide .rm-location-map-compact {
+  position: relative;
+  overflow: hidden;
+  max-height: 320px;
+  background: rgba(0,0,0,.035);
+}
+
+#rmGuide .rm-location-map-compact img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  display: block;
+  transition: transform .25s ease, filter .25s ease;
+}
+
+#rmGuide .rm-map-thumb:hover .rm-location-map-compact img,
+#rmGuide .rm-map-thumb:focus-visible .rm-location-map-compact img {
+  transform: scale(1.018);
+  filter: contrast(1.025);
+}
+
+#rmGuide .rm-map-zoom {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(22, 27, 31, .84);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+#rmGuide .rm-map-hint {
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+#rmGuide .rm-map-hint a {
+  color: var(--accent, #e1914c);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#rmGuide .rm-map-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+#rmGuide .rm-map-lightbox:target {
+  display: flex;
+}
+
+#rmGuide .rm-map-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 16, 20, .82);
+  backdrop-filter: blur(7px);
+}
+
+#rmGuide .rm-map-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, 94vw);
+  max-height: 92vh;
+  margin: 0;
+  padding: 14px;
+  overflow: auto;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 18px;
+  background: #f6f4ef;
+  box-shadow: 0 24px 70px rgba(0,0,0,.38);
+}
+
+#rmGuide .rm-map-dialog img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 11px;
+}
+
+#rmGuide .rm-map-dialog figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 20px;
+  padding: 12px 4px 2px;
+  color: #26313a;
+  font-size: 11px;
+}
+
+#rmGuide .rm-map-dialog figcaption strong {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+}
+
+#rmGuide .rm-map-close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(20,24,28,.85);
+  color: #fff;
+  font-size: 25px;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 5px 18px rgba(0,0,0,.2);
+}
+
+/* ---------- Distritos nuevos ---------- */
+#rmGuide .rm-district-image.coast {
+  background:
+    linear-gradient(135deg, rgba(20,35,44,.08), rgba(20,35,44,.28)),
+    radial-gradient(circle at 75% 26%, rgba(255,255,255,.48), transparent 22%),
+    linear-gradient(155deg, #c8d6d3 0 33%, #8eaeba 34% 58%, #e3d0aa 59% 67%, #aabfa8 68% 100%);
+}
+
+#rmGuide .rm-district-image.eastbrook {
+  background:
+    linear-gradient(135deg, rgba(30,40,46,.05), rgba(30,40,46,.24)),
+    radial-gradient(ellipse at 58% 52%, #87afbd 0 17%, transparent 18%),
+    repeating-linear-gradient(25deg, transparent 0 25px, rgba(255,255,255,.22) 26px 29px),
+    linear-gradient(145deg, #b9c7b0, #ccd1c8 44%, #a9b99e 100%);
+}
+
+/* ---------- Nuevos lugares: fondos cartográficos/ambientales ---------- */
+#rmGuide .maritime-museum .rm-landmark-image,
+#rmGuide .maritime-museum-card .rm-place-image {
+  background: linear-gradient(150deg, rgba(29,56,69,.18), rgba(29,56,69,.5)), linear-gradient(35deg, #b9c7c8 0 42%, #708f9a 43% 63%, #c6af91 64% 100%);
+}
+
+#rmGuide .central-library .rm-landmark-image,
+#rmGuide .central-library-card .rm-place-image {
+  background: linear-gradient(135deg, rgba(60,48,39,.12), rgba(60,48,39,.4)), repeating-linear-gradient(90deg, #cabba5 0 12px, #9f8d79 13px 17px, #d5c8b7 18px 31px);
+}
+
+#rmGuide .bellrose-zoo .rm-landmark-image,
+#rmGuide .bellrose-zoo-card .rm-place-image {
+  background: radial-gradient(circle at 25% 35%, #d6dfc7 0 10%, transparent 11%), radial-gradient(circle at 70% 68%, #8eaa80 0 17%, transparent 18%), linear-gradient(145deg, #c8d6b6, #829c75);
+}
+
+#rmGuide .old-bastion .rm-landmark-image,
+#rmGuide .old-bastion-card .rm-place-image {
+  background: linear-gradient(145deg, rgba(35,34,31,.08), rgba(35,34,31,.38)), repeating-linear-gradient(0deg, #b7ad9d 0 18px, #91897d 19px 21px, #c6bcad 22px 38px);
+}
+
+#rmGuide .eastbrook-fair .rm-landmark-image,
+#rmGuide .eastbrook-fair-card .rm-place-image {
+  background: radial-gradient(circle at 50% 42%, transparent 0 21%, rgba(255,255,255,.45) 22% 24%, transparent 25%), conic-gradient(from 10deg at 50% 42%, #c6a37d, #8ea8a7, #c7bd9c, #9b91a8, #c6a37d);
+}
+
+#rmGuide .kearney-lookout .rm-landmark-image,
+#rmGuide .kearney-lookout-card .rm-place-image {
+  background: linear-gradient(to bottom, #9fbcc8 0 38%, #c6d0c0 39% 49%, #70856b 50% 68%, #536b59 69% 100%);
+}
+
+/* Give visual cards a little more breathing room now that there are more. */
+#rmGuide .rm-landmarks {
+  align-items: stretch;
+}
+
+#rmGuide .rm-landmarks > article,
+#rmGuide .rm-place-grid > article {
+  min-width: 0;
+}
+
+#rmGuide[data-theme="dark"] .rm-map-dialog {
+  background: #24282b;
+}
+
+#rmGuide[data-theme="dark"] .rm-map-dialog figcaption {
+  color: #ece8df;
+}
+
+@media (max-width: 760px) {
+  #rmGuide .rm-tablist [role="tab"] {
+    flex-basis: calc(50% - 8px);
+  }
+  #rmGuide .rm-location-map-compact,
+  #rmGuide .rm-location-map-compact img {
+    height: 240px;
+  }
+  #rmGuide .rm-map-lightbox {
+    padding: 12px;
+  }
+  #rmGuide .rm-map-dialog {
+    width: 96vw;
+    padding: 8px;
+    border-radius: 13px;
+  }
+  #rmGuide .rm-map-close {
+    top: 14px;
+    right: 14px;
+  }
+}
+
+@media (max-width: 460px) {
+  #rmGuide .rm-tablist [role="tab"] {
+    flex-basis: 100%;
+  }
+  #rmGuide .rm-subzones {
+    gap: 5px;
+  }
+  #rmGuide .rm-subzones span {
+    font-size: 9px;
+  }
+}

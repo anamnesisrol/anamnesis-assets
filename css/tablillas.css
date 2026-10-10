@@ -10904,3 +10904,176 @@ body.theme-dark .am-starter-mini .asm-info::before {
     text-align: left;
   }
 }
+
+
+/* RÉMORA MOBILE · HISTORIAL DE CHATS */
+.am-phone-chat-history .am-phone-screen{
+  background:linear-gradient(180deg,var(--am-blue-soft),var(--am-phone-screen) 32%);
+}
+.am-history-header{
+  min-height:54px;
+  padding:14px 16px 10px;
+  display:grid;
+  grid-template-columns:28px minmax(0,1fr) 28px;
+  gap:8px;
+  align-items:center;
+  border-bottom:1px solid var(--am-line);
+  flex:0 0 auto;
+}
+.am-history-header>span{
+  color:var(--am-text-soft);
+  font-size:20px;
+  text-align:center;
+}
+.am-history-header strong{
+  min-width:0;
+  color:var(--am-text);
+  font-size:15px;
+  font-weight:800;
+  text-align:center;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.am-history-search{
+  min-height:34px;
+  margin:11px 14px 8px;
+  padding:0 11px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  border:1px solid var(--am-line);
+  border-radius:12px;
+  background:var(--am-surface-glass);
+  color:var(--am-text-faint);
+  flex:0 0 auto;
+}
+.am-history-search>span:first-child{font-size:17px}
+.am-history-search>span:last-child{
+  min-width:0;
+  overflow:hidden;
+  font-size:9px;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.am-history-summary{
+  padding:5px 16px 8px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  color:var(--am-text-soft);
+  flex:0 0 auto;
+}
+.am-history-summary strong{
+  color:var(--am-text);
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.am-history-summary span{font-size:8px}
+.am-history-list{
+  min-height:0;
+  padding:0 12px 18px;
+  overflow-y:auto;
+  flex:1 1 auto;
+}
+.am-history-item{
+  min-width:0;
+  padding:11px 4px;
+  display:grid;
+  grid-template-columns:43px minmax(0,1fr) 68px;
+  gap:10px;
+  align-items:center;
+  border-bottom:1px solid var(--am-line);
+  color:var(--am-text);
+  text-decoration:none!important;
+  transition:background .18s ease,transform .18s ease;
+}
+.am-history-item:hover{
+  background:color-mix(in srgb,var(--am-blue-soft) 34%,transparent);
+}
+.am-history-avatar{
+  width:43px;
+  height:43px;
+  border:1px solid var(--am-line-strong);
+  border-radius:50%;
+  overflow:hidden;
+}
+.am-history-avatar img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+.am-history-data{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.am-history-data strong,
+.am-history-data b,
+.am-history-data span{
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.am-history-data strong{
+  color:var(--am-text);
+  font-size:10px;
+  font-weight:800;
+}
+.am-history-data b{
+  color:var(--am-text-soft);
+  font-size:8px;
+  font-weight:700;
+}
+.am-history-data span{
+  color:var(--am-text-faint);
+  font-size:8px;
+}
+.am-history-meta{
+  min-width:0;
+  display:grid;
+  justify-items:end;
+  gap:4px;
+}
+.am-history-meta small{
+  color:var(--am-text-faint);
+  font-size:7px;
+  font-weight:700;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.am-history-meta em{
+  padding:3px 6px;
+  border:1px solid var(--am-line);
+  border-radius:999px;
+  font-size:7px;
+  font-style:normal;
+  font-weight:800;
+  line-height:1;
+  letter-spacing:.04em;
+}
+.am-history-meta>span{
+  color:var(--am-text-faint);
+  font-size:13px;
+}
+.am-history-status-active .am-history-meta em{
+  background:color-mix(in srgb,var(--am-sage) 22%,var(--am-surface));
+  color:color-mix(in srgb,var(--am-green) 78%,var(--am-text));
+}
+.am-history-status-closed .am-history-meta em{
+  background:color-mix(in srgb,var(--am-blue) 22%,var(--am-surface));
+  color:color-mix(in srgb,var(--am-blue) 72%,var(--am-text));
+}
+.am-history-status-archived .am-history-meta em{
+  background:color-mix(in srgb,var(--am-lilac) 24%,var(--am-surface));
+  color:color-mix(in srgb,var(--am-lilac) 70%,var(--am-text));
+}
+.am-maxi-icon-chathistory>span{background:var(--am-sage)}
+.am-phone-maxi .am-maxi-app.am-phone-chat-history{
+  background:linear-gradient(180deg,var(--am-blue-soft),var(--am-phone-screen) 32%);
+}

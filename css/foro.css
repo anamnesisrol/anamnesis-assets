@@ -1394,7 +1394,7 @@ body.theme-dark .ana-post-paper {
     var(--bg-panel);
 }
 body.theme-dark .ana-post-head {
-  background: var(--accent-sage);
+  background: color-mix(in srgb, var(--accent-sage) 78%, #000 22%);
 }
 body.theme-dark .ana-post-grid {
   background: color-mix(in srgb, var(--bg-main) 90%, var(--bg-panel) 10%);

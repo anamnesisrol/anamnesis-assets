@@ -742,16 +742,7 @@ body.theme-dark .ana-post-paper{background:var(--bg-panel)}
   filter: brightness(0) invert(1);
 }
 .ana-post-actions li:hover{background:rgba(255,255,255,0.16);border-color:var(--accent-warm)}
-.ana-post-grid {
-  position: relative;
-  z-index: 3;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 380px;
-  gap: 0;
-  padding: 0;
-  align-items: stretch;
-  background: color-mix(in srgb, var(--bg-main) 88%, var(--bg-panel) 12%);
-}
+.ana-post-grid{position:relative;z-index:3;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:0;padding:0;align-items:stretch;background:color-mix(in srgb,var(--bg-main) 88%,var(--bg-panel) 12%);min-width:0}
 .ana-post-main {
   min-width: 0;
   padding: 30px 38px 36px 28px;
@@ -766,14 +757,7 @@ body.theme-dark .ana-post-paper{background:var(--bg-panel)}
   font-size: 1.05em;
   line-height: 1.95;
 }
-.ana-post-message {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0;
-  color: var(--text-main);
-  font-size: 16px;
-  line-height: 1.5;
-}
+.ana-post-message{max-width:760px;margin:0 auto;padding:0;color:var(--text-main);font-size:16px;line-height:1.5;min-width:0}
 .ana-post-content br {
   display: block;
   content: "";
@@ -1339,9 +1323,7 @@ body.theme-dark .ana-author-archive {
 body.theme-dark .ana-post-foot{background:var(--bg-panel)}
 body.theme-dark .ana-post-content blockquote,body.theme-dark .ana-post-content .quote,body.theme-dark .ana-post-content .spoiler,body.theme-dark .ana-post-content dl.codebox{background:var(--bg-panel)}
 @media (max-width: 1180px) {
-  .ana-post-grid {
-    grid-template-columns: minmax(0, 1fr) 340px;
-  }
+  .ana-post-grid{grid-template-columns:minmax(0,1fr) 340px;min-width:0}
   .ana-author-avatar,
   .ana-author-archive {
     width: 280px;
@@ -1350,72 +1332,8 @@ body.theme-dark .ana-post-content blockquote,body.theme-dark .ana-post-content .
     height: 374px;
   }
 }
-@media (max-width: 900px) {
-  .ana-post-head,
-  .ana-post-foot {
-    grid-template-columns: 1fr;
-  }
-  .ana-post-grid {
-    grid-template-columns: 1fr;
-  }
-  .ana-post-main {
-    padding: 28px 24px;
-  }
-  .ana-post-side {
-    padding: 28px 24px;
-    border-left: 0 !important;
-    border-top: 1px solid var(--line-soft) !important;
-  }
-  .ana-author-avatar,
-  .ana-author-archive {
-    width: min(300px, 100%);
-  }
-  .ana-author-avatar {
-    height: 400px;
-  }
-  .ana-post-data {
-    grid-template-columns: 1fr;
-    border-left: 0;
-  }
-  .ana-post-field {
-    border-right: 0;
-    border-bottom: 1px solid var(--line-soft);
-  }
-}
-@media (max-width: 560px) {
-  .ana-post-paper {
-    padding: 12px;
-  }
-  .ana-post-paper::before {
-    inset: 12px;
-  }
-  .ana-post-head,
-  .ana-post-main,
-  .ana-post-side,
-  .ana-post-foot {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-  .ana-post-head-side {
-    justify-content: flex-end;
-  }
-  .ana-author-avatar {
-    height: 360px;
-  }
-  .ana-post-signer {
-    grid-template-columns: 46px minmax(0, 1fr);
-  }
-  .ana-post-miniimage {
-    width: 46px;
-    height: 46px;
-  }
-	.ana-signature-native{margin:30px auto !important;}
-  .ana-post-signature strong,
-  .ana-post-signature strong a,
-  .ana-post-signature strong span {
-    font-size: 28px;
-  }
-}
+@media(max-width:980px){.ana-post-head,.ana-post-foot{grid-template-columns:1fr}.ana-viewtopic .ana-post-grid{grid-template-columns:minmax(0,1fr)}.ana-post-main{padding:28px 24px}.ana-post-side{padding:28px 24px;border-left:0!important;border-top:1px solid var(--line-soft)!important}.ana-author-avatar,.ana-author-archive{width:min(300px,100%)}.ana-author-avatar{height:400px}.ana-post-data{grid-template-columns:1fr;border-left:0}.ana-post-field{border-right:0;border-bottom:1px solid var(--line-soft)}.ana-viewtopic .ana-post-content{padding:12px 0;text-align:left}.ana-viewtopic .ana-post-content p{text-align:left}.ana-viewtopic .ana-post-message{overflow-wrap:anywhere}}
+@media (max-width:560px){.ana-post-paper{padding:12px}.ana-post-paper::before{inset:12px}.ana-post-head,.ana-post-main,.ana-post-side,.ana-post-foot{padding-left:18px;padding-right:18px}.ana-post-head-side{justify-content:flex-end}.ana-author-avatar{height:360px}.ana-post-signer{grid-template-columns:46px minmax(0,1fr)}.ana-post-miniimage{width:46px;height:46px}.ana-signature-native{margin:30px auto!important}.ana-post-signature strong,.ana-post-signature strong a,.ana-post-signature strong span{font-size:28px}.ana-post-head{padding-left:50px}.ana-post-head::before{left:14px;top:18px;width:22px;height:42px;transform:none;opacity:.45}}
 .ana-viewtopic,
 .ana-viewtopic * {
   box-sizing: border-box;
@@ -1463,19 +1381,7 @@ body.theme-dark .ana-post-content blockquote,body.theme-dark .ana-post-content .
 .ana-topic-navline {
   padding-left: 72px;
 }
-.ana-topic-title {
-  grid-area: title;
-  position: relative;
-  z-index: 2;
-  margin: 0 !important;
-  color: var(--title-color);
-  font-family: var(--font-title);
-  font-size: clamp(15px, 1.5vw, 21px);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
+.ana-topic-title{grid-area:title;position:relative;z-index:2;margin:0!important;color:var(--title-color);font-family:var(--font-title);font-size:clamp(15px,1.5vw,21px);font-weight:400;line-height:1.1;letter-spacing:0.18em;text-transform:uppercase;overflow-wrap:anywhere}
 .ana-topic-title a {
   color: inherit;
   text-decoration: none;
@@ -1592,15 +1498,11 @@ body.theme-dark .ana-topic-button:hover{background:var(--accent-sage);border-col
     flex-wrap: wrap;
     min-width: 0;
   }
-  .ana-topic-button {
-    width: 132px;
-  }
+  .ana-topic-button{width:auto;flex:1 1 120px;max-width:180px;min-width:0}
   .ana-topic-breadcrumbs {
     flex-wrap: wrap;
   }
-  .ana-topic-route {
-    white-space: normal;
-  }
+  .ana-topic-route{white-space:normal;flex-wrap:wrap;overflow-wrap:anywhere}
 }
 .ana-post-content {
   padding: 5% 10%;
@@ -2097,10 +1999,7 @@ body.theme-dark .ana-topic-end-card{background:var(--bg-main)}
   max-width: none !important;
   margin: 0 !important;
 }
-.sceditor-container iframe,
-.sceditor-container textarea {
-  font-size: 14px !important;
-}
+.ana-quick-reply-inner .sceditor-container iframe,.ana-quick-reply-inner .sceditor-container textarea{font-size:14px!important}
 .ana-quick-reply-inner .sceditor-container {
   background: var(--bg-panel) !important;
   border: 1px solid var(--line) !important;
@@ -2123,22 +2022,7 @@ body.theme-dark .ana-topic-end-card{background:var(--bg-main)}
 .ana-quick-reply-inner .sceditor-button div {
   opacity: 0.96;
 }
-.sceditor-button {
-  -moz-background-clip: padding;
-  -moz-border-radius: 3px;
-  -webkit-background-clip: padding-box;
-  -webkit-border-radius: 3px;
-  background-clip: padding-box;
-  border-radius: 3px;
-  cursor: pointer;
-  cursor: pointer;
-  float: left;
-  height: 30px !important;
-  padding: 3px 5px;
-  text-indent: -9999px;
-  width: 30px !important;
-  border: solid 1px var(--line-soft);
-}
+.ana-quick-reply-inner .sceditor-button{-moz-background-clip:padding;-moz-border-radius:3px;-webkit-background-clip:padding-box;-webkit-border-radius:3px;background-clip:padding-box;border-radius:3px;cursor:pointer;cursor:pointer;float:left;height:30px!important;padding:3px 5px;text-indent:-9999px;width:30px!important;border:solid 1px var(--line-soft)}
 .ana-quick-reply-inner iframe,
 .ana-quick-reply-inner textarea {
   width: 100% !important;
@@ -2213,7 +2097,7 @@ body.theme-dark .ana-quick-reply-inner .sceditor-toolbar {
 body.theme-dark .ana-topic-end-tools::before {
   opacity: 0.2;
 }
-@media (max-width: 900px) {
+@media(max-width:980px) {
   .ana-topic-end-grid {
     grid-template-columns: 1fr;
   }

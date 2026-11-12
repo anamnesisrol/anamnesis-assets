@@ -1393,9 +1393,6 @@ body.theme-dark .ana-post-paper {
     linear-gradient(135deg, rgba(255, 255, 255, 0.035), transparent 48%),
     var(--bg-panel);
 }
-body.theme-dark .ana-post-head {
-  background: color-mix(in srgb, var(--accent-sage) 78%, #000 22%);
-}
 body.theme-dark .ana-post-grid {
   background: color-mix(in srgb, var(--bg-main) 90%, var(--bg-panel) 10%);
 }

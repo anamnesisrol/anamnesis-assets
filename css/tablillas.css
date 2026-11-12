@@ -1568,6 +1568,7 @@ body.theme-dark .expd-admin-item{background:color-mix(in srgb,var(--bg-main) 88%
   height:110px;
   overflow-y:auto;
 }
+body.theme-dark .expd-admin-value{color:var(--accent-ink)}
 .expd-admin-copy {
   display: block;
   margin-top: 9px;

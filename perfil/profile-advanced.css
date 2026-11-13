@@ -154,3 +154,10 @@ body.theme-dark .prf-actions::before{opacity:.16;}
 /* V2.5 · ancho contenido y centrado en el cuerpo del foro */
 .prf-wrap{position:relative;width:calc(100% - 56px);max-width:1120px;margin:0 auto 30px;min-width:0;}
 @media(max-width:760px){.prf-wrap{width:100%;max-width:100%;}}
+
+/* V2.6 · Estadísticas sin duplicados: acceso compacto en la columna lateral */
+.prf-stats-action-only{min-width:0;}
+.prf-stats-action-only .prf-stats-link{display:grid;width:100%;margin:0;min-height:42px;grid-template-columns:22px minmax(0,1fr) 20px;gap:10px;align-items:center;text-align:center;background:var(--accent-sage)!important;border-color:var(--accent-sage)!important;color:#fff!important;}
+.prf-stats-action-only .prf-stats-link:hover{background:var(--accent-rose)!important;border-color:var(--accent-rose)!important;}
+.prf-stats-action-only .prf-stats-link .material-symbols-outlined{color:#fff!important;}
+.prf-summary-row[data-summary="ultima-visita"] .prf-summary-value{overflow-wrap:anywhere;}

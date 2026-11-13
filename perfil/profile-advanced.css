@@ -90,3 +90,31 @@ body.theme-dark .prf-hero:before,body.theme-dark .prf-content:before,body.theme-
  .prf-sheet-placeholder>p,.prf-sheet-placeholders {max-width:100%;}
  .prf-sheet-note {top:auto;bottom:18px;right:20px;width:125px;min-height:90px;padding-top:18px;font-size:18px;}
 }
+
+/* ANAMNESIS · Perfil avanzado V2.1 · Ajustes de composición */
+/* Las tipografías son exclusivamente las variables globales del foro. */
+.prf-name{font-family:var(--font-title);font-style:italic;font-weight:600;letter-spacing:.018em;line-height:1.12;overflow-wrap:break-word;}
+.prf-primary{display:flex;flex-direction:column;align-items:stretch;gap:16px;}
+.prf-primary>.prf-correspondence{margin-top:0;}
+.prf-sheet-placeholder{min-height:450px;flex:none;padding:32px 34px 36px;}
+.prf-sheet-placeholders{margin-top:34px;gap:24px;max-width:68%;}
+.prf-sheet-placeholder>p{max-width:67%;}
+.prf-biography .prf-info-row{border-bottom:1px dotted var(--line);padding:9px 0;}
+.prf-quick-stat{border-bottom:1px dotted var(--line);padding:12px 0;}
+.prf-correspondence .prf-messages>ol>li{border-bottom:1px dotted var(--line-strong);}
+.prf-relations{padding:24px 20px 25px;min-height:260px;}
+.prf-relations .prf-side-friends{gap:12px;margin-top:22px;align-items:start;}
+.prf-relations .prf-side-friends .friend-block{padding:6px 6px 24px;}
+.prf-relations .prf-side-friends .avatar{aspect-ratio:4/5;}
+.prf-relations .prf-friends-info{margin-top:25px;}
+/* Cinta de las notas: acento rose, no sage. */
+.prf-archive::before,.prf-sheet-note::before{background:color-mix(in srgb,var(--accent-rose) 36%,transparent);border-color:color-mix(in srgb,var(--accent-rose) 25%,transparent);}
+.prf-sheet-note{background:color-mix(in srgb,var(--accent-rose) 16%,#f5eee1 84%);border-color:color-mix(in srgb,var(--accent-rose) 38%,#c4b69a 62%);color:#5b3b44;}
+/* Botones de papel editorial: rellenos, nunca transparentes. */
+.prf-wrap .prf-prizes-link,.prf-wrap .prf-stats-link,.prf-wrap .prf-friends-info button,.prf-wrap .prf-edit-toggle,.prf-wrap .prf-all-friends-close,.prf-wrap .prf-activity-actions button{background:var(--accent-sage)!important;border:1px solid var(--accent-sage)!important;color:#fff!important;box-shadow:none;}
+.prf-wrap .prf-prizes-link:hover,.prf-wrap .prf-stats-link:hover,.prf-wrap .prf-friends-info button:hover,.prf-wrap .prf-edit-toggle:hover,.prf-wrap .prf-all-friends-close:hover,.prf-wrap .prf-activity-actions button:hover{background:var(--accent-rose)!important;border-color:var(--accent-rose)!important;color:#fff!important;}
+.prf-wrap .prf-friends-info button{width:100%;min-height:36px;padding:8px 10px;font-family:var(--font-base);font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;}
+.prf-wrap .prf-stats-link .material-symbols-outlined{color:#fff!important;}
+body.theme-dark .prf-sheet-note{background:color-mix(in srgb,var(--accent-rose) 27%,#eee3d7 73%);color:#51343c;}
+@media(max-width:850px){.prf-relations{min-height:250px;}}
+@media(max-width:600px){.prf-sheet-placeholder{min-height:425px;padding:26px 23px;}.prf-sheet-placeholder>p{max-width:100%;}.prf-sheet-placeholders{max-width:100%;}.prf-relations{min-height:245px;}.prf-name{font-size:clamp(29px,8vw,40px);}}

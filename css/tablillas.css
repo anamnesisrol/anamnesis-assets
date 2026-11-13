@@ -11147,3 +11147,46 @@ body.theme-dark .am-starter-mini .asm-info::before {
 }
 .atb-register .atb-fc-group + .atb-fc-group { margin-top:10px; }
 .atb-register :is(.atb-fc-list,.atb-fc-group,.atb-fc-box) > br { display:none; }
+
+/* Encabezados administrativos: escala según el espacio del mensaje. */
+@container (max-width:420px) {
+  .atb .atb-main .atb-head { display:block; }
+  .atb .atb-main .atb-head::before { width:42px; height:52px; margin-bottom:10px; }
+  .atb .atb-main .atb-head::after { display:none; }
+  .atb .atb-main .atb-head .atb-kicker { margin-bottom:6px; }
+  .fxa-accepted .fxa-head { grid-template-columns:minmax(0,1fr); gap:10px; }
+  .fxa-accepted .fxa-mark { margin:0; }
+}
+.atb .atb-main, .fxa-accepted .fxa-main { container-type:inline-size; }
+.atb .atb-main .atb-head {
+  min-height:0;
+  row-gap:6px;
+  margin-bottom:20px;
+  text-align:left;
+}
+.atb .atb-main .atb-head .atb-title,
+.fxa-accepted .fxa-head .fxa-title {
+  min-width:0;
+  font-size:28px;
+  font-size:clamp(20px,4.5cqi,28px);
+  line-height:1.18;
+  letter-spacing:.065em;
+  text-align:left;
+  text-align-last:left;
+  white-space:normal;
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+.atb .atb-main .atb-head .atb-kicker {
+  font-size:21px;
+  line-height:1.25;
+  text-align:left;
+  text-align-last:left;
+  margin-bottom:0;
+}
+.fxa-accepted .fxa-head :is(.fxa-head-text,.fxa-kicker) { text-align:left; }
+@media (max-width:600px) {
+  .atb .atb-main .atb-head .atb-title,
+  .fxa-accepted .fxa-head .fxa-title { font-size:20px; letter-spacing:.045em; }
+  .atb .atb-main .atb-head .atb-kicker { font-size:18px; }
+}

@@ -146,3 +146,5 @@ body.theme-dark .prf-actions::before{opacity:.16;}
 .prf-actions button.followBtn i,.prf-actions button.followBtn i::before,.prf-actions button.followBtn .fa,.prf-actions button.followBtn .fas,.prf-actions button.followBtn .far,.prf-actions button.followBtn .material-icons,.prf-actions button.followBtn .material-symbols-outlined{color:#fff!important;-webkit-text-fill-color:#fff!important;}
 .prf-actions button.followBtn img{filter:brightness(0) invert(1)!important;}
 .prf-actions button.followBtn svg,.prf-actions button.followBtn svg *{fill:#fff!important;stroke:#fff!important;}
+
+.prf-actions button.followBtn{font-variant-emoji:text!important;}

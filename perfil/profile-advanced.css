@@ -266,3 +266,26 @@ body.theme-dark .prf-archive::before{background:#DBCFB9!important;border-color:#
 .prf-main-v27 .prf-top-row>.prf-biography .prf-inline-edit{margin-top:auto;}
 .prf-main-v27 .prf-top-row>.prf-relations .prf-friends-info{margin-top:auto!important;padding-top:10px;}
 @media(max-width:700px){.prf-main-v27 .prf-top-row{grid-template-columns:minmax(0,1fr)!important;}.prf-main-v27 .prf-top-row>.prf-biography,.prf-main-v27 .prf-top-row>.prf-relations{min-height:0;}}
+
+/* V2.14 · SOLO simetría, enlaces y mini-polaroids */
+.prf-main-v27 .prf-top-row{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;align-items:stretch!important;gap:16px;}
+.prf-main-v27 .prf-top-row>.prf-biography{height:100%!important;min-height:315px;align-self:stretch!important;display:flex;flex-direction:column;}
+.prf-main-v27 .prf-top-row>.prf-relations-column{height:100%;min-height:315px;align-self:stretch;display:flex;flex-direction:column;gap:0;}
+.prf-main-v27 .prf-relations-column>.prf-relations{height:100%!important;min-height:315px;flex:1 1 auto!important;margin:0!important;display:flex;flex-direction:column;}
+.prf-main-v27 .prf-biography>.prf-inline-edit,.prf-main-v27 .prf-relations .prf-friends-info{margin-top:auto;}
+.prf-main-v27 .prf-relations .prf-side-friends{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:start;justify-items:center;gap:7px;}
+.prf-main-v27 .prf-relations .prf-side-friends .friend-block{display:block!important;width:100%;max-width:70px;min-width:0;padding:3px 3px 10px!important;}
+.prf-main-v27 .prf-relations .prf-side-friends .friend-block:nth-child(n+6){display:none!important;}
+.prf-main-v27 .prf-relations .prf-side-friends .avatar{width:100%;height:auto;aspect-ratio:1/1!important;margin:0 0 2px!important;}
+.prf-main-v27 .prf-relations .prf-side-friends .avatar img{width:100%!important;height:100%!important;object-fit:cover!important;}
+.prf-main-v27 .prf-relations .prf-friend-short-name{font-size:10px!important;line-height:1!important;margin-top:2px!important;}
+.prf-main-v27 .prf-bottom-row{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;align-items:stretch!important;gap:16px;}
+.prf-main-v27 .prf-bottom-row>.prf-correspondence,.prf-main-v27 .prf-bottom-row>.prf-awards-section{grid-column:auto!important;width:100%!important;height:100%!important;min-height:315px!important;margin:0!important;align-self:stretch!important;display:flex;flex-direction:column;}
+.prf-main-v27 .prf-bottom-row>.prf-correspondence #prf-wall-target,.prf-main-v27 .prf-bottom-row>.prf-awards-section #prf-awards-target{flex:1 1 auto;}
+.prf-wrap .prf-actions .prf-stats-link.prf-editorial-link,.prf-wrap .prf-section-title .prf-prizes-link.prf-editorial-link,.prf-wrap .prf-relations .prf-friends-info .prf-show-all-friends{display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;gap:5px!important;width:auto!important;min-width:0!important;min-height:26px!important;padding:2px 0!important;margin:0!important;background:transparent!important;border:0!important;border-bottom:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important;color:var(--accent-sage)!important;font-family:var(--font-base);font-size:9px!important;letter-spacing:.08em!important;font-weight:800!important;text-transform:uppercase;text-align:left!important;cursor:pointer;}
+.prf-wrap .prf-actions .prf-stats-link.prf-editorial-link:hover,.prf-wrap .prf-section-title .prf-prizes-link.prf-editorial-link:hover,.prf-wrap .prf-relations .prf-friends-info .prf-show-all-friends:hover{color:var(--accent-rose)!important;border-bottom-color:var(--accent-rose)!important;background:transparent!important;}
+.prf-wrap .prf-actions .prf-stats-link.prf-editorial-link .material-symbols-outlined,.prf-wrap .prf-section-title .prf-prizes-link.prf-editorial-link .material-symbols-outlined{font-size:15px!important;color:inherit!important;}
+.prf-main-v27 .prf-section-title-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px;}
+.prf-main-v27 .prf-section-title-actions h2{flex:1;}
+.prf-main-v27 .prf-relations .prf-friends-info{text-align:right;padding-top:14px;}
+@media(max-width:700px){.prf-main-v27 .prf-top-row,.prf-main-v27 .prf-bottom-row{grid-template-columns:minmax(0,1fr)!important;}.prf-main-v27 .prf-top-row>.prf-biography,.prf-main-v27 .prf-top-row>.prf-relations-column{min-height:0!important;}.prf-main-v27 .prf-relations-column>.prf-relations{min-height:250px!important;}.prf-main-v27 .prf-bottom-row>.prf-correspondence,.prf-main-v27 .prf-bottom-row>.prf-awards-section{min-height:260px!important;}}

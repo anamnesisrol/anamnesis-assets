@@ -148,3 +148,6 @@ body.theme-dark .prf-actions::before{opacity:.16;}
 .prf-actions button.followBtn svg,.prf-actions button.followBtn svg *{fill:#fff!important;stroke:#fff!important;}
 
 .prf-actions button.followBtn{font-variant-emoji:text!important;}
+
+/* V2.4 · El expediente ocupa el ancho real del contenido del foro, sin max-width que cree margenes asimetricos. */
+.prf-wrap{width:100%;max-width:none;margin-left:0;margin-right:0;min-width:0;}

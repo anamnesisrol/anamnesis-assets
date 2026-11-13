@@ -118,3 +118,16 @@ body.theme-dark .prf-hero:before,body.theme-dark .prf-content:before,body.theme-
 body.theme-dark .prf-sheet-note{background:color-mix(in srgb,var(--accent-rose) 27%,#eee3d7 73%);color:#51343c;}
 @media(max-width:850px){.prf-relations{min-height:250px;}}
 @media(max-width:600px){.prf-sheet-placeholder{min-height:425px;padding:26px 23px;}.prf-sheet-placeholder>p{max-width:100%;}.prf-sheet-placeholders{max-width:100%;}.prf-relations{min-height:245px;}.prf-name{font-size:clamp(29px,8vw,40px);}}
+
+/* ANAMNESIS · Perfil · refinamiento de cabecera 2.2 */
+.prf-polaroid::after{font-size:22px;line-height:28px;left:5px;right:5px}
+.prf-name{font-family:var(--font-note);font-size:clamp(38px,4.2vw,57px);font-weight:400;font-style:normal;letter-spacing:.012em;line-height:1.08;text-transform:none;overflow-wrap:normal}
+.prf-actions .followBtn,.prf-actions .followBtn *{color:#fff!important}
+.prf-actions .followBtn::before,.prf-actions .followBtn::after{color:#fff!important}
+.prf-actions .followBtn svg,.prf-actions .followBtn svg *{fill:#fff!important;stroke:#fff!important}
+.prf-actions .followBtn .material-symbols-outlined,.prf-actions .followBtn i{color:#fff!important;-webkit-text-fill-color:#fff!important}
+.prf-archive{background:color-mix(in srgb,var(--accent-sage) 18%,var(--bg-panel) 82%)}
+.prf-archive::before{background:#d7c6ad;border:1px solid #cbb99c;opacity:.75}
+.prf-mini-date{bottom:4px;left:7px;right:7px;height:28px;display:flex;align-items:center;justify-content:center;line-height:1.05;font-size:10px;letter-spacing:0;white-space:normal}
+body.theme-dark .prf-archive{background:color-mix(in srgb,var(--accent-sage) 16%,var(--bg-panel) 84%)}
+@media(max-width:760px){.prf-name{font-size:clamp(34px,8vw,49px)}}

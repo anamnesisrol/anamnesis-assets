@@ -268,5 +268,5 @@ body.theme-dark .generator-wrap .result-text{box-shadow:var(--shadow-panel,0 12p
   --gen-ink:var(--accent-ink,#75414F);
 }
 .generator-wrap .btn-main{background:var(--gen-sage);border-color:var(--gen-sage);color:#fff;}
-.generator-wrap .btn-secondary{background:transparent;border-color:var(--gen-line);color:var(--gen-text);}
+.generator-wrap .btn-secondary{background:var(--gen-rose);border-color:var(--gen-rose);color:#fff!important;-webkit-text-fill-color:#fff!important;}
 .generator-wrap select:focus-visible,.generator-wrap button:focus-visible{outline:2px solid var(--gen-rose);outline-offset:2px;}

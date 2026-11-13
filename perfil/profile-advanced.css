@@ -289,3 +289,63 @@ body.theme-dark .prf-archive::before{background:#DBCFB9!important;border-color:#
 .prf-main-v27 .prf-section-title-actions h2{flex:1;}
 .prf-main-v27 .prf-relations .prf-friends-info{text-align:right;padding-top:14px;}
 @media(max-width:700px){.prf-main-v27 .prf-top-row,.prf-main-v27 .prf-bottom-row{grid-template-columns:minmax(0,1fr)!important;}.prf-main-v27 .prf-top-row>.prf-biography,.prf-main-v27 .prf-top-row>.prf-relations-column{min-height:0!important;}.prf-main-v27 .prf-relations-column>.prf-relations{min-height:250px!important;}.prf-main-v27 .prf-bottom-row>.prf-correspondence,.prf-main-v27 .prf-bottom-row>.prf-awards-section{min-height:260px!important;}}
+
+/* V2.15 · Altura y alineación consistentes entre personajes */
+@media(min-width:701px){
+  .prf-main-v27 .prf-top-row{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-auto-rows:330px;
+    align-items:stretch!important;
+    gap:16px;
+  }
+  .prf-main-v27 .prf-top-row>.prf-biography,
+  .prf-main-v27 .prf-top-row>.prf-relations-column{
+    box-sizing:border-box;
+    height:330px!important;
+    min-height:330px!important;
+    max-height:330px!important;
+    min-width:0;
+    align-self:stretch!important;
+    margin:0!important;
+  }
+  .prf-main-v27 .prf-top-row>.prf-biography{
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  .prf-main-v27 .prf-top-row>.prf-biography>.prf-info-list{
+    min-height:0;
+    flex:1 1 auto;
+    overflow-y:auto;
+    scrollbar-width:thin;
+  }
+  .prf-main-v27 .prf-top-row>.prf-biography>.prf-inline-edit{
+    flex:0 0 auto;
+    margin-top:12px!important;
+  }
+  .prf-main-v27 .prf-top-row>.prf-relations-column{
+    display:flex;
+    flex-direction:column;
+  }
+  .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations{
+    box-sizing:border-box;
+    height:330px!important;
+    min-height:330px!important;
+    max-height:330px!important;
+    flex:1 1 auto!important;
+    margin:0!important;
+    display:flex;
+    flex-direction:column;
+  }
+  .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations>.prf-side-friends{
+    min-height:0;
+    flex:1 1 auto;
+    align-content:start;
+  }
+  .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations>.prf-friends-info{
+    flex:0 0 auto;
+    margin-top:12px!important;
+    padding-top:0!important;
+  }
+}

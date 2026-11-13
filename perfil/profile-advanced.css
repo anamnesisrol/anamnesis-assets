@@ -201,3 +201,19 @@ body.theme-dark .prf-actions::before{opacity:.16;}
 .prf-main-v27 .prf-relations .prf-side-friends .friend-block{width:100%;max-width:88px;padding:4px 4px 14px;}
 .prf-main-v27 .prf-relations .prf-side-friends .avatar{aspect-ratio:4/5;margin:0 0 2px;}
 .prf-main-v27 .prf-relations .prf-friend-short-name{font-size:11px;line-height:1;margin-top:2px;}
+
+/* V2.10 · Tarjetas compactas y cinco mini-polaroids */
+.prf-main-v27 .prf-top-row{align-items:start;}
+.prf-main-v27 .prf-top-row>.prf-biography{height:auto;min-height:0;align-self:start;}
+.prf-main-v27 .prf-top-row .prf-biography{padding:18px 20px;}
+.prf-main-v27 .prf-relations-column{align-self:start;gap:8px;}
+.prf-main-v27 .prf-relations-column .prf-relations{flex:none;height:auto;min-height:0;padding:18px 18px 14px;}
+.prf-main-v27 .prf-relations .prf-side-friends{grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;align-items:start;justify-items:center;}
+.prf-main-v27 .prf-relations .prf-side-friends .friend-block{display:block;width:100%;max-width:69px;padding:3px 3px 9px;min-width:0;}
+.prf-main-v27 .prf-relations .prf-side-friends .friend-block:nth-child(n+6){display:none;}
+.prf-main-v27 .prf-relations .prf-side-friends .avatar{aspect-ratio:4/5;margin:0 0 1px;}
+.prf-main-v27 .prf-relations .prf-friend-short-name{font-size:10px;line-height:1;margin:1px 0 0;}
+.prf-main-v27 .prf-relations .prf-friends-info{margin-top:10px;padding-top:0;}
+.prf-main-v27 .prf-relations .prf-section-title{margin-bottom:13px;}
+.prf-main-v27 .prf-relations-column .prf-stats-action-only .prf-stats-link{min-height:36px;}
+@media(max-width:700px){.prf-main-v27 .prf-relations .prf-side-friends{gap:5px;}.prf-main-v27 .prf-relations .prf-side-friends .friend-block{max-width:67px;}}

@@ -886,31 +886,26 @@
   text-transform: uppercase;
 }
 /* - - - - - - - - - - T A B L I L L A S   /   R E G I S T R O S   -   R E S P O N S I V E - - - - - - - - - - */
-@media (max-width: 760px) {
-  .atb-register .atb-frame { grid-template-columns: 6px minmax(0,1fr); }
-  .atb-register .atb-main { padding: 22px 14px; }
-  .atb-register .atb-head { grid-template-columns: 48px 1px minmax(0,1fr); gap: 13px; min-height: 86px; }
-  .atb-register .atb-head::before { width: 46px; height: 68px; }
-  .atb-register .atb-head::after { height: 62px; }
-  .atb-register .atb-fc-group { grid-template-columns: minmax(0,1fr); min-height: 0; }
-  .atb-register .atb-fc-letter { justify-content: flex-start; min-height: 42px; padding: 12px 14px; font-size: 13px; background: var(--accent-sage); }
-  .atb-register .atb-fc-box { max-height: none; overflow: visible; }
-  .atb-register .atb-fc-item { grid-template-columns: 12px minmax(0,1fr); gap: 4px 8px; padding: 12px 14px; line-height: 1.5; border-bottom: 1px solid var(--line-soft); }
-  .atb-register .atb-fc-arrow { display: none; }
-  .atb-register .atb-fc-name { grid-column: 2; grid-row: 1; }
-  .atb-register .atb-fc-user { grid-column: 2; grid-row: 2; }
-  .atb-register :is(.atb-fc-name,.atb-fc-user) { text-align: left; word-break: normal; overflow-wrap: break-word; hyphens: none; }
+@media (max-width:760px) {
+ .atb-register .atb-frame { grid-template-columns:6px minmax(0,1fr); }
+ .atb-register .atb-main { padding:22px 14px; }
 }
-/* Un mensaje estrecho también necesita la distribución apilada en escritorio. */
-@container (max-width: 580px) {
-  .atb-register .atb-fc-group { grid-template-columns: minmax(0,1fr); min-height: 0; }
-  .atb-register .atb-fc-letter { justify-content: flex-start; min-height: 42px; padding: 12px 14px; font-size: 13px; background: var(--accent-sage); }
-  .atb-register .atb-fc-box { max-height: none; overflow: visible; }
-  .atb-register .atb-fc-item { grid-template-columns: 12px minmax(0,1fr); gap: 4px 8px; padding: 12px 14px; line-height: 1.5; border-bottom: 1px solid var(--line-soft); }
-  .atb-register .atb-fc-arrow { display: none; }
-  .atb-register .atb-fc-name { grid-column: 2; grid-row: 1; }
-  .atb-register .atb-fc-user { grid-column: 2; grid-row: 2; }
-  .atb-register :is(.atb-fc-name,.atb-fc-user) { text-align: left; word-break: normal; overflow-wrap: break-word; hyphens: none; }
+/* Registro compacto: PB y personaje comparten fila mientras haya espacio. */
+.atb-register :is(.atb-head,.atb-title,.atb-kicker,.atb-intro,.atb-callout) { text-align:left; }
+.atb-register .atb-fc-list { gap:10px; }
+.atb-register .atb-fc-group { grid-template-columns:minmax(0,1fr); min-height:0; }
+.atb-register .atb-fc-group::after { display:none; }
+.atb-register .atb-fc-letter { justify-content:flex-start; min-height:0; padding:8px 12px; font-size:12px; background:var(--accent-sage); }
+.atb-register .atb-fc-box { max-height:none; overflow:visible; }
+.atb-register .atb-fc-item { grid-template-columns:8px minmax(0,1fr) minmax(0,1fr); gap:8px; padding:7px 12px; line-height:1.4; border-bottom:1px solid var(--line-soft); }
+.atb-register .atb-fc-item:last-child { border-bottom:0; }
+.atb-register .atb-fc-arrow { display:none; }
+.atb-register .atb-fc-name { grid-column:2; grid-row:1; }
+.atb-register .atb-fc-user { grid-column:3; grid-row:1; }
+.atb-register :is(.atb-fc-name,.atb-fc-user) { text-align:left; word-break:normal; overflow-wrap:anywhere; hyphens:none; }
+@container (max-width:260px) {
+ .atb-register .atb-fc-item { grid-template-columns:8px minmax(0,1fr); gap:2px 7px; padding:6px 10px; }
+ .atb-register .atb-fc-user { grid-column:2; grid-row:2; }
 }
 /* - - - - - - - - - - T A B L I L L A S   /   N O T A   D E   S T A F F - - - - - - - - - - */
 .atb-staff-note .atb-frame { grid-template-columns: 34px minmax(0,1fr); }

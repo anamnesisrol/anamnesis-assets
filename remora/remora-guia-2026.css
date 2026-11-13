@@ -589,11 +589,11 @@
 #rmGuide .rm-place-new .rm-photo-container .rm-media-photo {
   position:relative;z-index:2;display:block;width:100%;height:100%;object-fit:cover;
 }
+/* Solo mostrar el rótulo cuando no haya ninguna foto de respaldo.
+   Nunca cubrir con un fondo opaco la imagen definida en el HTML. */
 #rmGuide .rm-place-new .rm-photo-fallback-label {
-  position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;
-  padding:20px;text-align:center;font:400 17px/1.4 var(--font-title,'Cinzel',serif);
-  letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft,var(--rm-sub));
-  background:var(--bg-panel-alt,var(--rm-soft));
+  display:none!important;
+  background:none!important;
 }
 #rmGuide .rm-place-new .rm-media-photo.rm-photo-unavailable { display:none!important; }
 #rmGuide .rm-place-new h3 { overflow-wrap:anywhere; }

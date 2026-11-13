@@ -11138,3 +11138,12 @@ body.theme-dark .am-starter-mini .asm-info::before {
  .expd-extra-list, .expd-bio-text { max-height:none; overflow:visible; }
 }
 .expd-section-title { text-align:left; }
+
+/* Ignorar saltos del editor entre grupos y entradas del registro. */
+.atb-register :is(.atb-fc-list,.atb-fc-group,.atb-fc-box) {
+  display:block;
+  font-size:0;
+  line-height:0;
+}
+.atb-register .atb-fc-group + .atb-fc-group { margin-top:10px; }
+.atb-register :is(.atb-fc-list,.atb-fc-group,.atb-fc-box) > br { display:none; }

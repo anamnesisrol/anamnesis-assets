@@ -1756,10 +1756,14 @@ body.theme-dark .ana-topic-button:hover {
 .ana-post-content p:last-child {
   margin-bottom: 0;
 }
+/* Rémora Mobile conserva los colores de cada aplicación y burbuja. */
 .ana-post-message b,
 .ana-post-message strong {
-  color: var(--ana-user-color, var(--accent-rose));
   font-weight: 800;
+}
+.ana-post-message b:not(:where(.am-phone *)),
+.ana-post-message strong:not(:where(.am-phone *)) {
+  color: var(--ana-user-color, var(--accent-rose));
 }
 .ana-post-content i,
 .ana-post-content em {
@@ -2503,5 +2507,126 @@ body.theme-dark .ana-topic-end-tools::before {
     left:10px!important;
     max-width:calc(100% - 16px)!important;
     max-height:calc(100% - 19px)!important;
+  }
+}
+
+/* TABLÓN DE PORTADA · RESPONSIVE
+   Evita mínimos de escritorio en tablet y alturas porcentuales
+   dentro de las tarjetas apiladas. El tablón permanece visible. */
+#ana-tablon-anchor {
+  width: calc(100% - 48px);
+  max-width: 1320px;
+}
+#ana-tablon-anchor #tablon-anamnesis {
+  width: 100%;
+}
+@media (max-width: 1320px) {
+  #tablon-anamnesis .ana-wall-main {
+    grid-template-columns: minmax(220px,.9fr) minmax(0,2fr);
+  }
+  #tablon-anamnesis .ana-side-links {
+    grid-column: 1 / -1;
+    height: auto;
+    min-height: 0;
+  }
+  #tablon-anamnesis .ana-side-links ul {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 8px 16px;
+  }
+  #tablon-anamnesis .ana-wall-tools {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+}
+@media (max-width: 900px) {
+  #tablon-anamnesis .ana-wall-main,
+  #tablon-anamnesis .ana-wall-tools {
+    grid-template-columns: minmax(0,1fr);
+  }
+  #tablon-anamnesis .ana-wall-main > *,
+  #tablon-anamnesis .ana-wall-tools > * {
+    min-width: 0;
+  }
+  #tablon-anamnesis .ana-start-panel {
+    height: auto;
+    min-height: 0;
+  }
+  #tablon-anamnesis .ana-start-frame {
+    height: auto;
+    padding: 16px;
+  }
+  #tablon-anamnesis .ana-start-frame::before {
+    inset: 0;
+  }
+  #tablon-anamnesis .ana-start-frame-head {
+    position: relative;
+    top: auto;
+    left: auto;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 100%;
+    margin-bottom: 16px;
+    padding: 0;
+    overflow: visible;
+  }
+  #tablon-anamnesis .ana-start-script,
+  #tablon-anamnesis .ana-start-kicker {
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+    line-height: 1.35;
+  }
+  #tablon-anamnesis .ana-start-script {
+    font-size: 25px;
+  }
+  #tablon-anamnesis .ana-start-frame-inner {
+    height: auto;
+    padding: 0;
+  }
+  #tablon-anamnesis .ana-start-guide {
+    height: auto;
+    grid-template-columns: minmax(0,1fr);
+    grid-template-rows: none;
+    grid-auto-rows: auto;
+    gap: 8px;
+    background: transparent;
+  }
+  #tablon-anamnesis .ana-start-card {
+    grid-column: auto;
+    grid-row: auto;
+    grid-template-columns: minmax(0,1fr) minmax(0,32%);
+    min-height: 140px;
+  }
+  #tablon-anamnesis .ana-start-copy {
+    height: auto;
+  }
+  #tablon-anamnesis .ana-start-media {
+    height: auto;
+    min-height: 0;
+  }
+  #tablon-anamnesis .ana-start-text {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  #tablon-anamnesis .ana-side-links ul {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  #tablon-anamnesis .ana-side-links a {
+    width: auto;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+  #tablon-anamnesis .ana-wall-box {
+    min-height: 0;
+  }
+}
+@media (max-width: 480px) {
+  #tablon-anamnesis .ana-side-links ul {
+    grid-template-columns: minmax(0,1fr);
+  }
+}
+@media (max-width: 760px) {
+  #ana-tablon-anchor {
+    width: 100%;
   }
 }

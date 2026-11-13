@@ -161,3 +161,23 @@ body.theme-dark .prf-actions::before{opacity:.16;}
 .prf-stats-action-only .prf-stats-link:hover{background:var(--accent-rose)!important;border-color:var(--accent-rose)!important;}
 .prf-stats-action-only .prf-stats-link .material-symbols-outlined{color:#fff!important;}
 .prf-summary-row[data-summary="ultima-visita"] .prf-summary-value{overflow-wrap:anywhere;}
+
+/* V2.7 · Distribución editorial: datos biográficos y relaciones a partes iguales */
+.prf-main.prf-main-v27{display:flex;flex-direction:column;gap:16px;margin-top:18px;min-width:0;}
+.prf-main-v27 .prf-top-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;gap:16px;min-width:0;}
+.prf-main-v27 .prf-top-row>.prf-biography,.prf-main-v27 .prf-top-row>.prf-relations{min-width:0;height:100%;margin:0;}
+.prf-main-v27 .prf-top-row .prf-biography{padding:22px;}
+.prf-main-v27 .prf-top-row .prf-relations{padding:22px;min-height:0;display:flex;flex-direction:column;overflow:visible;}
+.prf-main-v27 .prf-relations .prf-side-friends{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:start;justify-items:center;}
+.prf-main-v27 .prf-relations .prf-side-friends .friend-block{width:100%;max-width:118px;padding:5px 5px 22px;}
+.prf-main-v27 .prf-relations .prf-side-friends .avatar{aspect-ratio:4/5;margin:0 0 3px;}
+.prf-main-v27 .prf-relations .prf-friend-short-name{font-size:13px;line-height:1.1;margin-top:2px;}
+.prf-main-v27 .prf-relations .prf-friends-info{margin-top:auto;padding-top:14px;}
+.prf-main-v27 .prf-sheet-placeholder{width:100%;margin:0;min-width:0;}
+.prf-main-v27 .prf-bottom-row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,.9fr);gap:16px;align-items:start;min-width:0;}
+.prf-main-v27 .prf-bottom-row>.prf-correspondence,.prf-main-v27 .prf-bottom-row>.prf-awards-section,.prf-main-v27 .prf-bottom-row>.prf-tools-column{min-width:0;margin:0;}
+.prf-main-v27 .prf-bottom-row>.prf-awards-section{padding:20px;}
+.prf-main-v27 .prf-tools-column{display:flex;flex-direction:column;gap:16px;}
+.prf-main-v27 .prf-tools-column .prf-edit-card{margin:0;}
+@media(max-width:1040px){.prf-main-v27 .prf-bottom-row{grid-template-columns:repeat(2,minmax(0,1fr));}.prf-main-v27 .prf-bottom-row>.prf-correspondence{grid-column:1/-1;}}
+@media(max-width:700px){.prf-main-v27 .prf-top-row,.prf-main-v27 .prf-bottom-row{grid-template-columns:1fr;}.prf-main-v27 .prf-bottom-row>.prf-correspondence{grid-column:auto;}.prf-main-v27 .prf-relations .prf-side-friends{gap:10px;}.prf-main-v27 .prf-top-row .prf-biography,.prf-main-v27 .prf-top-row .prf-relations{padding:18px;}}

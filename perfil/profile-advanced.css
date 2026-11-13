@@ -151,3 +151,6 @@ body.theme-dark .prf-actions::before{opacity:.16;}
 
 /* V2.4 · El expediente ocupa el ancho real del contenido del foro, sin max-width que cree margenes asimetricos. */
 .prf-wrap{width:100%;max-width:none;margin-left:0;margin-right:0;min-width:0;}
+/* V2.5 · ancho contenido y centrado en el cuerpo del foro */
+.prf-wrap{position:relative;width:calc(100% - 56px);max-width:1120px;margin:0 auto 30px;min-width:0;}
+@media(max-width:760px){.prf-wrap{width:100%;max-width:100%;}}

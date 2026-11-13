@@ -250,3 +250,19 @@ body.theme-dark .prf-actions::before{opacity:.16;}
 .prf-main-v27 .prf-bottom-row>.prf-correspondence #prf-wall-target,
 .prf-main-v27 .prf-bottom-row>.prf-awards-section #prf-awards-target{flex:1;min-height:80px;}
 @media(max-width:700px){.prf-main-v27 .prf-bottom-row{grid-template-columns:minmax(0,1fr);}.prf-main-v27 .prf-bottom-row>.prf-correspondence,.prf-main-v27 .prf-bottom-row>.prf-awards-section{min-height:250px;}}
+
+/* V2.13 · Reparaciones visuales tras recuperar el JavaScript */
+body.theme-dark .prf-archive{background:#B1A48F!important;border-color:#9D8D79;color:#302B2B;}
+body.theme-dark .prf-archive-title{color:#3D2831!important;}
+body.theme-dark .prf-archive-link{color:#3D3031!important;border-bottom-color:rgba(65,51,48,.22)!important;}
+body.theme-dark .prf-archive-link .material-symbols-outlined,
+body.theme-dark .prf-archive-link::after{color:#68414B!important;}
+body.theme-dark .prf-archive::before{background:#DBCFB9!important;border-color:#C7B89F!important;}
+.prf-main-v27 .prf-top-row{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;align-items:stretch!important;gap:16px;}
+.prf-main-v27 .prf-top-row>.prf-biography,
+.prf-main-v27 .prf-top-row>.prf-relations{height:100%!important;min-height:310px;align-self:stretch!important;}
+.prf-main-v27 .prf-top-row>.prf-relations{margin:0!important;flex:initial!important;}
+.prf-main-v27 .prf-top-row>.prf-biography{display:flex;flex-direction:column;}
+.prf-main-v27 .prf-top-row>.prf-biography .prf-inline-edit{margin-top:auto;}
+.prf-main-v27 .prf-top-row>.prf-relations .prf-friends-info{margin-top:auto!important;padding-top:10px;}
+@media(max-width:700px){.prf-main-v27 .prf-top-row{grid-template-columns:minmax(0,1fr)!important;}.prf-main-v27 .prf-top-row>.prf-biography,.prf-main-v27 .prf-top-row>.prf-relations{min-height:0;}}

@@ -195,3 +195,9 @@ body.theme-dark .prf-actions::before{opacity:.16;}
 .prf-main-v27 .prf-relations .prf-side-friends .friend-block{padding-bottom:16px;}
 .prf-main-v27 .prf-relations .prf-friend-short-name{font-size:12px;line-height:1;margin-top:2px;}
 @media(max-width:700px){.prf-main-v27 .prf-top-row,.prf-main-v27 .prf-bottom-row{grid-template-columns:1fr;}}
+
+/* V2.9 · Mini-polaroids en Relaciones */
+.prf-main-v27 .prf-relations .prf-side-friends{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:start;justify-items:center;}
+.prf-main-v27 .prf-relations .prf-side-friends .friend-block{width:100%;max-width:88px;padding:4px 4px 14px;}
+.prf-main-v27 .prf-relations .prf-side-friends .avatar{aspect-ratio:4/5;margin:0 0 2px;}
+.prf-main-v27 .prf-relations .prf-friend-short-name{font-size:11px;line-height:1;margin-top:2px;}

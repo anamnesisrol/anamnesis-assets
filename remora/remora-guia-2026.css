@@ -721,3 +721,26 @@ body.theme-dark #rmGuide .rm-button:not(.ghost):hover {
  #rmGuide .rm-location-body {padding:16px;}
  #rmGuide .rm-hospital .rm-hospital-director {flex-basis:100%;max-width:none;}
 }
+
+/* La cabecera necesita fondo de contraste real: antes mostraba texto blanco
+   sobre un fondo crema definido por --bg-contrast. */
+#rmGuide .rm-hero {
+ background:var(--accent-sage);
+ color:#fff;
+}
+#rmGuide .rm-hero :is(h1,p,.rm-kicker) {color:#fff;}
+#rmGuide .rm-hero .rm-button:not(.ghost) {
+ background:var(--bg-panel);border-color:var(--bg-panel);
+ color:var(--accent-sage)!important;
+}
+#rmGuide .rm-hero .rm-button:not(.ghost):hover {
+ background:var(--bg-soft);border-color:var(--bg-soft);
+ color:var(--accent-sage)!important;
+}
+body.theme-dark #rmGuide .rm-hero {
+ background:color-mix(in srgb,var(--accent-sage) 78%,var(--bg-main));
+}
+body.theme-dark #rmGuide .rm-hero .rm-button:not(.ghost) {
+ background:var(--text-main);border-color:var(--text-main);
+ color:var(--bg-main)!important;
+}

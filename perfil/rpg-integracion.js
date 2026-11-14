@@ -1,6 +1,36 @@
-/* ANAMNESIS · hoja RPG dentro del perfil avanzado; lectura únicamente. */
+/* ANAMNESIS · Hoja RPG en el perfil avanzado · lector de solo lectura. */
 (function () {
   "use strict";
+
+  function normalize(text) {
+    return (text || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, " ").trim();
+  }
+
+  var groupDefinitions = [
+    { key: "tramas", heading: "Tramas y conexiones", fields: ["situacion actual", "intereses narrativos", "conexiones buscadas"] },
+    { key: "retrato", heading: "Retrato cotidiano", fields: ["personalidad", "gustos y disgustos", "aficiones", "habitos y manias"] },
+    { key: "notas", heading: "Notas personales", fields: ["lugares frecuentes", "datos curiosos", "un secreto a voces"] }
+  ];
+
+  function getFieldText(container) {
+    /* Los campos Texto/Lista de Foroactivo pueden venir como textarea,
+       aunque esta sea una página de consulta: no debemos eliminar su valor. */
+    var textareas = Array.prototype.slice.call(container.querySelectorAll("textarea"));
+    if (textareas.length) {
+      return textareas.map(function (el) { return el.value || el.textContent || ""; }).join("\n").trim();
+    }
+    var fields = Array.prototype.slice.call(container.querySelectorAll("input:not([type=hidden]),select"));
+    if (fields.length) {
+      return fields.map(function (el) {
+        if (el.tagName === "SELECT") return el.options[el.selectedIndex] ? el.options[el.selectedIndex].text : "";
+        return el.value || "";
+      }).filter(Boolean).join("\n").trim();
+    }
+    var clone = container.cloneNode(true);
+    clone.querySelectorAll("script,style,iframe,form,button").forEach(function (node) { node.remove(); });
+    return (clone.innerText || clone.textContent || "").trim();
+  }
+
   function init() {
     var section = document.getElementById("prf-character-sheet");
     if (!section || section.dataset.rpgInitialized === "1") return;
@@ -14,10 +44,11 @@
     var sheetUrl = "/u" + userId + "rpgsheet";
     var link = section.querySelector(".prf-rpg-full-link");
     if (link) link.href = sheetUrl;
-    var fallback = function (message) {
+    function fallback(message) {
       mount.textContent = message;
       section.classList.add("prf-rpg-unavailable");
-    };
+    }
+
     fetch(sheetUrl, { credentials: "same-origin" })
       .then(function (res) {
         if (!res.ok) throw new Error("Respuesta " + res.status);
@@ -25,57 +56,79 @@
       })
       .then(function (html) {
         var doc = new DOMParser().parseFromString(html, "text/html");
-        var rows = Array.prototype.slice.call(
-          doc.querySelectorAll(".ana-rpg-view .rpg-view-field")
-        );
-        if (!rows.length) {
-          rows = Array.prototype.slice.call(
-            doc.querySelectorAll(".column1 fieldset dl, .column2 fieldset dl")
-          );
-        }
+        var rows = Array.prototype.slice.call(doc.querySelectorAll(".ana-rpg-view .rpg-view-field"));
+        if (!rows.length) rows = Array.prototype.slice.call(doc.querySelectorAll(".column1 fieldset dl, .column2 fieldset dl"));
         if (!rows.length) {
           fallback("No hay registros RPG disponibles para este personaje.");
           return;
         }
-        var list = document.createElement("div");
-        list.className = "prf-rpg-records";
-        var count = 0;
+
+        var records = {};
         rows.forEach(function (row) {
-          var name = row.querySelector("dt");
-          var value = row.querySelector("dd");
-          if (!name || !value) return;
-          var title = name.querySelector("label") || name;
-          var label = title.textContent.replace(/\s*:\s*$/, "").trim();
+          var dt = row.querySelector("dt"), dd = row.querySelector("dd");
+          if (!dt || !dd) return;
+          var label = (dt.querySelector("label") || dt).textContent.replace(/\s*:\s*$/, "").trim();
           if (!label) return;
+          var key = normalize(label);
+          var value = getFieldText(dd);
           var card = document.createElement("article");
           card.className = "prf-rpg-record";
-          var heading = document.createElement("h3");
+          var heading = document.createElement("h4");
           heading.className = "prf-rpg-label";
           heading.textContent = label;
-          var text = document.createElement("div");
-          text.className = "prf-rpg-value";
-          var safe = value.cloneNode(true);
-          safe.querySelectorAll("script,style,iframe,form,input,button,textarea,select").forEach(function (node) { node.remove(); });
-          safe.querySelectorAll("*").forEach(function (el) {
-            Array.prototype.slice.call(el.attributes).forEach(function (attr) {
-              if (/^on/i.test(attr.name)) el.removeAttribute(attr.name);
-            });
-          });
-          while (safe.firstChild) text.appendChild(safe.firstChild);
-          if (!text.textContent.trim() && !text.querySelector("img")) {
-            text.textContent = "Sin anotaciones todavía.";
-            text.classList.add("is-empty");
-          }
+          var body = document.createElement("div");
+          body.className = "prf-rpg-value";
+          body.textContent = value || "Sin anotaciones todavía.";
+          if (!value) body.classList.add("is-empty");
           card.appendChild(heading);
-          card.appendChild(text);
-          list.appendChild(card);
-          count++;
+          card.appendChild(body);
+          records[key] = card;
         });
+
+        var root = document.createElement("div");
+        root.className = "prf-rpg-records";
+        var count = 0;
+        groupDefinitions.forEach(function (def) {
+          var group = document.createElement("section");
+          group.className = "prf-rpg-group prf-rpg-group--" + def.key;
+          var title = document.createElement("h3");
+          title.className = "prf-rpg-group-heading";
+          title.textContent = def.heading;
+          var grid = document.createElement("div");
+          grid.className = "prf-rpg-grid";
+          def.fields.forEach(function (key) {
+            var card = records[key];
+            if (!card) return;
+            if (key === "situacion actual" || key === "datos curiosos" || key === "un secreto a voces") card.classList.add("prf-rpg-record--wide");
+            grid.appendChild(card);
+            delete records[key];
+            count++;
+          });
+          if (grid.childElementCount) {
+            group.appendChild(title);
+            group.appendChild(grid);
+            root.appendChild(group);
+          }
+        });
+        var extras = Object.keys(records);
+        if (extras.length) {
+          var other = document.createElement("section");
+          other.className = "prf-rpg-group";
+          var otherTitle = document.createElement("h3");
+          otherTitle.className = "prf-rpg-group-heading";
+          otherTitle.textContent = "Otros registros";
+          var otherGrid = document.createElement("div");
+          otherGrid.className = "prf-rpg-grid";
+          extras.forEach(function (key) { otherGrid.appendChild(records[key]); count++; });
+          other.appendChild(otherTitle);
+          other.appendChild(otherGrid);
+          root.appendChild(other);
+        }
         if (!count) {
           fallback("No hay registros RPG disponibles para este personaje.");
           return;
         }
-        mount.replaceChildren(list);
+        mount.replaceChildren(root);
         section.classList.add("prf-rpg-loaded");
       })
       .catch(function () {

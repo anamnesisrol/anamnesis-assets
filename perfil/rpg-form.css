@@ -50,3 +50,62 @@ body.theme-dark .ana-rpg{--rp-paper:#303033;--rp-input:#262629;--rp-line:#625E58
 .ana-rpg .rp-hero{display:block;min-height:0}
 .ana-rpg .rp-lead{max-width:100%}
 .ana-rpg .rp-fields{width:100%!important;max-width:none!important;margin:0!important}
+
+/* V2.2 · Acciones de guardado visibles y accesibles */
+.ana-rpg .rp-actions{
+  position:sticky!important;
+  bottom:12px;
+  z-index:50!important;
+  display:flex!important;
+  justify-content:flex-end!important;
+  align-items:center!important;
+  gap:14px!important;
+  width:100%!important;
+  margin:18px 0 0!important;
+  padding:15px 20px!important;
+  background:var(--rp-paper)!important;
+  border:1px solid var(--rp-line)!important;
+  box-shadow:0 8px 22px rgba(0,0,0,.12)!important;
+}
+.ana-rpg .rp-actions input[type="submit"],
+.ana-rpg .rp-actions input[type="reset"]{
+  display:inline-flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  width:auto!important;
+  height:auto!important;
+  min-width:130px!important;
+  min-height:42px!important;
+  margin:0!important;
+  padding:11px 17px!important;
+  border-radius:2px!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  font-family:var(--font-base)!important;
+  font-size:11px!important;
+  font-weight:700!important;
+  letter-spacing:.08em!important;
+  line-height:1.4!important;
+  text-align:center!important;
+  text-transform:uppercase!important;
+  cursor:pointer!important;
+}
+.ana-rpg .rp-actions input[type="submit"]{
+  color:#fffaf4!important;
+  background:var(--rp-wine)!important;
+  border:1px solid var(--rp-wine)!important;
+}
+.ana-rpg .rp-actions input[type="reset"]{
+  color:var(--rp-ink)!important;
+  background:transparent!important;
+  border:1px solid var(--rp-line)!important;
+}
+body.theme-dark .ana-rpg .rp-actions input[type="submit"]{
+  color:#29272a!important;
+  background:#D6A4AE!important;
+  border-color:#D6A4AE!important;
+}
+@media(max-width:650px){
+  .ana-rpg .rp-actions{bottom:0;justify-content:center!important;padding:12px!important}
+  .ana-rpg .rp-actions input[type="submit"],.ana-rpg .rp-actions input[type="reset"]{min-width:0!important;flex:1}
+}

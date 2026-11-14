@@ -927,22 +927,32 @@ body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-piece{
   .prf-rpg-piece--particularities,.prf-rpg-piece--curiosities
  ){max-height:300px}
 }
-
-/* ANAMNESIS · Relaciones: altura natural y sin hueco bajo los retratos.
-   Se conserva la altura de Datos biográficos y la retícula del perfil. */
+/* ANAMNESIS · Fila superior: tarjetas simétricas, compactas y estables.
+   Reemplaza el override de altura natural que desalineaba ambos paneles. */
 @media(min-width:701px){
  .prf-main-v27 .prf-top-row{
-   grid-auto-rows:auto!important;
-   align-items:start!important;
+   grid-auto-rows:290px!important;
+   align-items:stretch!important;
  }
+ .prf-main-v27 .prf-top-row>.prf-biography,
  .prf-main-v27 .prf-top-row>.prf-relations-column,
  .prf-main-v27 .prf-top-row>.prf-relations,
  .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations{
-   height:auto!important;
-   min-height:0!important;
-   max-height:none!important;
-   align-self:start!important;
-   flex:0 0 auto!important;
+   box-sizing:border-box;
+   height:290px!important;
+   min-height:290px!important;
+   max-height:290px!important;
+   align-self:stretch!important;
+ }
+ .prf-main-v27 .prf-top-row>.prf-relations-column{
+   display:flex;
+   flex-direction:column;
+ }
+ .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations{
+   margin:0!important;
+   flex:1 1 auto!important;
+   display:flex;
+   flex-direction:column;
  }
  .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations>.prf-side-friends{
    flex:0 0 auto!important;
@@ -950,7 +960,13 @@ body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-piece{
    align-content:start;
  }
  .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations>.prf-friends-info{
-   margin-top:14px!important;
-   padding-top:0!important;
+   flex:0 0 auto;
+   margin-top:auto!important;
+   padding-top:10px!important;
+ }
+ .prf-main-v27 .prf-top-row>.prf-biography>.prf-info-list{
+   min-height:0;
+   flex:1 1 auto;
+   overflow-y:auto;
  }
 }

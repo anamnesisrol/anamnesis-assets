@@ -615,3 +615,26 @@ body.theme-dark .prf-wrap .prf-correspondence .message-footer a{color:#CDAFA6!im
 body.theme-dark .prf-wrap .prf-correspondence .prf-wall-compose a{background:transparent!important;border-bottom-color:var(--prf-wine-light)!important;}
 body.theme-dark .prf-wrap .prf-correspondence .prf-wall-compose small{color:#CBB9B5!important;}
 body.theme-dark .prf-wrap .prf-correspondence .prf-messages .avatar{background:#EEE5D9!important;border-color:#B9A79B!important;}
+
+/* V2.23 · Hoja de personaje RPG integrada en el perfil */
+.prf-main-v27 .prf-sheet-placeholder.prf-rpg-loaded,
+.prf-main-v27 .prf-sheet-placeholder.prf-rpg-unavailable{
+  height:auto!important;max-height:none!important;min-height:0!important;
+  padding-bottom:32px!important;
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-intro{margin:0 0 16px;max-width:100%;line-height:1.7}
+.prf-main-v27 #prf-character-sheet .prf-rpg-records{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:24px 0 20px;position:relative;z-index:2}
+.prf-main-v27 #prf-character-sheet .prf-rpg-record{min-width:0;padding:16px 18px;background:var(--bg-main);border:1px solid var(--line);box-shadow:0 4px 12px rgba(25,20,17,.035)}
+.prf-main-v27 #prf-character-sheet .prf-rpg-label{margin:0 0 9px;color:var(--accent-rose);font-family:var(--font-base);font-size:10px;letter-spacing:.11em;text-transform:uppercase;font-weight:750}
+.prf-main-v27 #prf-character-sheet .prf-rpg-value{color:var(--text-main);font-family:var(--font-base);font-size:12px;line-height:1.8;overflow-wrap:anywhere;white-space:pre-line}
+.prf-main-v27 #prf-character-sheet .prf-rpg-value p{margin:0 0 8px}
+.prf-main-v27 #prf-character-sheet .prf-rpg-value.is-empty{color:var(--text-soft);font-family:var(--font-note);font-size:19px}
+.prf-main-v27 #prf-character-sheet .prf-rpg-full-link{position:relative;z-index:3;display:inline-block;margin-top:12px;color:var(--accent-rose);font-size:10px;font-weight:800;letter-spacing:.08em;text-decoration:underline;text-underline-offset:4px;text-transform:uppercase}
+.prf-main-v27 #prf-character-sheet.prf-rpg-loaded .prf-sheet-note,
+.prf-main-v27 #prf-character-sheet.prf-rpg-loaded .prf-sheet-placeholders,
+.prf-main-v27 #prf-character-sheet.prf-rpg-unavailable .prf-sheet-note,
+.prf-main-v27 #prf-character-sheet.prf-rpg-unavailable .prf-sheet-placeholders{display:none!important}
+body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-record{background:#29292B;border-color:#625e58}
+body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-label,
+body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-full-link{color:#D6A4AE}
+@media(max-width:700px){.prf-main-v27 #prf-character-sheet .prf-rpg-records{grid-template-columns:1fr;gap:10px}.prf-main-v27 #prf-character-sheet .prf-rpg-record{padding:13px 14px}}

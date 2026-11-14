@@ -927,46 +927,70 @@ body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-piece{
   .prf-rpg-piece--particularities,.prf-rpg-piece--curiosities
  ){max-height:300px}
 }
-/* ANAMNESIS · Fila superior: tarjetas simétricas, compactas y estables.
-   Reemplaza el override de altura natural que desalineaba ambos paneles. */
+/* ANAMNESIS · Biografía y Relaciones | proporciones y altura de contenido.
+   El texto largo nunca debe quedar atrapado en una caja de altura fija. */
 @media(min-width:701px){
  .prf-main-v27 .prf-top-row{
-   grid-auto-rows:290px!important;
-   align-items:stretch!important;
+  grid-auto-rows:auto!important;
+  align-items:stretch!important;
  }
  .prf-main-v27 .prf-top-row>.prf-biography,
  .prf-main-v27 .prf-top-row>.prf-relations-column,
- .prf-main-v27 .prf-top-row>.prf-relations,
- .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations{
-   box-sizing:border-box;
-   height:290px!important;
-   min-height:290px!important;
-   max-height:290px!important;
-   align-self:stretch!important;
+ .prf-main-v27 .prf-top-row>.prf-relations{
+  box-sizing:border-box;
+  height:auto!important;
+  min-height:290px!important;
+  max-height:none!important;
+  align-self:stretch!important;
  }
- .prf-main-v27 .prf-top-row>.prf-relations-column{
-   display:flex;
-   flex-direction:column;
- }
- .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations{
-   margin:0!important;
-   flex:1 1 auto!important;
-   display:flex;
-   flex-direction:column;
- }
- .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations>.prf-side-friends{
-   flex:0 0 auto!important;
-   min-height:0!important;
-   align-content:start;
- }
- .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations>.prf-friends-info{
-   flex:0 0 auto;
-   margin-top:auto!important;
-   padding-top:10px!important;
+ .prf-main-v27 .prf-top-row>.prf-biography{
+  overflow:visible!important;
  }
  .prf-main-v27 .prf-top-row>.prf-biography>.prf-info-list{
-   min-height:0;
-   flex:1 1 auto;
-   overflow-y:auto;
+  flex:0 0 auto!important;
+  min-height:0!important;
+  overflow:visible!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  column-gap:14px!important;
+ }
+ .prf-main-v27 .prf-biography .prf-info-row{
+  grid-template-columns:17px minmax(0,73px) minmax(0,1fr)!important;
+  column-gap:5px!important;
+  min-width:0;
+  height:auto;
+  min-height:43px;
+ }
+ .prf-main-v27 .prf-biography .prf-info-label{
+  min-width:0;
+  font-size:7.5px;
+  letter-spacing:.04em;
+ }
+ .prf-main-v27 .prf-biography .prf-info-value{
+  min-width:0;
+  overflow-wrap:break-word;
+  word-break:normal;
+  white-space:normal;
+ }
+ .prf-main-v27 .prf-top-row>.prf-relations-column{
+  display:flex;
+  flex-direction:column;
+ }
+ .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations{
+  height:100%!important;
+  min-height:290px!important;
+  max-height:none!important;
+  margin:0!important;
+  flex:1 1 auto!important;
+  display:flex;
+  flex-direction:column;
+ }
+ .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations>.prf-side-friends{
+  flex:0 0 auto!important;
+  min-height:0!important;
+  align-content:start;
+ }
+ .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations>.prf-friends-info{
+  margin-top:auto!important;
+  padding-top:10px!important;
  }
 }

@@ -11121,10 +11121,12 @@ body.theme-dark .am-starter-mini .asm-info::before {
   }
 }
 
-/* Expediente: ajustar al ancho real del mensaje. */
+/* Expediente: escritorio intacto; ajustes únicamente en pantallas pequeñas.
+   Antes una container query colapsaba el expediente en escritorio cuando su
+   contenedor editorial era estrecho, aunque el viewport fuera grande. */
 .expd, .expd *, .expd::before, .expd::after { box-sizing:border-box; }
-.expd { container-type:inline-size; }
-@container (max-width:700px) {
+.expd { container-type:normal; }
+@media screen and (max-width:700px) {
  .expd-paper { width:100%; max-width:100%; padding:20px 16px; }
  .expd-character { display:flex; flex-direction:column; width:100%; min-width:0; gap:22px; }
  .expd-photo-card { flex:none; width:min(250px,100%); max-width:100%; margin:0 auto; }

@@ -109,3 +109,29 @@ body.theme-dark .ana-rpg .rp-actions input[type="submit"]{
   .ana-rpg .rp-actions{bottom:0;justify-content:center!important;padding:12px!important}
   .ana-rpg .rp-actions input[type="submit"],.ana-rpg .rp-actions input[type="reset"]{min-width:0!important;flex:1}
 }
+
+/* V2.3 · Acciones sólidas en vino y verde, sin botones transparentes */
+.ana-rpg .rp-actions input[type="submit"]{
+  color:#fffaf4!important;
+  -webkit-text-fill-color:#fffaf4!important;
+  background:#925763!important;
+  background-image:none!important;
+  border:1px solid #925763!important;
+  border-bottom:1px solid #925763!important;
+}
+.ana-rpg .rp-actions input[type="reset"]{
+  color:#fffaf4!important;
+  -webkit-text-fill-color:#fffaf4!important;
+  background:#55746B!important;
+  background-image:none!important;
+  border:1px solid #55746B!important;
+  border-bottom:1px solid #55746B!important;
+}
+.ana-rpg .rp-actions input[type="submit"]:hover{background:#A66A76!important;border-color:#A66A76!important;}
+.ana-rpg .rp-actions input[type="reset"]:hover{background:#67867C!important;border-color:#67867C!important;}
+body.theme-dark .ana-rpg .rp-actions input[type="submit"]{
+  background:#925763!important;border-color:#925763!important;color:#fffaf4!important;-webkit-text-fill-color:#fffaf4!important;
+}
+body.theme-dark .ana-rpg .rp-actions input[type="reset"]{
+  background:#55746B!important;border-color:#55746B!important;color:#fffaf4!important;-webkit-text-fill-color:#fffaf4!important;
+}

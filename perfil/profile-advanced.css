@@ -520,3 +520,27 @@ body.theme-dark .prf-archive::before{background:#DBCFB9!important;border-color:#
 @media(max-width:700px){
   .prf-main-v27 .prf-correspondence #prf-wall-target .prf-messages{max-height:320px!important;scrollbar-color:var(--accent-sage) transparent;}
 }
+
+/* V2.20 · Relaciones distribuidas sin huecos reservados */
+.prf-main-v27 .prf-relations .prf-side-friends{
+  display:flex!important;
+  flex-wrap:nowrap!important;
+  justify-content:space-between!important;
+  align-items:flex-start!important;
+  gap:6px!important;
+  padding-inline:1px;
+  min-width:0;
+}
+.prf-main-v27 .prf-relations .prf-side-friends .friend-block{
+  display:block!important;
+  flex:0 1 73px!important;
+  width:73px!important;
+  max-width:73px!important;
+  min-width:0!important;
+  padding:3px 3px 10px!important;
+}
+.prf-main-v27 .prf-relations .prf-side-friends .friend-block:nth-child(n+6){display:none!important;}
+@media(max-width:700px){
+  .prf-main-v27 .prf-relations .prf-side-friends{gap:4px!important;}
+  .prf-main-v27 .prf-relations .prf-side-friends .friend-block{flex-basis:67px!important;width:67px!important;max-width:67px!important;}
+}

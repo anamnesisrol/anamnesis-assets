@@ -616,217 +616,11 @@ body.theme-dark .prf-wrap .prf-correspondence .prf-wall-compose a{background:tra
 body.theme-dark .prf-wrap .prf-correspondence .prf-wall-compose small{color:#CBB9B5!important;}
 body.theme-dark .prf-wrap .prf-correspondence .prf-messages .avatar{background:#EEE5D9!important;border-color:#B9A79B!important;}
 
-/* V2.23 · Hoja de personaje RPG integrada en el perfil */
-.prf-main-v27 .prf-sheet-placeholder.prf-rpg-loaded,
-.prf-main-v27 .prf-sheet-placeholder.prf-rpg-unavailable{
-  height:auto!important;max-height:none!important;min-height:0!important;
-  padding-bottom:32px!important;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-intro{margin:0 0 16px;max-width:100%;line-height:1.7}
-.prf-main-v27 #prf-character-sheet .prf-rpg-records{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:24px 0 20px;position:relative;z-index:2}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record{min-width:0;padding:16px 18px;background:var(--bg-main);border:1px solid var(--line);box-shadow:0 4px 12px rgba(25,20,17,.035)}
-.prf-main-v27 #prf-character-sheet .prf-rpg-label{margin:0 0 9px;color:var(--accent-rose);font-family:var(--font-base);font-size:10px;letter-spacing:.11em;text-transform:uppercase;font-weight:750}
-.prf-main-v27 #prf-character-sheet .prf-rpg-value{color:var(--text-main);font-family:var(--font-base);font-size:12px;line-height:1.8;overflow-wrap:anywhere;white-space:pre-line}
-.prf-main-v27 #prf-character-sheet .prf-rpg-value p{margin:0 0 8px}
-.prf-main-v27 #prf-character-sheet .prf-rpg-value.is-empty{color:var(--text-soft);font-family:var(--font-note);font-size:19px}
-.prf-main-v27 #prf-character-sheet .prf-rpg-full-link{position:relative;z-index:3;display:inline-block;margin-top:12px;color:var(--accent-rose);font-size:10px;font-weight:800;letter-spacing:.08em;text-decoration:underline;text-underline-offset:4px;text-transform:uppercase}
-.prf-main-v27 #prf-character-sheet.prf-rpg-loaded .prf-sheet-note,
-.prf-main-v27 #prf-character-sheet.prf-rpg-loaded .prf-sheet-placeholders,
-.prf-main-v27 #prf-character-sheet.prf-rpg-unavailable .prf-sheet-note,
-.prf-main-v27 #prf-character-sheet.prf-rpg-unavailable .prf-sheet-placeholders{display:none!important}
-body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-record{background:#29292B;border-color:#625e58}
-body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-label,
-body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-full-link{color:#D6A4AE}
-@media(max-width:700px){.prf-main-v27 #prf-character-sheet .prf-rpg-records{grid-template-columns:1fr;gap:10px}.prf-main-v27 #prf-character-sheet .prf-rpg-record{padding:13px 14px}}
-
-/* V2.24 · Hoja RPG: agrupación editorial, tamaños por contenido */
-.prf-main-v27 #prf-character-sheet .prf-rpg-records{
-  display:block!important;
-  margin:22px 0 18px!important;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-group{
-  margin:0 0 27px;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-group:last-child{margin-bottom:4px}
-.prf-main-v27 #prf-character-sheet .prf-rpg-group-heading{
-  margin:0 0 13px;
-  padding:0 0 9px;
-  border-bottom:1px solid var(--line-soft);
-  font:500 15px/1.35 var(--font-title);
-  color:var(--title-color);
-  letter-spacing:.11em;
-  text-transform:uppercase;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-grid{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  align-items:stretch;gap:12px;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record--wide{
-  grid-column:1 / -1;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record{
-  padding:16px 20px;
-  min-width:0;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-value{
-  white-space:pre-wrap;
-  line-height:1.85;
-}
-@media(max-width:700px){
- .prf-main-v27 #prf-character-sheet .prf-rpg-grid{grid-template-columns:1fr}
- .prf-main-v27 #prf-character-sheet .prf-rpg-record--wide{grid-column:auto}
- .prf-main-v27 #prf-character-sheet .prf-rpg-record{padding:14px 15px}
-}
-
-/* V2.25 · Hoja RPG como scrapbook editorial: NO cambia otras secciones */
-.prf-main-v27 #prf-character-sheet.prf-rpg-loaded{
-  padding:34px 38px 40px!important;
-  background:var(--bg-panel-alt)!important;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-intro{
-  font-size:12px;line-height:1.7;max-width:70%;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-records{
-  display:flex!important;flex-direction:column;gap:27px;
-  margin:28px 0 24px!important;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-group{
-  position:relative;margin:0!important;padding:0 0 24px;
-  border-bottom:1px dashed var(--line);
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-group:last-child{padding-bottom:0;border-bottom:0}
-.prf-main-v27 #prf-character-sheet .prf-rpg-group-heading{
-  display:flex;align-items:center;gap:12px;
-  margin:0 0 18px;padding:0;border:0;
-  color:var(--title-color);font:500 16px/1.3 var(--font-title);
-  letter-spacing:.10em;text-transform:uppercase;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-group-heading::before{
-  content:"";display:block;width:28px;height:1px;background:var(--accent-rose);
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-grid{
-  display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
-  grid-auto-flow:row dense;gap:14px;align-items:stretch;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record,
-.prf-main-v27 #prf-character-sheet .prf-rpg-record--wide{
-  grid-column:span 3;
-  min-width:0;min-height:0;margin:0;
-  padding:20px 22px;
-  background:var(--bg-main);border:1px solid var(--line);
-  box-shadow:0 5px 12px rgba(37,29,25,.035);
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-label{
-  color:var(--accent-rose);margin:0 0 11px;
-  font-size:10px;letter-spacing:.11em;font-weight:750;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-value{
-  white-space:pre-wrap;color:var(--text-main);
-  font-size:12px;line-height:1.8;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record--situacion-actual{
-  grid-column:span 6;
-  padding:23px 26px 22px 30px;
-  border-left:4px solid var(--accent-sage);
-  background:color-mix(in srgb,var(--bg-main) 92%,var(--accent-sage) 8%);
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record--situacion-actual .prf-rpg-value{font-size:13px;line-height:1.9}
-.prf-main-v27 #prf-character-sheet .prf-rpg-group--retrato .prf-rpg-grid{
-  grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-group--retrato .prf-rpg-record--personalidad{
-  grid-column:span 4;
-  background:color-mix(in srgb,var(--bg-main) 95%,var(--accent-rose) 5%);
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-group--retrato .prf-rpg-record--gustos-y-disgustos{
-  grid-column:span 2;
-  border-top:3px solid var(--accent-sage);
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-group--retrato .prf-rpg-record--aficiones{grid-column:span 2}
-.prf-main-v27 #prf-character-sheet .prf-rpg-group--retrato .prf-rpg-record--habitos-y-manias{
-  grid-column:span 4;
-  border-left:3px solid var(--accent-rose);
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-group--notas .prf-rpg-grid{
-  grid-template-columns:repeat(6,minmax(0,1fr));
-  align-items:start;gap:17px;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record--lugares-frecuentes{
-  grid-column:span 4;
-  position:relative;
-  padding-left:34px;
-  border:1px dashed var(--line-strong);
-  background:color-mix(in srgb,var(--bg-main) 91%,var(--accent-sage) 9%);
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record--lugares-frecuentes::before{
-  content:"\1F4CD";position:absolute;left:10px;top:16px;font-size:15px;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record--datos-curiosos{
-  grid-column:span 2;grid-row:span 2;
-  position:relative;z-index:1;
-  padding:35px 20px 24px;
-  transform:rotate(2deg);
-  background:#E7E2C9!important;
-  border:1px solid #C4B69B!important;
-  box-shadow:4px 9px 16px rgba(31,24,19,.13)!important;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record--datos-curiosos::before{
-  content:"";position:absolute;top:-9px;left:50%;
-  width:64px;height:18px;transform:translateX(-50%) rotate(-3deg);
-  background:rgba(139,159,135,.53);
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record--datos-curiosos .prf-rpg-label{
-  font:23px/1.15 var(--font-note);letter-spacing:0;text-transform:none;
-  color:#665248!important;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record--datos-curiosos .prf-rpg-value{
-  font:12px/1.75 var(--font-base);color:#4E4840!important;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record--un-secreto-a-voces{
-  grid-column:span 4;position:relative;
-  padding:30px 28px 23px;
-  background:color-mix(in srgb,var(--bg-main) 88%,var(--accent-rose) 12%);
-  border:1px solid var(--line-strong);
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record--un-secreto-a-voces::before{
-  content:"✉";position:absolute;right:18px;top:10px;
-  font-size:26px;color:var(--accent-rose);opacity:.45;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-record--un-secreto-a-voces .prf-rpg-label{
-  padding-right:30px;font-family:var(--font-title);font-size:14px;font-weight:500;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-full-link{margin-top:20px}
-body.theme-dark .prf-main-v27 #prf-character-sheet.prf-rpg-loaded{
-  background:#303033!important;border-color:#625e58!important;
-}
-body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-record{
-  background:#29292B;border-color:#625e58;box-shadow:none;
-}
-body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-record--situacion-actual{background:#343638;border-left-color:#8FA99C}
-body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-record--personalidad{background:#323236}
-body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-record--lugares-frecuentes{background:#333837}
-body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-record--un-secreto-a-voces{background:#363235;border-color:#75675F}
-body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-record--datos-curiosos{background:#D8D4BE!important}
-@media(max-width:900px){
- .prf-main-v27 #prf-character-sheet .prf-rpg-group--notas .prf-rpg-record--lugares-frecuentes{grid-column:span 6}
- .prf-main-v27 #prf-character-sheet .prf-rpg-group--notas .prf-rpg-record--datos-curiosos{grid-column:span 3;grid-row:auto}
- .prf-main-v27 #prf-character-sheet .prf-rpg-group--notas .prf-rpg-record--un-secreto-a-voces{grid-column:span 3}
-}
-@media(max-width:700px){
- .prf-main-v27 #prf-character-sheet.prf-rpg-loaded{padding:23px 19px 29px!important}
- .prf-main-v27 #prf-character-sheet .prf-rpg-intro{max-width:100%}
- .prf-main-v27 #prf-character-sheet .prf-rpg-grid{grid-template-columns:1fr!important;gap:12px!important}
- .prf-main-v27 #prf-character-sheet .prf-rpg-record,
- .prf-main-v27 #prf-character-sheet .prf-rpg-record--wide{grid-column:1!important}
- .prf-main-v27 #prf-character-sheet .prf-rpg-record--datos-curiosos{transform:rotate(1deg);margin:4px 5px}
- .prf-main-v27 #prf-character-sheet .prf-rpg-record--situacion-actual,
- .prf-main-v27 #prf-character-sheet .prf-rpg-record--un-secreto-a-voces{padding:20px}
-}
-
+/* V2.28 · RPG limpia: descartadas versiones V2.23–V2.27 en conflicto */
 /* V2.27 · Hoja RPG / lenguaje visual de tablillas.css
    Reutiliza paleta post-it, capas, texturas y recursos del foro.
    No cambia el resto del perfil ni la carga de datos. */
-#prf-character-sheet.prf-rpg-loaded {
+.prf-main-v27 #prf-character-sheet.prf-rpg-loaded {
   --rpg-yellow:#efe2a8;--rpg-rose:#e6c4cf;
   --rpg-sage:#c9d8c3;--rpg-blue:#c3d5e3;
   --rpg-tape:color-mix(in srgb,var(--accent-warm) 24%,rgba(255,255,255,.55));
@@ -834,113 +628,118 @@ body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-record--datos-curios
   background:linear-gradient(135deg,rgba(255,255,255,.10),transparent 56%),var(--bg-panel-alt)!important;
   border:1px dashed var(--line)!important;overflow:hidden;
 }
-#prf-character-sheet.prf-rpg-loaded::after {
+.prf-main-v27 #prf-character-sheet.prf-rpg-loaded::after {
   content:"";position:absolute;right:12px;bottom:12px;width:140px;height:150px;
   background:var(--ana-img-ramita) center/contain no-repeat;
   opacity:.10;pointer-events:none;
 }
-#prf-character-sheet .prf-rpg-scrapbook {
-  display:grid!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;
+.prf-main-v27 #prf-character-sheet .prf-rpg-scrapbook {
+  display:grid!important;width:100%!important;max-width:none!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;
   align-items:start;gap:23px 20px!important;margin:28px 0 26px!important;
   position:relative;isolation:isolate;
 }
-#prf-character-sheet .prf-rpg-paper,
-#prf-character-sheet .prf-rpg-paper.prf-rpg-record--wide {
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper,
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper.prf-rpg-record--wide {
   --rpg-color:var(--rpg-yellow);
   display:block!important;position:relative!important;grid-column:span 6!important;grid-row:auto!important;
   min-width:0!important;min-height:0!important;height:auto!important;max-height:none!important;
   margin:0!important;padding:24px 25px!important;overflow:visible!important;
   background:repeating-linear-gradient(180deg,transparent 0 29px,color-mix(in srgb,var(--line-soft) 36%,transparent) 30px),
     linear-gradient(180deg,rgba(255,255,255,.10),transparent 52%),
-    color-mix(in srgb,var(--rpg-color) 17%,var(--bg-panel) 83%)!important;
-  border:1px solid color-mix(in srgb,var(--rpg-color) 29%,var(--line))!important;
+    color-mix(in srgb,var(--rpg-color) 8%,var(--bg-panel) 92%)!important;
+  border:1px solid color-mix(in srgb,var(--rpg-color) 18%,var(--line))!important;
   color:var(--text-main)!important;
-  box-shadow:5px 6px 0 color-mix(in srgb,var(--line) 18%,transparent),0 12px 25px rgba(82,66,48,.07)!important;
+  box-shadow:4px 5px 0 color-mix(in srgb,var(--line) 14%,transparent),0 8px 19px rgba(82,66,48,.06)!important;
   transform:rotate(-.4deg);
 }
-#prf-character-sheet .prf-rpg-paper:nth-child(even) {transform:rotate(.5deg)}
-#prf-character-sheet .prf-rpg-paper .prf-rpg-label {
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper:nth-child(even) {transform:rotate(.5deg)}
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper .prf-rpg-label {
   color:var(--title-color)!important;font-family:var(--font-title)!important;
   font-size:12px!important;font-weight:400!important;line-height:1.5!important;
   letter-spacing:.13em!important;text-transform:uppercase!important;
   border-bottom:1px solid var(--line-soft)!important;
   margin:0 0 13px!important;padding:0 40px 10px 0!important;
 }
-#prf-character-sheet .prf-rpg-paper .prf-rpg-value {
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper .prf-rpg-value {
   color:var(--text-main)!important;font-family:var(--font-base)!important;
   font-size:12px!important;line-height:1.8!important;font-weight:500!important;
   overflow-wrap:anywhere;white-space:pre-wrap!important;
   position:relative;z-index:2;
 }
-#prf-character-sheet .prf-rpg-paper .prf-rpg-value.is-empty {
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper .prf-rpg-value.is-empty {
   color:var(--text-soft)!important;font-family:var(--font-note)!important;
   font-size:18px!important;
 }
-#prf-character-sheet .prf-rpg-paper--now {grid-column:1/-1!important;--rpg-color:var(--rpg-blue);
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--now {grid-column:1/-1!important;--rpg-color:var(--rpg-blue);
   border-left:3px solid var(--accent-rose)!important;transform:rotate(-.2deg)!important}
-#prf-character-sheet .prf-rpg-paper--interests {--rpg-color:var(--rpg-yellow);
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--interests {--rpg-color:var(--rpg-yellow);
   border-left:5px dotted var(--line-strong)!important}
-#prf-character-sheet .prf-rpg-paper--links {--rpg-color:var(--rpg-sage)}
-#prf-character-sheet .prf-rpg-paper--personality {grid-column:span 5!important;--rpg-color:var(--rpg-blue)}
-#prf-character-sheet .prf-rpg-paper--likes {grid-column:span 7!important;--rpg-color:var(--rpg-yellow)}
-#prf-character-sheet .prf-rpg-paper--habits {grid-column:span 8!important;--rpg-color:var(--rpg-rose)}
-#prf-character-sheet .prf-rpg-paper--hobbies {grid-column:span 4!important;--rpg-color:var(--rpg-sage)}
-#prf-character-sheet .prf-rpg-paper--places {grid-column:span 4!important;--rpg-color:var(--rpg-blue)}
-#prf-character-sheet .prf-rpg-paper--curiosities {grid-column:span 8!important;--rpg-color:var(--rpg-yellow)}
-#prf-character-sheet .prf-rpg-paper--secret {grid-column:1/-1!important;
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--links {--rpg-color:var(--rpg-sage)}
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--personality {grid-column:span 5!important;--rpg-color:var(--rpg-blue)}
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--likes {grid-column:span 7!important;--rpg-color:var(--rpg-yellow)}
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--habits {grid-column:span 8!important;--rpg-color:var(--rpg-rose)}
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--hobbies {grid-column:span 4!important;--rpg-color:var(--rpg-blue)}
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--places {grid-column:span 4!important;--rpg-color:var(--rpg-blue)}
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--curiosities {grid-column:span 8!important;--rpg-color:var(--rpg-sage)}
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--secret {grid-column:1/-1!important;
   margin:0 11%!important;--rpg-color:var(--rpg-rose);transform:rotate(.3deg)!important}
-#prf-character-sheet .prf-rpg-paper--extra {grid-column:span 6!important}
-#prf-character-sheet .prf-rpg-paper--likes,
-#prf-character-sheet .prf-rpg-paper--habits {min-height:160px!important}
-#prf-character-sheet .prf-rpg-paper--now::before,
-#prf-character-sheet .prf-rpg-paper--links::before,
-#prf-character-sheet .prf-rpg-paper--habits::before,
-#prf-character-sheet .prf-rpg-paper--curiosities::before {
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--extra {grid-column:span 6!important}
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--likes,
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--habits {min-height:160px!important}
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--now::before,
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--links::before,
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--habits::before,
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--curiosities::before {
   content:"";position:absolute;z-index:5;top:-10px;left:38%;height:20px;width:85px;
   background:var(--rpg-tape);border:1px solid color-mix(in srgb,var(--line) 35%,transparent);
   transform:rotate(-3deg);opacity:.86;pointer-events:none;
 }
-#prf-character-sheet .prf-rpg-paper--personality::after,
-#prf-character-sheet .prf-rpg-paper--curiosities::after {
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--personality::after,
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--curiosities::after {
   content:"";position:absolute;right:8px;bottom:7px;width:112px;height:110px;
   background:var(--ana-img-ramita) center/contain no-repeat;opacity:.23;pointer-events:none;
 }
-#prf-character-sheet .prf-rpg-paper--places::after{
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--places::after{
   content:"";position:absolute;right:7px;bottom:6px;width:92px;height:92px;
   background:var(--ana-img-postal) center/contain no-repeat;opacity:.13;pointer-events:none;
 }
-#prf-character-sheet .prf-rpg-paper--secret::after{
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--secret::after{
   content:"";position:absolute;right:12px;bottom:8px;width:88px;height:88px;
   background:var(--ana-img-sello) center/contain no-repeat;opacity:.24;pointer-events:none;
 }
-#prf-character-sheet .prf-rpg-paper--interests .prf-rpg-label,
-#prf-character-sheet .prf-rpg-paper--links .prf-rpg-label,
-#prf-character-sheet .prf-rpg-paper--curiosities .prf-rpg-label {
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--interests .prf-rpg-label,
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--links .prf-rpg-label,
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--curiosities .prf-rpg-label {
   color:var(--accent-rose)!important;font-family:var(--font-note)!important;
   font-size:24px!important;letter-spacing:0!important;text-transform:none!important;
 }
-#prf-character-sheet .prf-rpg-items {list-style:none!important;margin:0!important;padding:0!important;display:grid;gap:7px}
-#prf-character-sheet .prf-rpg-items li {position:relative;list-style:none!important;margin:0;padding:0 0 0 24px;line-height:1.65}
-#prf-character-sheet .prf-rpg-items--check li::before {
+.prf-main-v27 #prf-character-sheet .prf-rpg-items {list-style:none!important;margin:0!important;padding:0!important;display:grid;gap:7px}
+.prf-main-v27 #prf-character-sheet .prf-rpg-items li {position:relative;list-style:none!important;margin:0;padding:0 0 0 24px;line-height:1.65}
+.prf-main-v27 #prf-character-sheet .prf-rpg-items--check li::before {
   content:"";position:absolute;left:1px;top:5px;width:12px;height:12px;
   border:1px solid var(--accent-warm);background:color-mix(in srgb,var(--bg-main) 64%,transparent);
 }
-#prf-character-sheet .prf-rpg-items--notes li::before {
+.prf-main-v27 #prf-character-sheet .prf-rpg-items--notes li::before {
   content:"✳";position:absolute;left:1px;top:-2px;color:var(--accent-warm);
 }
-#prf-character-sheet .prf-rpg-items--places {gap:10px}
-#prf-character-sheet .prf-rpg-items--places li::before {
+.prf-main-v27 #prf-character-sheet .prf-rpg-items--places {gap:10px}
+.prf-main-v27 #prf-character-sheet .prf-rpg-items--places li::before {
   content:"";position:absolute;left:2px;top:4px;width:13px;height:15px;
   background:var(--accent-rose);clip-path:polygon(50% 100%,7% 38%,12% 18%,28% 4%,50% 0,72% 4%,88% 18%,93% 38%);
 }
-#prf-character-sheet .prf-rpg-items--places li:not(:last-child)::after {
+.prf-main-v27 #prf-character-sheet .prf-rpg-items--places li:not(:last-child)::after {
   content:"";position:absolute;left:8px;top:19px;height:calc(100% + 4px);
   border-left:1px dashed var(--line-strong);
 }
 @media(max-width:760px) {
-  #prf-character-sheet .prf-rpg-scrapbook {grid-template-columns:1fr!important;gap:22px!important}
-  #prf-character-sheet .prf-rpg-paper,
-  #prf-character-sheet .prf-rpg-paper.prf-rpg-record--wide {
+  .prf-main-v27 #prf-character-sheet .prf-rpg-scrapbook {grid-template-columns:1fr!important;gap:22px!important}
+  .prf-main-v27 #prf-character-sheet .prf-rpg-paper,
+  .prf-main-v27 #prf-character-sheet .prf-rpg-paper.prf-rpg-record--wide {
     grid-column:1/-1!important;margin:0!important;padding:21px!important;transform:none!important;
   }
 }
+
+/* Compensación de utilidades nativas del perfil, sin afectar módulos externos. */
+.prf-main-v27 #prf-character-sheet .prf-rpg-scrapbook > .prf-rpg-paper{float:none!important;clear:none!important;flex:none!important;width:auto!important;max-width:none!important;min-width:0!important;}
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--links,
+.prf-main-v27 #prf-character-sheet .prf-rpg-paper--curiosities{background-color:transparent!important;}

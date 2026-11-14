@@ -1254,7 +1254,10 @@
   line-height: .98;
   letter-spacing: .15em;
   text-transform: uppercase;
-  text-wrap: balance;
+  text-align: left !important;
+  text-align-last: left !important;
+  word-spacing: normal !important;
+  text-wrap: wrap;
   overflow-wrap: normal;
   word-break: normal;
 }

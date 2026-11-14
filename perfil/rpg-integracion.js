@@ -99,7 +99,7 @@
           def.fields.forEach(function (key) {
             var card = records[key];
             if (!card) return;
-            if (key === "situacion actual" || key === "datos curiosos" || key === "un secreto a voces") card.classList.add("prf-rpg-record--wide");
+            card.classList.add("prf-rpg-record--" + key.replace(/[^a-z0-9]+/g, "-")); if (key === "situacion actual" || key === "un secreto a voces") card.classList.add("prf-rpg-record--wide");
             grid.appendChild(card);
             delete records[key];
             count++;

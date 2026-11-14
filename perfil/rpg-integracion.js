@@ -6,11 +6,30 @@
     return (text || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, " ").trim();
   }
 
-  var groupDefinitions = [
-    { key: "tramas", heading: "Tramas y conexiones", fields: ["situacion actual", "intereses narrativos", "conexiones buscadas"] },
-    { key: "retrato", heading: "Retrato cotidiano", fields: ["personalidad", "gustos y disgustos", "aficiones", "habitos y manias"] },
-    { key: "notas", heading: "Notas personales", fields: ["lugares frecuentes", "datos curiosos", "un secreto a voces"] }
+  var layout = [
+    ["situacion actual","prf-rpg-paper--now"],
+    ["intereses narrativos","prf-rpg-paper--interests"],
+    ["conexiones buscadas","prf-rpg-paper--links"],
+    ["personalidad","prf-rpg-paper--personality"],
+    ["gustos y disgustos","prf-rpg-paper--likes"],
+    ["habitos y manias","prf-rpg-paper--habits"],
+    ["aficiones","prf-rpg-paper--hobbies"],
+    ["lugares frecuentes","prf-rpg-paper--places"],
+    ["datos curiosos","prf-rpg-paper--curiosities"],
+    ["un secreto a voces","prf-rpg-paper--secret"]
   ];
+  function renderList(value, type) {
+    var list = document.createElement("ul");
+    list.className = "prf-rpg-items prf-rpg-items--" + type;
+    var items = value.split(type === "notes" ? /\n+|[•●]\s*/ : /\n+|\s*[,;]\s*|[•●]\s*/);
+    items.map(function (item) {return item.trim().replace(/^[-*□☐✓]\s*/, "");})
+      .filter(Boolean).forEach(function (item) {
+        var li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+      });
+    return list;
+  }
 
   function getFieldText(container) {
     /* Los campos Texto/Lista de Foroactivo pueden venir como textarea,
@@ -86,44 +105,31 @@
         });
 
         var root = document.createElement("div");
-        root.className = "prf-rpg-records";
+        root.className = "prf-rpg-records prf-rpg-scrapbook";
         var count = 0;
-        groupDefinitions.forEach(function (def) {
-          var group = document.createElement("section");
-          group.className = "prf-rpg-group prf-rpg-group--" + def.key;
-          var title = document.createElement("h3");
-          title.className = "prf-rpg-group-heading";
-          title.textContent = def.heading;
-          var grid = document.createElement("div");
-          grid.className = "prf-rpg-grid";
-          def.fields.forEach(function (key) {
-            var card = records[key];
-            if (!card) return;
-            card.classList.add("prf-rpg-record--" + key.replace(/[^a-z0-9]+/g, "-")); if (key === "situacion actual" || key === "un secreto a voces") card.classList.add("prf-rpg-record--wide");
-            grid.appendChild(card);
-            delete records[key];
-            count++;
-          });
-          if (grid.childElementCount) {
-            group.appendChild(title);
-            group.appendChild(grid);
-            root.appendChild(group);
+        layout.forEach(function (item) {
+          var key = item[0], card = records[key];
+          if (!card) return;
+          card.classList.add("prf-rpg-paper", item[1]);
+          var body = card.querySelector(".prf-rpg-value");
+          var value = body ? body.textContent.trim() : "";
+          if (body && !body.classList.contains("is-empty")) {
+            if (key === "intereses narrativos" || key === "conexiones buscadas" || key === "lugares frecuentes" || key === "datos curiosos") {
+              var type = key === "lugares frecuentes" ? "places" : key === "datos curiosos" ? "notes" : "check";
+              var list = renderList(value, type);
+              if (list.children.length) body.replaceChildren(list);
+            }
           }
+          root.appendChild(card);
+          delete records[key];
+          count++;
         });
-        var extras = Object.keys(records);
-        if (extras.length) {
-          var other = document.createElement("section");
-          other.className = "prf-rpg-group";
-          var otherTitle = document.createElement("h3");
-          otherTitle.className = "prf-rpg-group-heading";
-          otherTitle.textContent = "Otros registros";
-          var otherGrid = document.createElement("div");
-          otherGrid.className = "prf-rpg-grid";
-          extras.forEach(function (key) { otherGrid.appendChild(records[key]); count++; });
-          other.appendChild(otherTitle);
-          other.appendChild(otherGrid);
-          root.appendChild(other);
-        }
+        Object.keys(records).forEach(function (key) {
+          var card = records[key];
+          card.classList.add("prf-rpg-paper", "prf-rpg-paper--extra");
+          root.appendChild(card);
+          count++;
+        });
         if (!count) {
           fallback("No hay registros RPG disponibles para este personaje.");
           return;

@@ -349,3 +349,66 @@ body.theme-dark .prf-archive::before{background:#DBCFB9!important;border-color:#
     padding-top:0!important;
   }
 }
+
+/* V2.16 · Acciones de cabecera como enlaces editoriales, sin cajas sólidas */
+.prf-wrap .prf-actions{column-gap:18px;row-gap:8px;align-items:center;}
+.prf-wrap .prf-actions .prf-friend-action{gap:18px;align-items:center;}
+.prf-wrap .prf-actions button.followBtn,
+.prf-wrap .prf-actions .prf-friend-action a,
+.prf-wrap .prf-actions .prf-friend-action button,
+.prf-wrap .prf-actions .prf-friend-action input,
+.prf-wrap .prf-actions #profile-advanced-add a,
+.prf-wrap .prf-actions .prf-stats-link.prf-editorial-link{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:5px!important;
+  min-height:28px!important;
+  min-width:0!important;
+  width:auto!important;
+  margin:0!important;
+  padding:3px 0!important;
+  border:0!important;
+  border-bottom:1px solid var(--line)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+  color:var(--accent-sage)!important;
+  -webkit-text-fill-color:var(--accent-sage)!important;
+  font-family:var(--font-base)!important;
+  font-size:9px!important;
+  line-height:1.4!important;
+  font-weight:800!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+  cursor:pointer;
+}
+.prf-wrap .prf-actions button.followBtn:hover,
+.prf-wrap .prf-actions .prf-friend-action a:hover,
+.prf-wrap .prf-actions .prf-friend-action button:hover,
+.prf-wrap .prf-actions .prf-friend-action input:hover,
+.prf-wrap .prf-actions #profile-advanced-add a:hover,
+.prf-wrap .prf-actions .prf-stats-link.prf-editorial-link:hover{
+  background:transparent!important;
+  color:var(--accent-rose)!important;
+  -webkit-text-fill-color:var(--accent-rose)!important;
+  border-bottom-color:var(--accent-rose)!important;
+}
+.prf-wrap .prf-actions button.followBtn i,
+.prf-wrap .prf-actions button.followBtn i::before,
+.prf-wrap .prf-actions button.followBtn .fa,
+.prf-wrap .prf-actions button.followBtn .fas,
+.prf-wrap .prf-actions button.followBtn .far,
+.prf-wrap .prf-actions button.followBtn .material-symbols-outlined,
+.prf-wrap .prf-actions button.followBtn .material-icons,
+.prf-wrap .prf-actions button.followBtn::before,
+.prf-wrap .prf-actions button.followBtn::after{
+  color:inherit!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+.prf-wrap .prf-actions button.followBtn svg,
+.prf-wrap .prf-actions button.followBtn svg *{stroke:currentColor!important;fill:currentColor!important;}
+.prf-wrap .prf-actions button.followBtn img{filter:none!important;}
+@media(max-width:760px){.prf-wrap .prf-actions{column-gap:14px;}}

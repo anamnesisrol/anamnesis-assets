@@ -875,3 +875,12 @@ body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-piece{
    padding:22px!important;
  }
 }
+
+/* ANAMNESIS · RPG V2.33 · títulos ligeramente más grandes (+2px). */
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece-title {
+  font-size:15px!important;
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece--interests .prf-rpg-piece-title,
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece--curiosities .prf-rpg-piece-title {
+  font-size:26px!important;
+}

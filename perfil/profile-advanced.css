@@ -499,3 +499,24 @@ body.theme-dark .prf-archive::before{background:#DBCFB9!important;border-color:#
     max-height:280px!important;
   }
 }
+
+/* V2.19 · Correspondencia: lista acotada y desplazamiento discreto */
+.prf-main-v27 .prf-correspondence #prf-wall-target .prf-messages{
+  max-height:360px!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  scrollbar-color:transparent transparent;
+}
+.prf-main-v27 .prf-correspondence #prf-wall-target .prf-messages:hover,
+.prf-main-v27 .prf-correspondence #prf-wall-target .prf-messages:focus-within{
+  scrollbar-color:var(--accent-sage) transparent;
+}
+.prf-main-v27 .prf-correspondence #prf-wall-target .prf-messages::-webkit-scrollbar{width:6px;}
+.prf-main-v27 .prf-correspondence #prf-wall-target .prf-messages::-webkit-scrollbar-thumb{background:transparent;border-radius:6px;}
+.prf-main-v27 .prf-correspondence #prf-wall-target .prf-messages:hover::-webkit-scrollbar-thumb,
+.prf-main-v27 .prf-correspondence #prf-wall-target .prf-messages:focus-within::-webkit-scrollbar-thumb{background:var(--accent-sage);}
+@media(max-width:700px){
+  .prf-main-v27 .prf-correspondence #prf-wall-target .prf-messages{max-height:320px!important;scrollbar-color:var(--accent-sage) transparent;}
+}

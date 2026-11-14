@@ -32,3 +32,39 @@
 .ana-rpg .ana-rpg-signoff{margin:9px 0 0;text-align:right;font:20px var(--font-note);color:var(--rpg-muted)}
 body.theme-dark .ana-rpg{--rpg-paper:#303033;--rpg-ink:var(--text-main,#f5ece4);--rpg-muted:var(--text-soft,#c7bcb2);--rpg-line:#625e58;--rpg-sage:#bed1c2}
 @media(max-width:700px){.ana-rpg{width:100%;margin:15px auto 30px}.ana-rpg .ana-rpg-card{padding:22px 18px}.ana-rpg .ana-rpg-actions.submit-buttons{padding:12px!important;gap:8px!important}.ana-rpg .ana-rpg-actions.submit-buttons input[type=submit],.ana-rpg .ana-rpg-actions.submit-buttons input[type=reset]{min-width:0!important;flex:1 1 0!important;padding:11px 7px!important;font-size:10px!important}}
+
+/* V3.1 · Controles nativos desacoplados de las clases UCP */
+.ana-rpg .ana-rpg-controls{
+  display:flex!important;flex-wrap:wrap;align-items:center;justify-content:flex-end;
+  gap:12px;min-height:80px;margin:0;padding:16px 22px;
+  background:var(--rpg-paper);border:1px solid var(--rpg-line);
+  box-shadow:0 8px 18px rgba(48,39,35,.07);
+}
+.ana-rpg .ana-rpg-controls input.ana-rpg-control{
+  display:inline-block!important;visibility:visible!important;opacity:1!important;
+  position:static!important;float:none!important;clip:auto!important;
+  width:auto!important;height:auto!important;min-width:175px!important;min-height:46px!important;
+  margin:0!important;padding:12px 20px!important;
+  appearance:none!important;-webkit-appearance:none!important;
+  font:700 11px/1.3 var(--font-base)!important;
+  letter-spacing:.08em!important;text-align:center!important;text-transform:uppercase!important;
+  color:#fff!important;-webkit-text-fill-color:#fff!important;
+  border-radius:2px!important;box-shadow:none!important;background-image:none!important;
+  cursor:pointer!important;
+}
+.ana-rpg .ana-rpg-controls input.ana-rpg-control--save{
+  background:#925763!important;border:1px solid #925763!important;
+}
+.ana-rpg .ana-rpg-controls input.ana-rpg-control--reset{
+  background:#55746b!important;border:1px solid #55746b!important;
+}
+.ana-rpg .ana-rpg-controls input.ana-rpg-control--save:hover{
+  background:#a86c79!important;border-color:#a86c79!important;
+}
+.ana-rpg .ana-rpg-controls input.ana-rpg-control--reset:hover{
+  background:#66867b!important;border-color:#66867b!important;
+}
+@media(max-width:700px){
+ .ana-rpg .ana-rpg-controls{padding:12px;gap:8px}
+ .ana-rpg .ana-rpg-controls input.ana-rpg-control{flex:1 1 auto;min-width:120px!important}
+}

@@ -761,3 +761,44 @@ body.theme-dark #rmGuide .rm-hero {
 body.theme-dark #rmGuide .rm-hero :is(h1,p,.rm-kicker){
  color:#fff!important;
 }
+
+/* ANAMNESIS · portada solicitada · 14 nov 2026.
+   Imagen de Servimg aportada por la administración y acciones con color. */
+#rmGuide .rm-hero,
+body.theme-dark #rmGuide .rm-hero{
+ background-color:var(--accent-sage);
+ background-image:linear-gradient(90deg,rgba(24,22,25,.68) 0%,rgba(24,22,25,.39) 58%,rgba(24,22,25,.12) 100%),url("https://i68.servimg.com/u/f68/20/65/25/08/alex-v10.jpg");
+ background-size:cover,cover;
+ background-position:center,center;
+ background-repeat:no-repeat;
+}
+/* Ocultar únicamente el boleto «Punto de llegada» de la portada. */
+#rmGuide .rm-hero .rm-ticket{display:none!important;}
+/* Ambos botones con relleno y acentos de la identidad del foro. */
+#rmGuide .rm-hero .rm-actions .rm-button,
+#rmGuide .rm-hero .rm-actions .rm-button.ghost,
+body.theme-dark #rmGuide .rm-hero .rm-actions .rm-button,
+body.theme-dark #rmGuide .rm-hero .rm-actions .rm-button.ghost{
+ background:var(--accent-sage);
+ border:1px solid var(--accent-sage);
+ color:#fff!important;
+ box-shadow:none;
+}
+#rmGuide .rm-hero .rm-actions .rm-button.ghost,
+body.theme-dark #rmGuide .rm-hero .rm-actions .rm-button.ghost{
+ background:var(--accent-rose);
+ border-color:var(--accent-rose);
+ color:#fff!important;
+}
+body.theme-dark #rmGuide .rm-hero .rm-actions .rm-button{
+ background:var(--accent-ink);border-color:var(--accent-ink);color:var(--bg-main)!important;
+}
+body.theme-dark #rmGuide .rm-hero .rm-actions .rm-button.ghost{
+ background:var(--accent-rose);border-color:var(--accent-rose);color:var(--bg-main)!important;
+}
+#rmGuide .rm-hero .rm-actions .rm-button:hover,
+#rmGuide .rm-hero .rm-actions .rm-button.ghost:hover,
+body.theme-dark #rmGuide .rm-hero .rm-actions .rm-button:hover,
+body.theme-dark #rmGuide .rm-hero .rm-actions .rm-button.ghost:hover{
+ background:var(--accent-warm);border-color:var(--accent-warm);color:#1b1b1d!important;
+}

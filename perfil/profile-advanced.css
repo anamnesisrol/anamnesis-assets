@@ -743,3 +743,18 @@ body.theme-dark .prf-wrap .prf-correspondence .prf-messages .avatar{background:#
 .prf-main-v27 #prf-character-sheet .prf-rpg-scrapbook > .prf-rpg-paper{float:none!important;clear:none!important;flex:none!important;width:auto!important;max-width:none!important;min-width:0!important;}
 .prf-main-v27 #prf-character-sheet .prf-rpg-paper--links,
 .prf-main-v27 #prf-character-sheet .prf-rpg-paper--curiosities{background-color:transparent!important;}
+
+/* RPG · cabecera y enlace, restituidos tras retirar reglas obsoletas. */
+.prf-main-v27 #prf-character-sheet .prf-rpg-intro{
+  max-width:640px;margin:7px 0 0;color:var(--text-soft);
+  font-family:var(--font-base);font-size:11px;line-height:1.7;
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-full-link{
+  position:relative;z-index:2;display:inline-flex;margin-top:12px;padding:0 0 5px;
+  border-bottom:1px solid var(--line-strong);color:var(--accent-rose)!important;
+  font-family:var(--font-base);font-size:9px;font-weight:800;
+  letter-spacing:.12em;text-decoration:none;text-transform:uppercase;
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-full-link:hover{
+  color:var(--accent-ink)!important;border-color:var(--accent-ink);
+}

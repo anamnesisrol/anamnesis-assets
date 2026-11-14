@@ -46,3 +46,16 @@ body.theme-dark .ana-rpg .ana-rpg-intro,body.theme-dark .ana-rpg .ana-rpg-paper,
 body.theme-dark .ana-rpg .ana-rpg-field :is(input[type="text"],input[type="url"],input[type="number"],textarea,select),body.theme-dark .ana-rpg .ana-rpg-avatar-input{background:var(--rpg-soft)!important}
 @media(max-width:800px){.ana-rpg .ana-rpg-intro{grid-template-columns:minmax(0,1fr) 135px;padding:25px}.ana-rpg .ana-rpg-image{width:130px;min-height:145px}.ana-rpg .ana-rpg-fields-grid{gap:12px}.ana-rpg .ana-rpg-fields{padding:20px}}
 @media(max-width:650px){.ana-rpg{width:100%;margin:15px auto 30px}.ana-rpg .ana-rpg-intro{grid-template-columns:1fr;gap:15px}.ana-rpg .ana-rpg-image{justify-self:start}.ana-rpg .ana-rpg-avatar-grid,.ana-rpg .ana-rpg-fields-grid{grid-template-columns:1fr}.ana-rpg .ana-rpg-paper,.ana-rpg .ana-rpg-fields{padding:20px 18px}.ana-rpg .ana-rpg-save{justify-content:flex-start}}
+
+/* V1.1 · Subtítulos explicativos bajo las etiquetas RPG */
+.ana-rpg .ana-rpg-field .ana-rpg-field-description{
+  display:block;
+  margin:5px 0 0;
+  color:var(--rpg-muted);
+  font-family:var(--font-base);
+  font-size:11px;
+  font-weight:400;
+  letter-spacing:0;
+  line-height:1.6;
+  text-transform:none;
+}

@@ -994,3 +994,33 @@ body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-piece{
   padding-top:10px!important;
  }
 }
+
+/* ANAMNESIS · Ajuste exclusivamente horizontal de la fila superior.
+   Datos biográficos y Relaciones deben abarcar lo mismo que Apuntes personales. */
+.prf-main.prf-main-v27{
+ width:100%!important;
+ max-width:none!important;
+ align-items:stretch!important;
+}
+.prf-main-v27 .prf-top-row{
+ box-sizing:border-box;
+ width:100%!important;
+ max-width:none!important;
+ min-width:0!important;
+ align-self:stretch!important;
+ flex:0 0 auto;
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;
+}
+.prf-main-v27 .prf-top-row>.prf-biography,
+.prf-main-v27 .prf-top-row>.prf-relations-column,
+.prf-main-v27 .prf-top-row>.prf-relations{
+ box-sizing:border-box;
+ width:100%!important;
+ max-width:none!important;
+ min-width:0!important;
+}
+@media(max-width:700px){
+ .prf-main-v27 .prf-top-row{
+   grid-template-columns:minmax(0,1fr)!important;
+ }
+}

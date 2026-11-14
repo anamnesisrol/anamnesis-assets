@@ -43,5 +43,5 @@
 .ana-rpg .rp-actions input:hover{filter:brightness(1.15)}
 .ana-rpg .rp-signoff{margin:0;text-align:right;color:var(--rp-muted);font:20px var(--font-note)}
 body.theme-dark .ana-rpg{--rp-paper:#303033;--rp-input:#262629;--rp-line:#625E58;--rp-line-soft:#464541;--rp-accent:#C5D3C3;--rp-wine:#D6A4AE}
-@media(min-width:850px){.ana-rpg .rp-fields fieldset{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 27px;align-items:start}.ana-rpg .rp-field{height:100%}}
+.ana-rpg .rp-fields{max-width:850px;margin:0 auto}
 @media(max-width:650px){.ana-rpg{width:100%;margin:12px auto 30px}.ana-rpg .rp-card{padding:20px 18px}.ana-rpg .rp-hero{grid-template-columns:1fr;gap:18px}.ana-rpg .rp-photo{justify-self:start}.ana-rpg .rp-actions{justify-content:flex-start}}

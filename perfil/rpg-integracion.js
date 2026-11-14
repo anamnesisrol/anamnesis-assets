@@ -6,12 +6,12 @@
       .toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
   }
   var definitions = [
-    { key: "situacion actual", area:"opening", style:"current", mode:"text" },
-    { key: "intereses narrativos", area:"left", style:"interests", mode:"check" },
-    { key: "lugares frecuentes", area:"left", style:"places", mode:"places" },
-    { key: "pequenas particularidades", area:"right", style:"particularities", mode:"text" },
-    { key: "datos curiosos", area:"right", style:"curiosities", mode:"notes" },
-    { key: "un secreto a voces", area:"ending", style:"secret", mode:"text" }
+    { key: "situacion actual", area:"opening", style:"current", mode:"text", subtitle:"Lo que está ocurriendo en su vida en este momento." },
+    { key: "intereses narrativos", area:"left", style:"interests", mode:"check", subtitle:"Historias, conflictos y experiencias que le interesa explorar." },
+    { key: "lugares frecuentes", area:"left", style:"places", mode:"places", subtitle:"Los rincones de Rémora que forman parte de su rutina." },
+    { key: "pequenas particularidades", area:"right", style:"particularities", mode:"text", subtitle:"Gustos, disgustos, aficiones y costumbres que lo distinguen." },
+    { key: "datos curiosos", area:"right", style:"curiosities", mode:"notes", subtitle:"Anécdotas y detalles que quizá no aparecen en su expediente." },
+    { key: "un secreto a voces", area:"ending", style:"secret", mode:"text", subtitle:"Aquello que algunos saben, aunque no se cuente abiertamente." }
   ];
   function readValue(container) {
     var textareas = Array.prototype.slice.call(container.querySelectorAll("textarea"));
@@ -88,7 +88,7 @@
           var title=document.createElement("h3");title.className="prf-rpg-piece-title";title.textContent=record.label;
           var body=document.createElement("div");body.className="prf-rpg-piece-text";
           renderBody(body,record.value,def.mode);
-          article.appendChild(title);article.appendChild(body);targets[def.area].appendChild(article);count++;
+          var subtitle=document.createElement("p");subtitle.className="prf-rpg-piece-subtitle";subtitle.textContent=def.subtitle;article.appendChild(title);article.appendChild(subtitle);article.appendChild(body);targets[def.area].appendChild(article);count++;
         });
         if(!count){fallback("No hay registros RPG disponibles para este personaje.");return;}
         mount.replaceChildren(root);section.classList.add("prf-rpg-loaded");

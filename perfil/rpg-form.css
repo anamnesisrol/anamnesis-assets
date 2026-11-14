@@ -180,3 +180,26 @@ body.theme-dark .ana-rpg .rp-actions input[type="reset"]{
 .ana-rpg .rp-actions .rp-action-button--save:hover{background-color:#A66A76!important;border-color:#A66A76!important}
 .ana-rpg .rp-actions .rp-action-button--reset:hover{background-color:#67867C!important;border-color:#67867C!important}
 @media(max-width:650px){.ana-rpg .rp-actions .rp-action-button{flex:1 1 0;min-width:0!important}}
+
+/* V2.5 · Navegación UCP: mismos botones vino que el resto del panel.
+   Solo afecta al menú envuelto en .ana-rpg-tabs. */
+.ana-rpg-tabs{display:block;width:100%;margin:0 auto 20px;font-family:var(--font-base)}
+.ana-rpg-tabs :is(ul,ol){display:flex!important;flex-wrap:wrap!important;align-items:center;gap:8px!important;list-style:none!important;margin:0!important;padding:0!important}
+.ana-rpg-tabs :is(li,dl,dt){margin:0!important;padding:0!important;list-style:none!important;background:none!important;border:0!important}
+.ana-rpg-tabs a,
+.ana-rpg-tabs a:link,
+.ana-rpg-tabs a:visited{
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  min-height:35px!important;margin:0!important;padding:9px 13px!important;
+  background:#502B36!important;background-image:none!important;
+  border:1px solid #502B36!important;border-radius:0!important;
+  box-shadow:none!important;color:#fffaf4!important;-webkit-text-fill-color:#fffaf4!important;
+  font-family:var(--font-base)!important;font-size:10px!important;font-weight:700!important;
+  line-height:1.45!important;letter-spacing:.045em!important;text-decoration:none!important;
+  text-transform:uppercase!important;opacity:1!important;
+}
+.ana-rpg-tabs a:hover,
+.ana-rpg-tabs a:focus-visible{background:#71414D!important;border-color:#71414D!important;color:#fffaf4!important;-webkit-text-fill-color:#fffaf4!important}
+.ana-rpg-tabs :is(.activetab,.active,.selected,.current) a,
+.ana-rpg-tabs a[aria-current="page"]{background:#55746B!important;border-color:#55746B!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+@media(max-width:650px){.ana-rpg-tabs :is(ul,ol){gap:5px!important}.ana-rpg-tabs a{min-height:32px!important;padding:8px 10px!important;font-size:9px!important}}

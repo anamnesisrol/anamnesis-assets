@@ -826,48 +826,52 @@ body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-piece{
   display:none!important;
 }
 
-/* ANAMNESIS · RPG V2.31 · corrección de ancho y microencabezados */
-.prf-main-v27 #prf-character-sheet .prf-rpg-opening,
-.prf-main-v27 #prf-character-sheet .prf-rpg-columns,
-.prf-main-v27 #prf-character-sheet .prf-rpg-ending,
-.prf-main-v27 #prf-character-sheet .prf-rpg-stack {
-  min-width:0;
-  max-width:100%;
-  box-sizing:border-box;
-}
-.prf-main-v27 #prf-character-sheet .prf-rpg-piece--secret{
+/* ANAMNESIS · RPG V2.32
+   Fix: closing letter stays inside its parent.
+   Micro-headings sit under titles but BEFORE the divider. */
+.prf-main-v27 #prf-character-sheet #prf-rpg-content,
+.prf-main-v27 #prf-character-sheet .prf-rpg-scrapbook,
+.prf-main-v27 #prf-character-sheet .prf-rpg-ending {
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
   box-sizing:border-box!important;
-  display:flex!important;
-  width:calc(100% - 11%)!important;
-  max-width:calc(100% - 11%)!important;
-  margin:0 4% 0 7%!important;
-  transform:none!important;
 }
-/* Título y microdescripción comparten la cabecera; la línea cierra ambos */
-.prf-main-v27 #prf-character-sheet .prf-rpg-piece-title {
-  border-bottom:0!important;
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece--secret {
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
   margin:0!important;
-  padding:0!important;
+  transform:none!important;
+  box-sizing:border-box!important;
 }
-.prf-main-v27 #prf-character-sheet .prf-rpg-piece-subtitle{
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece-title {
+  padding:0!important;
+  margin:0!important;
+  border-bottom:0!important;
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece-subtitle {
+  position:relative!important;
   display:block!important;
   box-sizing:border-box!important;
   width:100%!important;
-  margin:4px 0 14px!important;
-  padding:0 0 10px!important;
+  max-width:100%!important;
+  padding:4px 0 10px!important;
+  margin:0 0 14px!important;
+  border:0!important;
   border-bottom:1px solid var(--line-soft)!important;
   color:var(--text-soft)!important;
   font-family:var(--font-base)!important;
+  font-style:normal!important;
   font-size:9px!important;
   font-weight:700!important;
   line-height:1.5!important;
-  letter-spacing:.075em!important;
+  letter-spacing:.085em!important;
   text-transform:uppercase!important;
+  white-space:normal!important;
 }
-@media(max-width:760px){
-  .prf-main-v27 #prf-character-sheet .prf-rpg-piece--secret{
-    width:100%!important;
-    max-width:100%!important;
-    margin:0!important;
-  }
+@media(max-width:760px) {
+ .prf-main-v27 #prf-character-sheet .prf-rpg-piece--secret {
+   padding:22px!important;
+ }
 }

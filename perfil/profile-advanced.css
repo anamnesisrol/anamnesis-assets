@@ -487,3 +487,15 @@ body.theme-dark .prf-archive::before{background:#DBCFB9!important;border-color:#
 .prf-wrap .prf-all-friends-toolbar{justify-content:flex-end;}
 .prf-wrap .prf-friends-info{text-align:right;}
 .prf-wrap .prf-actions .prf-friend-action{align-items:center;gap:16px;}
+
+/* V2.18 · Fichas superiores más compactas y simétricas */
+@media(min-width:701px){
+  .prf-main-v27 .prf-top-row{grid-auto-rows:280px!important;}
+  .prf-main-v27 .prf-top-row>.prf-biography,
+  .prf-main-v27 .prf-top-row>.prf-relations-column,
+  .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations{
+    height:280px!important;
+    min-height:280px!important;
+    max-height:280px!important;
+  }
+}

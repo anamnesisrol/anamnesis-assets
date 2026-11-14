@@ -599,3 +599,125 @@
 #rmGuide .rm-place-new h3 { overflow-wrap:anywhere; }
 #rmGuide .rm-filters { flex-wrap:wrap; }
 #rmGuide .rm-filters button { white-space:normal; }
+
+/* ===========================================================
+   ANAMNESIS · DESCUBRE RÉMORA · REVISIÓN VISUAL 2026-11-14
+   Variables del tema oficial, sin rediseñar la retícula de escritorio.
+   =========================================================== */
+body.theme-dark #rmGuide {
+ --rm-bg:var(--bg-main);
+ --rm-paper:var(--bg-panel);
+ --rm-soft:var(--bg-soft);
+ --rm-ink:var(--text-main);
+ --rm-sub:var(--text-soft);
+ --rm-title:var(--title-color);
+ --rm-line:var(--line);
+ --rm-line2:var(--line-soft);
+ --rm-sage:var(--accent-ink); /* rosa-vino legible sobre carbón */
+ --rm-rose:var(--accent-rose);
+ --rm-brass:var(--accent-warm);
+ --rm-link:var(--link);
+ color:var(--rm-ink);
+ background:var(--rm-paper);
+}
+body.theme-dark #rmGuide .rm-page,
+body.theme-dark #rmGuide .rm-topbar,
+body.theme-dark #rmGuide .rm-panel,
+body.theme-dark #rmGuide .rm-location-card,
+body.theme-dark #rmGuide .rm-district-panel,
+body.theme-dark #rmGuide .rm-place,
+body.theme-dark #rmGuide .rm-landmarks article,
+body.theme-dark #rmGuide .rm-accordion details,
+body.theme-dark #rmGuide .rm-map-dialog {
+ background-color:var(--rm-paper);
+ background-image:none;
+ box-shadow:none;
+}
+body.theme-dark #rmGuide :is(.rm-district-panel,.rm-government,.rm-note,.rm-transit article,.rm-history-steps article,.rm-npcs article,.rm-offrole,.rm-quote,.rm-location-note,.rm-event-note) {
+ border-color:var(--rm-line);
+ box-shadow:none;
+}
+body.theme-dark #rmGuide :is(.rm-tablist button[aria-selected=true],.rm-filters button.active) {
+ background:var(--accent-ink);
+ border-color:var(--accent-ink);
+ color:var(--bg-body)!important;
+}
+body.theme-dark #rmGuide .rm-button:not(.ghost) {
+ background:var(--accent-ink);
+ border-color:var(--accent-ink);
+ color:var(--bg-body)!important;
+}
+body.theme-dark #rmGuide .rm-button:not(.ghost):hover {
+ background:var(--accent-rose);
+ border-color:var(--accent-rose);
+ color:var(--bg-body)!important;
+}
+/* Preservar las fotografías en ambos modos, no sustituirlas por capas opacas. */
+#rmGuide :is(.rm-district-image,.rm-place-image,.rm-landmark-image,.rm-photo-container) {
+ position:relative;overflow:hidden;
+}
+#rmGuide :is(.rm-district-image,.rm-place-image,.rm-landmark-image,.rm-photo-container) img {
+ display:block;width:100%;height:100%;object-fit:cover;
+}
+#rmGuide .rm-district-image {min-height:230px;}
+#rmGuide .rm-location-card .rm-location-map{padding:15px;}
+#rmGuide .rm-location-card .rm-location-body{padding:20px;}
+#rmGuide .rm-location-card .rm-map-thumb{
+ position:absolute;inset:0;z-index:2;
+}
+#rmGuide .rm-location-map-compact{position:relative;}
+#rmGuide .rm-location-map-compact .rm-map-zoom{
+ position:absolute;z-index:3;right:12px;bottom:12px;pointer-events:none;
+}
+#rmGuide :is(a,button,summary,input):focus-visible{
+ outline:2px solid var(--accent-rose);outline-offset:3px;
+}
+#rmGuide .rm-nav a:hover,
+#rmGuide .rm-footer a:hover {color:var(--accent-rose);}
+#rmGuide .rm-tablist button:hover,
+#rmGuide .rm-filters button:hover {
+ border-color:var(--accent-rose);
+}
+#rmGuide .rm-place a,
+#rmGuide .rm-npcs a,
+#rmGuide .rm-map-hint a {
+ color:var(--rm-link);
+ text-decoration:underline;
+ text-underline-offset:2px;
+}
+#rmGuide .rm-place a:hover,
+#rmGuide .rm-npcs a:hover,
+#rmGuide .rm-map-hint a:hover {color:var(--rm-rose);}
+#rmGuide .rm-landmarks article .rm-landmark-image,
+#rmGuide .rm-place .rm-place-image {
+ flex:none;height:150px;
+}
+#rmGuide .rm-landmarks article .rm-landmark-image img,
+#rmGuide .rm-place .rm-place-image img {object-fit:cover;}
+/* El fallo de la imagen no tapa el contenido, y conserva el fondo del papel. */
+#rmGuide img.rm-photo-unavailable{display:none!important;}
+#rmGuide .rm-place-grid>.rm-place,
+#rmGuide .rm-landmarks>article,
+#rmGuide .rm-npcs>article {min-width:0;}
+#rmGuide .rm-accordion details>summary {list-style-position:inside;}
+#rmGuide .rm-accordion details>ul.rm-event-list{padding:0 20px;}
+#rmGuide .rm-hospital .rm-hospital-content {min-width:0;flex:1 1 300px;}
+#rmGuide .rm-hospital .rm-hospital-director {flex:0 1 220px;}
+@media(max-width:860px) {
+ #rmGuide .rm-location-grid {grid-template-columns:1fr;}
+ #rmGuide .rm-npcs {grid-template-columns:repeat(2,minmax(0,1fr));}
+ #rmGuide .rm-landmarks,#rmGuide .rm-place-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:600px) {
+ #rmGuide {width:100%;margin:18px auto 30px;}
+ #rmGuide .rm-topbar {padding:16px;}
+ #rmGuide .rm-nav {gap:9px 13px;}
+ #rmGuide .rm-hero {padding:30px 22px;}
+ #rmGuide .rm-history-steps,
+ #rmGuide .rm-transit,
+ #rmGuide .rm-npcs,
+ #rmGuide .rm-landmarks,
+ #rmGuide .rm-place-grid {grid-template-columns:1fr;}
+ #rmGuide .rm-location-body {padding:16px;}
+ #rmGuide .rm-hospital .rm-hospital-director {flex-basis:100%;max-width:none;}
+}

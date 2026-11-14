@@ -954,26 +954,3 @@ body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-piece{
    padding-top:0!important;
  }
 }
-
-/* ANAMNESIS · Datos biográficos: etiquetas compactas y más espacio para valores.
-   Mantener los dos grupos de datos y los iconos, sin alterar otras tarjetas. */
-@media(min-width:701px){
- .prf-main-v27 .prf-biography .prf-info-list{
-   grid-template-columns:repeat(2,minmax(0,1fr));
-   column-gap:16px;
- }
- .prf-main-v27 .prf-biography .prf-info-row{
-   grid-template-columns:17px minmax(0,76px) minmax(0,1fr);
-   column-gap:6px;
- }
- .prf-main-v27 .prf-biography .prf-info-label{
-   min-width:0;
-   font-size:7.5px;
-   letter-spacing:.055em;
- }
- .prf-main-v27 .prf-biography .prf-info-value{
-   min-width:0;
-   overflow-wrap:break-word;
-   word-break:normal;
- }
-}

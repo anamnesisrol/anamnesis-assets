@@ -744,3 +744,20 @@ body.theme-dark #rmGuide .rm-hero .rm-button:not(.ghost) {
  background:var(--text-main);border-color:var(--text-main);
  color:var(--bg-main)!important;
 }
+
+/* DESCUBRE RÉMORA · Portada fotográfica restaurada.
+   El HTML no contiene una imagen de portada; antes se mostraba solo color. */
+#rmGuide .rm-hero,
+body.theme-dark #rmGuide .rm-hero {
+  background-color:var(--accent-sage);
+  background-image:
+    linear-gradient(90deg,rgba(27,27,29,.73),rgba(27,27,29,.24)),
+    url("https://i.servimg.com/u/f68/20/65/25/08/_top_t10.jpg");
+  background-position:center,center 48%;
+  background-size:cover,cover;
+  background-repeat:no-repeat;
+}
+#rmGuide .rm-hero :is(h1,p,.rm-kicker),
+body.theme-dark #rmGuide .rm-hero :is(h1,p,.rm-kicker){
+ color:#fff!important;
+}

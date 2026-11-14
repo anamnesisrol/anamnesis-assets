@@ -544,3 +544,74 @@ body.theme-dark .prf-archive::before{background:#DBCFB9!important;border-color:#
   .prf-main-v27 .prf-relations .prf-side-friends{gap:4px!important;}
   .prf-main-v27 .prf-relations .prf-side-friends .friend-block{flex-basis:67px!important;width:67px!important;max-width:67px!important;}
 }
+
+/* V2.21 · Paleta editorial del perfil en modo oscuro: contraste y papel */
+body.theme-dark .prf-wrap{
+  --prf-wine-light:#D69CAC;
+  --prf-paper-dark:#343133;
+  --prf-paper-raised:#3B3638;
+  --prf-paper-line:#70615F;
+}
+body.theme-dark .prf-wrap :is(
+  .prf-actions button.followBtn,
+  .prf-actions .prf-friend-action a,
+  .prf-actions .prf-friend-action button,
+  .prf-actions .prf-friend-action input,
+  .prf-actions .prf-stats-link,
+  .prf-friends-info .prf-show-all-friends,
+  .prf-edit-toggle,
+  .prf-prizes-link,
+  .prf-stats-link,
+  .prf-all-friends-close,
+  .prf-wall-compose a,
+  .prf-activity-actions button
+){
+  color:var(--prf-wine-light)!important;
+  -webkit-text-fill-color:var(--prf-wine-light)!important;
+  border-bottom-color:color-mix(in srgb,var(--prf-wine-light) 46%,transparent)!important;
+}
+body.theme-dark .prf-wrap :is(
+  .prf-actions button.followBtn,
+  .prf-actions .prf-friend-action a,
+  .prf-actions .prf-friend-action button,
+  .prf-actions .prf-stats-link,
+  .prf-friends-info .prf-show-all-friends,
+  .prf-edit-toggle,
+  .prf-prizes-link,
+  .prf-stats-link,
+  .prf-all-friends-close,
+  .prf-wall-compose a
+):hover{
+  color:#F0C5CE!important;
+  -webkit-text-fill-color:#F0C5CE!important;
+  border-bottom-color:#F0C5CE!important;
+}
+body.theme-dark .prf-wrap .prf-actions button.followBtn :is(i,.material-symbols-outlined,.material-icons),
+body.theme-dark .prf-wrap .prf-actions button.followBtn::before{color:inherit!important;-webkit-text-fill-color:currentColor!important;}
+/* La hoja RPG se percibe como un papel insertado, no como otro panel carbón. */
+body.theme-dark .prf-wrap .prf-sheet-placeholder{
+  background:#383136!important;
+  border-color:#866A6C!important;
+  color:#EAE0D8;
+  box-shadow:inset 0 0 0 1px rgba(211,185,169,.08);
+}
+body.theme-dark .prf-wrap .prf-sheet-placeholder::before,
+body.theme-dark .prf-wrap .prf-sheet-placeholder::after{opacity:.38;}
+body.theme-dark .prf-wrap .prf-sheet-placeholder .prf-sheet-number{color:#CDAFA6!important;}
+body.theme-dark .prf-wrap .prf-sheet-placeholder .prf-sheet-placeholders span{border-color:#766462!important;}
+/* Correspondencia: tarjetas cálidas, separadas del panel, sin negro sobre negro. */
+body.theme-dark .prf-wrap .prf-correspondence #prf-wall-target .prf-messages>ol>li{
+  background:var(--prf-paper-dark)!important;
+  border:1px solid var(--prf-paper-line)!important;
+  box-shadow:none!important;
+  color:#EEE5DE!important;
+}
+body.theme-dark .prf-wrap .prf-correspondence #prf-wall-target .prf-messages>ol>li::after{opacity:.10!important;}
+body.theme-dark .prf-wrap .prf-correspondence .message-block,
+body.theme-dark .prf-wrap .prf-correspondence .message-text{color:#EEE5DE!important;}
+body.theme-dark .prf-wrap .prf-correspondence .message-header{color:#D9C5BD!important;}
+body.theme-dark .prf-wrap .prf-correspondence .message-date{color:#C1D6C4!important;}
+body.theme-dark .prf-wrap .prf-correspondence .message-footer a{color:#CDAFA6!important;}
+body.theme-dark .prf-wrap .prf-correspondence .prf-wall-compose a{background:transparent!important;border-bottom-color:var(--prf-wine-light)!important;}
+body.theme-dark .prf-wrap .prf-correspondence .prf-wall-compose small{color:#CBB9B5!important;}
+body.theme-dark .prf-wrap .prf-correspondence .prf-messages .avatar{background:#EEE5D9!important;border-color:#B9A79B!important;}

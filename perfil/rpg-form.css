@@ -135,3 +135,48 @@ body.theme-dark .ana-rpg .rp-actions input[type="submit"]{
 body.theme-dark .ana-rpg .rp-actions input[type="reset"]{
   background:#55746B!important;border-color:#55746B!important;color:#fffaf4!important;-webkit-text-fill-color:#fffaf4!important;
 }
+
+/* V2.4 · Botones HTML explícitos: evita reglas globales de Foroactivo sobre input.button1/button2 */
+.ana-rpg .rp-actions .rp-action-button{
+  display:inline-flex!important;
+  position:relative!important;
+  visibility:visible!important;
+  opacity:1!important;
+  flex:0 0 auto;
+  justify-content:center!important;
+  align-items:center!important;
+  width:auto!important;
+  height:auto!important;
+  min-width:170px!important;
+  min-height:44px!important;
+  margin:0!important;
+  padding:12px 20px!important;
+  border-radius:2px!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  -webkit-appearance:none!important;
+  appearance:none!important;
+  font-family:var(--font-base)!important;
+  font-size:11px!important;
+  font-weight:800!important;
+  line-height:1.4!important;
+  letter-spacing:.09em!important;
+  text-decoration:none!important;
+  text-transform:uppercase!important;
+  cursor:pointer!important;
+}
+.ana-rpg .rp-actions .rp-action-button--save{
+  background-color:#925763!important;
+  border:1px solid #925763!important;
+  color:#fffaf4!important;
+  -webkit-text-fill-color:#fffaf4!important;
+}
+.ana-rpg .rp-actions .rp-action-button--reset{
+  background-color:#55746B!important;
+  border:1px solid #55746B!important;
+  color:#fffaf4!important;
+  -webkit-text-fill-color:#fffaf4!important;
+}
+.ana-rpg .rp-actions .rp-action-button--save:hover{background-color:#A66A76!important;border-color:#A66A76!important}
+.ana-rpg .rp-actions .rp-action-button--reset:hover{background-color:#67867C!important;border-color:#67867C!important}
+@media(max-width:650px){.ana-rpg .rp-actions .rp-action-button{flex:1 1 0;min-width:0!important}}

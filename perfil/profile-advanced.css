@@ -787,3 +787,41 @@ body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-piece{
    width:52px;height:52px;right:10px;top:15px;transform:none;opacity:.13;
  }
 }
+
+/* ANAMNESIS · RPG V2.30 · Ajustes finales acordados
+   Los colores alternan exclusivamente entre los acentos existentes.
+   Sin sombreado, sin transformaciones en la carta, sin texto oculto. */
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece--current {
+  min-height:145px!important;
+  padding-top:28px!important;
+  padding-bottom:30px!important;
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece--secret {
+  transform:none!important;
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece-subtitle {
+  position:relative;
+  z-index:2;
+  margin:-4px 0 15px!important;
+  color:var(--text-soft)!important;
+  font-family:var(--font-base)!important;
+  font-size:10.5px!important;
+  font-weight:500!important;
+  font-style:normal!important;
+  line-height:1.55!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece--current .prf-rpg-piece-title,
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece--places .prf-rpg-piece-title,
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece--curiosities .prf-rpg-piece-title {
+  color:var(--accent-sage)!important; /* vino */
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece--interests .prf-rpg-piece-title,
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece--particularities .prf-rpg-piece-title,
+.prf-main-v27 #prf-character-sheet .prf-rpg-piece--secret .prf-rpg-piece-title {
+  color:var(--accent-rose)!important; /* verde */
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-full-link {
+  display:none!important;
+}

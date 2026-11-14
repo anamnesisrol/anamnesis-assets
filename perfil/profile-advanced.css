@@ -884,3 +884,46 @@ body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-piece{
 .prf-main-v27 #prf-character-sheet .prf-rpg-piece--curiosities .prf-rpg-piece-title {
   font-size:26px!important;
 }
+
+/* ANAMNESIS · APUNTES PERSONALES · 2026-11-14
+   Los cuatro apuntes centrales no crecen indefinidamente.
+   Situación actual y Un secreto a voces mantienen altura natural.
+   La lectura es posible con ratón, teclado y tacto. */
+.prf-main-v27 #prf-character-sheet .prf-rpg-columns{
+ align-items:start!important;
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-stack{
+ align-self:start;
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-columns .prf-rpg-piece:is(
+ .prf-rpg-piece--interests,
+ .prf-rpg-piece--places,
+ .prf-rpg-piece--particularities,
+ .prf-rpg-piece--curiosities
+){
+ flex:0 0 auto!important;
+ min-height:0!important;
+ max-height:285px;
+ overflow:hidden;
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-columns .prf-rpg-piece .prf-rpg-piece-text{
+ min-height:0;
+ overflow-y:auto;
+ overflow-x:hidden;
+ overscroll-behavior:contain;
+ scrollbar-width:thin;
+ scrollbar-color:var(--line-strong) transparent;
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-columns .prf-rpg-piece .prf-rpg-piece-text:hover,
+.prf-main-v27 #prf-character-sheet .prf-rpg-columns .prf-rpg-piece .prf-rpg-piece-text:focus-within{
+ scrollbar-color:var(--accent-rose) transparent;
+}
+.prf-main-v27 #prf-character-sheet .prf-rpg-columns .prf-rpg-piece .prf-rpg-piece-text::-webkit-scrollbar{width:5px}
+.prf-main-v27 #prf-character-sheet .prf-rpg-columns .prf-rpg-piece .prf-rpg-piece-text::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:8px}
+.prf-main-v27 #prf-character-sheet .prf-rpg-columns .prf-rpg-piece .prf-rpg-piece-text:hover::-webkit-scrollbar-thumb{background:var(--accent-rose)}
+@media(max-width:760px){
+ .prf-main-v27 #prf-character-sheet .prf-rpg-columns .prf-rpg-piece:is(
+  .prf-rpg-piece--interests,.prf-rpg-piece--places,
+  .prf-rpg-piece--particularities,.prf-rpg-piece--curiosities
+ ){max-height:300px}
+}

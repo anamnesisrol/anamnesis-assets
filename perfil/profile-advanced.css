@@ -412,3 +412,78 @@ body.theme-dark .prf-archive::before{background:#DBCFB9!important;border-color:#
 .prf-wrap .prf-actions button.followBtn svg *{stroke:currentColor!important;fill:currentColor!important;}
 .prf-wrap .prf-actions button.followBtn img{filter:none!important;}
 @media(max-width:760px){.prf-wrap .prf-actions{column-gap:14px;}}
+
+/* V2.17 · Un solo lenguaje de enlaces de acción en todo el perfil.
+   No modifica las polaroids ni las filas del archivo del personaje. */
+.prf-wrap :is(
+  .prf-actions button.followBtn,
+  .prf-actions .prf-friend-action a,
+  .prf-actions .prf-friend-action button,
+  .prf-actions .prf-friend-action input,
+  .prf-actions .prf-stats-link,
+  .prf-friends-info .prf-show-all-friends,
+  .prf-edit-toggle,
+  .prf-prizes-link,
+  .prf-stats-link,
+  .prf-all-friends-close,
+  .prf-wall-compose a,
+  .prf-activity-actions button
+){
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:6px!important;
+  box-sizing:border-box!important;
+  width:max-content!important;
+  max-width:100%!important;
+  min-width:0!important;
+  min-height:28px!important;
+  padding:3px 0!important;
+  margin:0!important;
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  border-bottom:1px solid var(--line)!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+  color:var(--accent-sage)!important;
+  -webkit-text-fill-color:var(--accent-sage)!important;
+  font-family:var(--font-base)!important;
+  font-size:9px!important;
+  font-weight:800!important;
+  line-height:1.35!important;
+  letter-spacing:.08em!important;
+  text-transform:uppercase!important;
+  text-align:left!important;
+  cursor:pointer;
+}
+.prf-wrap :is(
+  .prf-actions button.followBtn,
+  .prf-actions .prf-friend-action a,
+  .prf-actions .prf-friend-action button,
+  .prf-actions .prf-friend-action input,
+  .prf-actions .prf-stats-link,
+  .prf-friends-info .prf-show-all-friends,
+  .prf-edit-toggle,
+  .prf-prizes-link,
+  .prf-stats-link,
+  .prf-all-friends-close,
+  .prf-wall-compose a,
+  .prf-activity-actions button
+):hover{
+  background:transparent!important;
+  color:var(--accent-rose)!important;
+  -webkit-text-fill-color:var(--accent-rose)!important;
+  border-bottom-color:var(--accent-rose)!important;
+}
+.prf-wrap :is(.prf-actions,.prf-friends-info,.prf-all-friends-toolbar,.prf-section-title-actions) .material-symbols-outlined{color:inherit!important;}
+.prf-wrap .prf-wall-compose a{display:flex!important;min-height:30px!important;}
+.prf-wrap .prf-wall-compose a::before,.prf-wrap .prf-wall-compose a::after{color:inherit!important;font-size:17px!important;}
+.prf-wrap .prf-wall-compose a>span{display:inline-flex;flex-wrap:wrap;gap:5px;align-items:baseline;}
+.prf-wrap .prf-wall-compose a strong{color:inherit!important;font-family:inherit;font-size:inherit;font-weight:inherit;}
+.prf-wrap .prf-wall-compose a small{color:var(--text-soft)!important;text-transform:none;letter-spacing:0;font-weight:400;}
+.prf-wrap .prf-edit-card .prf-edit-toggle{margin-top:3px!important;}
+.prf-wrap .prf-all-friends-toolbar{justify-content:flex-end;}
+.prf-wrap .prf-friends-info{text-align:right;}
+.prf-wrap .prf-actions .prf-friend-action{align-items:center;gap:16px;}

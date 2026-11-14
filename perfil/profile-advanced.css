@@ -927,3 +927,30 @@ body.theme-dark .prf-main-v27 #prf-character-sheet .prf-rpg-piece{
   .prf-rpg-piece--particularities,.prf-rpg-piece--curiosities
  ){max-height:300px}
 }
+
+/* ANAMNESIS · Relaciones: altura natural y sin hueco bajo los retratos.
+   Se conserva la altura de Datos biográficos y la retícula del perfil. */
+@media(min-width:701px){
+ .prf-main-v27 .prf-top-row{
+   grid-auto-rows:auto!important;
+   align-items:start!important;
+ }
+ .prf-main-v27 .prf-top-row>.prf-relations-column,
+ .prf-main-v27 .prf-top-row>.prf-relations,
+ .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations{
+   height:auto!important;
+   min-height:0!important;
+   max-height:none!important;
+   align-self:start!important;
+   flex:0 0 auto!important;
+ }
+ .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations>.prf-side-friends{
+   flex:0 0 auto!important;
+   min-height:0!important;
+   align-content:start;
+ }
+ .prf-main-v27 .prf-top-row .prf-relations-column>.prf-relations>.prf-friends-info{
+   margin-top:14px!important;
+   padding-top:0!important;
+ }
+}

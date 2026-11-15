@@ -669,11 +669,11 @@
 }
 .atb-groups .atb-group-text b { color: var(--title-color); font-weight: 800; }
 /* - - - - - - - - - - T A B L I L L A S   /   R A N G O S   Y   G R U P O S   -   C O L O R E S - - - - - - - - - - */
-.atb-groups .atb-group-staff { --atb-group-color: #9A6A48; }
-.atb-groups .atb-group-active { --atb-group-color: #D97861; }
-.atb-groups .atb-group-medium { --atb-group-color: #9B7A9D; }
-.atb-groups .atb-group-low { --atb-group-color: #7F8D70; }
-.atb-groups .atb-group-hiatus { --atb-group-color: #6F8EA5; }
+.atb-groups .atb-group-staff { --atb-group-color: #A18420; }
+.atb-groups .atb-group-active { --atb-group-color: #99659F; }
+.atb-groups .atb-group-steady { --atb-group-color: #74824F; }
+.atb-groups .atb-group-medium { --atb-group-color: #657F97; }
+.atb-groups .atb-group-low { --atb-group-color: #9D7154; }
 /* - - - - - - - - - - T A B L I L L A S   /   R A N G O S   Y   G R U P O S   -   R E S P O N S I V E - - - - - - - - - - */
 @media (max-width: 760px) {
   .atb-groups .atb-frame { grid-template-columns: 18px minmax(0,1fr); }

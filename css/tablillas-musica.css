@@ -68,8 +68,8 @@
   flex-direction: column !important;
   align-items: center !important;
   justify-content: center !important;
-  background: var(--accent-sage) !important;
-  border: 1px solid color-mix(in srgb,var(--accent-sage) 72%,var(--line)) !important;
+  background: var(--accent-warm) !important;
+  border: 1px solid color-mix(in srgb,var(--accent-warm) 72%,var(--line)) !important;
   text-align: center !important;
 }
 
@@ -177,8 +177,8 @@
   width: 38px !important;
   height: 38px !important;
   color: #fff !important;
-  background: var(--accent-sage) !important;
-  border: 1px solid var(--accent-sage) !important;
+  background: var(--accent-warm) !important;
+  border: 1px solid var(--accent-warm) !important;
   border-radius: 999px !important;
   font-family: serif !important;
   font-size: 24px !important;

@@ -1761,8 +1761,8 @@ body.theme-dark .ana-topic-button:hover {
 .ana-post-message strong {
   font-weight: 800;
 }
-.ana-post-message b:not(:where(.am-phone *)),
-.ana-post-message strong:not(:where(.am-phone *)) {
+.ana-post-message b:not(:where(.am-phone *, .atb *, .ams-scene *, .asp-spotify *, .am-starter-mini *, .expd *, .fxa-accepted *, .stn-note *, .scr-chrono *, .sbu-baul *, .sbt-plot *, .sbp-search *, .stb-post *, .stp-post *, .smr-search *, .snr-fragment *)),
+.ana-post-message strong:not(:where(.am-phone *, .atb *, .ams-scene *, .asp-spotify *, .am-starter-mini *, .expd *, .fxa-accepted *, .stn-note *, .scr-chrono *, .sbu-baul *, .sbt-plot *, .sbp-search *, .stb-post *, .stp-post *, .smr-search *, .snr-fragment *)) {
   color: var(--ana-user-color, var(--accent-rose));
 }
 .ana-post-content i,

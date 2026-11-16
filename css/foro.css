@@ -1826,16 +1826,16 @@ body.theme-dark .ana-topic-button:hover {
 .ana-post-content dl.codebox.spoiler::before,
 .ana-post-content dl.codebox.spoiler::after{content:none!important;display:none!important}
 .ana-post-content dl.codebox.spoiler>dt{
-  position:relative;display:block;min-height:42px;margin:0;padding:12px 16px 12px 42px;
+  position:relative;display:flex;align-items:center;min-height:48px;margin:0;padding:10px 16px 10px 42px;
   border:0!important;background:transparent!important;color:var(--title-color)!important;
-  font:700 12px/1.5 var(--font-base)!important;letter-spacing:.045em;
+  font:700 12px/1.35 var(--font-base)!important;letter-spacing:.045em;
   text-align:left;text-transform:uppercase;cursor:pointer;box-shadow:none!important;
 }
 .ana-post-content dl.codebox.spoiler>dt>*{
   display:inline!important;visibility:visible!important;color:inherit!important;font:inherit!important;
 }
 .ana-post-content dl.codebox.spoiler>dt::before{
-  content:"›"!important;position:absolute;top:50%;left:17px;display:block!important;
+  content:"›"!important;position:absolute;top:calc(50% - 2px);left:17px;display:block!important;
   transform:translateY(-50%);color:var(--accent-ink)!important;
   font:400 24px/1 Georgia,serif;letter-spacing:0;pointer-events:none;
 }

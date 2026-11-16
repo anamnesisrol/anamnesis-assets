@@ -810,24 +810,10 @@ body.theme-dark .subforo-layout.escena-img::after {
   padding: 0;
   color: var(--text-main);
   font-size: 16px;
-  line-height: 1.3;
+  line-height: 1.2;
 }
-/* Los saltos de línea del texto normal conservan el comportamiento nativo.
-   No se alteran los <br> internos de tablillas y componentes. */
-.ana-post-message > br {
-  display: inline;
-  margin: 0;
-}
-/* Separación intermedia entre párrafos escritos con dos <br> por Foroactivo.
-   Solo alcanza la prosa directa, no las tablillas anidadas. */
-.ana-post-message > br + br {
-  display: block;
-  content: "";
-  height: 1.5em;
-  line-height: 0;
-  margin: 0;
-  padding: 0;
-}
+/* Los <br> de Foroactivo se dejan con su comportamiento nativo.
+   Dos saltos consecutivos conservan una línea vacía entre párrafos. */
 .ana-post-content p {
   margin: 0 0 1.4em;
 }

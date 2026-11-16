@@ -2528,18 +2528,3 @@ body.theme-dark .ana-topic-end-tools::before {
     width: 100%;
   }
 }
-
-/* ANAMNESIS · DISCOVER / PREMIOS: alineación y contraste del tooltip */
-/* El sello acompaña el texto de la actividad, sin desplazarse en otros módulos. */
-.dsc-discover .activity-type-3 .dsc-text > .award {
-  position: relative;
-  top: 8px;
-}
-/* La tarjeta del tooltip sigue siendo clara en ambos modos:
-   en oscuro forzamos tinta legible sin alterar el diseño del modo día. */
-body.theme-dark .dsc-discover .award_tooltiptext,
-body.theme-dark .dsc-discover .award_tooltiptext *,
-body.theme-dark .dsc-discover .award_tooltiptext::before,
-body.theme-dark .dsc-discover .award_tooltiptext::after {
-  color: #403D39 !important;
-}

@@ -1781,11 +1781,11 @@ body.theme-dark .ana-topic-button:hover {
    Colores y fondos se adaptan con variables del tema.
    ========================================================= */
 .ana-post-content :is(blockquote,.quote,dl.codebox.quote){
-  position:relative;margin:1.6em 0;padding:18px 22px;background:var(--bg-panel-alt);
+  position:relative;margin:1.6em 0;padding:18px 22px 18px 62px;background:var(--bg-panel-alt);
   background-image:none;border:1px solid var(--line);border-left:4px solid var(--accent-ink);
   border-radius:4px;box-shadow:none;color:var(--text-main);font:inherit;line-height:1.7;text-align:left;
 }
-.ana-post-content :is(blockquote,.quote,dl.codebox.quote)::before,
+.ana-post-content :is(blockquote,.quote,dl.codebox.quote)::before{content:"“";display:block;position:absolute;top:13px;left:18px;color:var(--accent-ink);font:400 37px/1 Georgia,serif;pointer-events:none}
 .ana-post-content :is(blockquote,.quote,dl.codebox.quote)::after{content:none;display:none}
 .ana-post-content :is(blockquote,.quote,dl.codebox.quote) :is(cite,.quote-title,dt){
   display:block;margin:0 0 12px;padding:0 0 10px;border:0;border-bottom:1px solid var(--line);
@@ -1840,7 +1840,8 @@ body.theme-dark .ana-topic-button:hover {
   transform:translateY(-50%);color:var(--accent-ink)!important;
   font:400 24px/1 Georgia,serif;letter-spacing:0;pointer-events:none;
 }
-.ana-post-content dl.codebox.spoiler>dt::after{content:"visibility_off"!important;position:absolute;right:15px;top:50%;display:block!important;transform:translateY(-50%);font:400 19px/1 "Material Symbols Outlined";letter-spacing:normal;color:var(--accent-ink);opacity:.85;pointer-events:none}
+body .postbody .content dl.codebox.spoiler>dt::after,
+body .ana-post-content dl.codebox.spoiler>dt::after{content:"visibility_off"!important;position:absolute!important;right:15px!important;top:50%!important;display:block!important;visibility:visible!important;width:auto!important;height:auto!important;transform:translateY(-50%)!important;font:400 19px/1 "Material Symbols Outlined"!important;letter-spacing:normal!important;color:var(--accent-ink)!important;opacity:.85!important;pointer-events:none!important}
 .ana-post-content dl.codebox.spoiler>dt:hover{background:color-mix(in srgb,var(--accent-ink) 5%,transparent)!important}
 .ana-post-content dl.codebox.spoiler>dt:focus-visible{outline:2px solid var(--accent-ink);outline-offset:-3px}
 .ana-post-content dl.codebox.spoiler>dd{

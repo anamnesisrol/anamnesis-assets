@@ -810,7 +810,7 @@ body.theme-dark .subforo-layout.escena-img::after {
   padding: 0;
   color: var(--text-main);
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.3;
 }
 /* Los saltos de línea del texto normal conservan el comportamiento nativo.
    No se alteran los <br> internos de tablillas y componentes. */
@@ -823,7 +823,7 @@ body.theme-dark .subforo-layout.escena-img::after {
 .ana-post-message > br + br {
   display: block;
   content: "";
-  height: 1.1em;
+  height: 1.5em;
   line-height: 0;
   margin: 0;
   padding: 0;

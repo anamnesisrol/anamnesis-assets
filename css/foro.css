@@ -810,7 +810,7 @@ body.theme-dark .subforo-layout.escena-img::after {
   padding: 0;
   color: var(--text-main);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 /* Los saltos de línea del texto normal conservan el comportamiento nativo.
    No se alteran los <br> internos de tablillas y componentes. */
@@ -818,13 +818,12 @@ body.theme-dark .subforo-layout.escena-img::after {
   display: inline;
   margin: 0;
 }
-/* Los posts de prosa de Foroactivo contienen dos <br> por párrafo.
-   El segundo ocupa una pausa reducida en vez de otra línea completa.
-   Solo afecta saltos hijos directos: las tablillas internas quedan intactas. */
+/* Separación intermedia entre párrafos escritos con dos <br> por Foroactivo.
+   Solo alcanza la prosa directa, no las tablillas anidadas. */
 .ana-post-message > br + br {
   display: block;
   content: "";
-  height: 0.45em;
+  height: 1.1em;
   line-height: 0;
   margin: 0;
   padding: 0;

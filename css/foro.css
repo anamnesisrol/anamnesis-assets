@@ -1847,7 +1847,7 @@ body.theme-dark .ana-topic-button:hover {
   box-shadow:none!important;
 }
 .ana-post-content dl.codebox.spoiler :is(.spoiler_content,.spoiler-content){
-  margin:0;padding:16px 20px;border:0;border-top:1px solid var(--line);
+  margin:0;padding:16px 20px;border:0!important;border-top:0!important;
   background:transparent;color:var(--text-main);font:inherit;line-height:1.7;text-align:left;
 }
 .ana-post-content dl.codebox.spoiler :is(.spoiler_content,.spoiler-content) p:last-child{margin-bottom:0}

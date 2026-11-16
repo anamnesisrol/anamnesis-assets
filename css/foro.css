@@ -810,10 +810,19 @@ body.theme-dark .subforo-layout.escena-img::after {
   padding: 0;
   color: var(--text-main);
   font-size: 16px;
-  line-height: 1.2;
+  line-height: 1.15 !important;
 }
-/* Los <br> de Foroactivo se dejan con su comportamiento nativo.
-   Dos saltos consecutivos conservan una línea vacía entre párrafos. */
+/* Espaciador insertado entre párrafos normales desde viewtopic_body.
+   Un renglón completo y sin afectar el responsive ni las tablillas. */
+.ana-post-message > .ana-prose-gap {
+  display: block !important;
+  height: 1.15em !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  line-height: 0 !important;
+}
 .ana-post-content p {
   margin: 0 0 1.4em;
 }

@@ -810,12 +810,13 @@ body.theme-dark .subforo-layout.escena-img::after {
   padding: 0;
   color: var(--text-main);
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
-.ana-post-content br {
-  display: block;
-  content: "";
-  margin-bottom: -2px;
+/* Los saltos de línea del texto normal conservan el comportamiento nativo.
+   No se alteran los <br> internos de tablillas y componentes. */
+.ana-post-message > br {
+  display: inline;
+  margin: 0;
 }
 .ana-post-content p {
   margin: 0 0 1.4em;
@@ -1752,6 +1753,11 @@ body.theme-dark .ana-topic-button:hover {
 .ana-post-content p {
   margin: 0 0 1.15em;
   text-align: justify;
+}
+/* Prosa normal: separación más compacta sin afectar los párrafos
+   de tablillas o elementos anidados. */
+.ana-post-message > p {
+  margin-bottom: 0.85em;
 }
 .ana-post-content p:last-child {
   margin-bottom: 0;

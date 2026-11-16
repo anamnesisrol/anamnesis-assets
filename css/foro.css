@@ -818,12 +818,16 @@ body.theme-dark .subforo-layout.escena-img::after {
   display: inline;
   margin: 0;
 }
-/* Foroactivo separa los párrafos de prosa mediante dos <br> seguidos.
-   Compactamos solo el segundo salto, sin alterar las tablillas anidadas. */
+/* Los posts de prosa de Foroactivo contienen dos <br> por párrafo.
+   El segundo ocupa una pausa reducida en vez de otra línea completa.
+   Solo afecta saltos hijos directos: las tablillas internas quedan intactas. */
 .ana-post-message > br + br {
   display: block;
   content: "";
-  margin-top: -0.4em;
+  height: 0.45em;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
 }
 .ana-post-content p {
   margin: 0 0 1.4em;

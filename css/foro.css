@@ -1785,10 +1785,10 @@ body.theme-dark .ana-topic-button:hover {
   background-image:none;border:1px solid var(--line);border-left:4px solid var(--accent-ink);
   border-radius:4px;box-shadow:none;color:var(--text-main);font:inherit;line-height:1.7;text-align:left;
 }
-.ana-post-content :is(blockquote,.quote,dl.codebox.quote)::before{content:"“";display:block;position:absolute;top:13px;left:18px;color:var(--accent-ink);font:400 37px/1 Georgia,serif;pointer-events:none}
+.ana-post-content :is(blockquote,.quote,dl.codebox.quote)::before{content:"“"!important;display:block!important;position:absolute;top:13px;left:18px;color:var(--accent-ink);font:400 37px/1 Georgia,serif;pointer-events:none}
 .ana-post-content :is(blockquote,.quote,dl.codebox.quote)::after{content:none;display:none}
 .ana-post-content :is(blockquote,.quote,dl.codebox.quote) :is(cite,.quote-title,dt){
-  display:block;margin:0 0 12px;padding:0 0 10px;border:0;border-bottom:1px solid var(--line);
+  display:block;margin:0 0 12px;padding:0;border:0;border-bottom:0;
   background:none;color:var(--accent-ink);font:600 12px/1.5 var(--font-title);
   letter-spacing:.06em;text-transform:none;
 }

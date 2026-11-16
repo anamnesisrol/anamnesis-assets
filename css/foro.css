@@ -818,6 +818,13 @@ body.theme-dark .subforo-layout.escena-img::after {
   display: inline;
   margin: 0;
 }
+/* Foroactivo separa los párrafos de prosa mediante dos <br> seguidos.
+   Compactamos solo el segundo salto, sin alterar las tablillas anidadas. */
+.ana-post-message > br + br {
+  display: block;
+  content: "";
+  margin-top: -0.4em;
+}
 .ana-post-content p {
   margin: 0 0 1.4em;
 }

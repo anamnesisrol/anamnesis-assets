@@ -1804,10 +1804,11 @@ body.theme-dark .ana-topic-button:hover {
 .ana-post-content dl.codebox:not(.quote):not(.spoiler)::before,
 .ana-post-content dl.codebox:not(.quote):not(.spoiler)::after{content:none;display:none}
 .ana-post-content dl.codebox:not(.quote):not(.spoiler)>dt{
-  display:block;margin:0;padding:12px 16px;border:0;border-bottom:1px solid var(--line);
-  background:var(--bg-soft);color:var(--title-color);font:600 11px/1.5 var(--font-title);
-  letter-spacing:.12em;text-transform:uppercase;
+  position:relative;display:flex;align-items:center;min-height:46px;margin:0;padding:12px 48px 12px 16px;border:0;border-bottom:1px solid var(--line);
+  background:var(--bg-soft);color:var(--accent-ink);font:600 12px/1.5 var(--font-title);
+  letter-spacing:.06em;text-transform:none;
 }
+.ana-post-content dl.codebox:not(.quote):not(.spoiler)>dt::after{content:"code";position:absolute;right:15px;top:50%;transform:translateY(-50%);font:400 20px/1 "Material Symbols Outlined";letter-spacing:normal;color:var(--accent-ink);opacity:.85;pointer-events:none}
 .ana-post-content dl.codebox:not(.quote):not(.spoiler)>dd{
   margin:0;padding:16px 18px;background:transparent;border:0;overflow-x:auto;
   color:var(--text-main);font:12px/1.65 Consolas,Monaco,monospace;text-align:left;
@@ -1826,10 +1827,10 @@ body.theme-dark .ana-topic-button:hover {
 .ana-post-content dl.codebox.spoiler::before,
 .ana-post-content dl.codebox.spoiler::after{content:none!important;display:none!important}
 .ana-post-content dl.codebox.spoiler>dt{
-  position:relative;display:flex;align-items:center;min-height:48px;margin:0;padding:10px 16px 10px 42px;
-  border:0!important;background:transparent!important;color:var(--title-color)!important;
-  font:700 12px/1.35 var(--font-base)!important;letter-spacing:.045em;
-  text-align:left;text-transform:uppercase;cursor:pointer;box-shadow:none!important;
+  position:relative;display:flex;align-items:center;min-height:48px;margin:0;padding:10px 48px 10px 42px;
+  border:0!important;background:transparent!important;color:var(--accent-ink)!important;
+  font:600 12px/1.5 var(--font-title)!important;letter-spacing:.06em;
+  text-align:left;text-transform:none;cursor:pointer;box-shadow:none!important;
 }
 .ana-post-content dl.codebox.spoiler>dt>*{
   display:inline!important;visibility:visible!important;color:inherit!important;font:inherit!important;
@@ -1839,7 +1840,7 @@ body.theme-dark .ana-topic-button:hover {
   transform:translateY(-50%);color:var(--accent-ink)!important;
   font:400 24px/1 Georgia,serif;letter-spacing:0;pointer-events:none;
 }
-.ana-post-content dl.codebox.spoiler>dt::after{content:none!important;display:none!important}
+.ana-post-content dl.codebox.spoiler>dt::after{content:"visibility_off"!important;position:absolute;right:15px;top:50%;display:block!important;transform:translateY(-50%);font:400 19px/1 "Material Symbols Outlined";letter-spacing:normal;color:var(--accent-ink);opacity:.85;pointer-events:none}
 .ana-post-content dl.codebox.spoiler>dt:hover{background:color-mix(in srgb,var(--accent-ink) 5%,transparent)!important}
 .ana-post-content dl.codebox.spoiler>dt:focus-visible{outline:2px solid var(--accent-ink);outline-offset:-3px}
 .ana-post-content dl.codebox.spoiler>dd{

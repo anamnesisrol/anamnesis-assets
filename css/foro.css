@@ -2528,3 +2528,16 @@ body.theme-dark .ana-topic-end-tools::before {
     width: 100%;
   }
 }
+
+/* ANAMNESIS · Tablón / Nuestras tablillas: tres accesos apilados. */
+#tablon-anamnesis .ana-template-links {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 8px !important;
+}
+#tablon-anamnesis .ana-template-card {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  grid-column: 1 / -1 !important;
+}

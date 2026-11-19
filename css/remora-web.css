@@ -131,3 +131,29 @@
  .arw-blog-comments{padding:18px}
  .arw-blog-banner{aspect-ratio:16/7}
 }
+
+/* RÉMORA WEB · Ajuste para la columna narrativa del post.
+   Mantiene el diseño en escritorio sin forzar anchos de página completa. */
+.arw{width:min(100%,680px);max-width:100%;margin:16px auto;font-size:12px;overflow-wrap:anywhere}
+.arw .arw-browser{width:100%;max-width:100%;min-width:0}
+.arw-video .arw-content{padding:15px 16px 18px}
+.arw-video-title{font-size:16px}
+.arw-mail .arw-content{grid-template-columns:128px minmax(0,1fr)}
+.arw-mail-sidebar{padding:16px 9px}
+.arw-mail-brand{font-size:14px;margin:0 0 17px 4px}
+.arw-mail-main{padding:17px 18px 21px}
+.arw-mail-subject{font-size:22px}
+.arw-blog-layout{grid-template-columns:minmax(0,1fr) 135px;gap:16px;padding:20px}
+.arw-blog-sidebar{padding-left:13px}
+.arw-blog-head{padding:22px 17px}
+.arw-blog-comments{padding:18px 20px}
+.arw-blog-title{font-size:clamp(21px,3vw,29px)}
+@media(max-width:520px){
+ .arw-mail .arw-content{grid-template-columns:1fr}
+ .arw-mail-sidebar{display:none}
+ .arw-mail-main{padding:15px}
+ .arw-blog-layout{grid-template-columns:minmax(0,1fr);gap:16px;padding:16px}
+ .arw-blog-sidebar{border-left:0;border-top:1px solid var(--arw-line);padding:16px 0 0}
+ .arw-blog-comments{padding:16px}
+ .arw-blog-head{padding:19px 12px}
+}

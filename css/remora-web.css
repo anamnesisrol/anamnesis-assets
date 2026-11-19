@@ -189,3 +189,139 @@
  .arw-mail .arw-mail-main{padding:13px}
  .arw-mail .arw-mail-subject{font-size:17px}
 }
+
+/* RÉMORA WEB · VERSIÓN 6
+   Correo gris neutro · Press + Forum · diseño compacto para 600px · tema nocturno
+   Las variables del blog siguen siendo editables en el generador. */
+.arw.arw-mail{
+ --arw-paper:#f7f8fa;--arw-surface:#e8ebef;--arw-line:#d3d8dd;
+ --arw-ink:#303740;--arw-muted:#737b85;--arw-accent:#71818c;
+}
+.arw-mail .arw-mail-sidebar{background:#e5e8ec}
+.arw-mail .arw-mail-compose{background:var(--arw-accent)}
+.arw-mail .arw-mail-menu .is-active{background:#f7f8fa}
+/* Escala compacta del blog como la del correo. */
+.arw.arw-blog{font-size:11px;line-height:1.5}
+.arw-blog .arw-browser-top{min-height:28px;padding:5px 10px;gap:9px}
+.arw-blog .arw-address{padding:2px 8px;font-size:9px}
+.arw-blog .arw-blog-head{padding:17px 13px}
+.arw-blog .arw-blog-kicker{font-size:8px;letter-spacing:.17em}
+.arw-blog .arw-blog-name{font-size:25px;margin:4px 0}
+.arw-blog .arw-blog-tagline{font-size:10px}
+.arw-blog .arw-blog-nav{gap:5px 12px;padding:7px 10px;font-size:8px;letter-spacing:.04em}
+.arw-blog .arw-blog-banner{aspect-ratio:18/6}
+.arw-blog .arw-blog-layout{grid-template-columns:minmax(0,1fr) 112px;gap:13px;padding:16px}
+.arw-blog .arw-blog-meta{font-size:8px;letter-spacing:.065em}
+.arw-blog .arw-blog-title{font-size:20px;margin:6px 0 12px}
+.arw-blog .arw-blog-cover{margin-bottom:13px;max-height:245px}
+.arw-blog .arw-blog-body{font-size:11px;line-height:1.62}
+.arw-blog .arw-blog-quote{font-size:14px;line-height:1.5;padding-left:10px;margin:13px 0}
+.arw-blog .arw-blog-sidebar{padding-left:10px}
+.arw-blog .arw-blog-sidebar-title{font-size:9px;margin-bottom:9px}
+.arw-blog .arw-blog-profile{gap:7px;font-size:10px}
+.arw-blog .arw-blog-profile img{height:65px;width:65px}
+.arw-blog .arw-blog-side-links{margin-top:13px;font-size:9px;gap:5px}
+.arw-blog .arw-blog-tags{margin-top:14px}
+.arw-blog .arw-blog-tags span{font-size:9px;padding:3px 6px}
+.arw-blog .arw-blog-comments{padding:13px 16px}
+.arw-blog .arw-blog-comments h3{font-size:10px;margin-bottom:8px}
+.arw-blog .arw-blog-comment{gap:8px;margin:9px 0}
+.arw-blog .arw-blog-comment strong,.arw-blog .arw-blog-comment p{font-size:10px}
+.arw-blog .arw-blog-footer{padding:8px;font-size:9px}
+/* Video en proporciones de publicación, sin reducir el player 16:9. */
+.arw.arw-video{font-size:11px;line-height:1.45}
+.arw-video .arw-browser-top{min-height:28px;padding:5px 10px;gap:9px}
+.arw-video .arw-address{padding:2px 8px;font-size:9px}
+.arw-video .arw-content{padding:12px 14px 15px}
+.arw-video .arw-video-title{margin:10px 0 5px;font-size:15px;line-height:1.32}
+.arw-video .arw-video-stats{gap:3px 8px;font-size:9px}
+.arw-video .arw-video-channel{margin-top:12px;gap:8px}
+.arw-video .arw-avatar{height:29px;width:29px}
+.arw-video .arw-video-channel-name{font-size:10px}
+.arw-video .arw-video-subs{font-size:9px}
+.arw-video .arw-video-action{font-size:9px;padding:5px 9px}
+.arw-video .arw-video-description{margin-top:11px;padding:10px;border-radius:4px;font-size:10.5px;line-height:1.52}
+.arw-video .arw-video-comments{margin-top:13px;font-size:10px}
+.arw-video .arw-video-comment{gap:8px;margin-top:9px}
+.arw-video .arw-video-comment strong,.arw-video .arw-video-comment p{font-size:10px}
+/* Rémora Press */
+.arw-press{--arw-accent:#6b4d55;--arw-paper:#fbfaf8;--arw-surface:#f1eeeb;--arw-ink:#353138;--arw-muted:#817a7b;--arw-line:#ddd5d2;font-size:11px}
+.arw-press .arw-browser-top,.arw-forum .arw-browser-top{min-height:28px;padding:5px 10px}
+.arw-press .arw-address,.arw-forum .arw-address{font-size:9px;padding:2px 8px}
+.arw-press-head{padding:17px 17px 13px;text-align:center;border-bottom:1px solid var(--arw-line)}
+.arw-press-edition{font-size:8px;letter-spacing:.19em;color:var(--arw-muted)}
+.arw-press-brand{margin:3px 0;font:normal 27px/1.2 var(--font-title,Georgia,serif);color:var(--arw-ink)}
+.arw-press-section{font-size:9px;letter-spacing:.11em;color:var(--arw-accent)}
+.arw-press-article{padding:17px 24px 20px}
+.arw-press-date{font-size:9px;color:var(--arw-muted)}
+.arw-press-title{margin:7px 0;font:normal 24px/1.2 var(--font-title,Georgia,serif);color:var(--arw-ink)}
+.arw-press-subtitle{margin:0 0 10px;font-size:12px;line-height:1.5;color:var(--arw-muted)}
+.arw-press-author{display:flex;align-items:center;gap:7px;margin:13px 0;font-size:10px}
+.arw-press-author .arw-avatar{width:26px;height:26px}
+.arw-press-cover{width:100%;max-height:250px;object-fit:cover}
+.arw-press-caption{margin:5px 0 13px;font-size:9px;color:var(--arw-muted)}
+.arw-press-body{font-size:11px;line-height:1.68;white-space:pre-wrap;overflow-wrap:anywhere;margin:13px 0}
+.arw-press-quote{border-left:2px solid var(--arw-accent);padding:4px 12px;margin:12px 0;font:italic 15px/1.55 var(--font-title,Georgia,serif)}
+.arw-press-tags{display:flex;flex-wrap:wrap;gap:5px}
+.arw-press-tags span{padding:3px 7px;background:var(--arw-surface);color:var(--arw-accent);font-size:9px}
+.arw-press-comments{padding:13px 24px;border-top:1px solid var(--arw-line)}
+.arw-press-comments h3{margin:0 0 9px;font-size:10px;text-transform:uppercase;letter-spacing:.09em}
+.arw-press-comments .arw-video-comment{display:flex;gap:8px;margin:9px 0}
+.arw-press-comments .arw-video-comment strong,.arw-press-comments .arw-video-comment p{font-size:10px}
+/* Rémora Forum */
+.arw-forum{--arw-accent:#627784;--arw-paper:#f9fafb;--arw-surface:#eaf0f2;--arw-ink:#313b44;--arw-muted:#78848b;--arw-line:#d7e0e3;font-size:11px}
+.arw-forum-head{display:flex;align-items:center;gap:8px;padding:13px 15px;color:#fff;background:var(--arw-accent)}
+.arw-forum-brand{font-size:15px;font-weight:800;letter-spacing:.04em}
+.arw-forum-caption{margin-left:auto;font-size:8px;letter-spacing:.11em;opacity:.84}
+.arw-forum-crumb{padding:8px 15px;font-size:9px;color:var(--arw-muted);border-bottom:1px solid var(--arw-line)}
+.arw-forum-topic{padding:13px 15px}
+.arw-forum-category{font-size:9px;color:var(--arw-accent);text-transform:uppercase;letter-spacing:.11em}
+.arw-forum-title{margin:6px 0;font:normal 20px/1.28 var(--font-title,Georgia,serif);color:var(--arw-ink)}
+.arw-forum-stats{font-size:9px;color:var(--arw-muted)}
+.arw-forum-reply{display:grid;grid-template-columns:104px minmax(0,1fr);margin:0 12px 9px;border:1px solid var(--arw-line);background:var(--arw-paper)}
+.arw-forum-user{min-width:0;display:flex;flex-direction:column;align-items:center;gap:5px;padding:12px 5px;background:var(--arw-surface);text-align:center}
+.arw-forum-user .arw-avatar{width:36px;height:36px}
+.arw-forum-user strong{max-width:100%;overflow-wrap:anywhere;font-size:9px}
+.arw-forum-user small{font-size:8px;color:var(--arw-muted)}
+.arw-forum-reply-main{min-width:0;padding:12px 14px}
+.arw-forum-reply-date{padding-bottom:7px;border-bottom:1px solid var(--arw-line);color:var(--arw-muted);font-size:9px}
+.arw-forum-post-body{margin-top:10px;white-space:pre-wrap;font-size:10.5px;line-height:1.62;overflow-wrap:anywhere}
+.arw-forum-bottom{padding:9px 12px;text-align:center;font-size:9px;color:var(--arw-muted)}
+/* Modo oscuro: tema de ANAMNESIS en el body o atributo data-theme.
+   No se aplican filtros de inversión; se reasignan colores reales. */
+body.theme-dark .arw, body[data-theme="dark"] .arw, html[data-theme="dark"] .arw{
+ --arw-paper:#24272d!important;
+ --arw-surface:#30343b!important;
+ --arw-ink:#f1eef0!important;
+ --arw-muted:#b6b6bf!important;
+ --arw-line:#464a54!important;
+}
+body.theme-dark .arw-mail,body[data-theme="dark"] .arw-mail,html[data-theme="dark"] .arw-mail{
+ --arw-accent:#91a7b5!important;
+}
+body.theme-dark .arw-mail .arw-mail-sidebar,body[data-theme="dark"] .arw-mail .arw-mail-sidebar,html[data-theme="dark"] .arw-mail .arw-mail-sidebar{background:#2b2e34}
+body.theme-dark .arw-mail .arw-mail-menu .is-active,body[data-theme="dark"] .arw-mail .arw-mail-menu .is-active,html[data-theme="dark"] .arw-mail .arw-mail-menu .is-active{background:#343941}
+body.theme-dark .arw-mail .arw-mail-compose,body[data-theme="dark"] .arw-mail .arw-mail-compose,html[data-theme="dark"] .arw-mail .arw-mail-compose{color:#161b20!important;background:#91a7b5}
+body.theme-dark .arw-video,body[data-theme="dark"] .arw-video,html[data-theme="dark"] .arw-video{--arw-accent:#dc7582!important}
+body.theme-dark .arw-press,body[data-theme="dark"] .arw-press,html[data-theme="dark"] .arw-press{--arw-accent:#d6a4b1!important}
+body.theme-dark .arw-forum,body[data-theme="dark"] .arw-forum,html[data-theme="dark"] .arw-forum{--arw-accent:#8db0c4!important}
+body.theme-dark .arw-forum-head,body[data-theme="dark"] .arw-forum-head,html[data-theme="dark"] .arw-forum-head{background:#425d6b;color:#f5f6f7}
+body.theme-dark .arw-blog,body[data-theme="dark"] .arw-blog,html[data-theme="dark"] .arw-blog{
+ --arw-paper:color-mix(in srgb,var(--arw-accent) 9%,#23262c)!important;
+ --arw-surface:color-mix(in srgb,var(--arw-accent) 14%,#2a2e34)!important;
+ --arw-ink:#f4f1ed!important;
+ --arw-muted:#c3c2c5!important;
+ --arw-line:#50515a!important;
+}
+body.theme-dark .arw-blog-head,body[data-theme="dark"] .arw-blog-head,html[data-theme="dark"] .arw-blog-head{background:color-mix(in srgb,var(--arw-accent) 58%,#202329);color:#fff}
+body.theme-dark .arw-video-action,body[data-theme="dark"] .arw-video-action,html[data-theme="dark"] .arw-video-action{background:#d7d8da;color:#202329}
+@media(max-width:520px){
+ .arw-blog .arw-blog-layout{grid-template-columns:1fr;gap:12px;padding:13px}
+ .arw-blog .arw-blog-sidebar{border-left:0;border-top:1px solid var(--arw-line);padding:13px 0 0}
+ .arw-press-article{padding:14px}
+ .arw-press-comments{padding:12px 14px}
+ .arw-forum-reply{grid-template-columns:75px minmax(0,1fr);margin:0 6px 7px}
+ .arw-forum-reply-main{padding:10px}
+ .arw-forum-user{padding:9px 3px}
+ .arw-forum-title{font-size:18px}
+}

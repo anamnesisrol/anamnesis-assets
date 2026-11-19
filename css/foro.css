@@ -2541,3 +2541,40 @@ body.theme-dark .ana-topic-end-tools::before {
   min-width: 0 !important;
   grid-column: 1 / -1 !important;
 }
+
+/* ANAMNESIS · Tablillas: accesos compactos, sin estirar la columna. */
+#tablon-anamnesis .ana-template-links{
+  gap:5px!important;
+  align-content:start!important;
+  grid-auto-rows:max-content!important;
+}
+#tablon-anamnesis .ana-template-card{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:10px!important;
+  height:auto!important;
+  min-height:48px!important;
+  padding:7px 12px!important;
+  flex:none!important;
+}
+#tablon-anamnesis .ana-template-card > .material-symbols-outlined{
+  flex:0 0 18px!important;
+  font-size:18px!important;
+  line-height:1!important;
+}
+#tablon-anamnesis .ana-template-card > span:last-child{
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:center!important;
+  gap:2px!important;
+  min-width:0!important;
+}
+#tablon-anamnesis .ana-template-card strong{
+  font-size:10px!important;
+  line-height:1.2!important;
+}
+#tablon-anamnesis .ana-template-card small{
+  font-size:9px!important;
+  line-height:1.2!important;
+}

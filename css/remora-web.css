@@ -134,7 +134,7 @@
 
 /* RÉMORA WEB · Ajuste para la columna narrativa del post.
    Mantiene el diseño en escritorio sin forzar anchos de página completa. */
-.arw{width:min(100%,680px);max-width:100%;margin:16px auto;font-size:12px;overflow-wrap:anywhere}
+.arw{width:min(100%,600px);max-width:600px;margin:16px auto;font-size:12px;overflow-wrap:anywhere}
 .arw .arw-browser{width:100%;max-width:100%;min-width:0}
 .arw-video .arw-content{padding:15px 16px 18px}
 .arw-video-title{font-size:16px}

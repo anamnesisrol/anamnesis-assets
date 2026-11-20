@@ -57,3 +57,83 @@
 
 .am-sig-static-rust,.am-sig-static-rust *{box-sizing:border-box}.am-sig-static-rust{--rust-ink:#252526;--rust-olive:#717663;--rust-copper:#b7664f;--rust-sand:#e7ddcf;--rust-gray:#9b9992;position:relative;isolation:isolate;width:min(500px,100%);max-width:500px;aspect-ratio:2/1;max-height:250px;margin:24px auto;overflow:hidden;background:transparent!important;border:0!important;box-shadow:none!important}.am-sig-static-rust__portrait{position:absolute;z-index:3;top:12%;right:5%;width:39%;max-width:195px;height:76%;background:linear-gradient(145deg,var(--rust-olive),var(--rust-copper));padding:3px;clip-path:polygon(13% 0,100% 3%,88% 100%,0 96%);filter:drop-shadow(8px 8px 0 rgba(183,102,79,.15)) drop-shadow(0 9px 16px rgba(37,37,38,.14))}.am-sig-static-rust__portrait:before{content:"";position:absolute;z-index:-1;top:-8px;right:-9px;width:100%;height:100%;border:1px solid var(--rust-olive);clip-path:polygon(13% 0,100% 3%,88% 100%,0 96%)}.am-sig-static-rust__photo{position:relative;width:100%;height:100%;overflow:hidden;clip-path:polygon(13% 0,100% 3%,88% 100%,0 96%);background:var(--rust-ink)}.am-sig-static-rust__photo img{display:block!important;width:100%!important;height:100%!important;min-width:0!important;max-width:none!important;min-height:0!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;object-fit:cover;object-position:50% 29%;filter:grayscale(.65) sepia(.08) saturate(.65) contrast(1.12) brightness(.9)}.am-sig-static-rust__photo:after{content:"";position:absolute;inset:0;background:linear-gradient(140deg,rgba(231,221,207,.11),transparent 40%,rgba(183,102,79,.24));mix-blend-mode:color;pointer-events:none}.am-sig-static-rust__letter{position:absolute;z-index:1;top:3%;left:1%;color:rgba(113,118,99,.1);font-family:"Roboto Slab",serif;font-size:clamp(104px,28vw,140px);font-weight:700;line-height:1}.am-sig-static-rust__name{position:absolute;z-index:5;top:27%;left:4%;width:77%;line-height:.8;text-align:left;text-transform:uppercase}.am-sig-static-rust__first{display:block;width:max-content;max-width:100%;background:linear-gradient(105deg,var(--rust-ink),var(--rust-olive) 52%,var(--rust-copper));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--rust-ink);font-family:"Roboto Slab",serif;font-size:clamp(39px,10.5vw,54px);font-weight:700;letter-spacing:-.055em;white-space:nowrap;filter:drop-shadow(3px 4px 0 var(--rust-sand)) drop-shadow(6px 6px 0 rgba(183,102,79,.16))}.am-sig-static-rust__last{display:block;width:max-content;max-width:90%;margin:17px 0 0 clamp(61px,18vw,90px);padding:3px 11px 4px;background:var(--rust-ink);color:var(--rust-sand);font-family:"Barlow Condensed",sans-serif;font-size:clamp(17px,5vw,25px);font-weight:700;line-height:1;letter-spacing:.22em;white-space:nowrap;box-shadow:5px 5px 0 rgba(113,118,99,.52);clip-path:polygon(2% 0,100% 5%,97% 100%,0 92%)}.am-sig-static-rust__divider{position:absolute;z-index:4;top:68%;left:7%;width:59%;height:2px;background:linear-gradient(90deg,var(--rust-copper) 0 30%,var(--rust-ink) 30% 33%,var(--rust-olive) 33% 82%,transparent)}.am-sig-static-rust__divider:before{content:"";position:absolute;left:41%;top:-4px;width:9px;height:9px;background:var(--rust-sand);border:2px solid var(--rust-copper);transform:rotate(45deg)}.am-sig-static-rust__subtitle{position:absolute;z-index:5;top:74%;left:8%;width:56%;color:var(--rust-ink);font-family:"Montserrat",sans-serif;font-size:clamp(6px,1.7vw,9px);font-weight:600;line-height:1.55;letter-spacing:.11em;text-align:left;text-transform:uppercase;text-shadow:1px 1px 0 rgba(231,221,207,.86)}.am-sig-static-rust__details{position:absolute;z-index:6;inset:0;pointer-events:none}.am-sig-static-rust__details:before{content:"07 · HUX";position:absolute;top:13%;left:5%;color:var(--rust-gray);font-family:"Montserrat",sans-serif;font-size:6px;font-weight:700;letter-spacing:.17em}.am-sig-static-rust__details:after{content:"";position:absolute;right:3%;bottom:9%;width:37px;height:18px;border-right:2px solid var(--rust-copper);border-bottom:2px solid var(--rust-olive)}@media(max-width:520px){.am-sig-static-rust{width:100%;max-width:500px}.am-sig-static-rust__portrait{right:4%;width:38%;height:72%;top:14%}.am-sig-static-rust__name{top:30%;left:4%;width:78%}.am-sig-static-rust__first{font-size:clamp(35px,10vw,50px)}.am-sig-static-rust__last{font-size:clamp(15px,4.6vw,23px);margin-left:clamp(51px,16vw,78px);letter-spacing:.18em}.am-sig-static-rust__divider{top:68%;left:6%;width:60%}.am-sig-static-rust__subtitle{top:74%;left:7%;width:57%;letter-spacing:.08em}}
 .pz-signature{position:relative;display:flex;align-items:center;width:500px;height:250px;margin:auto;overflow:hidden;background:transparent;font-family:Quicksand,sans-serif}.pz-signature *{box-sizing:border-box}.pz-visual{position:relative;width:220px;height:250px;flex:none}.pz-visual:before{content:"";position:absolute;inset:14px 2px 14px 8px;border:1px solid #4ba3a5;border-radius:49% 51% 47% 53%/54% 47% 53% 46%;transform:rotate(-4deg);opacity:.75}.pz-visual:after{content:"";position:absolute;width:9px;height:9px;right:0;top:31px;border-radius:50%;background:#db7b6f;box-shadow:-10px 184px 0 -2px #4ba3a5}.pz-gif{position:absolute;left:18px;top:26px;display:block;width:184px;height:198px;object-fit:cover;object-position:62% center;border-radius:49% 51% 48% 52%/55% 47% 53% 45%}.pz-info{position:relative;display:flex;flex-direction:column;justify-content:center;width:280px;height:100%;padding:0 12px 0 5px;color:#172426}.pz-monogram{position:absolute;right:4px;top:28px;font:700 108px/1 Cinzel,serif;color:#4ba3a5;opacity:.08;letter-spacing:-14px}.pz-kicker{position:relative;display:flex;align-items:center;gap:8px;margin:0 0 8px 3px;color:#4b7778;font-size:8px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase}.pz-kicker:before{content:"";width:26px;height:1px;background:#db7b6f}.pz-name{position:relative;margin:0;font:400 36px/.88 Cinzel,serif;letter-spacing:-2px;text-transform:uppercase;color:#172426}.pz-name span{display:block;margin-left:20px;color:#3f8e91;font-size:31px;font-style:italic}.pz-detail{position:relative;display:flex;align-items:center;gap:9px;margin:16px 0 0 22px;color:#727d7c;font-size:8px;font-weight:700;line-height:1.4;letter-spacing:1.15px;text-transform:uppercase;white-space:nowrap}.pz-detail:before{content:"";width:23px;height:1px;flex:none;background:#db7b6f}.pz-cross{position:absolute;right:21px;bottom:35px;width:19px;height:19px}.pz-cross:before,.pz-cross:after{content:"";position:absolute;background:#4ba3a5;opacity:.55}.pz-cross:before{left:9px;width:1px;height:19px}.pz-cross:after{top:9px;width:19px;height:1px}
+/* ===========================================================
+   GAYLE R. LOCKWOOD — variante turquesa / salmón
+   Agregar am-sig-static-pastel--gayle a la clase del HTML.
+   La firma original de Hazel permanece intacta.
+   =========================================================== */
+.am-sig-static-pastel--gayle {
+  --pastel-peach: #efa18e;
+  --pastel-lilac: #c6a8db;
+  --pastel-sage: #4dbfc0;
+  --pastel-cream: #fff8ef;
+  --pastel-ink: #29424a;
+  --gayle-yellow: #f5d47d;
+}
+.am-sig-static-pastel--gayle .am-sig-static-pastel__portrait {
+  background: linear-gradient(145deg, #4dbfc0 0%, #76d3cb 37%, #efa18e 78%, #c6a8db 100%);
+  box-shadow: 8px 8px 0 rgba(77, 191, 192, .23),
+              -7px -6px 0 rgba(239, 161, 142, .23),
+              0 10px 18px rgba(41, 66, 74, .12);
+}
+.am-sig-static-pastel--gayle .am-sig-static-pastel__photo:after {
+  background: linear-gradient(145deg, rgba(255, 248, 239, .10), transparent 48%, rgba(77, 191, 192, .13));
+}
+.am-sig-static-pastel--gayle .am-sig-static-pastel__first {
+  background: linear-gradient(105deg, #35a9b2 0%, #4dbfc0 42%, #efa18e 79%, #c6a8db 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(3px 4px 0 #fff8ef) drop-shadow(6px 7px 0 rgba(239, 161, 142, .24));
+}
+.am-sig-static-pastel--gayle .am-sig-static-pastel__initial {
+  background: #efa18e;
+  color: #fff8ef;
+  box-shadow: 3px 3px 0 var(--gayle-yellow);
+}
+.am-sig-static-pastel--gayle .am-sig-static-pastel__last {
+  text-shadow: 2px 2px 0 #fff8ef, 4px 4px 0 rgba(77, 191, 192, .25);
+}
+.am-sig-static-pastel--gayle .am-sig-static-pastel__divider {
+  background: linear-gradient(90deg, transparent, #4dbfc0 16%, #efa18e 48%, #f5d47d 73%, #c6a8db 92%, transparent);
+}
+.am-sig-static-pastel--gayle .am-sig-static-pastel__divider:before {
+  border-color: #4dbfc0;
+  background: #fff8ef;
+}
+.am-sig-static-pastel--gayle .am-sig-static-pastel__shapes:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background:
+    radial-gradient(circle 3px at 6% 12%, #efa18e 97%, transparent 100%),
+    radial-gradient(circle 5px at 15% 10%, #c6a8db 97%, transparent 100%),
+    radial-gradient(circle 3px at 25% 16%, #4dbfc0 97%, transparent 100%),
+    radial-gradient(circle 3px at 38% 7%, #f5d47d 97%, transparent 100%),
+    radial-gradient(circle 4px at 50% 14%, #efa18e 97%, transparent 100%),
+    radial-gradient(circle 4px at 61% 9%, #c6a8db 97%, transparent 100%),
+    radial-gradient(circle 2px at 70% 7%, #f5d47d 97%, transparent 100%),
+    radial-gradient(circle 3px at 91% 11%, #4dbfc0 97%, transparent 100%),
+    radial-gradient(circle 3px at 97% 28%, #c6a8db 97%, transparent 100%),
+    radial-gradient(circle 3px at 3% 42%, #f5d47d 97%, transparent 100%),
+    radial-gradient(circle 3px at 6% 70%, #4dbfc0 97%, transparent 100%),
+    radial-gradient(circle 3px at 4% 88%, #efa18e 97%, transparent 100%),
+    radial-gradient(circle 3px at 18% 92%, #f5d47d 97%, transparent 100%),
+    radial-gradient(circle 2px at 32% 94%, #4dbfc0 97%, transparent 100%),
+    radial-gradient(circle 3px at 46% 89%, #c6a8db 97%, transparent 100%),
+    radial-gradient(circle 4px at 56% 94%, #efa18e 97%, transparent 100%),
+    radial-gradient(circle 3px at 64% 96%, #f5d47d 97%, transparent 100%),
+    radial-gradient(circle 2px at 83% 95%, #4dbfc0 97%, transparent 100%),
+    radial-gradient(circle 4px at 95% 91%, #efa18e 97%, transparent 100%),
+    radial-gradient(circle 2px at 98% 69%, #f5d47d 97%, transparent 100%);
+  box-shadow: none;
+  opacity: .88;
+}
+.am-sig-static-pastel--gayle .am-sig-static-pastel__shapes:after {
+  border-right-color: #c6a8db;
+  border-bottom-color: #efa18e;
+}
+

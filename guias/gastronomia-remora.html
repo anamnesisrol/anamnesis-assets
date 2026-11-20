@@ -67,23 +67,3 @@
 </section>
 <footer class="ag-footer">ANAMNESIS · Guía cultural de Rémora · 43 platillos y especialidades · Directorio en desarrollo</footer>
 </div>
-
-<script>
-/* ANAMNESIS: carga alternativa para imágenes si un CDN tiene un error transitorio. */
-(function () {
-  var gallery = document.getElementById('gastronomia-remora');
-  if (!gallery) return;
-  var prefix = 'https://cdn.jsdelivr.net/gh/anamnesisrol/anamnesis-assets@4e3a8cf0d8966f6bb15bc8d126965fde9d17b39e/images/gastronomia/';
-  gallery.querySelectorAll('.ag-photo img').forEach(function (img) {
-    var filename = img.getAttribute('src').split('/').pop();
-    var sources = [
-      'https://anamnesisrol.github.io/anamnesis-assets/images/gastronomia/' + filename,
-      'https://raw.githubusercontent.com/anamnesisrol/anamnesis-assets/4e3a8cf0d8966f6bb15bc8d126965fde9d17b39e/images/gastronomia/' + filename
-    ];
-    var step = 0;
-    img.addEventListener('error', function () {
-      if (step < sources.length) img.src = sources[step++];
-    });
-  });
-})();
-</script>

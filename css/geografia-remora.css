@@ -1,0 +1,72 @@
+/* ANAMNESIS · Archivo cultural de Rémora: geografía urbana · CSS aislado.
+   Comparte la identidad visual de gastronomía-remora.css. HTML preparado sin saltos para Foroactivo. */
+.ana-geo,.ana-geo *{box-sizing:border-box}
+.ana-geo{--ae-bg:var(--bg-panel,#fbf7f3);--ae-paper:var(--bg-main,#fffdfa);--ae-ink:var(--text-main,#41393d);--ae-muted:var(--text-soft,#80777b);--ae-line:var(--line,#d9cacc);--ae-soft:var(--line-soft,#eee3e3);--ae-accent:var(--accent-sage,#593641);width:min(100%,960px);max-width:960px;margin:24px auto;background:var(--ae-bg);border:1px solid var(--ae-line);color:var(--ae-ink);font:13px/1.7 var(--font-base,Arial,sans-serif);text-align:left}
+.ana-geo .ae-cover{padding:29px 34px;background:var(--ae-accent);color:#fff8f3}
+.ana-geo .ae-kicker{font-size:9px;letter-spacing:.17em;text-transform:uppercase;opacity:.85}
+.ana-geo .ae-title{margin:5px 0 3px!important;color:#fff8f3!important;font:normal 32px/1.2 var(--font-title,Georgia,serif)!important;letter-spacing:.03em}
+.ana-geo .ae-subtitle{font-size:12px;opacity:.89}
+.ana-geo .ae-intro{padding:22px 30px 12px;line-height:1.8}
+.ana-geo .ae-index{display:flex;flex-wrap:wrap;gap:7px;padding:3px 30px 22px}
+.ana-geo .ae-index a{padding:6px 10px;border:1px solid var(--ae-line);background:var(--ae-paper);color:var(--ae-ink);text-decoration:none;font-size:10px}
+.ana-geo .ae-index a:hover{border-color:var(--ae-accent)}
+.ana-geo .ae-section{scroll-margin-top:25px}
+.ana-geo .ae-section-head{display:flex;align-items:center;gap:13px;padding:12px 30px;background:var(--ae-accent);color:#fff}
+.ana-geo .ae-number{font:normal 23px/1 var(--font-title,Georgia,serif);opacity:.7}
+.ana-geo .ae-section-title{margin:0!important;color:#fff!important;font-size:14px!important;font-weight:700!important;letter-spacing:.09em;text-transform:uppercase;line-height:1.5!important}
+.ana-geo .ae-section-note{padding:12px 30px 5px;color:var(--ae-muted);font-size:11px}
+.ana-geo .ae-content{padding:15px 30px 23px}
+.ana-geo .ae-heading{margin:16px 0 8px!important;color:var(--title-color,var(--ae-ink))!important;font:normal 20px/1.4 var(--font-title,Georgia,serif)!important}
+.ana-geo .ae-content p{margin:0 0 12px}
+.ana-geo .ae-row{display:grid;grid-template-columns:145px minmax(0,1fr);gap:20px;padding:16px 0;border-bottom:1px solid var(--ae-soft)}
+.ana-geo .ae-row:last-child{border-bottom:0}
+.ana-geo .ae-row-side{align-self:start;background:var(--ae-paper);border:1px solid var(--ae-line);padding:13px 11px;text-align:center}
+.ana-geo .ae-age{font:normal 22px/1.2 var(--font-title,Georgia,serif);color:var(--title-color,var(--ae-ink))}
+.ana-geo .ae-age-label{display:block;margin-top:4px;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ae-muted)}
+.ana-geo .ae-row-title{margin:0 0 5px!important;color:var(--title-color,var(--ae-ink))!important;font:normal 19px/1.35 var(--font-title,Georgia,serif)!important}
+.ana-geo .ae-meta{font-size:10px;color:var(--ae-muted);line-height:1.6}
+.ana-geo .ae-badges{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}
+.ana-geo .ae-tag{font-size:9px;color:var(--ae-muted);padding:3px 7px;border:1px solid var(--ae-line);background:var(--ae-paper)}
+.ana-geo .ae-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:10px 0 15px}
+.ana-geo .ae-card{border:1px solid var(--ae-line);background:var(--ae-paper);padding:15px 16px}
+.ana-geo .ae-card-title{margin:0 0 7px!important;font:normal 17px/1.35 var(--font-title,Georgia,serif)!important;color:var(--title-color,var(--ae-ink))!important}
+.ana-geo .ae-card p{margin:0 0 7px;font-size:12px}
+.ana-geo .ae-small{font-size:11px;color:var(--ae-muted)}
+.ana-geo .ae-table{border:1px solid var(--ae-line);margin:14px 0 20px}
+.ana-geo .ae-tr{display:grid;grid-template-columns:1.15fr 1fr 2fr;min-width:0;border-bottom:1px solid var(--ae-line)}
+.ana-geo .ae-tr:last-child{border-bottom:0}
+.ana-geo .ae-tr>div{min-width:0;overflow-wrap:anywhere;padding:10px 12px;border-right:1px solid var(--ae-soft);font-size:11px}
+.ana-geo .ae-tr>div:last-child{border-right:0}
+.ana-geo .ae-th{background:var(--ae-accent);color:#fff;font-weight:700;letter-spacing:.05em}
+.ana-geo .ae-th>div{font-size:10px!important}
+.ana-geo .ae-callout{margin:14px 0 18px;padding:14px 17px;border-left:3px solid var(--ae-accent);background:var(--ae-paper);font-size:12px}
+.ana-geo .ae-timeline{border-left:1px solid var(--ae-line);margin:14px 0 15px 9px;padding-left:20px}
+.ana-geo .ae-step{position:relative;margin:0 0 14px}
+.ana-geo .ae-step:before{content:"";position:absolute;left:-26px;top:6px;width:10px;height:10px;background:var(--ae-accent);border:2px solid var(--ae-bg);border-radius:50%}
+.ana-geo .ae-step strong{display:block;font-size:12px}
+.ana-geo .ae-step span{display:block;font-size:11px;color:var(--ae-muted)}
+.ana-geo .ae-footer{padding:15px 26px;text-align:center;font-size:10px;color:var(--ae-muted);border-top:1px solid var(--ae-line)}
+:is(body.theme-dark,body[data-theme="dark"],html[data-theme="dark"]) .ana-geo{--ae-bg:var(--bg-panel,#2d292c);--ae-paper:var(--bg-main,#242124);--ae-ink:var(--text-main,#e9e0e2);--ae-muted:var(--text-soft,#b3a5ab);--ae-line:var(--line,#5a4a51);--ae-soft:var(--line-soft,#463b40)}
+@media(max-width:650px){.ana-geo .ae-cover{padding:22px}.ana-geo .ae-intro{padding:17px 18px 10px}.ana-geo .ae-index{padding:0 18px 17px}.ana-geo .ae-section-head{padding:11px 18px}.ana-geo .ae-section-note{padding:11px 18px 4px}.ana-geo .ae-content{padding:12px 18px 20px}.ana-geo .ae-row{grid-template-columns:100px minmax(0,1fr);gap:12px}.ana-geo .ae-age{font-size:18px}.ana-geo .ae-card-grid{grid-template-columns:1fr}.ana-geo .ae-tr>div{padding:8px 6px;font-size:10px}.ana-geo .ae-title{font-size:27px!important}}
+@media(max-width:390px){.ana-geo .ae-row{grid-template-columns:76px minmax(0,1fr);gap:10px}.ana-geo .ae-row-side{padding:11px 6px}.ana-geo .ae-row-title{font-size:16px!important}}
+
+/* Fechas y citas culturales */
+.ana-geo .ae-festival-date{display:block;font-size:10px;color:var(--ae-muted);text-transform:uppercase;letter-spacing:.07em;margin:2px 0 8px;font-weight:700}
+.ana-geo .ae-highlight{font-weight:700}
+.ana-geo .ae-content .ae-card p:last-child{margin-bottom:0}
+
+.ana-geo .ae-paragraph{margin:0 0 12px;line-height:1.75}
+.ana-geo .ae-row-body .ae-paragraph{margin:0 0 6px}
+.ana-geo .ae-card .ae-paragraph{margin:0;font-size:12px}
+.ana-geo .ae-heading{margin-top:18px!important}
+
+.ana-geo .ag-map-note{padding:13px 16px;background:var(--ae-paper);border:1px solid var(--ae-line);margin:12px 0;font-size:12px}
+.ana-geo .ag-dist-color{width:12px;height:12px;display:inline-block;vertical-align:middle;margin-right:7px;border-radius:2px}
+.ana-geo .ag-place{display:grid;grid-template-columns:44px minmax(0,1fr);gap:13px;padding:12px 0;border-bottom:1px solid var(--ae-soft)}
+.ana-geo .ag-place:last-child{border-bottom:0}
+.ana-geo .ag-place-n{border:1px solid var(--ae-line);background:var(--ae-paper);display:flex;align-items:center;justify-content:center;align-self:start;min-height:38px;font:normal 20px/1 var(--font-title,Georgia,serif)}
+.ana-geo .ag-place-name{font:normal 17px/1.4 var(--font-title,Georgia,serif);margin-bottom:3px}
+.ana-geo .ag-place-desc{font-size:12px}
+.ana-geo .ag-district-label{font-size:10px;letter-spacing:.08em;color:var(--ae-muted);margin-bottom:8px;text-transform:uppercase}
+.ana-geo .ae-row-body .ae-paragraph{line-height:1.7}
+@media(max-width:460px){.ana-geo .ag-place{grid-template-columns:35px minmax(0,1fr);gap:9px}.ana-geo .ag-place-n{min-height:35px;font-size:16px}.ana-geo .ag-place-name{font-size:15px}}

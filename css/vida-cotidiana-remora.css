@@ -54,3 +54,8 @@
 .ana-vida .ae-festival-date{display:block;font-size:10px;color:var(--ae-muted);text-transform:uppercase;letter-spacing:.07em;margin:2px 0 8px;font-weight:700}
 .ana-vida .ae-highlight{font-weight:700}
 .ana-vida .ae-content .ae-card p:last-child{margin-bottom:0}
+
+.ana-vida .ae-paragraph{margin:0 0 12px;line-height:1.75}
+.ana-vida .ae-row-body .ae-paragraph{margin:0 0 6px}
+.ana-vida .ae-card .ae-paragraph{margin:0;font-size:12px}
+.ana-vida .ae-heading{margin-top:18px!important}

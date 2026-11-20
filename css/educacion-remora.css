@@ -1,0 +1,51 @@
+/* ANAMNESIS · Archivo cultural de Rémora: educación · CSS aislado.
+   Comparte la identidad visual de gastronomía-remora.css. HTML preparado sin saltos para Foroactivo. */
+.ana-edu,.ana-edu *{box-sizing:border-box}
+.ana-edu{--ae-bg:var(--bg-panel,#fbf7f3);--ae-paper:var(--bg-main,#fffdfa);--ae-ink:var(--text-main,#41393d);--ae-muted:var(--text-soft,#80777b);--ae-line:var(--line,#d9cacc);--ae-soft:var(--line-soft,#eee3e3);--ae-accent:var(--accent-sage,#593641);width:min(100%,960px);max-width:960px;margin:24px auto;background:var(--ae-bg);border:1px solid var(--ae-line);color:var(--ae-ink);font:13px/1.7 var(--font-base,Arial,sans-serif);text-align:left}
+.ana-edu .ae-cover{padding:29px 34px;background:var(--ae-accent);color:#fff8f3}
+.ana-edu .ae-kicker{font-size:9px;letter-spacing:.17em;text-transform:uppercase;opacity:.85}
+.ana-edu .ae-title{margin:5px 0 3px!important;color:#fff8f3!important;font:normal 32px/1.2 var(--font-title,Georgia,serif)!important;letter-spacing:.03em}
+.ana-edu .ae-subtitle{font-size:12px;opacity:.89}
+.ana-edu .ae-intro{padding:22px 30px 12px;line-height:1.8}
+.ana-edu .ae-index{display:flex;flex-wrap:wrap;gap:7px;padding:3px 30px 22px}
+.ana-edu .ae-index a{padding:6px 10px;border:1px solid var(--ae-line);background:var(--ae-paper);color:var(--ae-ink);text-decoration:none;font-size:10px}
+.ana-edu .ae-index a:hover{border-color:var(--ae-accent)}
+.ana-edu .ae-section{scroll-margin-top:25px}
+.ana-edu .ae-section-head{display:flex;align-items:center;gap:13px;padding:12px 30px;background:var(--ae-accent);color:#fff}
+.ana-edu .ae-number{font:normal 23px/1 var(--font-title,Georgia,serif);opacity:.7}
+.ana-edu .ae-section-title{margin:0!important;color:#fff!important;font-size:14px!important;font-weight:700!important;letter-spacing:.09em;text-transform:uppercase;line-height:1.5!important}
+.ana-edu .ae-section-note{padding:12px 30px 5px;color:var(--ae-muted);font-size:11px}
+.ana-edu .ae-content{padding:15px 30px 23px}
+.ana-edu .ae-heading{margin:16px 0 8px!important;color:var(--title-color,var(--ae-ink))!important;font:normal 20px/1.4 var(--font-title,Georgia,serif)!important}
+.ana-edu .ae-content p{margin:0 0 12px}
+.ana-edu .ae-row{display:grid;grid-template-columns:145px minmax(0,1fr);gap:20px;padding:16px 0;border-bottom:1px solid var(--ae-soft)}
+.ana-edu .ae-row:last-child{border-bottom:0}
+.ana-edu .ae-row-side{align-self:start;background:var(--ae-paper);border:1px solid var(--ae-line);padding:13px 11px;text-align:center}
+.ana-edu .ae-age{font:normal 22px/1.2 var(--font-title,Georgia,serif);color:var(--title-color,var(--ae-ink))}
+.ana-edu .ae-age-label{display:block;margin-top:4px;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--ae-muted)}
+.ana-edu .ae-row-title{margin:0 0 5px!important;color:var(--title-color,var(--ae-ink))!important;font:normal 19px/1.35 var(--font-title,Georgia,serif)!important}
+.ana-edu .ae-meta{font-size:10px;color:var(--ae-muted);line-height:1.6}
+.ana-edu .ae-badges{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}
+.ana-edu .ae-tag{font-size:9px;color:var(--ae-muted);padding:3px 7px;border:1px solid var(--ae-line);background:var(--ae-paper)}
+.ana-edu .ae-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:10px 0 15px}
+.ana-edu .ae-card{border:1px solid var(--ae-line);background:var(--ae-paper);padding:15px 16px}
+.ana-edu .ae-card-title{margin:0 0 7px!important;font:normal 17px/1.35 var(--font-title,Georgia,serif)!important;color:var(--title-color,var(--ae-ink))!important}
+.ana-edu .ae-card p{margin:0 0 7px;font-size:12px}
+.ana-edu .ae-small{font-size:11px;color:var(--ae-muted)}
+.ana-edu .ae-table{border:1px solid var(--ae-line);margin:14px 0 20px}
+.ana-edu .ae-tr{display:grid;grid-template-columns:1.15fr 1fr 2fr;min-width:0;border-bottom:1px solid var(--ae-line)}
+.ana-edu .ae-tr:last-child{border-bottom:0}
+.ana-edu .ae-tr>div{min-width:0;overflow-wrap:anywhere;padding:10px 12px;border-right:1px solid var(--ae-soft);font-size:11px}
+.ana-edu .ae-tr>div:last-child{border-right:0}
+.ana-edu .ae-th{background:var(--ae-accent);color:#fff;font-weight:700;letter-spacing:.05em}
+.ana-edu .ae-th>div{font-size:10px!important}
+.ana-edu .ae-callout{margin:14px 0 18px;padding:14px 17px;border-left:3px solid var(--ae-accent);background:var(--ae-paper);font-size:12px}
+.ana-edu .ae-timeline{border-left:1px solid var(--ae-line);margin:14px 0 15px 9px;padding-left:20px}
+.ana-edu .ae-step{position:relative;margin:0 0 14px}
+.ana-edu .ae-step:before{content:"";position:absolute;left:-26px;top:6px;width:10px;height:10px;background:var(--ae-accent);border:2px solid var(--ae-bg);border-radius:50%}
+.ana-edu .ae-step strong{display:block;font-size:12px}
+.ana-edu .ae-step span{display:block;font-size:11px;color:var(--ae-muted)}
+.ana-edu .ae-footer{padding:15px 26px;text-align:center;font-size:10px;color:var(--ae-muted);border-top:1px solid var(--ae-line)}
+:is(body.theme-dark,body[data-theme="dark"],html[data-theme="dark"]) .ana-edu{--ae-bg:var(--bg-panel,#2d292c);--ae-paper:var(--bg-main,#242124);--ae-ink:var(--text-main,#e9e0e2);--ae-muted:var(--text-soft,#b3a5ab);--ae-line:var(--line,#5a4a51);--ae-soft:var(--line-soft,#463b40)}
+@media(max-width:650px){.ana-edu .ae-cover{padding:22px}.ana-edu .ae-intro{padding:17px 18px 10px}.ana-edu .ae-index{padding:0 18px 17px}.ana-edu .ae-section-head{padding:11px 18px}.ana-edu .ae-section-note{padding:11px 18px 4px}.ana-edu .ae-content{padding:12px 18px 20px}.ana-edu .ae-row{grid-template-columns:100px minmax(0,1fr);gap:12px}.ana-edu .ae-age{font-size:18px}.ana-edu .ae-card-grid{grid-template-columns:1fr}.ana-edu .ae-tr>div{padding:8px 6px;font-size:10px}.ana-edu .ae-title{font-size:27px!important}}
+@media(max-width:390px){.ana-edu .ae-row{grid-template-columns:76px minmax(0,1fr);gap:10px}.ana-edu .ae-row-side{padding:11px 6px}.ana-edu .ae-row-title{font-size:16px!important}}

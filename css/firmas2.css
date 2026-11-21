@@ -2350,7 +2350,7 @@ body.theme-dark .am-sig-faye-garden{--fg-ink:#e1ecf8;--fg-blue:#a9c1df;--fg-line
 .am-sig-faye-garden__butterfly--two{--fg-turn:22deg;top:26%;right:10%;scale:.7}
 .am-sig-faye-garden__wing{position:absolute;top:0;width:50%;height:100%}
 .am-sig-faye-garden__wing:first-child{right:50%;transform-origin:right}
-.am-sig-faye-garden__wing:last-child{left:50%;transform:scaleX(-1);transform-origin:left}
+.am-sig-faye-garden__wing:last-child{right:50%;transform:scaleX(-1);transform-origin:right}
 .am-sig-faye-garden__wing::before,.am-sig-faye-garden__wing::after{content:"";position:absolute;right:0;border:1px solid var(--fg-line);background:radial-gradient(ellipse at 35% 29%,#d7e7f5b8,transparent 45%),linear-gradient(140deg,var(--fg-wing),#55749c68)}
 .am-sig-faye-garden__wing::before{top:4%;width:100%;height:60%;border-radius:14% 82% 12% 76%;transform:rotate(12deg)}
 .am-sig-faye-garden__wing::after{top:53%;width:72%;height:41%;border-radius:78% 18% 64% 38%;transform:rotate(-12deg)}

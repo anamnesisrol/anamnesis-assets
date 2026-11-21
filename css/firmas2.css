@@ -2364,3 +2364,19 @@ body.theme-dark .am-sig-faye-garden{--fg-ink:#e1ecf8;--fg-blue:#a9c1df;--fg-line
 @keyframes am-faye-garden-fold-right{0%,100%{transform:scaleX(-1)}50%{transform:scaleX(-.58)}}
 @container (max-width:360px){.am-sig-faye-garden__copy::after{margin-top:4px}.am-sig-faye-garden__butterfly{width:8%}}
 @container (max-width:260px){.am-sig-faye-garden__name{font-size:clamp(22px,15cqw,39px)}.am-sig-faye-garden__portrait{padding:1px}}
+
+/* JAMIE WILLIAM PARKER */
+.am-sig-jamie-editorial,.am-sig-jamie-editorial *{box-sizing:border-box}
+.am-sig-jamie-editorial{--jp-ink:#214c51;--jp-berry:#94334f;--jp-seam:#397779;--jp-border:#92695e;--jp-wash:#c8767936;position:relative;isolation:isolate;container-type:inline-size;display:block;width:min(500px,100%);aspect-ratio:2/1;margin:24px auto}
+body.theme-dark .am-sig-jamie-editorial{--jp-ink:#d5ebe9;--jp-berry:#efa0b4;--jp-seam:#91ccc6;--jp-border:#b7978d;--jp-wash:#823b515b}
+.am-sig-jamie-editorial::before{content:"";position:absolute;inset:10% 2% 12% 14%;background:radial-gradient(ellipse at 44% 56%,var(--jp-wash),transparent 67%);pointer-events:none}
+.am-sig-jamie-editorial__portrait{position:absolute;z-index:1;top:6%;left:7%;width:39%;height:87%;display:block;overflow:hidden;border-radius:2px 26% 2px 2px;background:var(--jp-border);padding:2px}
+.am-sig-jamie-editorial__portrait img{display:block!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:inherit!important;object-fit:cover;object-position:32% 14%}
+.am-sig-jamie-editorial__frame{position:absolute;top:13%;left:5%;width:39%;height:84%;border:1px solid var(--jp-seam);border-radius:2px 26% 2px 2px;pointer-events:none}
+.am-sig-jamie-editorial__copy{position:absolute;z-index:2;top:47%;left:49%;width:47%;transform:translateY(-50%);text-align:left;color:var(--jp-ink)}
+.am-sig-jamie-editorial__first{display:block;font:italic 400 clamp(25px,14.6cqw,73px)/.92 "DM Serif Display",Georgia,serif;letter-spacing:-.06em}
+.am-sig-jamie-editorial__last{display:block;margin-top:.62em;color:var(--jp-berry);font:700 clamp(8px,2.5cqw,12px)/1.25 "Montserrat",sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.am-sig-jamie-editorial__line{display:block;width:85%;height:7px;margin:8px 0 3px;background:linear-gradient(90deg,var(--jp-seam),var(--jp-berry),transparent 96%) center/100% 1px no-repeat}
+.am-sig-jamie-editorial__note{display:block;color:var(--jp-ink);font:italic 600 clamp(10px,3.1cqw,15px)/1.25 "Cormorant Garamond",Georgia,serif}
+@container (max-width:360px){.am-sig-jamie-editorial__last{letter-spacing:.09em}.am-sig-jamie-editorial__line{margin:5px 0 2px}}
+@container (max-width:260px){.am-sig-jamie-editorial__portrait{padding:1px}.am-sig-jamie-editorial__first{font-size:clamp(23px,14cqw,36px)}.am-sig-jamie-editorial__last{font-size:8px;letter-spacing:.045em}}

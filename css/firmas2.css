@@ -2273,3 +2273,25 @@ body:not(.theme-dark) .av-sig-santiago__axis:after{background:repeating-linear-g
   .am-sig-jude-board__first { font-size: clamp(25px, 15cqw, 39px); }
   .am-sig-jude-board__last { font-size: 8px; letter-spacing: .045em; }
 }
+
+/* VITÓRIA AURORA CARVALHO */
+.am-sig-vitoria-aurora,.am-sig-vitoria-aurora *{box-sizing:border-box}
+.am-sig-vitoria-aurora{--va-ink:#20564c;--va-jade:#327869;--va-gold:#c38c4e;--va-peach:#f4ccb1;--va-rule:#9b6037;--va-wash:#f9dfc6;position:relative;isolation:isolate;container-type:inline-size;width:min(500px,100%);aspect-ratio:2/1;margin:24px auto}
+body.theme-dark .am-sig-vitoria-aurora{--va-ink:#f8e2cb;--va-jade:#88c6a0;--va-gold:#e7b678;--va-peach:#f1af91;--va-rule:#edba8f;--va-wash:#80534580}
+.am-sig-vitoria-aurora::before{content:"";position:absolute;inset:5% 0 0;background:radial-gradient(ellipse at 28% 60%,var(--va-wash),transparent 59%);pointer-events:none}
+.am-sig-vitoria-aurora__portrait{position:absolute;z-index:1;top:8%;left:11%;width:33%;height:82%;padding:2px;background:linear-gradient(148deg,var(--va-peach),var(--va-gold) 64%,var(--va-jade));border-radius:48% 48% 13% 13%/40% 40% 10% 10%;box-shadow:0 3px 13px #39585138}
+.am-sig-vitoria-aurora__portrait img{display:block!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:inherit!important;object-fit:cover;object-position:50% 18%}
+.am-sig-vitoria-aurora__copy{position:absolute;z-index:2;top:50%;left:46%;width:48%;text-align:center;color:var(--va-ink);transform:translateY(-50%)}
+.am-sig-vitoria-aurora__first{display:block;font:italic 600 clamp(26px,14cqw,70px)/.94 "Cormorant Garamond",Georgia,serif;letter-spacing:-.05em}
+.am-sig-vitoria-aurora__last{display:block;margin-top:.75em;color:var(--va-ink);font:700 clamp(8px,2.45cqw,12px)/1.3 "Montserrat",sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.am-sig-vitoria-aurora__last::after{content:"";display:block;width:63%;height:5px;margin:9px auto 0;background:radial-gradient(circle,var(--va-rule) 0 1.5px,transparent 2px),linear-gradient(90deg,transparent,var(--va-gold),transparent) center/100% 1px no-repeat}
+.am-sig-vitoria-aurora__sprig{position:absolute;z-index:2;width:9%;height:26%;border-left:1px solid var(--va-jade);border-radius:65% 0 0;pointer-events:none;transform:rotate(var(--va-turn));transform-origin:bottom left}
+.am-sig-vitoria-aurora__sprig--left{--va-turn:-19deg;left:11%;bottom:10%}
+.am-sig-vitoria-aurora__sprig--right{--va-turn:37deg;right:3%;top:15%;scale:.75}
+.am-sig-vitoria-aurora__sprig::before,.am-sig-vitoria-aurora__sprig::after{content:"";position:absolute;width:61%;height:37%;background:linear-gradient(132deg,var(--va-jade),var(--va-ink));border-radius:100% 0 100% 0}
+.am-sig-vitoria-aurora__sprig::before{top:10%;left:20%;transform:rotate(-19deg)}
+.am-sig-vitoria-aurora__sprig::after{top:38%;left:-47%;transform:rotate(68deg)}
+@media(prefers-reduced-motion:no-preference){.am-sig-vitoria-aurora__sprig{animation:am-vitoria-leaves 6s ease-in-out infinite}.am-sig-vitoria-aurora__sprig--right{animation-delay:-3s}}
+@keyframes am-vitoria-leaves{0%,100%{transform:rotate(var(--va-turn))}50%{transform:rotate(calc(var(--va-turn) + 5deg))}}
+@container (max-width:360px){.am-sig-vitoria-aurora__last{letter-spacing:.07em}.am-sig-vitoria-aurora__last::after{margin-top:5px}}
+@container (max-width:260px){.am-sig-vitoria-aurora__first{font-size:clamp(23px,13.5cqw,35px)}.am-sig-vitoria-aurora__last{font-size:8px;letter-spacing:.04em}}

@@ -2231,3 +2231,45 @@ body:not(.theme-dark) .av-sig-santiago__axis:after{background:repeating-linear-g
 .am-sig-jude-board__trace::after{content:"";position:absolute;top:12%;left:91%;width:1.6cqw;aspect-ratio:1;border:1px solid var(--jw-silver);border-radius:50%;background:var(--jw-blue);transform:translate(-50%,-50%);box-shadow:0 0 7px #d8fcff96}
 @media(prefers-reduced-motion:no-preference){.am-sig-jude-board__trace::after{animation:am-jude-board-pulse 3.8s ease-in-out infinite}.am-sig-jude-board__trace--bottom::after{animation-delay:-1.9s}}
 @keyframes am-jude-board-pulse{0%,100%{opacity:.55;scale:.78}50%{opacity:1;scale:1.15}}
+
+/* Signatures in narrow posts and profile columns */
+@container (max-width: 360px) {
+  .am-sig-gwen__surname { letter-spacing: .09em; }
+  .am-sig-gwen__text::after { margin-top: .45em; }
+
+  .am-sig-rosalie__name span { box-shadow: 1px 2px 0 #1814254d; }
+  .am-sig-rosalie__surname { top: 38%; }
+  .am-sig-rosalie__quote { top: 61%; padding-top: .38em; letter-spacing: .02em; }
+
+  .am-sig-isaac__last { letter-spacing: .35em; text-indent: .35em; }
+  .am-sig-isaac__last::after { margin-top: 4px; }
+  .am-sig-isaac__quote { margin-top: .27em; }
+
+  .am-sig-daphne__first { font-size: clamp(21px, 11.5cqw, 42px); }
+  .am-sig-daphne__last { font-size: clamp(7px, 2.5cqw, 10px); letter-spacing: .29em; text-indent: .29em; }
+
+  .am-sig-camille__first { font-size: clamp(19px, 10.4cqw, 38px); }
+  .am-sig-camille__last { letter-spacing: .12em; }
+
+  .am-sig-jude-board__last { letter-spacing: .09em; }
+}
+
+@container (max-width: 260px) {
+  .am-sig-gwen__name { font-size: clamp(21px, 12.5cqw, 32px); }
+  .am-sig-gwen__surname { font-size: 8px; letter-spacing: .055em; }
+
+  .am-sig-rosalie__name span { box-shadow: none; }
+  .am-sig-rosalie__quote { width: 35%; font-size: 8px; }
+
+  .am-sig-isaac__first { font-size: clamp(23px, 13cqw, 34px); }
+  .am-sig-isaac__last { font-size: 8px; }
+  .am-sig-isaac__quote { font-size: 10px; }
+
+  .am-sig-daphne__last { letter-spacing: .2em; text-indent: .2em; }
+  .am-sig-daphne__light { opacity: .72; }
+
+  .am-sig-camille__last { font-size: 7px; letter-spacing: .075em; }
+
+  .am-sig-jude-board__first { font-size: clamp(25px, 15cqw, 39px); }
+  .am-sig-jude-board__last { font-size: 8px; letter-spacing: .045em; }
+}

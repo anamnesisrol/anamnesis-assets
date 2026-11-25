@@ -298,6 +298,21 @@
 
   };
 
+  // Imágenes neutras por formato; nunca se reutilizan retratos de personajes.
+  var imageSizes = {"sbu-baul":{"img1":"300x300","img2":"300x300"},"scr-chrono":{"img":"300x300"},"ana-relations":{"img":"150x150"},"ana-npc":{"img":"300x400"},"ana-search-v2":{"img":"300x300"},"sbp-search":{"img":"300x400"},"sbt-plot":{"img":"600x400"}};
+  function neutralImage(type, id) {
+    return 'https://placehold.co/' + ((imageSizes[type] || {})[id] || '600x400');
+  }
+  Object.keys(imageSizes).forEach(function(type) {
+    function prepare(fields) {
+      fields.forEach(function(field) {
+        if (field.type === 'repeater') prepare(field.fields);
+        else if (imageSizes[type][field.id]) field.value = neutralImage(type, field.id);
+      });
+    }
+    prepare(definitions[type].fields);
+  });
+
   var currentType = '';
   var root = null;
   var previewModal = null;
@@ -334,9 +349,9 @@
 
   function esc(value) {
     return clean(value)
-      .replace(/&/g,'&')
-      .replace(/</g,'<')
-      .replace(/>/g,'>');
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;');
   }
 
   function attr(value) {
@@ -346,7 +361,12 @@
   }
 
   function text(value) {
-    return esc(value).replace(/\r?\n/g,'<br>');
+    var safe = esc(value);
+    // Entidades de salto de línea + white-space preservan el texto sin <br>
+    // ni saltos literales que Foroactivo convierta automáticamente.
+    return /[\r\n]/.test(safe)
+      ? '<span style="white-space:pre-line;">' + safe.replace(/\r\n|\r|\n/g,'&#10;') + '</span>'
+      : safe;
   }
 
   function blocks(value) {
@@ -371,7 +391,7 @@
   }
 
   function image(value) {
-    return clean(value) ? attr(value) : 'URL_IMAGEN';
+    return attr(clean(value) || neutralImage(currentType, 'img'));
   }
 
   function spotifyTrackId(value) {
@@ -537,6 +557,18 @@
       '</button></div>';
   }
 
+  var draftPrefix = 'anamnesis_tablillas_draft_v2:';
+  var importKey = 'anamnesis_tablillas_import_v1';
+  function storageGet(key) { try { return window.localStorage.getItem(key); } catch(e) { return null; } }
+  function storageSet(key, value) { try { window.localStorage.setItem(key, value); } catch(e) {} }
+  function storageRemove(key) { try { window.localStorage.removeItem(key); } catch(e) {} }
+  function saveDraft() {
+    if (currentType && formSlot) storageSet(draftPrefix + currentType, JSON.stringify(readForm()));
+  }
+  function getDraft(type) {
+    try { return JSON.parse(storageGet(draftPrefix + type) || 'null'); } catch(e) { return null; }
+  }
+
   function openGenerator(type, initialData) {
     var def = definitions[type];
     var html = '';
@@ -560,10 +592,9 @@
       html +
       '</div>';
 
-    if (initialData) {
-      fillForm(initialData);
-    }
-
+    var draft = initialData || getDraft(type);
+    if (draft) fillForm(draft);
+    if (initialData) saveDraft();
     openModal(formModal);
   }
 
@@ -702,6 +733,8 @@
     }
 
     fillForm(data);
+    storageRemove(draftPrefix + currentType);
+    storageRemove('anamnesis_tablillas_autosave_v1');
   }
 
   function readForm() {
@@ -837,6 +870,21 @@
       }
     }
 
+    // Datos ilustrativos exclusivos de «Ver ejemplo»; no pertenecen a personajes reales.
+    function sample(obj, key, value) { if (!obj[key]) obj[key] = value; }
+    def.fields.forEach(function(field) {
+      if (field.type === 'repeater') {
+        field.fields.forEach(function(sub) {
+          if (sub.type === 'textarea') sample(result[field.id][0], sub.id, 'Texto de ejemplo para este apartado.');
+          if (sub.id === 'name') sample(result[field.id][0], sub.id, sub.label === 'Nombre del NPC' ? 'Nombre del PNJ' : 'Nombre del personaje');
+          if (sub.id === 'title') sample(result[field.id][0], sub.id, sub.label);
+          if (sub.id === 'date') sample(result[field.id][0], sub.id, '01 de enero de 2026');
+        });
+      } else {
+        if (field.type === 'textarea') sample(result, field.id, 'Texto de ejemplo para este apartado.');
+        if (field.id === 'title') sample(result, field.id, field.label);
+      }
+    });
     return result;
   }
 
@@ -2209,7 +2257,7 @@
       }
     }
 
-    return '<div class="sbu-baul"><div class="sbu-sheet-back"></div><div class="sbu-sheet"><div class="sbu-tape"></div><div class="sbu-polaroids"><div class="sbu-photo sbu-photo-one"><img src="' + image(d.img1) + '"><span>recuerdo i</span></div><div class="sbu-photo sbu-photo-two"><img src="' + image(d.img2) + '"><span>recuerdo ii</span></div></div><div class="sbu-head"><div class="sbu-kicker">' + text(d.kicker) + '</div><div class="sbu-title">' + text(d.title) + '</div><div class="sbu-subtitle">' + text(d.subtitle) + '</div></div><div class="sbu-list">' + links + '</div><div class="sbu-note">' + text(d.note) + '</div><div class="sbu-deco-circle"></div><div class="sbu-deco-postal"></div></div></div>';
+    return '<div class="sbu-baul"><div class="sbu-sheet-back"></div><div class="sbu-sheet"><div class="sbu-tape"></div><div class="sbu-polaroids"><div class="sbu-photo sbu-photo-one"><img src="' + image(d.img1 || 'https://placehold.co/300x300') + '"><span>recuerdo i</span></div><div class="sbu-photo sbu-photo-two"><img src="' + image(d.img2 || 'https://placehold.co/300x300') + '"><span>recuerdo ii</span></div></div><div class="sbu-head"><div class="sbu-kicker">' + text(d.kicker) + '</div><div class="sbu-title">' + text(d.title) + '</div><div class="sbu-subtitle">' + text(d.subtitle) + '</div></div><div class="sbu-list">' + links + '</div><div class="sbu-note">' + text(d.note) + '</div><div class="sbu-deco-circle"></div><div class="sbu-deco-postal"></div></div></div>';
   }
 
   function buildChrono(d) {
@@ -2255,7 +2303,7 @@
       }
     }
 
-    return '<div class="scr-chrono"><div class="scr-sheet-back"></div><div class="scr-sheet"><div class="scr-tape"></div><div class="scr-photo"><img src="' + image(d.img) + '"><span>' + text(d.photoNote) + '</span></div><div class="scr-head"><div class="scr-kicker">' + text(d.kicker) + '</div><div class="scr-title">' + text(d.title) + '</div><div class="scr-subtitle">' + text(d.subtitle) + '</div></div><div class="scr-timeline">' + events + '</div><div class="scr-note">' + text(d.note) + '</div><div class="scr-deco-one"></div><div class="scr-deco-two"></div></div></div>';
+    return '<div class="scr-chrono"><div class="scr-sheet-back"></div><div class="scr-sheet"><div class="scr-tape"></div><div class="scr-photo"><img src="' + image(d.img || 'https://placehold.co/300x300') + '"><span>' + text(d.photoNote) + '</span></div><div class="scr-head"><div class="scr-kicker">' + text(d.kicker) + '</div><div class="scr-title">' + text(d.title) + '</div><div class="scr-subtitle">' + text(d.subtitle) + '</div></div><div class="scr-timeline">' + events + '</div><div class="scr-note">' + text(d.note) + '</div><div class="scr-deco-one"></div><div class="scr-deco-two"></div></div></div>';
   }
 
   function buildRelations(d) {
@@ -2570,11 +2618,11 @@
   }
 
   function buildPersonSearch(d) {
-    return '<div class="sbp-search"><div class="sbp-back"></div><div class="sbp-card"><div class="sbp-tape sbp-tape-left"></div><div class="sbp-tape sbp-tape-right"></div><div class="sbp-side"><div class="sbp-photo"><img src="' + image(d.img) + '"><span>' + text(d.photoNote) + '</span></div><div class="sbp-stamp"></div></div><div class="sbp-main"><div class="sbp-head"><div class="sbp-kicker">' + text(d.kicker) + '</div><div class="sbp-title">' + text(d.title) + '</div><div class="sbp-subtitle">' + text(d.subtitle) + '</div><div class="sbp-tags">' + tags(d.tags) + '</div></div><div class="sbp-contact"><div class="sbp-contact-label">contacto</div><div class="sbp-contact-value">' + text(d.contact) + '</div></div></div><div class="sbp-grid"><div class="sbp-block"><div class="sbp-block-title">contexto</div><div class="sbp-block-body">' + blocks(d.context) + '</div></div><div class="sbp-block"><div class="sbp-block-title">dinámica</div><div class="sbp-block-body">' + blocks(d.dynamic) + '</div></div><div class="sbp-block"><div class="sbp-block-title">qué busco</div><div class="sbp-block-body">' + blocks(d.looking) + '</div></div><div class="sbp-block"><div class="sbp-block-title">qué ofrezco</div><div class="sbp-block-body">' + blocks(d.offer) + '</div></div><div class="sbp-block sbp-block-wide"><div class="sbp-block-title">notas</div><div class="sbp-block-body">' + blocks(d.notes) + '</div></div></div><div class="sbp-foot"><div class="sbp-note">' + text(d.foot) + '</div></div><div class="sbp-deco-branch"></div><div class="sbp-deco-flower"></div></div></div>';
+    return '<div class="sbp-search"><div class="sbp-back"></div><div class="sbp-card"><div class="sbp-tape sbp-tape-left"></div><div class="sbp-tape sbp-tape-right"></div><div class="sbp-side"><div class="sbp-photo"><img src="' + image(d.img || 'https://placehold.co/300x400') + '"><span>' + text(d.photoNote) + '</span></div><div class="sbp-stamp"></div></div><div class="sbp-main"><div class="sbp-head"><div class="sbp-kicker">' + text(d.kicker) + '</div><div class="sbp-title">' + text(d.title) + '</div><div class="sbp-subtitle">' + text(d.subtitle) + '</div><div class="sbp-tags">' + tags(d.tags) + '</div></div><div class="sbp-contact"><div class="sbp-contact-label">contacto</div><div class="sbp-contact-value">' + text(d.contact) + '</div></div></div><div class="sbp-grid"><div class="sbp-block"><div class="sbp-block-title">contexto</div><div class="sbp-block-body">' + blocks(d.context) + '</div></div><div class="sbp-block"><div class="sbp-block-title">dinámica</div><div class="sbp-block-body">' + blocks(d.dynamic) + '</div></div><div class="sbp-block"><div class="sbp-block-title">qué busco</div><div class="sbp-block-body">' + blocks(d.looking) + '</div></div><div class="sbp-block"><div class="sbp-block-title">qué ofrezco</div><div class="sbp-block-body">' + blocks(d.offer) + '</div></div><div class="sbp-block sbp-block-wide"><div class="sbp-block-title">notas</div><div class="sbp-block-body">' + blocks(d.notes) + '</div></div></div><div class="sbp-foot"><div class="sbp-note">' + text(d.foot) + '</div></div><div class="sbp-deco-branch"></div><div class="sbp-deco-flower"></div></div></div>';
   }
 
   function buildPlotSearch(d) {
-    return '<div class="sbt-plot"><div class="sbt-back"></div><div class="sbt-board"><div class="sbt-tape"></div><div class="sbt-head"><div class="sbt-kicker">' + text(d.kicker) + '</div><div class="sbt-title">' + text(d.title) + '</div><div class="sbt-subtitle">' + text(d.subtitle) + '</div></div><div class="sbt-top"><div class="sbt-photo"><img src="' + image(d.img) + '"><span>' + text(d.photoNote) + '</span></div><div class="sbt-intro"><div class="sbt-intro-label">propuesta general</div><div class="sbt-intro-text">' + text(d.intro) + '</div></div></div><div class="sbt-grid"><div class="sbt-note-card sbt-idea"><div class="sbt-note-title">idea</div><div class="sbt-note-body">' + blocks(d.idea) + '</div></div><div class="sbt-note-card sbt-tone"><div class="sbt-note-title">tono</div><div class="sbt-note-body">' + blocks(d.tone) + '</div></div><div class="sbt-note-card sbt-looking"><div class="sbt-note-title">busco</div><div class="sbt-note-body">' + blocks(d.looking) + '</div></div><div class="sbt-note-card sbt-offer"><div class="sbt-note-title">ofrezco</div><div class="sbt-note-body">' + blocks(d.offer) + '</div></div></div><div class="sbt-info"><div><strong>ritmo</strong><span>' + text(d.rhythm) + '</span></div><div><strong>cupos</strong><span>' + text(d.slots) + '</span></div><div><strong>contacto</strong><span>' + text(d.contact) + '</span></div></div><div class="sbt-foot">' + text(d.foot) + '</div><div class="sbt-deco-one"></div><div class="sbt-deco-two"></div></div></div>';
+    return '<div class="sbt-plot"><div class="sbt-back"></div><div class="sbt-board"><div class="sbt-tape"></div><div class="sbt-head"><div class="sbt-kicker">' + text(d.kicker) + '</div><div class="sbt-title">' + text(d.title) + '</div><div class="sbt-subtitle">' + text(d.subtitle) + '</div></div><div class="sbt-top"><div class="sbt-photo"><img src="' + image(d.img || 'https://placehold.co/600x400') + '"><span>' + text(d.photoNote) + '</span></div><div class="sbt-intro"><div class="sbt-intro-label">propuesta general</div><div class="sbt-intro-text">' + text(d.intro) + '</div></div></div><div class="sbt-grid"><div class="sbt-note-card sbt-idea"><div class="sbt-note-title">idea</div><div class="sbt-note-body">' + blocks(d.idea) + '</div></div><div class="sbt-note-card sbt-tone"><div class="sbt-note-title">tono</div><div class="sbt-note-body">' + blocks(d.tone) + '</div></div><div class="sbt-note-card sbt-looking"><div class="sbt-note-title">busco</div><div class="sbt-note-body">' + blocks(d.looking) + '</div></div><div class="sbt-note-card sbt-offer"><div class="sbt-note-title">ofrezco</div><div class="sbt-note-body">' + blocks(d.offer) + '</div></div></div><div class="sbt-info"><div><strong>ritmo</strong><span>' + text(d.rhythm) + '</span></div><div><strong>cupos</strong><span>' + text(d.slots) + '</span></div><div><strong>contacto</strong><span>' + text(d.contact) + '</span></div></div><div class="sbt-foot">' + text(d.foot) + '</div><div class="sbt-deco-one"></div><div class="sbt-deco-two"></div></div></div>';
   }
 
   function buildMiniSearch(d) {
@@ -2913,6 +2961,7 @@
             'beforeend',
             repeatItemHTML(def)
           );
+          saveDraft();
         }
       }
 
@@ -2945,6 +2994,7 @@
           item.parentNode.removeChild(
             item
           );
+          saveDraft();
         }
       }
 
@@ -2996,6 +3046,52 @@
     }
   }
 
+  function initPNJBuilder() {
+    var name = document.getElementById('anaPNJName');
+    var avatar = document.getElementById('anaPNJAvatar');
+    var output = document.getElementById('anaPNJCode');
+    var copy = document.getElementById('anaPNJCopy');
+    var status = document.getElementById('anaPNJStatus');
+    if (!name || !avatar || !output || !copy || !status) return;
+    var clear = document.getElementById('anaPNJClear');
+    if (!clear) {
+      clear = document.createElement('button');
+      clear.type = 'button'; clear.id = 'anaPNJClear';
+      clear.className = 'tgen-action tgen-action-alt';
+      clear.textContent = 'Limpiar formulario';
+      copy.parentNode.appendChild(clear);
+    }
+    name.placeholder = 'Nombre del PNJ';
+    avatar.placeholder = 'https://placehold.co/150x150';
+    function build() {
+      var label = clean(name.value), source = clean(avatar.value), valid = false;
+      output.value = ''; status.textContent = '';
+      if (!label || !source) return false;
+      try {
+        var parsed = new URL(source);
+        valid = /^(https?:)$/.test(parsed.protocol) && !!parsed.hostname;
+      } catch(e) {}
+      if (!valid) { status.textContent = 'Introduce una URL válida para el avatar.'; return false; }
+      output.value = '<div class="ana-pnj-config" style="display:none;"><span class="ana-pnj-name">' + esc(label) + '</span><img src="' + attr(source) + '" alt=""></div>';
+      return true;
+    }
+    name.addEventListener('input', build);
+    avatar.addEventListener('input', build);
+    clear.addEventListener('click', function() {
+      name.value = ''; avatar.value = ''; build(); name.focus();
+      status.textContent = 'Formulario limpio.';
+    });
+    copy.addEventListener('click', async function() {
+      if (!build()) { if (!status.textContent) status.textContent = 'Completa ambos campos.'; return; }
+      try {
+        if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(output.value);
+        else { output.focus(); output.select(); if (!document.execCommand('copy')) throw new Error('copy'); }
+        status.textContent = 'Código copiado. Pégalo al principio de tu mensaje.';
+      } catch(e) { output.focus(); output.select(); status.textContent = 'Selecciona el código y cópialo manualmente.'; }
+    });
+    build();
+  }
+
   function init() {
     var buildButton;
     var copyButton;
@@ -3017,6 +3113,16 @@
     }
 
     initialized = true;
+    storageRemove('anamnesis_tablillas_autosave_v1');
+    if (formSlot) {
+      formSlot.addEventListener('input', saveDraft);
+      formSlot.addEventListener('change', saveDraft);
+    }
+    if (importInput) {
+      if (!importInput.value) importInput.value = storageGet(importKey) || '';
+      importInput.addEventListener('input', function() { storageSet(importKey, importInput.value); });
+    }
+    initPNJBuilder();
 
     if (document.addEventListener) {
       document.addEventListener(
@@ -3068,10 +3174,15 @@
         copyOutput;
     }
 
-    if (clearFormButton) {
-      clearFormButton.onclick =
-        clearCurrentForm;
+    if (!clearFormButton && buildButton) {
+      clearFormButton = document.createElement('button');
+      clearFormButton.type = 'button';
+      clearFormButton.id = 'anaGenClearForm';
+      clearFormButton.className = 'tgen-action tgen-action-alt';
+      clearFormButton.textContent = 'Limpiar formulario';
+      buildButton.parentNode.insertBefore(clearFormButton, buildButton.nextSibling);
     }
+    if (clearFormButton) clearFormButton.onclick = clearCurrentForm;
 
     if (importLoadButton) {
       importLoadButton.onclick =
@@ -3079,8 +3190,10 @@
     }
 
     if (importClearButton) {
-      importClearButton.onclick =
-        clearImportedCode;
+      importClearButton.onclick = function() {
+        clearImportedCode();
+        storageRemove(importKey);
+      };
     }
   }
 

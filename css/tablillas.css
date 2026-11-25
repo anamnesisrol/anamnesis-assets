@@ -2009,6 +2009,8 @@
 }
 
 /* ANAMNESIS · TABLILLAS DE ROL */
+/* Las negritas sin un color propio conservan el del texto de su tablilla. */
+:where(.stb-post,.stn-note,.sbu-baul,.scr-chrono,.sbp-search,.sbt-plot,.stp-post,.snr-fragment,.smr-search,.am-starter-mini,.ams-scene,.ana-search-v2,.ana-relations,.ana-npc,.am-phone,.am-phone-maxi) :where(strong,b):where(:not([style*="color" i])){color:inherit!important}
 /* - - - - - - - - - - S C R A P B O O K   /   B A S E   G E N E R A L - - - - - - - - - - */
 
 .stb-post,
@@ -2690,7 +2692,7 @@
 }
 
 .sbu-list a:hover strong {
-  color: var(--accent-rose);
+  color: var(--accent-rose) !important;
 }
 
 .sbu-note {
@@ -3404,7 +3406,7 @@
 .sbt-info strong {
   display: block;
   margin-bottom: 8px;
-  color: var(--accent-rose);
+  color: var(--accent-rose) !important;
   font-family: var(--font-base);
   font-size: 9px;
   font-weight: 800;
@@ -3750,7 +3752,7 @@
 .smr-data strong {
   display: block;
   margin-bottom: 6px;
-  color: var(--smr-color);
+  color: var(--smr-color) !important;
   font-family: var(--font-base);
   font-size: 8px;
   font-weight: 800;
@@ -5957,7 +5959,7 @@ body.theme-dark .am-phone img{
 
 .am-mail-meta strong{
   font-size:7px;
-  color:var(--am-text-soft);
+  color:var(--am-text-soft) !important;
 }
 
 .am-mail-meta .material-symbols-rounded{
@@ -6430,6 +6432,10 @@ body.theme-dark .am-phone img{
 .am-call-item.missed .am-call-data strong,
 .am-call-item.missed .am-call-data > span{
   color:var(--am-red);
+}
+
+.am-call-item.missed .am-call-data strong{
+  color:var(--am-red) !important;
 }
 
 .am-calls-navigation{
@@ -7106,7 +7112,7 @@ body.theme-dark .am-phone img{
 .am-map-place-data > b{
   margin-top:3px;
   font-size:7px;
-  color:var(--am-green);
+  color:var(--am-green) !important;
 }
 
 .am-map-rating{
@@ -7256,7 +7262,7 @@ body.theme-dark .am-phone img{
       rgba(251,249,245,.52),
       rgba(251,249,245,.52)
     ),
-    var(--am-wallpaper) center/cover no-repeat!important;
+    var(--am-wallpaper) center/100% auto no-repeat var(--am-phone-screen)!important;
 }
 
 body.theme-dark .am-phone[style*="--am-wallpaper"] .am-phone-screen{
@@ -7265,7 +7271,7 @@ body.theme-dark .am-phone[style*="--am-wallpaper"] .am-phone-screen{
       rgba(34,36,44,.58),
       rgba(34,36,44,.58)
     ),
-    var(--am-wallpaper) center/cover no-repeat!important;
+    var(--am-wallpaper) center/100% auto no-repeat var(--am-phone-screen)!important;
 }
 
 
@@ -10187,7 +10193,7 @@ ANAMNESIS · BÚSQUEDA MODULAR · SCRAPBOOK / CLASIFICADOS
 }
 
 .asm-date b {
-  color:var(--text-soft);
+  color:var(--text-soft) !important;
 }
 
 .asm-date span {
@@ -10939,7 +10945,7 @@ body.theme-dark .am-starter-mini .asm-info::before {
 }
 .am-history-header strong{
   min-width:0;
-  color:var(--am-text);
+  color:var(--am-text) !important;
   font-size:15px;
   font-weight:800;
   text-align:center;
@@ -10978,7 +10984,7 @@ body.theme-dark .am-starter-mini .asm-info::before {
   flex:0 0 auto;
 }
 .am-history-summary strong{
-  color:var(--am-text);
+  color:var(--am-text) !important;
   font-size:10px;
   letter-spacing:.08em;
   text-transform:uppercase;
@@ -11033,12 +11039,12 @@ body.theme-dark .am-starter-mini .asm-info::before {
   white-space:nowrap;
 }
 .am-history-data strong{
-  color:var(--am-text);
+  color:var(--am-text) !important;
   font-size:10px;
   font-weight:800;
 }
 .am-history-data b{
-  color:var(--am-text-soft);
+  color:var(--am-text-soft) !important;
   font-size:8px;
   font-weight:700;
 }
@@ -11194,4 +11200,12 @@ body.theme-dark .am-starter-mini .asm-info::before {
   .atb .atb-main .atb-head .atb-title,
   .fxa-accepted .fxa-head .fxa-title { font-size:20px; letter-spacing:.045em; }
   .atb .atb-main .atb-head .atb-kicker { font-size:18px; }
+}
+
+/* Fondos personalizados de bloqueo e inicio del Maxi. */
+.am-phone-maxi :is(.am-maxi-lock,.am-maxi-home)[style*="background"]{
+  background-size:100% auto!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  background-color:var(--am-phone-screen)!important;
 }

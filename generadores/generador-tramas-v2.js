@@ -3,7 +3,6 @@
   "use strict";
   const URL = "https://raw.githubusercontent.com/anamnesisrol/foro-generador-tramas/main/situaciones.json";
   // Fotografías seleccionadas por la administración de ANAMNESIS.
-  // Pendientes de URL directa (no se cargan como imagen): {"Estación Central":"https://unsplash.com/photos/W-qbp5e1Kig","Terminal de Ferris":"https://unsplash.com/photos/BNUK6Bdbdmo","Carnaval de las Máscaras":"https://unsplash.com/photos/5kL77tAHTqQ","Festival de Otoño":"https://unsplash.com/photos/r4dreHcE2RI","Festival de la Marea":"https://unsplash.com/photos/Q7CR263zBHc","Mercado de Invierno":"https://unsplash.com/photos/5X8N9A2ruHM"}
   const placePhotos = {
   "Acuario de Rémora": "https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=1200&q=82",
   "Aeropuerto Internacional de Rémora": "https://images.unsplash.com/photo-1781989302296-805b5a8a2f2e?auto=format&fit=crop&w=1200&q=82",
@@ -59,7 +58,13 @@
   "Vivero Bellrose": "https://images.unsplash.com/photo-1772907952251-09e722aafa6a?auto=format&fit=crop&w=1200&q=82",
   "Zoológico de Eastbrook": "https://i.servimg.com/u/f68/20/65/25/08/pexels27.jpg",
   "Noche de los Faroles": "https://i86.servimg.com/u/f86/20/65/24/37/pexels11.jpg",
-  "Procesión de las Luces": "https://i86.servimg.com/u/f86/20/65/24/37/pexels12.jpg"
+  "Procesión de las Luces": "https://i86.servimg.com/u/f86/20/65/24/37/pexels12.jpg",
+  "Estación Central": "https://i86.servimg.com/u/f86/20/65/24/37/christ10.jpg",
+  "Terminal de Ferris": "https://i86.servimg.com/u/f86/20/65/24/37/josh-h10.jpg",
+  "Carnaval de las Máscaras": "https://i86.servimg.com/u/f86/20/65/24/37/llanyd10.jpg",
+  "Festival de Otoño": "https://i86.servimg.com/u/f86/20/65/24/37/adrien10.jpg",
+  "Festival de la Marea": "https://i86.servimg.com/u/f86/20/65/24/37/richar10.jpg",
+  "Mercado de Invierno": "https://i86.servimg.com/u/f86/20/65/24/37/om-kam10.jpg"
 };
   const districtPhotos = {
   "Centro Histórico": "https://i.servimg.com/u/f68/20/65/25/08/_top_t10.jpg",
@@ -69,7 +74,37 @@
   "Bellrose": "https://i.servimg.com/u/f68/20/65/25/08/image10.jpg",
   "Distrito Eastbrook": "https://images.pexels.com/photos/30433829/pexels-photo-30433829.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "Corredor del Istmo": "https://i86.servimg.com/u/f86/20/65/24/37/3nzyns10.jpg",
-  "Fuera de Rémora": "https://images.unsplash.com/photo-1486299267070-83823f5448dd?auto=format&fit=crop&w=1200&q=82"
+  "Fuera de Rémora": "https://i86.servimg.com/u/f86/20/65/24/37/marcin10.jpg"
+};
+  const genericScenarioPhotos = {
+  "Residencia privada": "https://i86.servimg.com/u/f86/20/65/24/37/pexels13.jpg",
+  "Residencia familiar": "https://i86.servimg.com/u/f86/20/65/24/37/pexels14.jpg",
+  "Zona residencial": "https://i86.servimg.com/u/f86/20/65/24/37/pexels13.jpg",
+  "Edificio residencial": "https://i86.servimg.com/u/f86/20/65/24/37/pexels14.jpg",
+  "Lugar de trabajo": "https://i86.servimg.com/u/f86/20/65/24/37/pexels15.jpg",
+  "Espacio comunitario": "https://i86.servimg.com/u/f86/20/65/24/37/pexels17.jpg",
+  "Calles y plazas": "https://i.servimg.com/u/f68/20/65/25/08/plazas10.png",
+  "Restaurante": "https://i86.servimg.com/u/f86/20/65/24/37/pexels16.jpg",
+  "Salón de eventos": "https://i50.servimg.com/u/f50/19/72/91/15/la_tar10.jpg",
+  "Establecimiento comercial": "https://i50.servimg.com/u/f50/19/72/91/15/tem-ry10.jpg",
+  "Estación de transporte": "https://i50.servimg.com/u/f50/19/72/91/15/descar15.jpg",
+  "Evento público": "https://i50.servimg.com/u/f50/19/72/91/15/bagzha10.jpg",
+  "Teatro": "https://i50.servimg.com/u/f50/19/72/91/15/kyle-h10.jpg",
+  "Edificio con elevador": "https://i50.servimg.com/u/f50/19/72/91/15/bagzha10.jpg",
+  "Estacionamiento residencial": "https://i86.servimg.com/u/f86/20/65/24/37/pexels17.jpg",
+  "Sala de escape": "https://i50.servimg.com/u/f50/19/72/91/15/zachar10.jpg",
+  "Recinto de competición": "https://i50.servimg.com/u/f50/19/72/91/15/seongj10.jpg",
+  "Sala de reuniones": "https://i50.servimg.com/u/f50/19/72/91/15/michae10.jpg",
+  "Zona verde": "https://i50.servimg.com/u/f50/19/72/91/15/bedir-10.jpg",
+  "Escenario libre": "https://i86.servimg.com/u/f86/20/65/24/37/alex-v10.jpg",
+  "Establecimiento profesional": "https://i86.servimg.com/u/f86/20/65/24/37/pexels15.jpg",
+  "Espacio profesional": "https://i86.servimg.com/u/f86/20/65/24/37/pexels15.jpg",
+  "Comercio local": "https://i50.servimg.com/u/f50/19/72/91/15/tem-ry10.jpg",
+  "Evento comunitario": "https://i50.servimg.com/u/f50/19/72/91/15/bagzha10.jpg",
+  "Centro cultural": "https://i86.servimg.com/u/f86/20/65/24/37/pexels17.jpg",
+  "Plaza pública": "https://i.servimg.com/u/f68/20/65/25/08/plazas10.png",
+  "Espacio verde": "https://i50.servimg.com/u/f50/19/72/91/15/bedir-10.jpg",
+  "Parada de transporte público": "https://i50.servimg.com/u/f50/19/72/91/15/descar15.jpg"
 };
   const bonds = ["Desconocidos","Conocidos","Amistad","Romance","Familia","Profesional","Académico","Rivalidad","Vínculos del pasado"];
   const trust = ["Nula","Baja","Media","Alta","Profunda"];
@@ -180,8 +215,13 @@
       result.querySelector("h3").textContent=current.titulo;
       result.querySelector(".ag-story").textContent=current.situacion;
       const img=result.querySelector(".ag-photo img"), caption=result.querySelector(".ag-photo figcaption"), frame=result.querySelector(".ag-photo-frame");
-      const exact=placePhotos[current.escenario], view=districtPhotos[current.distrito];
-      const candidates=[{url:exact,label:current.escenario,alt:"Vista de "+current.escenario},{url:view,label:"Vista de "+current.distrito+" · "+current.escenario,alt:"Vista del distrito "+current.distrito}].filter((c,i,a)=>c.url&&a.findIndex(x=>x.url===c.url)===i);
+      const exact=placePhotos[current.escenario], generic=genericScenarioPhotos[current.escenario], view=districtPhotos[current.distrito];
+      const candidates=[
+        {url:exact,label:current.escenario,alt:"Vista de "+current.escenario},
+        {url:generic,label:current.escenario,alt:"Imagen ilustrativa de "+current.escenario},
+        {url:view,label:"Vista de "+current.distrito+" · "+current.escenario,alt:"Vista del distrito "+current.distrito},
+        {url:genericScenarioPhotos["Escenario libre"],label:current.escenario+" · Imagen de ambientación",alt:"Imagen general de ambientación"}
+      ].filter((c,i,a)=>c.url&&a.findIndex(x=>x.url===c.url)===i);
       img.hidden=true;frame.classList.remove("ag-has-photo");img.onload=null;img.onerror=null;img.removeAttribute("src");
       caption.textContent=current.escenario;
       const cardId=current.id;

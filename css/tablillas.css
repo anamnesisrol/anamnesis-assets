@@ -11200,10 +11200,17 @@ body.theme-dark .am-starter-mini .asm-info::before {
   .atb .atb-main .atb-head .atb-kicker { font-size:18px; }
 }
 
-/* Fondos personalizados de pantalla, chat, bloqueo e inicio. */
-.am-phone :is(.am-phone-screen,.am-chat-body)[style*="background"],
-.am-phone-maxi :is(.am-maxi-lock,.am-maxi-home)[style*="background"]{
+/* Fondos personalizados de pantalla y chat. */
+.am-phone :is(.am-phone-screen,.am-chat-body)[style*="background"]{
   background-size:100% auto!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  background-color:var(--am-phone-screen)!important;
+}
+
+/* Fondos personalizados de bloqueo e inicio del Maxi. */
+.am-phone-maxi :is(.am-maxi-lock,.am-maxi-home)[style*="background"]{
+  background-size:cover!important;
   background-repeat:no-repeat!important;
   background-position:center!important;
   background-color:var(--am-phone-screen)!important;

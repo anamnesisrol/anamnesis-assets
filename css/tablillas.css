@@ -2009,8 +2009,6 @@
 }
 
 /* ANAMNESIS · TABLILLAS DE ROL */
-/* Las negritas sin un color propio conservan el del texto de su tablilla. */
-:where(.stb-post,.stn-note,.sbu-baul,.scr-chrono,.sbp-search,.sbt-plot,.stp-post,.snr-fragment,.smr-search,.am-starter-mini,.ams-scene,.ana-search-v2,.ana-relations,.ana-npc,.am-phone,.am-phone-maxi) :where(strong,b):where(:not([style*="color" i])){color:inherit!important}
 /* - - - - - - - - - - S C R A P B O O K   /   B A S E   G E N E R A L - - - - - - - - - - */
 
 .stb-post,

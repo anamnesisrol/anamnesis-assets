@@ -1,0 +1,65 @@
+/* ANAMNESIS — Una historia por escribir · v2
+   Los colores, tipografías y ornamentos pertenecen a la skin general. */
+.ana-gen{--ag-paper:var(--bg-panel);--ag-base:var(--bg-main);--ag-soft:var(--bg-soft);--ag-alt:var(--bg-panel-alt);--ag-line:var(--line);--ag-strong:var(--line-strong);--ag-text:var(--text-main);--ag-muted:var(--text-muted);--ag-title:var(--title-color);--ag-accent:var(--accent-sage);--ag-secondary:var(--accent-rose);--ag-gold:var(--accent-warm);--ag-ink:var(--accent-ink);position:relative;isolation:isolate;width:min(100%,940px);margin:24px auto;padding:clamp(16px,3vw,38px);background:var(--ag-paper);border:1px solid var(--ag-line);color:var(--ag-text);font:500 14px/1.65 var(--font-base);overflow:hidden;text-align:left}
+.ana-gen,.ana-gen *{box-sizing:border-box}
+.ana-gen :is(h1,h2,h3,p,fieldset,legend){margin:0}
+.ana-gen [hidden]{display:none!important}
+.ana-gen button{font:inherit;color:var(--ag-text);border-radius:0;cursor:pointer;box-shadow:none;text-transform:none;letter-spacing:normal;min-width:0;background:var(--ag-base);border:1px solid var(--ag-line);transition:border-color .2s,background-color .2s,color .2s;white-space:normal}
+.ana-gen button:focus-visible,.ana-gen select:focus-visible{outline:2px solid var(--ag-secondary);outline-offset:3px}
+.ana-gen button:disabled{opacity:.45;cursor:not-allowed}
+.ana-gen .ag-header{position:relative;isolation:isolate;padding:34px 24px 28px;border:1px solid var(--ag-strong);text-align:center;background:var(--ag-base);overflow:hidden}
+.ana-gen .ag-header:before,.ana-gen .ag-header:after{content:"";position:absolute;z-index:-1;pointer-events:none;width:100px;height:100px;opacity:.18;background:var(--ana-img-ramita) center/contain no-repeat;bottom:-8px}
+.ana-gen .ag-header:before{left:-14px;transform:rotate(-20deg)}
+.ana-gen .ag-header:after{right:-14px;transform:scaleX(-1) rotate(-20deg)}
+.ana-gen .ag-kicker,.ana-gen .ag-eyebrow{font:700 10px/1.5 var(--font-base);letter-spacing:.15em;text-transform:uppercase;color:var(--ag-gold)}
+.ana-gen .ag-header h1{margin:12px 0 4px;font:400 clamp(22px,4vw,36px)/1.2 var(--font-title);color:var(--ag-title);overflow-wrap:anywhere}
+.ana-gen .ag-motto{font:400 clamp(23px,3.5vw,30px)/1.25 var(--font-note);color:var(--ag-secondary)}
+.ana-gen .ag-intro{max-width:570px;margin:12px auto 0;color:var(--ag-muted);font-size:12px}
+.ana-gen .ag-ornament{display:flex;align-items:center;justify-content:center;gap:12px;margin:14px auto;width:min(220px,80%);color:var(--ag-gold)}
+.ana-gen .ag-ornament:before,.ana-gen .ag-ornament:after{content:"";height:1px;background:var(--ag-strong);flex:1}
+.ana-gen .ag-ornament svg{width:12px;height:12px}
+.ana-gen .ag-mode{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:7px;margin:24px 0 8px}
+.ana-gen .ag-mode button{padding:8px 16px;font-size:12px}
+.ana-gen .ag-section{padding:22px 0;border-bottom:1px solid var(--ag-line)}
+.ana-gen .ag-section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px}
+.ana-gen .ag-number{font:400 25px/1 var(--font-title);color:var(--ag-gold)}
+.ana-gen .ag-section h2{font:600 16px/1.4 var(--font-title);color:var(--ag-title)}
+.ana-gen .ag-label{display:block;margin-bottom:9px;font-size:13px;font-weight:700;color:var(--ag-text)}
+.ana-gen .ag-hint{margin-top:8px;color:var(--ag-muted);font-size:11px}
+.ana-gen .ag-subgroup+.ag-subgroup{margin-top:20px}
+.ana-gen .ag-bonds{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.ana-gen .ag-bond{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 8px;min-height:88px;text-align:center;background:var(--ag-base)}
+.ana-gen .ag-bond svg{width:21px;height:21px;stroke:var(--ag-gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ana-gen .ag-bond span{font-weight:600;font-size:12px;overflow-wrap:anywhere}
+.ana-gen .ag-bond small{font-size:10px;color:var(--ag-muted)}
+.ana-gen .ag-bond[aria-pressed=true]:after{content:"";position:absolute;right:6px;top:6px;width:5px;height:5px;transform:rotate(45deg);background:var(--ag-secondary)}
+.ana-gen .ag-options{display:flex;flex-wrap:wrap;gap:7px}
+.ana-gen .ag-chip{padding:7px 12px;min-height:36px;font-size:12px!important}
+.ana-gen .ag-any{margin-top:8px;padding:6px 12px;font-size:11px;background:transparent}
+.ana-gen button:not(:disabled):hover{border-color:var(--ag-secondary)}
+.ana-gen button[aria-pressed=true]{background:var(--ag-soft);border-color:var(--ag-secondary);color:var(--ag-title);box-shadow:inset 0 0 0 1px var(--ag-secondary)}
+.ana-gen button[aria-pressed=true] svg{stroke:var(--ag-secondary)}
+.ana-gen .ag-scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;position:relative}
+.ana-gen .ag-trust{display:flex;flex-direction:column;align-items:center;gap:7px;padding:10px 2px;font-size:11px;background:transparent;border-color:transparent}
+.ana-gen .ag-trust:before{content:"";width:12px;height:12px;border:1px solid var(--ag-strong);border-radius:50%;background:var(--ag-soft)}
+.ana-gen .ag-trust[aria-pressed=true]:before{background:var(--ag-secondary);border-color:var(--ag-secondary);box-shadow:0 0 0 3px var(--ag-soft)}
+.ana-gen .ag-select{width:100%;min-height:42px;padding:8px 12px;font:500 13px/1.4 var(--font-base);color:var(--ag-text)!important;-webkit-text-fill-color:var(--ag-text)!important;background:var(--ag-base);border:1px solid var(--ag-line);border-radius:0;appearance:auto}
+.ana-gen .ag-select option{background:var(--ag-base);color:var(--ag-text)}
+.ana-gen .ag-bottom{padding-top:22px}
+.ana-gen .ag-actions{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap}
+.ana-gen .ag-primary{flex:1;padding:13px 20px;background:var(--ag-accent);border-color:var(--ag-accent);color:#fff!important;-webkit-text-fill-color:#fff!important;font-weight:700;letter-spacing:.035em}
+.ana-gen .ag-primary:not(:disabled):hover{background:var(--ag-ink);border-color:var(--ag-ink)}
+.ana-gen .ag-secondary{padding:11px 16px;background:transparent;color:var(--ag-text)}
+.ana-gen .ag-status{margin-top:10px;color:var(--ag-muted);font-size:12px;min-height:20px}
+.ana-gen .ag-result{position:relative;isolation:isolate;margin:32px 5px 6px;padding:clamp(22px,4vw,35px);border:1px solid var(--ag-strong);background:var(--ag-base);box-shadow:4px 5px 0 var(--ag-soft)}
+.ana-gen .ag-result:before{content:"";position:absolute;right:14px;top:12px;width:74px;height:74px;z-index:-1;background:var(--ana-img-sello) center/contain no-repeat;opacity:.12;pointer-events:none}
+.ana-gen .ag-result h3{margin:10px 0;color:var(--ag-title);font:500 clamp(19px,3vw,28px)/1.3 var(--font-title);overflow-wrap:anywhere}
+.ana-gen .ag-meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px}
+.ana-gen .ag-meta span{padding:3px 8px;border:1px solid var(--ag-line);color:var(--ag-muted);font-size:11px}
+.ana-gen .ag-story{font-size:clamp(14px,2vw,17px);line-height:1.85;overflow-wrap:anywhere}
+.ana-gen .ag-season{margin-top:12px;padding:8px 12px;border-left:2px solid var(--ag-gold);color:var(--ag-muted);font-size:12px}
+.ana-gen .ag-result-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.ana-gen .ag-result-actions button{padding:8px 14px;font-size:12px}
+.ana-gen .ag-footer{margin-top:20px;text-align:center;color:var(--ag-muted);font-size:10px;letter-spacing:.05em}
+@media(max-width:560px){.ana-gen{margin:10px auto;padding:14px}.ana-gen .ag-header{padding:25px 12px}.ana-gen .ag-bonds{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.ana-gen .ag-bond{min-height:82px}.ana-gen .ag-section{padding:18px 0}.ana-gen .ag-mode button{flex:1;padding:8px}.ana-gen .ag-actions{flex-direction:column}.ana-gen .ag-primary,.ana-gen .ag-secondary{width:100%}.ana-gen .ag-result{margin:24px 0 4px}.ana-gen .ag-trust{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.ana-gen button{transition:none}}

@@ -3061,8 +3061,12 @@
       clear.textContent = 'Limpiar formulario';
       copy.parentNode.appendChild(clear);
     }
-    name.placeholder = 'Nombre del PNJ';
-    avatar.placeholder = 'https://placehold.co/150x150';
+    name.placeholder = 'Nombre del personaje';
+    avatar.placeholder = 'https://placehold.co/300x400';
+    name.defaultValue = 'Nombre del personaje';
+    avatar.defaultValue = 'https://placehold.co/300x400';
+    name.value = name.defaultValue;
+    avatar.value = avatar.defaultValue;
     function build() {
       var label = clean(name.value), source = clean(avatar.value), valid = false;
       output.value = ''; status.textContent = '';

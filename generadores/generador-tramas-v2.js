@@ -2,38 +2,74 @@
 (function () {
   "use strict";
   const URL = "https://raw.githubusercontent.com/anamnesisrol/foro-generador-tramas/main/situaciones.json";
-  // Imágenes reutilizadas de remora-guide.css y remora-guide-expansion.css.
+  // Fotografías seleccionadas por la administración de ANAMNESIS.
+  // Pendientes de URL directa (no se cargan como imagen): {"Estación Central":"https://unsplash.com/photos/W-qbp5e1Kig","Terminal de Ferris":"https://unsplash.com/photos/BNUK6Bdbdmo","Carnaval de las Máscaras":"https://unsplash.com/photos/5kL77tAHTqQ","Festival de Otoño":"https://unsplash.com/photos/r4dreHcE2RI","Festival de la Marea":"https://unsplash.com/photos/Q7CR263zBHc","Mercado de Invierno":"https://unsplash.com/photos/5X8N9A2ruHM"}
   const placePhotos = {
+  "Acuario de Rémora": "https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=1200&q=82",
+  "Aeropuerto Internacional de Rémora": "https://images.unsplash.com/photo-1781989302296-805b5a8a2f2e?auto=format&fit=crop&w=1200&q=82",
+  "Arcilla & Sal": "https://images.pexels.com/photos/14770810/pexels-photo-14770810.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Bastión Viejo": "https://images.pexels.com/photos/31691937/pexels-photo-31691937.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Biblioteca Central de Rémora": "https://images.pexels.com/photos/19238157/pexels-photo-19238157.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Bolos del Lago": "https://images.pexels.com/photos/7429591/pexels-photo-7429591.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Botica del Istmo": "https://images.pexels.com/photos/8667531/pexels-photo-8667531.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Casa Oliva": "https://images.pexels.com/photos/5865153/pexels-photo-5865153.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Cine Aurora": "https://images.pexels.com/photos/7991112/pexels-photo-7991112.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Costa Norte": "https://images.pexels.com/photos/40608182/pexels-photo-40608182.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Dulce de Barrio": "https://images.pexels.com/photos/40842654/pexels-photo-40842654.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Eastbrook Galleria": "https://images.pexels.com/photos/10195985/pexels-photo-10195985.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "El Dedal": "https://images.pexels.com/photos/5865772/pexels-photo-5865772.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Escalinata de las Mareas": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=82",
+  "Faro de Saint Orla": "https://images.pexels.com/photos/9323301/pexels-photo-9323301.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Ferretería del Puerto": "https://images.pexels.com/photos/37435112/pexels-photo-37435112.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "FORGE": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=82",
+  "Foto Estuario": "https://images.pexels.com/photos/32822405/pexels-photo-32822405.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Galería Entre Líneas": "https://images.pexels.com/photos/39007932/pexels-photo-39007932.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Hospital Universitario": "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=82",
+  "Hotel Bruma": "https://images.pexels.com/photos/29702285/pexels-photo-29702285.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Hotel Rêverie": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=82",
+  "Instituto Saint Maren": "https://images.pexels.com/photos/17792676/pexels-photo-17792676.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Jardín Botánico": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=82",
+  "June & Co.": "https://images.pexels.com/photos/26292713/pexels-photo-26292713.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "La Bicicletería": "https://images.pexels.com/photos/40248241/pexels-photo-40248241.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "La Espiga": "https://images.pexels.com/photos/40842630/pexels-photo-40842630.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "La Mesa Común": "https://images.pexels.com/photos/40565121/pexels-photo-40565121.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "La Rosa de los Vientos": "https://images.pexels.com/photos/32955841/pexels-photo-32955841.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "La Última Llave": "https://images.pexels.com/photos/5865388/pexels-photo-5865388.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Lago Eastbrook": "https://i.servimg.com/u/f68/20/65/25/08/pexels25.jpg",
+  "Lavandería El Faro": "https://images.pexels.com/photos/16674237/pexels-photo-16674237.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Leroy's": "https://i.servimg.com/u/f68/20/65/25/08/pexels15.jpg",
+  "Marina": "https://i.servimg.com/u/f68/20/65/25/08/pexels20.jpg",
+  "Mercado de la Lonja": "https://images.unsplash.com/photo-1534482421-64566f976cfa?auto=format&fit=crop&w=1200&q=82",
+  "Mercado de las Flores": "https://images.pexels.com/photos/40821508/pexels-photo-40821508.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Mirador de Monte Kearney": "https://images.pexels.com/photos/33050274/pexels-photo-33050274.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Mirador del Istmo": "https://i.servimg.com/u/f68/20/65/25/08/pexels16.jpg",
+  "Museo Marítimo y Oceanográfico": "https://images.pexels.com/photos/37302564/pexels-photo-37302564.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Needle & Groove": "https://images.pexels.com/photos/29396283/pexels-photo-29396283.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Papel de Invierno": "https://images.pexels.com/photos/30654939/pexels-photo-30654939.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Recinto Ferial de Eastbrook": "https://images.pexels.com/photos/5555853/pexels-photo-5555853.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Rostco": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1200&q=82",
+  "Scaredy Cat": "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=82",
+  "Segunda Vida": "https://images.pexels.com/photos/40749408/pexels-photo-40749408.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Sendero de los Farallones": "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=82",
   "Sweet Nothings": "https://i.servimg.com/u/f68/20/65/25/08/pexels11.jpg",
   "Tándem": "https://images.unsplash.com/photo-1776993298422-3e8c397d0235?auto=format&fit=crop&w=1200&q=82",
-  "Universidad de Rémora": "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=82",
-  "Instituto Saint Maren": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=82",
-  "Hospital Universitario": "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=82",
-  "Rostco": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1200&q=82",
-  "Hotel Rêverie": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=82",
-  "FORGE": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=82",
   "The Bluebell": "https://i.servimg.com/u/f68/20/65/25/08/pexels12.jpg",
-  "Leroy's": "https://i.servimg.com/u/f68/20/65/25/08/pexels15.jpg",
-  "Scaredy Cat": "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=82",
-  "Acuario de Rémora": "https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=1200&q=82",
-  "Sendero de los Farallones": "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=82",
-  "Faro de Saint Orla": "https://images.unsplash.com/photo-1515894347712-4d9164b20a51?auto=format&fit=crop&w=1200&q=82",
-  "Escalinata de las Mareas": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=82",
-  "Jardín Botánico": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=82",
-  "Museo Marítimo y Oceanográfico": "https://images.pexels.com/photos/37302564/pexels-photo-37302564.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  "Biblioteca Central de Rémora": "https://images.pexels.com/photos/19238157/pexels-photo-19238157.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  "Zoológico de Eastbrook": "https://images.pexels.com/photos/9247032/pexels-photo-9247032.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  "Bastión Viejo": "https://images.pexels.com/photos/31691937/pexels-photo-31691937.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  "Recinto Ferial de Eastbrook": "https://images.pexels.com/photos/5555853/pexels-photo-5555853.jpeg?auto=compress&cs=tinysrgb&w=1400",
-  "Mirador de Monte Kearney": "https://images.pexels.com/photos/33050274/pexels-photo-33050274.jpeg?auto=compress&cs=tinysrgb&w=1400"
+  "Tinta y Matriz": "https://images.pexels.com/photos/7256937/pexels-photo-7256937.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Universidad de Rémora": "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=82",
+  "Vivero Bellrose": "https://images.unsplash.com/photo-1772907952251-09e722aafa6a?auto=format&fit=crop&w=1200&q=82",
+  "Zoológico de Eastbrook": "https://i.servimg.com/u/f68/20/65/25/08/pexels27.jpg",
+  "Noche de los Faroles": "https://i86.servimg.com/u/f86/20/65/24/37/pexels11.jpg",
+  "Procesión de las Luces": "https://i86.servimg.com/u/f86/20/65/24/37/pexels12.jpg"
 };
   const districtPhotos = {
   "Centro Histórico": "https://i.servimg.com/u/f68/20/65/25/08/_top_t10.jpg",
   "Distrito Portuario": "https://i.servimg.com/u/f68/20/65/25/08/descar10.jpg",
-  "Barrio Universitario": "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
-  "Bellrose": "https://i.servimg.com/u/f68/20/65/25/08/pexels16.jpg",
   "Distrito Costero": "https://images.pexels.com/photos/37519550/pexels-photo-37519550.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  "Distrito Eastbrook": "https://images.pexels.com/photos/30433829/pexels-photo-30433829.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  "Barrio Universitario": "https://i.servimg.com/u/f68/20/65/25/08/facult10.png",
+  "Bellrose": "https://i.servimg.com/u/f68/20/65/25/08/image10.jpg",
+  "Distrito Eastbrook": "https://images.pexels.com/photos/30433829/pexels-photo-30433829.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "Corredor del Istmo": "https://i86.servimg.com/u/f86/20/65/24/37/3nzyns10.jpg",
+  "Fuera de Rémora": "https://images.unsplash.com/photo-1486299267070-83823f5448dd?auto=format&fit=crop&w=1200&q=82"
 };
   const bonds = ["Desconocidos","Conocidos","Amistad","Romance","Familia","Profesional","Académico","Rivalidad","Vínculos del pasado"];
   const trust = ["Nula","Baja","Media","Alta","Profunda"];
@@ -76,7 +112,7 @@
   function init(root){
     if(root.dataset.agReady) return;
     root.dataset.agReady="1";
-    root.innerHTML='<header class="ag-header"><p class="ag-kicker">Anamnesis · Estación de tramas</p><h1>Una historia por escribir</h1><div class="ag-ornament">'+svg('<path d="m12 4 8 8-8 8-8-8Z" fill="currentColor"/>')+'</div><p class="ag-motto">Todo comienza con un encuentro.</p><p class="ag-intro">Elige lo que une a tus personajes o el lugar donde se encuentran. Nosotros te damos el comienzo; la historia es tuya.</p></header><nav class="ag-mode" aria-label="Modo de búsqueda"><button type="button" data-mode="vinculo" aria-pressed="true">Por vínculo</button><button type="button" data-mode="escenario" aria-pressed="false">Por escenario</button></nav><div class="ag-sections"></div><div class="ag-bottom"><p class="ag-hint">Al cambiar un filtro anterior, se restablecen los que le siguen. Todos son opcionales.</p><div class="ag-actions"><button type="button" class="ag-primary" data-action="generate" disabled>Encontrar inspiración</button><button type="button" class="ag-secondary" data-action="reset">Limpiar filtros</button></div><p class="ag-status" role="status" aria-live="polite">Cargando el banco de situaciones…</p></div><article class="ag-result" hidden aria-live="polite"><div class="ag-postmark"><p class="ag-eyebrow">Correspondencia de Rémora</p><span class="ag-card-id"></span></div><div class="ag-postcard"><figure class="ag-photo"><div class="ag-photo-frame"><img alt="" loading="lazy" hidden><span class="ag-photo-fallback" aria-hidden="true"></span></div><figcaption></figcaption></figure><div class="ag-letter"><p class="ag-letter-note">Tu próxima historia</p><h3></h3><div class="ag-meta"></div><p class="ag-story"></p><p class="ag-season" hidden></p></div></div><div class="ag-result-actions"><button type="button" data-action="copy">Copiar situación</button><button type="button" data-action="generate">Otra inspiración</button></div></article><p class="ag-footer">ANAMNESIS · El generador propone las circunstancias; tú escribes la historia.</p>';
+    root.innerHTML='<header class="ag-header"><p class="ag-kicker">Anamnesis · Estación de tramas</p><h1>Una historia por escribir</h1><div class="ag-ornament">'+svg('<path d="m12 4 8 8-8 8-8-8Z" fill="currentColor"/>')+'</div><p class="ag-motto">Todo comienza con un encuentro.</p><p class="ag-intro">Elige lo que une a tus personajes o el lugar donde se encuentran. Nosotros te damos el comienzo; la historia es tuya.</p></header><nav class="ag-mode" aria-label="Modo de búsqueda"><button type="button" data-mode="vinculo" aria-pressed="true">Por vínculo</button><button type="button" data-mode="escenario" aria-pressed="false">Por escenario</button></nav><div class="ag-sections"></div><div class="ag-bottom"><p class="ag-hint">Al cambiar un filtro anterior, se restablecen los que le siguen. Todos son opcionales.</p><div class="ag-actions"><button type="button" class="ag-primary" data-action="generate" disabled>Encontrar inspiración</button><button type="button" class="ag-secondary" data-action="reset">Limpiar filtros</button></div><p class="ag-status" role="status" aria-live="polite">Cargando el banco de situaciones…</p></div><article class="ag-result" hidden aria-live="polite"><div class="ag-postmark"><p class="ag-eyebrow">Correspondencia de Rémora</p><span class="ag-card-id"></span></div><div class="ag-postcard"><figure class="ag-photo"><div class="ag-photo-frame"><img alt="" loading="eager" hidden><span class="ag-photo-fallback" aria-hidden="true"></span></div><figcaption></figcaption></figure><div class="ag-letter"><p class="ag-letter-note">Tu próxima historia</p><h3></h3><div class="ag-meta"></div><p class="ag-story"></p><p class="ag-season" hidden></p></div></div><div class="ag-result-actions"><button type="button" data-action="copy">Copiar situación</button><button type="button" data-action="generate">Otra inspiración</button></div></article><p class="ag-footer">ANAMNESIS · El generador propone las circunstancias; tú escribes la historia.</p>';
     const section=root.querySelector(".ag-sections"), status=root.querySelector(".ag-status"), result=root.querySelector(".ag-result"), main=root.querySelector(".ag-primary");
     let data=[], selected={}, mode="vinculo", loaded=false, current=null, used=new Set();
     const el=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;};
@@ -145,12 +181,24 @@
       result.querySelector(".ag-story").textContent=current.situacion;
       const img=result.querySelector(".ag-photo img"), caption=result.querySelector(".ag-photo figcaption"), frame=result.querySelector(".ag-photo-frame");
       const exact=placePhotos[current.escenario], view=districtPhotos[current.distrito];
-      const photo=exact||view;
-      img.hidden=true;frame.classList.remove("ag-has-photo");img.removeAttribute("src");
-      caption.textContent=exact?current.escenario:view?"Vista de "+current.distrito+" · "+current.escenario:current.escenario;
-      img.onload=()=>{img.hidden=false;frame.classList.add("ag-has-photo");};
-      img.onerror=()=>{img.hidden=true;frame.classList.remove("ag-has-photo");caption.textContent=current.escenario;};
-      if(photo){img.alt=exact?"Vista de "+current.escenario:"Vista del distrito "+current.distrito;img.src=photo;}
+      const candidates=[{url:exact,label:current.escenario,alt:"Vista de "+current.escenario},{url:view,label:"Vista de "+current.distrito+" · "+current.escenario,alt:"Vista del distrito "+current.distrito}].filter((c,i,a)=>c.url&&a.findIndex(x=>x.url===c.url)===i);
+      img.hidden=true;frame.classList.remove("ag-has-photo");img.onload=null;img.onerror=null;img.removeAttribute("src");
+      caption.textContent=current.escenario;
+      const cardId=current.id;
+      function tryPhoto(i){
+        if(!current||current.id!==cardId)return;
+        const item=candidates[i];
+        if(!item){img.hidden=true;frame.classList.remove("ag-has-photo");caption.textContent=current.escenario;return;}
+        const probe=new Image();
+        probe.onload=()=>{
+          if(!current||current.id!==cardId)return;
+          img.alt=item.alt;img.src=item.url;img.hidden=false;
+          frame.classList.add("ag-has-photo");caption.textContent=item.label;
+        };
+        probe.onerror=()=>tryPhoto(i+1);
+        probe.src=item.url;
+      }
+      tryPhoto(0);
       result.querySelector(".ag-card-id").textContent="N.º "+current.id.replace(/^SIT/,"");
       const meta=result.querySelector(".ag-meta");meta.replaceChildren();
       [current.vinculo,current.relacion,current.tematica,current.distrito==="Cualquiera"?"":current.distrito,current.escenario].filter(Boolean).forEach(v=>meta.append(el("span","",v)));

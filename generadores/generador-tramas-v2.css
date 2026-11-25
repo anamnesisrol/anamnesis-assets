@@ -304,3 +304,34 @@
  .ana-gen[data-generator] .ag-bonds{grid-template-columns:minmax(0,1fr);gap:0}
  .ana-gen[data-generator] .ag-bond{min-height:40px;padding:8px 7px}
 }
+
+/* Listas adaptadas al ancho real del panel, también en el modo por escenario. */
+.ana-gen[data-generator] .ag-bonds{
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,165px),1fr));
+  gap:3px 12px;
+}
+.ana-gen[data-generator] .ag-bond{
+  min-width:0;height:auto;min-height:43px;
+  align-items:center;justify-content:flex-start;
+  padding:9px 8px;gap:8px;
+}
+.ana-gen[data-generator] .ag-bond svg{flex:0 0 18px}
+.ana-gen[data-generator] .ag-bond span{
+  flex:1 1 auto;min-width:0;max-width:100%;
+  white-space:normal!important;word-break:normal!important;
+  overflow-wrap:normal!important;hyphens:none!important;
+}
+.ana-gen[data-generator] .ag-section:not(:first-child) .ag-bonds{
+  grid-template-columns:minmax(0,1fr);
+  gap:0;
+}
+.ana-gen[data-generator] .ag-section:not(:first-child) .ag-bond{
+  min-height:39px;padding:7px 8px;
+}
+.ana-gen[data-generator] .ag-chip{
+  max-width:100%;height:auto;white-space:normal!important;
+  word-break:normal!important;overflow-wrap:normal!important;
+}
+@media(max-width:480px){
+  .ana-gen[data-generator] .ag-bonds{grid-template-columns:minmax(0,1fr);gap:0}
+}

@@ -2,6 +2,39 @@
 (function () {
   "use strict";
   const URL = "https://raw.githubusercontent.com/anamnesisrol/foro-generador-tramas/main/situaciones.json";
+  // Imágenes reutilizadas de remora-guide.css y remora-guide-expansion.css.
+  const placePhotos = {
+  "Sweet Nothings": "https://i.servimg.com/u/f68/20/65/25/08/pexels11.jpg",
+  "Tándem": "https://images.unsplash.com/photo-1776993298422-3e8c397d0235?auto=format&fit=crop&w=1200&q=82",
+  "Universidad de Rémora": "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=82",
+  "Instituto Saint Maren": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=82",
+  "Hospital Universitario": "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=82",
+  "Rostco": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1200&q=82",
+  "Hotel Rêverie": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=82",
+  "FORGE": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=82",
+  "The Bluebell": "https://i.servimg.com/u/f68/20/65/25/08/pexels12.jpg",
+  "Leroy's": "https://i.servimg.com/u/f68/20/65/25/08/pexels15.jpg",
+  "Scaredy Cat": "https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=82",
+  "Acuario de Rémora": "https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=1200&q=82",
+  "Sendero de los Farallones": "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=82",
+  "Faro de Saint Orla": "https://images.unsplash.com/photo-1515894347712-4d9164b20a51?auto=format&fit=crop&w=1200&q=82",
+  "Escalinata de las Mareas": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=82",
+  "Jardín Botánico": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=1200&q=82",
+  "Museo Marítimo y Oceanográfico": "https://images.pexels.com/photos/37302564/pexels-photo-37302564.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Biblioteca Central de Rémora": "https://images.pexels.com/photos/19238157/pexels-photo-19238157.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Zoológico de Eastbrook": "https://images.pexels.com/photos/9247032/pexels-photo-9247032.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Bastión Viejo": "https://images.pexels.com/photos/31691937/pexels-photo-31691937.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Recinto Ferial de Eastbrook": "https://images.pexels.com/photos/5555853/pexels-photo-5555853.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  "Mirador de Monte Kearney": "https://images.pexels.com/photos/33050274/pexels-photo-33050274.jpeg?auto=compress&cs=tinysrgb&w=1400"
+};
+  const districtPhotos = {
+  "Centro Histórico": "https://i.servimg.com/u/f68/20/65/25/08/_top_t10.jpg",
+  "Distrito Portuario": "https://i.servimg.com/u/f68/20/65/25/08/descar10.jpg",
+  "Barrio Universitario": "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+  "Bellrose": "https://i.servimg.com/u/f68/20/65/25/08/pexels16.jpg",
+  "Distrito Costero": "https://images.pexels.com/photos/37519550/pexels-photo-37519550.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "Distrito Eastbrook": "https://images.pexels.com/photos/30433829/pexels-photo-30433829.jpeg?auto=compress&cs=tinysrgb&w=1600"
+};
   const bonds = ["Desconocidos","Conocidos","Amistad","Romance","Familia","Profesional","Académico","Rivalidad","Vínculos del pasado"];
   const trust = ["Nula","Baja","Media","Alta","Profunda"];
   const themes = ["Vida cotidiana","Ocio y entretenimiento","Humor","Romance","Celebraciones","Conflictos","Imprevistos","Desarrollo personal","Aventuras","Cambios vitales","Descubrimientos","Cooperación","Recuerdos y nostalgia"];
@@ -43,7 +76,7 @@
   function init(root){
     if(root.dataset.agReady) return;
     root.dataset.agReady="1";
-    root.innerHTML='<header class="ag-header"><p class="ag-kicker">Anamnesis · Inspiración narrativa</p><h1>Una historia por escribir</h1><div class="ag-ornament">'+svg('<path d="m12 4 8 8-8 8-8-8Z" fill="currentColor"/>')+'</div><p class="ag-motto">Todo comienza con un encuentro.</p><p class="ag-intro">Elige lo que une a tus personajes o el lugar donde se encuentran. Nosotros te damos el comienzo; la historia es tuya.</p></header><nav class="ag-mode" aria-label="Modo de búsqueda"><button type="button" data-mode="vinculo" aria-pressed="true">Por vínculo</button><button type="button" data-mode="escenario" aria-pressed="false">Por escenario</button></nav><div class="ag-sections"></div><div class="ag-bottom"><p class="ag-hint">Al cambiar un filtro anterior, se restablecen los que le siguen. Todos son opcionales.</p><div class="ag-actions"><button type="button" class="ag-primary" data-action="generate" disabled>Encontrar inspiración</button><button type="button" class="ag-secondary" data-action="reset">Limpiar filtros</button></div><p class="ag-status" role="status" aria-live="polite">Cargando el banco de situaciones…</p></div><article class="ag-result" hidden aria-live="polite"><p class="ag-eyebrow">Tu próxima historia</p><h3></h3><div class="ag-meta"></div><p class="ag-story"></p><p class="ag-season" hidden></p><div class="ag-result-actions"><button type="button" data-action="copy">Copiar situación</button><button type="button" data-action="generate">Otra inspiración</button></div></article><p class="ag-footer">ANAMNESIS · El generador propone las circunstancias; tú escribes la historia.</p>';
+    root.innerHTML='<header class="ag-header"><p class="ag-kicker">Anamnesis · Estación de tramas</p><h1>Una historia por escribir</h1><div class="ag-ornament">'+svg('<path d="m12 4 8 8-8 8-8-8Z" fill="currentColor"/>')+'</div><p class="ag-motto">Todo comienza con un encuentro.</p><p class="ag-intro">Elige lo que une a tus personajes o el lugar donde se encuentran. Nosotros te damos el comienzo; la historia es tuya.</p></header><nav class="ag-mode" aria-label="Modo de búsqueda"><button type="button" data-mode="vinculo" aria-pressed="true">Por vínculo</button><button type="button" data-mode="escenario" aria-pressed="false">Por escenario</button></nav><div class="ag-sections"></div><div class="ag-bottom"><p class="ag-hint">Al cambiar un filtro anterior, se restablecen los que le siguen. Todos son opcionales.</p><div class="ag-actions"><button type="button" class="ag-primary" data-action="generate" disabled>Encontrar inspiración</button><button type="button" class="ag-secondary" data-action="reset">Limpiar filtros</button></div><p class="ag-status" role="status" aria-live="polite">Cargando el banco de situaciones…</p></div><article class="ag-result" hidden aria-live="polite"><div class="ag-postmark"><p class="ag-eyebrow">Correspondencia de Rémora</p><span class="ag-card-id"></span></div><div class="ag-postcard"><figure class="ag-photo"><div class="ag-photo-frame"><img alt="" loading="lazy" hidden><span class="ag-photo-fallback" aria-hidden="true"></span></div><figcaption></figcaption></figure><div class="ag-letter"><p class="ag-letter-note">Tu próxima historia</p><h3></h3><div class="ag-meta"></div><p class="ag-story"></p><p class="ag-season" hidden></p></div></div><div class="ag-result-actions"><button type="button" data-action="copy">Copiar situación</button><button type="button" data-action="generate">Otra inspiración</button></div></article><p class="ag-footer">ANAMNESIS · El generador propone las circunstancias; tú escribes la historia.</p>';
     const section=root.querySelector(".ag-sections"), status=root.querySelector(".ag-status"), result=root.querySelector(".ag-result"), main=root.querySelector(".ag-primary");
     let data=[], selected={}, mode="vinculo", loaded=false, current=null, used=new Set();
     const el=(tag,cls,txt)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;};
@@ -80,7 +113,7 @@
         vals.forEach((v,i)=>{
           const n=pool.filter(r=>matches(r,key,v)).length;
           const b=makeButton(key,v,key==="participantes"&&v==="7+"?"7 o más":v,key==="vinculo"?"ag-bond":key==="confianza"?"ag-trust":"ag-chip",n>0,key==="vinculo"?icons[i]:null);
-          if(key==="vinculo")b.append(el("small","",n+" propuestas"));
+          if(key==="vinculo")b.title=n+" propuestas compatibles";
           box.append(b);
         });
         wrap.append(box,makeButton(key,"",anyText[key],"ag-any",true));
@@ -110,6 +143,15 @@
       current=fresh[Math.floor(Math.random()*fresh.length)];used.add(current.id);
       result.querySelector("h3").textContent=current.titulo;
       result.querySelector(".ag-story").textContent=current.situacion;
+      const img=result.querySelector(".ag-photo img"), caption=result.querySelector(".ag-photo figcaption"), frame=result.querySelector(".ag-photo-frame");
+      const exact=placePhotos[current.escenario], view=districtPhotos[current.distrito];
+      const photo=exact||view;
+      img.hidden=true;frame.classList.remove("ag-has-photo");img.removeAttribute("src");
+      caption.textContent=exact?current.escenario:view?"Vista de "+current.distrito+" · "+current.escenario:current.escenario;
+      img.onload=()=>{img.hidden=false;frame.classList.add("ag-has-photo");};
+      img.onerror=()=>{img.hidden=true;frame.classList.remove("ag-has-photo");caption.textContent=current.escenario;};
+      if(photo){img.alt=exact?"Vista de "+current.escenario:"Vista del distrito "+current.distrito;img.src=photo;}
+      result.querySelector(".ag-card-id").textContent="N.º "+current.id.replace(/^SIT/,"");
       const meta=result.querySelector(".ag-meta");meta.replaceChildren();
       [current.vinculo,current.relacion,current.tematica,current.distrito==="Cualquiera"?"":current.distrito,current.escenario].filter(Boolean).forEach(v=>meta.append(el("span","",v)));
       const season=result.querySelector(".ag-season");

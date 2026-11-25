@@ -11200,7 +11200,8 @@ body.theme-dark .am-starter-mini .asm-info::before {
   .atb .atb-main .atb-head .atb-kicker { font-size:18px; }
 }
 
-/* Fondos personalizados de bloqueo e inicio del Maxi. */
+/* Fondos personalizados de pantalla, chat, bloqueo e inicio. */
+.am-phone :is(.am-phone-screen,.am-chat-body)[style*="background"],
 .am-phone-maxi :is(.am-maxi-lock,.am-maxi-home)[style*="background"]{
   background-size:100% auto!important;
   background-repeat:no-repeat!important;

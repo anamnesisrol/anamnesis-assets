@@ -11215,3 +11215,29 @@ body.theme-dark .am-starter-mini .asm-info::before {
   background-position:center!important;
   background-color:var(--am-phone-screen)!important;
 }
+
+/* ANAMNESIS · THE WINTER HUNT · MARCADOR DE EQUIPO (ESTILOS AISLADOS) */
+.ana-wh-team{--wht-bg:#f4f0ea;--wht-alt:#ebe4dc;--wht-ink:#392d32;--wht-muted:#796a70;--wht-line:#d5c5bb;--wht-accent:#702d48;box-sizing:border-box;width:640px;max-width:100%;margin:16px auto;border:1px solid var(--wht-line);background:var(--wht-bg);color:var(--wht-ink);font-family:"Quicksand",sans-serif}
+:is(body.theme-dark,body.dark,body[data-theme="dark"],html.dark,html[data-theme="dark"]) .ana-wh-team{--wht-bg:#29262b;--wht-alt:#332d33;--wht-ink:#eee4e6;--wht-muted:#c2afb5;--wht-line:#594b51;--wht-accent:#d0a3b5}
+.ana-wh-team *{box-sizing:border-box}
+.ana-wh-team .wht-head{padding:18px 22px;background:var(--wht-bg);border-bottom:2px solid var(--wht-accent)}
+.ana-wh-team .wht-kicker{display:block;color:var(--wht-accent);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.ana-wh-team .wht-title{margin:6px 0 0;color:var(--wht-ink);font:500 23px/1.4 "Cinzel",serif}
+.ana-wh-team .am-starter-mini.wht-date{display:flex!important;align-items:center!important;gap:18px!important;width:100%!important;max-width:none!important;min-height:0!important;margin:0!important;padding:17px 22px!important;border:0!important;border-bottom:1px solid var(--wht-line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;transform:none!important}
+.ana-wh-team .am-starter-mini.wht-date::before,.ana-wh-team .am-starter-mini.wht-date::after,.ana-wh-team .am-starter-mini.wht-date .asm-info::before{display:none!important;content:none!important}
+.ana-wh-team .asm-date.wht-day{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;flex:0 0 58px!important;width:58px!important;min-width:0!important;height:auto!important;margin:0!important;padding:0 15px 0 0!important;border:0!important;border-right:1px solid var(--wht-line)!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+.ana-wh-team .wht-day b{display:block!important;margin:0!important;font:400 27px/1.2 "Cinzel",serif!important;color:var(--wht-accent)!important}
+.ana-wh-team .wht-day span{display:block!important;margin:5px 0 0!important;font-size:10px!important;font-weight:700!important;letter-spacing:1px!important;color:var(--wht-muted)!important}
+.ana-wh-team .asm-info.wht-info{display:block!important;flex:1!important;min-width:0!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important}
+.ana-wh-team .wht-info>strong{display:block!important;margin:0 0 8px!important;color:var(--wht-ink)!important;font:500 15px/1.4 "Cinzel",serif!important;letter-spacing:.5px!important}
+.ana-wh-team .asm-meta.wht-meta{display:flex!important;flex-wrap:wrap!important;align-items:center!important;gap:6px 13px!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important}
+.ana-wh-team .wht-meta>span{display:inline-flex!important;align-items:center!important;gap:5px!important;margin:0!important;color:var(--wht-muted)!important;font-size:10px!important;line-height:1.5!important}
+.ana-wh-team .wht-meta>span::after{display:none!important;content:none!important}
+.ana-wh-team .wht-meta i.material-symbols-outlined{font-size:14px!important;color:var(--wht-accent)!important}
+.ana-wh-team .wht-players{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:18px 22px}
+.ana-wh-team .wht-label{display:block;margin-bottom:8px;color:var(--wht-accent);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.ana-wh-team .wht-person{display:block;margin:5px 0;color:var(--wht-ink);font-size:12px;line-height:1.6}
+.ana-wh-team .wht-score{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:15px 22px;background:var(--wht-alt);border-top:1px solid var(--wht-line)}
+.ana-wh-team .wht-value{display:block;color:var(--wht-accent);font:500 22px/1.3 "Cinzel",serif}
+.ana-wh-team .wht-score-right{text-align:right}
+@media(max-width:520px){.ana-wh-team .wht-head,.ana-wh-team .wht-players,.ana-wh-team .wht-score{padding:15px}.ana-wh-team .wht-title{font-size:20px}.ana-wh-team .am-starter-mini.wht-date{padding:15px!important;gap:12px!important}.ana-wh-team .asm-date.wht-day{flex-basis:48px!important;width:48px!important;padding-right:10px!important}.ana-wh-team .wht-info>strong{font-size:13px!important}.ana-wh-team .wht-meta>span{font-size:9px!important}.ana-wh-team .wht-players{gap:12px}.ana-wh-team .wht-value{font-size:19px}}

@@ -11241,6 +11241,10 @@ body.theme-dark .am-starter-mini .asm-info::before {
 .expd-admin-label{margin-bottom:8px;font-size:10px;line-height:1.45;letter-spacing:.09em}
 .expd-admin-value{display:block;height:auto;min-height:0;max-height:none;overflow:visible;color:var(--text-main);font:650 12px/1.65 var(--font-base);text-align:left;overflow-wrap:anywhere}
 .expd-admin-value.expd-rhythm{color:var(--accent-sage);font:600 13px/1.5 var(--font-title)}
+.expd-admin-value.expd-rhythm--bajo{color:#7e8b67}
+.expd-admin-value.expd-rhythm--medio{color:#698c98}
+.expd-admin-value.expd-rhythm--alto{color:#a67e4f}
+.expd-admin-value.expd-rhythm--muy-alto{color:#a4778d}
 .expd-admin-value.expd-interests{display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px}
 .expd-interest{display:inline-block;padding:4px 8px;border:1px solid var(--line);background:var(--bg-panel);color:var(--text-main);font:650 10.5px/1.4 var(--font-base)}
 .expd-admin-copy{margin-top:8px;font-size:10px;line-height:1.5}

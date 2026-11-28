@@ -11216,17 +11216,34 @@ body.theme-dark .am-starter-mini .asm-info::before {
   background-color:var(--am-phone-screen)!important;
 }
 
-/* ANAMNESIS · EXPEDIENTE V2 · AJUSTES SOLO PARA FICHAS NUEVAS */
-.expd.expd-v2 .expd-extra-item{display:block;margin:0;padding:0;color:var(--text-main);font:500 11.5px/1.55 var(--font-base)}
-.expd.expd-v2 .expd-extra-item+.expd-extra-item{margin-top:5px}
-.expd.expd-v2 .expd-bio-p{margin:0 0 11px;white-space:pre-line;overflow-wrap:anywhere}
-.expd.expd-v2 .expd-bio-p:last-child{margin-bottom:0}
-.expd.expd-v2 .expd-admin-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.expd.expd-v2 .expd-admin-item{min-height:0;padding:17px 18px;text-align:left}
-.expd.expd-v2 .expd-admin-label{margin-bottom:7px;font:700 10px/1.4 var(--font-title);letter-spacing:.09em}
-.expd.expd-v2 .expd-admin-value{display:block;height:auto;min-height:0;max-height:none;overflow:visible;color:var(--text-main);font:650 12px/1.6 var(--font-base);text-align:left;overflow-wrap:anywhere}
-.expd.expd-v2 .expd-admin-value.expd-rhythm{color:var(--accent-sage);font:600 13px/1.5 var(--font-title)}
-.expd.expd-v2 .expd-admin-value.expd-interests{display:flex;align-items:flex-start;flex-wrap:wrap;gap:6px}
-.expd.expd-v2 .expd-interest{display:inline-block;padding:4px 8px;border:1px solid var(--line);background:var(--bg-panel);color:var(--text-main);font:650 10.5px/1.4 var(--font-base);white-space:normal}
-.expd.expd-v2 .expd-admin-copy{margin-top:9px;font:600 10px/1.45 var(--font-base)}
-@media(max-width:560px){.expd.expd-v2 .expd-admin-grid{grid-template-columns:1fr}}
+/* ANAMNESIS · EXPEDIENTE · REDISEÑO LIGERO · MISMAS CLASES HTML */
+/* Sin hoja inclinada detrás; se conserva el papel y su decoración interna. */
+.expd::before{display:none;content:none}
+.expd::after{display:none;content:none}
+.expd-paper{padding:32px}
+.expd-character{grid-template-columns:235px minmax(0,1fr);column-gap:24px;row-gap:22px}
+.expd-photo-card{grid-column:1;grid-row:1;align-self:start}
+.expd-photo-frame img{height:310px}
+.expd-main{display:contents}
+.expd-main>.expd-card:first-child{grid-column:2;grid-row:1;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.expd-main>.expd-card:nth-child(2){grid-column:1/-1;grid-row:2}
+.expd-character>.expd-bio-card{grid-column:1/-1;grid-row:3}
+.expd-card{padding:23px 25px}
+.expd-extra-list{max-height:360px;padding-right:10px;font-size:12.5px;line-height:1.75;overflow-wrap:anywhere}
+.expd-bio-text{max-height:520px;padding-right:10px;font-size:12.5px;line-height:1.85;overflow-wrap:anywhere}
+.expd-extra-item{display:block;margin:0;color:var(--text-main);font:500 12.5px/1.75 var(--font-base)}
+.expd-extra-item+.expd-extra-item{margin-top:6px}
+.expd-bio-p{margin:0 0 13px;white-space:pre-line;overflow-wrap:anywhere}
+.expd-bio-p:last-child{margin-bottom:0}
+/* Organización narrativa: dos columnas, tipografía legible y sin alturas fijas. */
+.expd-admin-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.expd-admin-item{min-height:0;padding:18px 21px;text-align:left}
+.expd-admin-label{margin-bottom:8px;font-size:10px;line-height:1.45;letter-spacing:.09em}
+.expd-admin-value{display:block;height:auto;min-height:0;max-height:none;overflow:visible;color:var(--text-main);font:650 12px/1.65 var(--font-base);text-align:left;overflow-wrap:anywhere}
+.expd-admin-value.expd-rhythm{color:var(--accent-sage);font:600 13px/1.5 var(--font-title)}
+.expd-admin-value.expd-interests{display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px}
+.expd-interest{display:inline-block;padding:4px 8px;border:1px solid var(--line);background:var(--bg-panel);color:var(--text-main);font:650 10.5px/1.4 var(--font-base)}
+.expd-admin-copy{margin-top:8px;font-size:10px;line-height:1.5}
+/* Las fichas existentes siguen usando exactamente .expd, .expd-main, .expd-extra, etc. */
+@media(max-width:860px){.expd-character{grid-template-columns:minmax(0,1fr)}.expd-photo-card{grid-column:1;grid-row:1}.expd-main>.expd-card:first-child{grid-column:1;grid-row:2}.expd-main>.expd-card:nth-child(2){grid-column:1;grid-row:3}.expd-character>.expd-bio-card{grid-column:1;grid-row:4}}
+@media(max-width:560px){.expd-paper{padding:18px}.expd-card{padding:18px}.expd-admin-grid{grid-template-columns:1fr}.expd-admin-item{padding:16px}.expd-extra-list{max-height:330px}.expd-bio-text{max-height:440px}}

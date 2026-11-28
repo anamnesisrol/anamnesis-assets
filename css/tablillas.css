@@ -11215,3 +11215,18 @@ body.theme-dark .am-starter-mini .asm-info::before {
   background-position:center!important;
   background-color:var(--am-phone-screen)!important;
 }
+
+/* ANAMNESIS · EXPEDIENTE V2 · AJUSTES SOLO PARA FICHAS NUEVAS */
+.expd.expd-v2 .expd-extra-item{display:block;margin:0;padding:0;color:var(--text-main);font:500 11.5px/1.55 var(--font-base)}
+.expd.expd-v2 .expd-extra-item+.expd-extra-item{margin-top:5px}
+.expd.expd-v2 .expd-bio-p{margin:0 0 11px;white-space:pre-line;overflow-wrap:anywhere}
+.expd.expd-v2 .expd-bio-p:last-child{margin-bottom:0}
+.expd.expd-v2 .expd-admin-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.expd.expd-v2 .expd-admin-item{min-height:0;padding:17px 18px;text-align:left}
+.expd.expd-v2 .expd-admin-label{margin-bottom:7px;font:700 10px/1.4 var(--font-title);letter-spacing:.09em}
+.expd.expd-v2 .expd-admin-value{display:block;height:auto;min-height:0;max-height:none;overflow:visible;color:var(--text-main);font:650 12px/1.6 var(--font-base);text-align:left;overflow-wrap:anywhere}
+.expd.expd-v2 .expd-admin-value.expd-rhythm{color:var(--accent-sage);font:600 13px/1.5 var(--font-title)}
+.expd.expd-v2 .expd-admin-value.expd-interests{display:flex;align-items:flex-start;flex-wrap:wrap;gap:6px}
+.expd.expd-v2 .expd-interest{display:inline-block;padding:4px 8px;border:1px solid var(--line);background:var(--bg-panel);color:var(--text-main);font:650 10.5px/1.4 var(--font-base);white-space:normal}
+.expd.expd-v2 .expd-admin-copy{margin-top:9px;font:600 10px/1.45 var(--font-base)}
+@media(max-width:560px){.expd.expd-v2 .expd-admin-grid{grid-template-columns:1fr}}
